@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="Keywords" content="宮崎県,宮崎市,宮崎,動物園,遊園地,流れるプール,ひなた,ふれあい,ファミリー" />
+    <meta name="description" content="Hinata Zooは宮崎市にある動物園。日本でも珍しいフラミンゴショーを見ることができます。遊園地も併設しており、流れるプールや屋外プールも楽しめます。" />
+    <title>Hinata Zoo</title>
+    <!-- リセットcss -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <!-- 自作js -->
+    <script src="js/main.js"></script>
+    <script src="js/slide.js"></script>
+    <!-- 自作css -->
+    <link rel="stylesheet" href="./assets/css/common.css" />
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/31799c2542.js" crossorigin="anonymous"></script>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500&family=Noto+Sans+Tamil:wght@100;200;300;400;500&family=Zen+Maru+Gothic:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  </head>
+
+  <body id="BG">
+    <header class="header">
+      <div class="header-top flex">
+        <div>
+          <h1 class="header-logo">
+            <a href="index.html"><img src="./assets/images/logo.svg" width="229" height="82" alt="Hinata Zoo" /></a>
+          </h1>
+          <div class="flex header-btn">
+            <a href="" class="qa-btn">よくある質問</a>
+            <a href="contact.html" class="contact-btn">お問い合わせ</a>
+          </div>
+          <button type="button" class="menu-btn" id="js-hamburger">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+          </button>
+
+          <div class="menu">
+            <img src="./assets/images/logo.svg" height="50" alt="Hinata Zoo" />
+            <div class="menu__item"><a href="">イベント情報</a></div>
+            <div class="menu__item"><a href="">当園について</a></div>
+            <div class="menu__item"><a href="">入園について</a></div>
+            <div class="menu__item"><a href="">施設案内</a></div>
+            <div class="menu__item"><a href="">モデルコース</a></div>
+            <div class="menu__item"><a href="">ニュース</a></div>
+            <div class="menu__item"><a href="">アクセス</a></div>
+            <div class="menu__item"><a href="">よくある質問</a></div>
+            <div class="menu-sns__icon">
+              <a href="https://twitter.com/m_phoenixzoo"><img src="./assets/images/twiiter_w.svg" alt="" /></a>
+              <a href="https://www.instagram.com/phoenixzoo1971/"><img src="./assets/images/instagram_w.svg" alt="" /></a>
+              <a href="https://www.facebook.com/mphzoo/?locale=ja_JP"><img src="./assets/images/facebook_w.svg" alt="" /></a>
+              <a href="https://www.youtube.com/@miyazakicitychannel8545/featured"><img src="./assets/images/youtube_w.svg" alt="" /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.header-top -->
+
+      <div class="header-bottom">
+        <div class="container flex">
+          <div class="business-hours">
+            <dl class="flex">
+              <dt>本日の営業時間</dt>
+              <dd>
+                午前
+                <time datetime="09:00">9:00</time>
+                ～午後
+                <time datetime="17:00">5:00</time>
+              </dd>
+            </dl>
+          </div>
+          <div class="sns-icon">
+            <a href="https://twitter.com/m_phoenixzoo"><img src="./assets/images/twiiter_w.svg" alt="" /></a>
+            <a href="https://www.instagram.com/phoenixzoo1971/"><img src="./assets/images/instagram_w.svg" alt="" /></a>
+            <a href="https://www.facebook.com/mphzoo/?locale=ja_JP"><img src="./assets/images/facebook_w.svg" alt="" /></a>
+            <a href="https://www.youtube.com/@miyazakicitychannel8545/featured"><img src="./assets/images/youtube_w.svg" alt="" /></a>
+          </div>
+        </div>
+      </div>
+      <!-- /.header-bottom -->
+
+      <nav class="global-nav">
+        <ul class="nav-list flex">
+          <li><a href="about.html" class="nav-list__item">当園について</a></li>
+          <li><a href="admission.html" class="nav-list__item">入園について</a></li>
+          <li><a href="animals.html" class="nav-list__item">園内の動物たち</a></li>
+          <li><a href="guide.html" class="nav-list__item">施設案内</a></li>
+          <li><a href="modelcourse.html" class="nav-list__item">モデルコース</a></li>
+          <li><a href="news.html" class="nav-list__item">ニュース</a></li>
+          <li class="right-line"><a href="access.html" class="nav-list__item">アクセス</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- /.header -->
+
+    <main>
+      <section class="fee">
+        <div class="container fee-container">
+          <div class="fee-contents flex">
+            <h2 class="fee-title">入園料</h2>
+            <dl>
+              <div class="flex">
+                <dt>大人（高校生以上）</dt>
+                <dd>840円</dd>
+              </div>
+              <div class="flex">
+                <dt>中学生</dt>
+                <dd>420円</dd>
+              </div>
+              <div class="flex">
+                <dt>小学生</dt>
+                <dd>310円</dd>
+              </div>
+              <div class="flex">
+                <dt>未就学児</dt>
+                <dd>無料</dd>
+              </div>
+            </dl>
+          </div>
+          <div class="ticket flex">
+            <a href="webticket.html" class="ticket-web">Webチケットはこちら</a>
+            <a href="admission.html" class="ticket-group">団体のお客様はこちら</a>
+          </div>
+        </div>
+      </section>
+      <!-- /.fee -->
+
+      <section class="event">
+        <div class="container">
+          <div class="section-title">
+            <h2 class="primary-title">Event</h2>
+            <p class="section-catchcopy">楽しいイベント盛りだくさん！</p>
+          </div>
+        </div>
+        <div class="loop__wrap">
+          <ul class="loop__list loop__list--left">
+            <li class="loop__item">
+              <div class="eventSlide-item">
+                <div class="contents-text">
+                  <h3 class="secondary-title">ゾウさんのお散歩と記念撮影</h3>
+                  <dl>
+                    <div class="flex event-time">
+                      <dt>時間</dt>
+                      <dd>14時〜</dd>
+                    </div>
+                    <div class="flex event-place">
+                      <dt>場所</dt>
+                      <dd>アジアゾウ展示場→ゾウさん広場</dd>
+                    </div>
+                  </dl>
+                  <p class="event-text">
+                    アジアゾウ展示場」と「ゾウさん広場」の間、約100mをアジアゾウの「みどり」と一緒にお散歩しませんか。お散歩して「ゾウさん広場」に到着したあとは、お客様との写真撮影を行います（無料）
+                    <br />
+                    ご家族みなさんで記念の１枚をどうぞ！
+                    <br />
+                    <small>※会場に並んでいただいた順番での撮影になります。</small>
+                    <br />
+                    <small>※同行する飼育員の指示にしたがって下さい。</small>
+                  </p>
+                </div>
+                <figure>
+                  <img src="./assets/images/dailyEvent_elepahant.png" alt="ゾウさんのお散歩と記念撮影" />
+                </figure>
+              </div>
+            </li>
+
+            <li class="loop__item">
+              <div class="eventSlide-item">
+                <div class="contents-text">
+                  <h3 class="secondary-title">ゾウさんに乗ってみよう</h3>
+                  <dl>
+                    <div class="flex event-time">
+                      <dt>時間</dt>
+                      <dd>「ゾウさんと記念撮影」終了後</dd>
+                    </div>
+                    <div class="flex event-place">
+                      <dt>場所</dt>
+                      <dd>「ゾウさん広場」にて。</dd>
+                    </div>
+                  </dl>
+                  <p>
+                    アジアゾウ「みどり」の背中に乗ってみよう！
+                    <small>※「みどり」の体調によっては、変更・中止する場合があります。</small>
+                    <br />
+                    <small>※一人で階段の上り下りができるお子様から、小学校3年生までが対象。</small>
+                    <br />
+                    体験料：500円
+                  </p>
+                </div>
+                <figure>
+                  <img src="./assets/images/limitedEvent_elepahant.png" alt="ゾウさんに乗ってみよう" />
+                </figure>
+              </div>
+            </li>
+
+            <li class="loop__item">
+              <div class="eventSlide-item">
+                <div class="contents-text">
+                  <h3 class="secondary-title">ヤギの大行進</h3>
+                  <dl>
+                    <div class="flex event-time">
+                      <dt>時間</dt>
+                      <dd>1回目：10時～、2回目：16時～</dd>
+                    </div>
+                    <div class="flex event-place">
+                      <dt>場所</dt>
+                      <dd>猛獣舎横→こども動物村</dd>
+                    </div>
+                  </dl>
+                  <p>
+                    10時は観覧橋内部の寝室からこども動物村まで。16時にはこども動物村から寝室まで戻ります。
+                    <br />
+                    約50頭がその間約180mを駆け足で大行進します。一生懸命走るヤギのかわいい姿をぜひご覧ください。
+                  </p>
+                </div>
+                <figure>
+                  <img src="./assets/images/daylyEvent_yagi.png" alt="ヤギの大行進" />
+                </figure>
+              </div>
+            </li>
+
+            <li class="loop__item">
+              <div class="eventSlide-item">
+                <div class="contents-text">
+                  <h3 class="secondary-title">ゾウさんに乗ってみよう</h3>
+                  <dl>
+                    <div class="flex event-time">
+                      <dt>時間</dt>
+                      <dd>「ゾウさんと記念撮影」終了後</dd>
+                    </div>
+                    <div class="flex event-place">
+                      <dt>場所</dt>
+                      <dd>「ゾウさん広場」にて。</dd>
+                    </div>
+                  </dl>
+                  <p>
+                    アジアゾウ「みどり」の背中に乗ってみよう！
+                    <small>※「みどり」の体調によっては、変更・中止する場合があります。</small>
+                    <br />
+                    <small>※一人で階段の上り下りができるお子様から、小学校3年生までが対象。</small>
+                    <br />
+                    体験料：500円
+                  </p>
+                </div>
+                <figure>
+                  <img src="./assets/images/limitedEvent_elepahant.png" alt="ゾウさんに乗ってみよう" />
+                </figure>
+              </div>
+            </li>
+
+            <li class="loop__item">
+              <div class="eventSlide-item">
+                <div class="contents-text">
+                  <h3 class="secondary-title">ヤギの大行進</h3>
+                  <dl>
+                    <div class="flex event-time">
+                      <dt>時間</dt>
+                      <dd>1回目：10時～、2回目：16時～</dd>
+                    </div>
+                    <div class="flex event-place">
+                      <dt>場所</dt>
+                      <dd>猛獣舎横→こども動物村</dd>
+                    </div>
+                  </dl>
+                  <p>
+                    10時は観覧橋内部の寝室からこども動物村まで。16時にはこども動物村から寝室まで戻ります。
+                    <br />
+                    約50頭がその間約180mを駆け足で大行進します。一生懸命走るヤギのかわいい姿をぜひご覧ください。
+                  </p>
+                </div>
+                <figure>
+                  <img src="./assets/images/daylyEvent_yagi.png" alt="ヤギの大行進" />
+                </figure>
+              </div>
+            </li>
+
+            <li class="loop__item">
+              <div class="eventSlide-item">
+                <div class="contents-text">
+                  <h3 class="secondary-title">ゾウさんのお散歩と記念撮影</h3>
+                  <dl>
+                    <div class="flex event-time">
+                      <dt>時間</dt>
+                      <dd>14時〜</dd>
+                    </div>
+                    <div class="flex event-place">
+                      <dt>場所</dt>
+                      <dd>アジアゾウ展示場→ゾウさん広場</dd>
+                    </div>
+                  </dl>
+                  <p class="event-text">
+                    アジアゾウ展示場」と「ゾウさん広場」の間、約100mをアジアゾウの「みどり」と一緒にお散歩しませんか。お散歩して「ゾウさん広場」に到着したあとは、お客様との写真撮影を行います（無料）
+                    <br />
+                    ご家族みなさんで記念の１枚をどうぞ！
+                    <br />
+                    <small>※会場に並んでいただいた順番での撮影になります。</small>
+                    <br />
+                    <small>※同行する飼育員の指示にしたがって下さい。</small>
+                  </p>
+                </div>
+                <figure>
+                  <img src="./assets/images/dailyEvent_elepahant.png" alt="ゾウさんのお散歩と記念撮影" />
+                </figure>
+              </div>
+            </li>
+
+            <li class="loop__item">
+              <div class="eventSlide-item">
+                <div class="contents-text">
+                  <h3 class="secondary-title">ゾウさんに乗ってみよう</h3>
+                  <dl>
+                    <div class="flex event-time">
+                      <dt>時間</dt>
+                      <dd>「ゾウさんと記念撮影」終了後</dd>
+                    </div>
+                    <div class="flex event-place">
+                      <dt>場所</dt>
+                      <dd>「ゾウさん広場」にて。</dd>
+                    </div>
+                  </dl>
+                  <p>
+                    アジアゾウ「みどり」の背中に乗ってみよう！
+                    <small>※「みどり」の体調によっては、変更・中止する場合があります。</small>
+                    <br />
+                    <small>※一人で階段の上り下りができるお子様から、小学校3年生までが対象。</small>
+                    <br />
+                    体験料：500円
+                  </p>
+                </div>
+                <figure>
+                  <img src="./assets/images/limitedEvent_elepahant.png" alt="ゾウさんに乗ってみよう" />
+                </figure>
+              </div>
+            </li>
+
+            <li class="loop__item">
+              <div class="eventSlide-item">
+                <div class="contents-text">
+                  <h3 class="secondary-title">ゾウさんのお散歩と記念撮影</h3>
+                  <dl>
+                    <div class="flex event-time">
+                      <dt>時間</dt>
+                      <dd>14時〜</dd>
+                    </div>
+                    <div class="flex event-place">
+                      <dt>場所</dt>
+                      <dd>アジアゾウ展示場→ゾウさん広場</dd>
+                    </div>
+                  </dl>
+                  <p class="event-text">
+                    アジアゾウ展示場」と「ゾウさん広場」の間、約100mをアジアゾウの「みどり」と一緒にお散歩しませんか。お散歩して「ゾウさん広場」に到着したあとは、お客様との写真撮影を行います（無料）
+                    <br />
+                    ご家族みなさんで記念の１枚をどうぞ！
+                    <br />
+                    <small>※会場に並んでいただいた順番での撮影になります。</small>
+                    <br />
+                    <small>※同行する飼育員の指示にしたがって下さい。</small>
+                  </p>
+                </div>
+                <figure>
+                  <img src="./assets/images/dailyEvent_elepahant.png" alt="ゾウさんのお散歩と記念撮影" />
+                </figure>
+              </div>
+            </li>
+
+            <li class="loop__item">
+              <div class="eventSlide-item">
+                <div class="contents-text">
+                  <h3 class="secondary-title">ゾウさんに乗ってみよう</h3>
+                  <dl>
+                    <div class="flex event-time">
+                      <dt>時間</dt>
+                      <dd>「ゾウさんと記念撮影」終了後</dd>
+                    </div>
+                    <div class="flex event-place">
+                      <dt>場所</dt>
+                      <dd>「ゾウさん広場」にて。</dd>
+                    </div>
+                  </dl>
+                  <p>
+                    アジアゾウ「みどり」の背中に乗ってみよう！
+                    <small>※「みどり」の体調によっては、変更・中止する場合があります。</small>
+                    <br />
+                    <small>※一人で階段の上り下りができるお子様から、小学校3年生までが対象。</small>
+                    <br />
+                    体験料：500円
+                  </p>
+                </div>
+                <figure>
+                  <img src="./assets/images/limitedEvent_elepahant.png" alt="ゾウさんに乗ってみよう" />
+                </figure>
+              </div>
+            </li>
+
+            <li class="loop__item">
+              <div class="eventSlide-item">
+                <div class="contents-text">
+                  <h3 class="secondary-title">ヤギの大行進</h3>
+                  <dl>
+                    <div class="flex event-time">
+                      <dt>時間</dt>
+                      <dd>1回目：10時～、2回目：16時～</dd>
+                    </div>
+                    <div class="flex event-place">
+                      <dt>場所</dt>
+                      <dd>猛獣舎横→こども動物村</dd>
+                    </div>
+                  </dl>
+                  <p>
+                    10時は観覧橋内部の寝室からこども動物村まで。16時にはこども動物村から寝室まで戻ります。
+                    <br />
+                    約50頭がその間約180mを駆け足で大行進します。一生懸命走るヤギのかわいい姿をぜひご覧ください。
+                  </p>
+                </div>
+                <figure>
+                  <img src="./assets/images/daylyEvent_yagi.png" alt="ヤギの大行進" />
+                </figure>
+              </div>
+            </li>
+
+            <li class="loop__item">
+              <div class="eventSlide-item">
+                <div class="contents-text">
+                  <h3 class="secondary-title">ゾウさんに乗ってみよう</h3>
+                  <dl>
+                    <div class="flex event-time">
+                      <dt>時間</dt>
+                      <dd>「ゾウさんと記念撮影」終了後</dd>
+                    </div>
+                    <div class="flex event-place">
+                      <dt>場所</dt>
+                      <dd>「ゾウさん広場」にて。</dd>
+                    </div>
+                  </dl>
+                  <p>
+                    アジアゾウ「みどり」の背中に乗ってみよう！
+                    <small>※「みどり」の体調によっては、変更・中止する場合があります。</small>
+                    <br />
+                    <small>※一人で階段の上り下りができるお子様から、小学校3年生までが対象。</small>
+                    <br />
+                    体験料：500円
+                  </p>
+                </div>
+                <figure>
+                  <img src="./assets/images/limitedEvent_elepahant.png" alt="ゾウさんに乗ってみよう" />
+                </figure>
+              </div>
+            </li>
+
+            <li class="loop__item">
+              <div class="eventSlide-item">
+                <div class="contents-text">
+                  <h3 class="secondary-title">ヤギの大行進</h3>
+                  <dl>
+                    <div class="flex event-time">
+                      <dt>時間</dt>
+                      <dd>1回目：10時～、2回目：16時～</dd>
+                    </div>
+                    <div class="flex event-place">
+                      <dt>場所</dt>
+                      <dd>猛獣舎横→こども動物村</dd>
+                    </div>
+                  </dl>
+                  <p>
+                    10時は観覧橋内部の寝室からこども動物村まで。16時にはこども動物村から寝室まで戻ります。
+                    <br />
+                    約50頭がその間約180mを駆け足で大行進します。一生懸命走るヤギのかわいい姿をぜひご覧ください。
+                  </p>
+                </div>
+                <figure>
+                  <img src="./assets/images/daylyEvent_yagi.png" alt="ヤギの大行進" />
+                </figure>
+              </div>
+            </li>
+
+            <li class="loop__item">
+              <div class="eventSlide-item">
+                <div class="contents-text">
+                  <h3 class="secondary-title">ゾウさんのお散歩と記念撮影</h3>
+                  <dl>
+                    <div class="flex event-time">
+                      <dt>時間</dt>
+                      <dd>14時〜</dd>
+                    </div>
+                    <div class="flex event-place">
+                      <dt>場所</dt>
+                      <dd>アジアゾウ展示場→ゾウさん広場</dd>
+                    </div>
+                  </dl>
+                  <p class="event-text">
+                    アジアゾウ展示場」と「ゾウさん広場」の間、約100mをアジアゾウの「みどり」と一緒にお散歩しませんか。お散歩して「ゾウさん広場」に到着したあとは、お客様との写真撮影を行います（無料）
+                    <br />
+                    ご家族みなさんで記念の１枚をどうぞ！
+                    <br />
+                    <small>※会場に並んでいただいた順番での撮影になります。</small>
+                    <br />
+                    <small>※同行する飼育員の指示にしたがって下さい。</small>
+                  </p>
+                </div>
+                <figure>
+                  <img src="./assets/images/dailyEvent_elepahant.png" alt="ゾウさんのお散歩と記念撮影" />
+                </figure>
+              </div>
+            </li>
+
+            <li class="loop__item">
+              <div class="eventSlide-item">
+                <div class="contents-text">
+                  <h3 class="secondary-title">ゾウさんに乗ってみよう</h3>
+                  <dl>
+                    <div class="flex event-time">
+                      <dt>時間</dt>
+                      <dd>「ゾウさんと記念撮影」終了後</dd>
+                    </div>
+                    <div class="flex event-place">
+                      <dt>場所</dt>
+                      <dd>「ゾウさん広場」にて。</dd>
+                    </div>
+                  </dl>
+                  <p>
+                    アジアゾウ「みどり」の背中に乗ってみよう！
+                    <small>※「みどり」の体調によっては、変更・中止する場合があります。</small>
+                    <br />
+                    <small>※一人で階段の上り下りができるお子様から、小学校3年生までが対象。</small>
+                    <br />
+                    体験料：500円
+                  </p>
+                </div>
+                <figure>
+                  <img src="./assets/images/limitedEvent_elepahant.png" alt="ゾウさんに乗ってみよう" />
+                </figure>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <a href="event.html" class="btn event-btn">イベント一覧はこちら</a>
+      </section>
+      <!-- /.event -->
+
+      <!-- .modelcourse -->
+      <section class="modelcourse">
+        <div class="container">
+          <div class="section-title">
+            <h2 class="primary-title">Model Course</h2>
+            <p class="section-catchcopy">あなたにぴったりのプランをご紹介！</p>
+          </div>
+        </div>
+
+        <div class="section-contents tab-panel">
+          <!--タブ-->
+          <ul class="tab-group flex container">
+            <li class="tab tab-A is-active">だれと楽しむ？</li>
+            <li class="tab tab-B">なにを楽しむ？</li>
+            <li class="tab tab-C">どんな日に楽しむ？</li>
+          </ul>
+
+          <!--タブを切り替えて表示するコンテンツ-->
+          <div class="panel-group">
+            <div class="panel tab-A is-show">
+              <div class="flex">
+                <div class="left"></div>
+                <div class="right">
+                  <div class="right-top flex">
+                    <a href="#" class="flex right-1">ファミリーで</a>
+                    <a href="#" class="flex right-2">ふたりで</a>
+                  </div>
+                  <a href=""><div class="right-bottom">ひとりで</div></a>
+                </div>
+              </div>
+            </div>
+            <div class="panel tab-B">
+              <div class="flex">
+                <div class="left"></div>
+                <div class="right">
+                  <div class="right-top flex">
+                    <a href="#" class="flex right-1">動物をたのしむ</a>
+                    <a href="#" class="flex right-2">
+                      遊園地・プールを
+                      <br />
+                      たのしむ
+                    </a>
+                  </div>
+                  <a href=""><div class="right-bottom">グルメをたのしむ</div></a>
+                </div>
+              </div>
+            </div>
+            <div class="panel tab-C">
+              <div class="flex">
+                <div class="left"></div>
+                <div class="right">
+                  <div class="right-top flex">
+                    <a href="#" class="flex right-1">雨の日にたのしむ</a>
+                    <a href="#" class="flex right-2">記念日にたのしむ</a>
+                  </div>
+                  <a href="">
+                    <div class="right-bottom">夜にたのしむ</div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /.modelcourse -->
+
+      <section class="favorite">
+        <div class="container">
+          <div class="section-title">
+            <h2 class="primary-title">Favorite</h2>
+            <p class="section-catchcopy">お気に入りの動物を見つけよう！</p>
+          </div>
+        </div>
+
+        <swiper-container class="mySwiper" slides-per-view="auto" space-between="16" pagination="false" navigation="true" loop="true">
+          <swiper-slide class="daytimeAnimal favoriteSlide-item">
+            <a href=""><img src="./assets/images/daytimeAnimal.jpg" alt="昼行性の動物を詳しく見る" /></a>
+          </swiper-slide>
+          <swiper-slide class="nightAnimal favoriteSlide-item">
+            <a href=""><img src="./assets/images/nightAnimal.jpg" alt="夜行性の動物を詳しく見る" /></a>
+          </swiper-slide>
+          <swiper-slide class="miniAnimal favoriteSlide-item">
+            <a href=""><img src="./assets/images/miniAnimal.jpg" alt="小動物を詳しく見る" /></a>
+          </swiper-slide>
+          <swiper-slide class="nightAnimal favoriteSlide-item">
+            <a href=""><img src="./assets/images/nightAnimal.jpg" alt="夜行性の動物を詳しく見る" /></a>
+          </swiper-slide>
+          <swiper-slide class="daytimeAnimal favoriteSlide-item">
+            <a href=""><img src="./assets/images/daytimeAnimal.jpg" alt="昼行性の動物を詳しく見る" /></a>
+          </swiper-slide>
+          <swiper-slide class="miniAnimal favoriteSlide-item">
+            <a href=""><img src="./assets/images/miniAnimal.jpg" alt="小動物を詳しく見る" /></a>
+          </swiper-slide>
+          <swiper-slide class="nightAnimal favoriteSlide-item">
+            <a href=""><img src="./assets/images/nightAnimal.jpg" alt="夜行性の動物を詳しく見る" /></a>
+          </swiper-slide>
+          <swiper-slide class="daytimeAnimal favoriteSlide-item">
+            <a href=""><img src="./assets/images/daytimeAnimal.jpg" alt="昼行性の動物を詳しく見る" /></a>
+          </swiper-slide>
+          <swiper-slide class="miniAnimal favoriteSlide-item">
+            <a href=""><img src="./assets/images/miniAnimal.jpg" alt="小動物を詳しく見る" /></a>
+          </swiper-slide>
+          <swiper-slide class="nightAnimal favoriteSlide-item">
+            <a href=""><img src="./assets/images/nightAnimal.jpg" alt="夜行性の動物を詳しく見る" /></a>
+          </swiper-slide>
+          <swiper-slide class="daytimeAnimal favoriteSlide-item">
+            <a href=""><img src="./assets/images/daytimeAnimal.jpg" alt="昼行性の動物を詳しく見る" /></a>
+          </swiper-slide>
+          <swiper-slide class="miniAnimal favoriteSlide-item">
+            <a href=""><img src="./assets/images/miniAnimal.jpg" alt="小動物を詳しく見る" /></a>
+          </swiper-slide>
+        </swiper-container>
+
+        <a href="animals.html" class="btn">園内の動物一覧</a>
+      </section>
+      <!-- /.favorite -->
+
+      <section class="nightzoo">
+        <h2>Night Zooについて</h2>
+        <div class="flow-text"></div>
+        <a href="nightzoo.html" class="nightzoo-btn"><span>Are you ready ?</span></a>
+      </section>
+
+      <section class="instagram flex">
+        <h2>Instagram</h2>
+        <section class="section-contents insta-contents flex">
+          <h3>みんなの投稿大募集！</h3>
+          <p>#Hinata Zoo</p>
+          <a href="https://www.instagram.com/phoenixzoo1971/" class="insta-btn flex">
+            <i class="fa-brands fa-instagram"></i>
+
+            Instagram
+          </a>
+        </section>
+      </section>
+      <!-- /.instagram -->
+
+      <section class="news">
+        <div class="section-title">
+          <h2 class="primary-title">News</h2>
+          <p class="section-catchcopy">新着情報</p>
+        </div>
+        <div class="container">
+          <ul class="news-list">
+            <li class="flex list-item">
+              <div class="flex">
+                <time datetime="2025-03-23">2025年03月23日</time>
+                <div class="label news-label">ニュース</div>
+              </div>
+              <a href="" class="break-keep">遊園地のりもの料金改定のお知らせ</a>
+            </li>
+            <li class="flex list-item">
+              <div class="flex">
+                <time datetime="2025-03-23">2025年03月23日</time>
+                <div class="label news-label">ニュース</div>
+              </div>
+              <a href="" class="break-keep">ギンビス「たべっ子どうぶつ」Meets 宮崎市Hinata Zoo</a>
+            </li>
+            <li class="flex list-item">
+              <div class="flex">
+                <time datetime="2025-03-23">2025年03月23日</time>
+                <div class="label collect-label">募集情報</div>
+              </div>
+              <a href="" class="break-keep">「チンパンジー総選挙」結果発表！</a>
+            </li>
+            <li class="flex list-item">
+              <div class="flex">
+                <time datetime="2025-03-23">2025年03月23日</time>
+                <div class="label letter-label">動物園だより</div>
+              </div>
+              <a href="" class="break-keep">ワオキツネザルに ふたごの赤ちゃんが生まれました！</a>
+            </li>
+            <li class="flex list-item">
+              <div class="flex">
+                <time datetime="2025-03-23">2025年03月23日</time>
+                <div class="label letter-label">動物園だより</div>
+              </div>
+              <a href="" class="break-keep">マサイキリン「ハルマ」1歳の誕生会</a>
+            </li>
+          </ul>
+        </div>
+
+        <a href="news.html" class="btn">ニュース一覧</a>
+      </section>
+      <!-- /.news -->
+
+      <section class="access">
+        <div class="section-title">
+          <h2 class="primary-title">Access</h2>
+          <p class="section-catchcopy">アクセス</p>
+        </div>
+        <div class="section-contents flex">
+          <iframe class="access-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3384.188952534567!2d131.47391521516198!3d31.982892881219033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3538bad132ff7be5%3A0x4a57e247d1a13528!2sMiyazaki%20City%20Phoenix%20Zoo!5e0!3m2!1sen!2sjp!4v1683858824910!5m2!1sen!2sjp" width="1160" height="800" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+          <ul class="access-text">
+            <li>
+              <section>
+                <div class="contents-text">
+                  <h3 class="secondary-title access-car">
+                    <i class="fa-solid fa-car"></i>
+                    お車でお越しの方
+                  </h3>
+                  <p class="break-keep">
+                    羽南自動車道・羽南インターチェンジより、ひなた有料道路を経由して、ひなた西インターチェンジまで約15分。
+                    <br />
+                    旭川方面からは、国道12号線を経由してひなた有料道路を利用し、ひなた西インターチェンジまで約2時間。
+                    <br />
+                    <small>※ひなた西インターチェンジを降りて約1分で、左手にHnata Zooの駐車場が見えてきます。</small>
+                  </p>
+                </div>
+              </section>
+            </li>
+            <li>
+              <section>
+                <div class="contents-text">
+                  <h3 class="secondary-title access-train">
+                    <i class="fa-solid fa-train"></i>
+                    JR
+                  </h3>
+                  <p class="break-keep">
+                    ・最寄の駅から JR羽南本線「羽南動物公園駅」よりタクシーにて約10分
+                    <br />
+                    <small>※羽南動物公園駅には特急・快速列車は停車しません。</small>
+                    <br />
+                    ・JR羽南中央駅からJR羽南本線、各駅停車にて「羽南動物公園駅」まで約12分
+                    <br />
+                    タクシーで動物園まで15～20分
+                  </p>
+                </div>
+              </section>
+            </li>
+            <li>
+              <section>
+                <div class="contents-text">
+                  <h3 class="secondary-title access-bus">
+                    <i class="fa-solid fa-bus"></i>
+                    バス
+                  </h3>
+                  <p class="break-keep">
+                    宮崎駅からHinata Zoo行きのバスが 運行しております。
+                    <br />
+                    <small>※時刻表等はホームページをご参照ください。</small>
+                  </p>
+                </div>
+              </section>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- /.access -->
+      <div class="floating-banner">
+        <button onclick="buttonClick('gray')"><img src="./assets/images/clickTiger.png" /></button>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-top flex">
+          <address>
+            <p class="footer-name">Hinata Zoo</p>
+            <p>
+              〒880-XXXX
+              <br />
+              宮崎県宮崎市XXXXXXX
+            </p>
+            <p>
+              電話番号：
+              <a href="tel:+0985123456">0985-12-3456</a>
+            </p>
+            <p>FAX番号：0985-12-3456</p>
+          </address>
+
+          <ul class="footer-nav grid">
+            <li><a href="about.html">当園について</a></li>
+            <li><a href="event.html">イベント情報</a></li>
+            <li><a href="">よくある質問</a></li>
+
+            <li><a href="admission.html">入園について</a></li>
+            <li><a href="modelcourse.html">モデルコース</a></li>
+            <li class="footer-nav__sns">
+              公式SNS
+              <ul>
+                <li class="footer-sns"><a href="https://twitter.com/m_phoenixzoo">Twitter</a></li>
+                <li class="footer-sns"><a href="https://www.instagram.com/phoenixzoo1971/">Instagram</a></li>
+                <li class="footer-sns"><a href="https://www.facebook.com/mphzoo/?locale=ja_JP">Facebook</a></li>
+                <li class="footer-sns">
+                  <a href="https://www.youtube.com/">YouTube</a>
+                </li>
+              </ul>
+            </li>
+            <li><a href="guide.html">施設案内</a></li>
+            <li><a href="animals.html">園内の動物たち</a></li>
+            <li class="footer-wrap"><div></div></li>
+            <li><a href="news.html">ニュース</a></li>
+            <li><a href="access.html">アクセス</a></li>
+          </ul>
+        </div>
+        <!-- /.footer-top -->
+
+        <div class="footer-bottom">
+          <div class="sns-icon">
+            <a href="https://twitter.com/m_phoenixzoo"><img src="./assets/images/twiiter_w.svg" alt="" /></a>
+            <a href="https://www.instagram.com/phoenixzoo1971/"><img src="./assets/images/instagram_w.svg" alt="" /></a>
+            <a href="https://www.facebook.com/mphzoo/?locale=ja_JP"><img src="./assets/images/facebook_w.svg" alt="" /></a>
+            <a href="https://www.youtube.com/@miyazakicitychannel8545/featured"><img src="./assets/images/youtube_w.svg" alt="" /></a>
+          </div>
+          <!-- /.sns-icon -->
+
+          <img src="./assets/images/logo.svg" width="229" height="82" alt="Hinata Zoo" class="logo" />
+          <small>Copyright &copy; 2011 Miyazaki City Phoenix Zoo ALL Rights Reserved.</small>
+        </div>
+        <!-- /.footer-bottom -->
+      </div>
+    </footer>
+    <!-- /.footer -->
+    <script>
+      function buttonClick(newColor) {
+        document.getElementById('BG').style.background = newColor;
+        document.getElementsByTagName('p').style.color = newColor;
+      }
+      (function () {
+        $('.menu-btn').on('click', function () {
+          $('.menu').toggleClass('is-active');
+        });
+      })();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+  </body>
+</html>
