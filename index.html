@@ -15,11 +15,9 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-    <!-- 自作js -->
-    <script src="js/main.js"></script>
+    <!-- js -->
+    <script type="module" src="./assets/js/main.js"></script>
     <script src="js/slide.js"></script>
-    <!-- 自作css -->
-    <link rel="stylesheet" href="./assets/css/common.css" />
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/31799c2542.js" crossorigin="anonymous"></script>
 
@@ -29,76 +27,33 @@
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500&family=Noto+Sans+Tamil:wght@100;200;300;400;500&family=Zen+Maru+Gothic:wght@300;400;500;700&display=swap" rel="stylesheet" />
   </head>
 
-  <body id="BG">
+  <body>
     <header class="header">
-      <div class="header-top flex">
-        <div>
-          <h1 class="header-logo">
-            <a href="index.html"><img src="./assets/images/logo.svg" width="229" height="82" alt="Hinata Zoo" /></a>
-          </h1>
-          <div class="flex header-btn">
-            <a href="" class="qa-btn">よくある質問</a>
-            <a href="contact.html" class="contact-btn">お問い合わせ</a>
-          </div>
-          <button type="button" class="menu-btn" id="js-hamburger">
-            <i class="fa fa-bars" aria-hidden="true"></i>
-          </button>
+      <div class="header__inner">
+        <h1 class="header__logo">
+          <a href="./" class="header__link">
+            <img src="./assets/images/logo.svg" width="186" height="54" alt="Hinata Zoo" class="header__logo-image" />
+          </a>
+        </h1>
 
-          <div class="menu">
-            <img src="./assets/images/logo.svg" height="50" alt="Hinata Zoo" />
-            <div class="menu__item"><a href="">イベント情報</a></div>
-            <div class="menu__item"><a href="">当園について</a></div>
-            <div class="menu__item"><a href="">入園について</a></div>
-            <div class="menu__item"><a href="">施設案内</a></div>
-            <div class="menu__item"><a href="">モデルコース</a></div>
-            <div class="menu__item"><a href="">ニュース</a></div>
-            <div class="menu__item"><a href="">アクセス</a></div>
-            <div class="menu__item"><a href="">よくある質問</a></div>
-            <div class="menu-sns__icon">
-              <a href="https://twitter.com/m_phoenixzoo"><img src="./assets/images/twiiter_w.svg" alt="" /></a>
-              <a href="https://www.instagram.com/phoenixzoo1971/"><img src="./assets/images/instagram_w.svg" alt="" /></a>
-              <a href="https://www.facebook.com/mphzoo/?locale=ja_JP"><img src="./assets/images/facebook_w.svg" alt="" /></a>
-              <a href="https://www.youtube.com/@miyazakicitychannel8545/featured"><img src="./assets/images/youtube_w.svg" alt="" /></a>
-            </div>
-          </div>
-        </div>
+        <aside id="js-drawerMenu" class="hamburger-menu__wrapper">
+          <nav class="nav">
+            <ul class="nav__list">
+              <li class="nav__item"><a href="admission.html" class="nav__link">入園案内</a></li>
+              <li class="nav__item"><a href="animals.html" class="nav__link">どうぶつ</a></li>
+              <li class="nav__item"><a href="guide.html" class="nav__link">施設案内</a></li>
+              <li class="nav__item"><a href="modelcourse.html" class="nav__link">コース</a></li>
+              <li class="nav__item"><a href="news.html" class="nav__link">ニュース</a></li>
+              <li class="nav__item"><a href="access.html" class="nav__link">アクセス</a></li>
+            </ul>
+          </nav>
+        </aside>
+
+        <button id="js-hamburgerMenu" class="hamburger-menu" aria-label="メニューを開く" aria-controls="drawerMenu" aria-expanded="false">
+          <span class="hamburger-menu__line"></span>
+        </button>
       </div>
-      <!-- /.header-top -->
-
-      <div class="header-bottom">
-        <div class="container flex">
-          <div class="business-hours">
-            <dl class="flex">
-              <dt>本日の営業時間</dt>
-              <dd>
-                午前
-                <time datetime="09:00">9:00</time>
-                ～午後
-                <time datetime="17:00">5:00</time>
-              </dd>
-            </dl>
-          </div>
-          <div class="sns-icon">
-            <a href="https://twitter.com/m_phoenixzoo"><img src="./assets/images/twiiter_w.svg" alt="" /></a>
-            <a href="https://www.instagram.com/phoenixzoo1971/"><img src="./assets/images/instagram_w.svg" alt="" /></a>
-            <a href="https://www.facebook.com/mphzoo/?locale=ja_JP"><img src="./assets/images/facebook_w.svg" alt="" /></a>
-            <a href="https://www.youtube.com/@miyazakicitychannel8545/featured"><img src="./assets/images/youtube_w.svg" alt="" /></a>
-          </div>
-        </div>
-      </div>
-      <!-- /.header-bottom -->
-
-      <nav class="global-nav">
-        <ul class="nav-list flex">
-          <li><a href="about.html" class="nav-list__item">当園について</a></li>
-          <li><a href="admission.html" class="nav-list__item">入園について</a></li>
-          <li><a href="animals.html" class="nav-list__item">園内の動物たち</a></li>
-          <li><a href="guide.html" class="nav-list__item">施設案内</a></li>
-          <li><a href="modelcourse.html" class="nav-list__item">モデルコース</a></li>
-          <li><a href="news.html" class="nav-list__item">ニュース</a></li>
-          <li class="right-line"><a href="access.html" class="nav-list__item">アクセス</a></li>
-        </ul>
-      </nav>
+      <!-- /.header__inner -->
     </header>
     <!-- /.header -->
 
@@ -739,7 +694,7 @@
           <p class="section-catchcopy">アクセス</p>
         </div>
         <div class="section-contents flex">
-          <iframe class="access-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3384.188952534567!2d131.47391521516198!3d31.982892881219033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3538bad132ff7be5%3A0x4a57e247d1a13528!2sMiyazaki%20City%20Phoenix%20Zoo!5e0!3m2!1sen!2sjp!4v1683858824910!5m2!1sen!2sjp" width="1160" height="800" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <!-- <iframe class="access-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3384.188952534567!2d131.47391521516198!3d31.982892881219033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3538bad132ff7be5%3A0x4a57e247d1a13528!2sMiyazaki%20City%20Phoenix%20Zoo!5e0!3m2!1sen!2sjp!4v1683858824910!5m2!1sen!2sjp" width="1160" height="800" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
 
           <ul class="access-text">
             <li>
