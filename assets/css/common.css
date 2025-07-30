@@ -85,12 +85,10 @@ body {
   }
 
   .hamburger-menu {
-    position: absolute;
-    top: 50%;
-    right: 4.1vw;
-    transform: translateY(-50%);
-    width: 32px;
-    height: 36px;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
     z-index: 200;
   }
 
@@ -98,7 +96,6 @@ body {
   .hamburger-menu__line::before,
   .hamburger-menu__line::after {
     position: absolute;
-    right: 0;
     z-index: 101;
     width: 100%;
     background-color: var(--main-color-blue);
@@ -107,6 +104,7 @@ body {
 
   .hamburger-menu__line::before,
   .hamburger-menu__line::after {
+    right: 8px;
     height: 4px;
     content: '';
   }
