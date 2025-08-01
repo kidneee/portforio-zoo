@@ -30,7 +30,7 @@
         <aside id="js-drawerMenu" class="hamburger-menu__wrapper">
           <div class="hamburger-menu-video-wrapper">
             <video autoplay muted loop playsinline class="hamburger-menu-video">
-              <source src="./assets/images/fv-video.mp4" type="video/mp4" />
+              <source src="./assets/images/fv-movie-sp.mp4" type="video/mp4" />
               お使いのブラウザは動画に対応していません。
             </video>
           </div>
@@ -102,6 +102,19 @@
     <!-- /.header -->
 
     <main>
+      <!-- FV -->
+      <div class="fv">
+        <!-- PC用動画 -->
+        <video autoplay muted loop playsinline class="fv__movie pc-only">
+          <source src="./assets/images/fv-movie-pc.mp4" type="video/mp4" />
+          お使いのブラウザは動画に対応していません。
+        </video>
+        <!-- SP用動画 -->
+        <video autoplay muted loop playsinline class="fv__movie sp-only">
+          <source src="./assets/images/fv-movie-sp.mp4" type="video/mp4" />
+          お使いのブラウザは動画に対応していません。
+        </video>
+      </div>
       <section class="fee">
         <div class="container fee-container">
           <div class="fee-contents flex">

@@ -35,6 +35,15 @@ a {
 /* Components */
 
 /* Utility */
+.pc-only {
+  display: block;
+}
+@media (max-width: 768px) {
+  .pc-only {
+    display: none;
+  }
+}
+
 .sp-only {
   display: none;
 }
@@ -280,6 +289,14 @@ a {
 /*=====================
   メインコンテンツ
 =====================*/
-main {
-  /* スタイル */
+/* FV */
+.fv {
+  width: 100%;
+  height: calc(100vh - 85px);
+}
+
+.fv__movie {
+  width: 100vw;
+  height: calc(100vh - 85px);
+  object-fit: cover;
 }
