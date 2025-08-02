@@ -5,12 +5,11 @@ module.exports = function () {
   return {
     mode: 'development',
 
-    entry: {},
+    entry: {
+      entry: path.resolve(__dirname, 'src/pages/index.ejs'),
+    },
 
     output: {
-      /**
-       * OUTPUT_DIRECTORY = /dist
-       */
       path: path.resolve(__dirname, 'dist'),
     },
 
@@ -19,11 +18,14 @@ module.exports = function () {
         {
           test: /\.ejs$/,
           use: [
-            /**
-             * HtmlLoader -> TemplateEjsLoader
-             */
             'html-loader',
-            'template-ejs-loader',
+            {
+              loader: 'template-ejs-loader',
+              options: {
+                // EJS の include 用パスのルート指定
+                root: path.resolve(__dirname, 'src'),
+              },
+            },
           ],
         },
       ],
@@ -31,8 +33,8 @@ module.exports = function () {
 
     plugins: [
       new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, 'src', 'source.ejs'),
-        filename: 'target.html',
+        template: path.resolve(__dirname, 'src/pages/index.ejs'), // pages内にあるindex
+        filename: 'index.html',
         minify: {
           collapseWhitespace: true,
           preserveLineBreaks: true,
