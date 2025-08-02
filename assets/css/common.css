@@ -175,33 +175,6 @@ a {
     z-index: 200;
   }
 
-  /* ハンバーガーメニュー 下部 */
-  .hamburger-menu__information {
-    display: flex;
-    flex-direction: column;
-    gap: 4.74vh;
-  }
-
-  /* ハンバーガーメニュー 営業時間 */
-  .opening-hours {
-    display: flex;
-    flex-direction: column;
-    gap: 0.95vh;
-    color: var(--text-color-nav);
-    line-height: 1;
-    text-align: center;
-  }
-
-  .opening-hours__label {
-    font-size: 1rem;
-  }
-
-  .opening-hours__time time {
-    display: inline-block;
-    font-size: 2rem;
-    line-height: 1;
-  }
-
   /* ハンバーガーメニュー背景 */
   .hamburger-menu__wrapper.open .hamburger-menu-video-wrapper {
     display: block;
@@ -277,6 +250,33 @@ a {
     top: 0;
     transform: rotate(-315deg);
   }
+
+  /* ハンバーガーメニュー 下部 */
+  .hamburger-menu__information {
+    display: flex;
+    flex-direction: column;
+    gap: 4.74vh;
+  }
+}
+
+/*営業時間 */
+.opening-hours {
+  display: flex;
+  flex-direction: column;
+  gap: 0.95vh;
+  color: var(--text-color-nav);
+  line-height: 1;
+  text-align: center;
+}
+
+.opening-hours__label {
+  font-size: 1rem;
+}
+
+.opening-hours__time time {
+  display: inline-block;
+  font-size: 2rem;
+  line-height: 1;
 }
 
 /* SNSリスト */
@@ -299,4 +299,16 @@ a {
   width: 100vw;
   height: calc(100vh - 85px);
   object-fit: cover;
+}
+
+/* information-bar */
+.information-bar {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  background-color: var(--main-color-green);
+}
+
+.information-bar .opening-hours {
+  display: flex;
 }
