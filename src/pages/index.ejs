@@ -1,0 +1,49 @@
+<%- include('../layouts/_layout', { title: 'トップページ', content: `
+<!-- FV -->
+<div class="fv">
+  <!-- PC用動画 -->
+  <video autoplay muted loop playsinline class="fv__movie pc-only">
+    <source src="../../assets/images/fv-movie-pc.mp4" type="video/mp4" />
+    お使いのブラウザは動画に対応していません。
+  </video>
+  <!-- SP用動画 -->
+  <video autoplay muted loop playsinline class="fv__movie sp-only">
+    <source src="../../assets/images/fv-movie-sp.mp4" type="video/mp4" />
+    お使いのブラウザは動画に対応していません。
+  </video>
+</div>
+
+<div class="information-bar">
+  <div class="opening-hours">
+    <span class="opening-hours__label">本日の営業時間</span>
+    <p class="opening-hours__time">
+      <time datetime="09:00">午前9:00</time>
+      ～
+      <time datetime="17:00">午後5:00</time>
+    </p>
+  </div>
+  <ul class="social-links">
+    <li class="social-links__item">
+      <a href="" class="social-links__link">
+        <img src="../../assets/images/twitter.svg" alt="ツイッター" class="social-links__icon" />
+      </a>
+    </li>
+    <li class="social-links__item">
+      <a href="" class="social-links__link">
+        <img src="../../assets/images/instagram.svg" alt="インスタグラム" class="social-links__icon" />
+      </a>
+    </li>
+    <li class="social-links__item">
+      <a href="" class="social-links__link">
+        <img src="../../assets/images/facebook.svg" alt="フェイスブック" class="social-links__icon" />
+      </a>
+    </li>
+    <li class="social-links__item">
+      <a href="" class="social-links__link">
+        <img src="../../assets/images/youtube.svg" alt="ユーチューブ" class="social-links__icon" />
+      </a>
+    </li>
+  </ul>
+</div>
+<!-- /.information-bar -->
+` }) %>
