@@ -284,6 +284,13 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 2.78vw;
+}
+@media (max-width: 768px) {
+  /* TOPだけ非表示 */
+  .top__information-bar .social-links {
+    display: none;
+  }
 }
 
 /*=====================
@@ -292,23 +299,41 @@ a {
 /* FV */
 .fv {
   width: 100%;
-  height: calc(100vh - 85px);
+  height: calc(100vh - 9.38vh);
 }
 
 .fv__movie {
   width: 100vw;
-  height: calc(100vh - 85px);
+  height: calc(100vh - 9.38vh);
   object-fit: cover;
 }
 
-/* information-bar */
-.information-bar {
+/*TOP information-bar */
+.top__information-bar {
+  position: relative;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100vw;
+  height: 9.77vh;
   background-color: var(--main-color-green);
+  padding-right: 6.94vw;
+  padding-left: 6.94vw;
+  margin-top: -9.38vh;
+  z-index: 10;
+}
+@media (max-width: 768px) {
+  .top__information-bar {
+    justify-content: center;
+  }
 }
 
-.information-bar .opening-hours {
-  display: flex;
+.top__information-bar .opening-hours {
+  flex-direction: row;
+  align-items: center;
+}
+@media (max-width: 500px) {
+  .top__information-bar .opening-hours {
+    flex-direction: column;
+  }
 }

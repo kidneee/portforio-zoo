@@ -19,87 +19,7 @@
   </head>
 
   <body>
-    <header class="header">
-      <div class="header__inner">
-        <h1 class="header__logo">
-          <a href="./" class="header__link">
-            <img src="./assets/images/logo.svg" width="186" height="54" alt="Hinata Zoo" class="header__logo-image" />
-          </a>
-        </h1>
 
-        <aside id="js-drawerMenu" class="hamburger-menu__wrapper">
-          <div class="hamburger-menu-video-wrapper">
-            <video autoplay muted loop playsinline class="hamburger-menu-video">
-              <source src="./assets/images/fv-movie-sp.mp4" type="video/mp4" />
-              お使いのブラウザは動画に対応していません。
-            </video>
-          </div>
-          <!-- /.hamburger-menu-video-wrapper -->
-          <img src="./assets/images/logo_hamburger.svg" width="186" height="54" alt="" class="hamburger-menu__logo sp-only" />
-          <nav class="nav">
-            <ul class="nav__list">
-              <li class="nav__item">
-                <a href="admission.html" class="nav__link nav__admission">入園案内</a>
-              </li>
-              <li class="nav__item">
-                <a href="animals.html" class="nav__link nav__animals">どうぶつ</a>
-              </li>
-              <li class="nav__item">
-                <a href="guide.html" class="nav__link nav__guide">施設案内</a>
-              </li>
-              <li class="nav__item">
-                <a href="course.html" class="nav__link nav__course">コース</a>
-              </li>
-              <li class="nav__item">
-                <a href="news.html" class="nav__link nav__news">ニュース</a>
-              </li>
-              <li class="nav__item">
-                <a href="access.html" class="nav__link nav__access">アクセス</a>
-              </li>
-            </ul>
-          </nav>
-          <div class="hamburger-menu__information">
-            <div class="opening-hours">
-              <span class="opening-hours__label">本日の営業時間</span>
-              <p class="opening-hours__time">
-                <time datetime="09:00">午前9:00</time>
-                ～
-                <time datetime="17:00">午後5:00</time>
-              </p>
-            </div>
-            <ul class="social-links">
-              <li class="social-links__item">
-                <a href="" class="social-links__link">
-                  <img src="./assets/images/twitter.svg" alt="ツイッター" class="social-links__icon" />
-                </a>
-              </li>
-              <li class="social-links__item">
-                <a href="" class="social-links__link">
-                  <img src="./assets/images/instagram.svg" alt="インスタグラム" class="social-links__icon" />
-                </a>
-              </li>
-              <li class="social-links__item">
-                <a href="" class="social-links__link">
-                  <img src="./assets/images/facebook.svg" alt="フェイスブック" class="social-links__icon" />
-                </a>
-              </li>
-              <li class="social-links__item">
-                <a href="" class="social-links__link">
-                  <img src="./assets/images/youtube.svg" alt="ユーチューブ" class="social-links__icon" />
-                </a>
-              </li>
-            </ul>
-          </div>
-          <!-- /.hamburger-menu__information -->
-        </aside>
-
-        <button id="js-hamburgerMenu" class="hamburger-menu" aria-label="メニューを開く" aria-controls="js-drawerMenu" aria-expanded="false">
-          <span class="hamburger-menu__line"></span>
-        </button>
-      </div>
-      <!-- /.header__inner -->
-    </header>
-    <!-- /.header -->
 
     <main>
       <!-- FV -->
@@ -115,6 +35,41 @@
           お使いのブラウザは動画に対応していません。
         </video>
       </div>
+
+      <div class="information-bar">
+        <div class="opening-hours">
+          <span class="opening-hours__label">本日の営業時間</span>
+          <p class="opening-hours__time">
+            <time datetime="09:00">午前9:00</time>
+            ～
+            <time datetime="17:00">午後5:00</time>
+          </p>
+        </div>
+        <ul class="social-links">
+          <li class="social-links__item">
+            <a href="" class="social-links__link">
+              <img src="./assets/images/twitter.svg" alt="ツイッター" class="social-links__icon" />
+            </a>
+          </li>
+          <li class="social-links__item">
+            <a href="" class="social-links__link">
+              <img src="./assets/images/instagram.svg" alt="インスタグラム" class="social-links__icon" />
+            </a>
+          </li>
+          <li class="social-links__item">
+            <a href="" class="social-links__link">
+              <img src="./assets/images/facebook.svg" alt="フェイスブック" class="social-links__icon" />
+            </a>
+          </li>
+          <li class="social-links__item">
+            <a href="" class="social-links__link">
+              <img src="./assets/images/youtube.svg" alt="ユーチューブ" class="social-links__icon" />
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- /.information-bar -->
+
       <section class="fee">
         <div class="container fee-container">
           <div class="fee-contents flex">
