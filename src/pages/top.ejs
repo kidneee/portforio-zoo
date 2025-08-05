@@ -8,65 +8,91 @@
     <meta name="description" content="Hinata Zooは宮崎市にある動物園。日本でも珍しいフラミンゴショーを見ることができます。遊園地も併設しており、流れるプールや屋外プールも楽しめます。" />
     <title>Hinata Zoo</title>
     <!-- css -->
-    <link rel="stylesheet" href="../../assets/css/reset.css" />
-    <link rel="stylesheet" href="../../assets/css/common.css" />
+    <link rel="stylesheet" href="/assets/css/reset.css" />
+    <link rel="stylesheet" href="/assets/css/common.css" />
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500&family=Noto+Sans+Tamil:wght@100;200;300;400;500&family=Zen+Maru+Gothic:wght@300;400;500;700&display=swap" rel="stylesheet" />
     <!-- js -->
-    <script type="module" src="../../assets/js/main.js"></script>
+    <script type="module" src="/assets/js/main.js"></script>
   </head>
 
   <body>
+    <!-- ヘッダー -->
     <%- include('../partials/_header.ejs') %>
+
     <main>
       <!-- FV -->
       <div class="fv">
         <!-- PC用動画 -->
         <video autoplay muted loop playsinline class="fv__movie pc-only">
-          <source src="../../assets/images/fv-movie-pc.mp4" type="video/mp4" />
+          <source src="/assets/images/fv-movie-pc.mp4" type="video/mp4" />
           お使いのブラウザは動画に対応していません。
         </video>
         <!-- SP用動画 -->
         <video autoplay muted loop playsinline class="fv__movie sp-only">
-          <source src="../../assets/images/fv-movie-sp.mp4" type="video/mp4" />
+          <source src="/assets/images/fv-movie-sp.mp4" type="video/mp4" />
           お使いのブラウザは動画に対応していません。
         </video>
       </div>
       <div class="top__information-bar"><%- include('../partials/information.ejs') %></div>
 
-      <section class="fee">
-        <div class="container fee-container">
-          <div class="fee-contents flex">
-            <h2 class="fee-title">入園料</h2>
-            <dl>
-              <div class="flex">
-                <dt>大人（高校生以上）</dt>
-                <dd>840円</dd>
-              </div>
-              <div class="flex">
-                <dt>中学生</dt>
-                <dd>420円</dd>
-              </div>
-              <div class="flex">
-                <dt>小学生</dt>
-                <dd>310円</dd>
-              </div>
-              <div class="flex">
-                <dt>未就学児</dt>
-                <dd>無料</dd>
-              </div>
-            </dl>
+      <!-- 入園料金 -->
+      <section class="admission-fees">
+        <div class="l-inner">
+          <h2 class="c-section-title">
+            <span class="c-section-title__en">Admission Fees</span>
+            <span class="c-section-title__ja">入園料金</span>
+          </h2>
+          <dl class="admission-fees__list">
+            <div class="admission-fees__item">
+              <dt class="admission-fees__item-label">大人（高校生以上）</dt>
+              <dd class="admission-fees__item-fee">
+                840
+                <span class="small">円</span>
+              </dd>
+            </div>
+            <div class="admission-fees__item">
+              <dt class="admission-fees__item-label">中学生</dt>
+              <dd class="admission-fees__item-fee">
+                420
+                <span class="small">円</span>
+              </dd>
+            </div>
+            <div class="admission-fees__item">
+              <dt class="admission-fees__item-label">小学生</dt>
+              <dd class="admission-fees__item-fee">
+                310
+                <span class="small">円</span>
+              </dd>
+            </div>
+            <div class="admission-fees__item">
+              <dt class="admission-fees__item-label">未就学児</dt>
+              <dd class="admission-fees__item-fee">無料</dd>
+            </div>
+          </dl>
+          <div class="admission-fees__web-ticket-list-wrapper">
+            <ul class="admission-fees__web-ticket-list">
+              <li class="admission-fees___web-ticket-item">
+                <a href="webticket.html" class="admission-fees__link">Webチケット</a>
+              </li>
+              <li class="admission-fees__web-ticket-item">
+                <a href="admission.html" class="admission-fees__link">団体のお客様</a>
+              </li>
+            </ul>
           </div>
-          <div class="ticket flex">
-            <a href="webticket.html" class="ticket-web">Webチケットはこちら</a>
-            <a href="admission.html" class="ticket-group">団体のお客様はこちら</a>
-          </div>
+          <!-- /.list-wrapper -->
         </div>
+        <!-- /.l-inner -->
       </section>
-      <!-- /.fee -->
+      <!-- /.admission-fees -->
+
+
+      <!-- イベント -->
     </main>
+
+    <!-- フッター -->
     <%- include('../partials/_footer.ejs') %>
   </body>
 </html>

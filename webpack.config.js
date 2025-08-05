@@ -1,22 +1,30 @@
-// webpack.config.js
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'development',
 
-  entry: {}, // JS特に無ければ空でOK
+  entry: {},
 
   output: {
     path: path.resolve(__dirname, 'dist'),
-    clean: true, // distクリーン
+    clean: true,
   },
 
   module: {
     rules: [
       {
         test: /\.ejs$/,
-        use: ['html-loader', 'template-ejs-loader'],
+        use: [
+          {
+            loader: 'html-loader',
+            options: {
+              sources: false,
+            },
+          },
+          'template-ejs-loader',
+        ],
       },
     ],
   },
@@ -26,6 +34,9 @@ module.exports = {
       template: path.resolve(__dirname, 'src/pages/top.ejs'),
       filename: 'index.html',
       minify: false,
+    }),
+    new CopyWebpackPlugin({
+      patterns: [{from: 'public/assets', to: 'assets'}],
     }),
   ],
 

@@ -1,0 +1,462 @@
+@charset "UTF-8";
+
+/*=====================
+  common
+=====================*/
+:root {
+  /* コンセプトカラー */
+  --main-color-orange: #e39411;
+  --main-color-green: #517830;
+  --main-color-blue: #1aa6b4;
+  --sub-color-white: #fefbf3;
+
+  /* 背景色 */
+  --header-bg: #fefbf3;
+
+  /* テキストカラー */
+  --text-color-primary: #333;
+  --text-color-nav: #fefbf3;
+}
+
+body {
+  font-family: 'Zen Maru Gothic', sans-serif;
+  position: relative;
+  box-sizing: border-box;
+  background: #fff;
+  overflow-x: hidden;
+}
+
+a {
+  display: block;
+  width: 100%;
+}
+
+/* Layout */
+.l-inner {
+  padding: 7.81vh 6.94vw 11.72vh;
+}
+
+/* Components */
+.c-section-title {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.56vh;
+  margin-bottom: 6.25vh;
+  line-height: 1;
+}
+
+.c-section-title__en {
+  font-size: 1rem;
+}
+
+.c-section-title__ja {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.c-section-title::after {
+  position: absolute;
+  bottom: -24px;
+  content: '';
+  background-color: var(--main-color-green);
+  height: 8px;
+  width: 88px;
+}
+
+/* Utility */
+.pc-only {
+  display: block;
+}
+@media (max-width: 768px) {
+  .pc-only {
+    display: none;
+  }
+}
+
+.sp-only {
+  display: none;
+}
+@media (max-width: 768px) {
+  .sp-only {
+    display: block;
+  }
+}
+/*=====================
+  header
+=====================*/
+.header {
+  position: relative;
+  background-color: var(--header-bg);
+  height: 9.38vh;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 6.94vw;
+}
+@media (max-width: 768px) {
+  .header__inner {
+    padding: 0 4.1vw;
+  }
+}
+
+/* ナビ */
+.nav__list {
+  display: flex;
+  gap: 2.22vw;
+}
+@media screen and (max-width: 768px) {
+  .nav__list {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4.74vh;
+  }
+}
+
+.nav__link {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+@media screen and (max-width: 768px) {
+  .nav__link {
+    position: relative;
+    color: var(--text-color-nav);
+    padding-left: 40px;
+  }
+
+  .nav__link::before {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    content: '';
+    width: 28px;
+    height: 28px;
+  }
+
+  .nav__admission::before {
+    background-image: url('../../assets/images/icon_admission.svg');
+  }
+
+  .nav__animals::before {
+    background-image: url('../../assets/images/icon_animals.svg');
+  }
+
+  .nav__guide::before {
+    background-image: url('../../assets/images/icon_guide.svg');
+  }
+
+  .nav__course::before {
+    background-image: url('../../assets/images/icon_course.svg');
+  }
+
+  .nav__news::before {
+    background-image: url('../../assets/images/icon_news.svg');
+  }
+
+  .nav__access::before {
+    background-image: url('../../assets/images/icon_access.svg');
+  }
+}
+
+/* ハンバーガーメニュー */
+.hamburger-menu,
+.hamburger-menu-video,
+.hamburger-menu__information {
+  display: none;
+}
+@media (max-width: 768px) {
+  /* ハンバーガーメニュー スタイル */
+  .hamburger-menu,
+  .hamburger-menu__information {
+    display: block;
+  }
+
+  .hamburger-menu__wrapper {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    padding: 2.84vh 4.1vw;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .hamburger-menu__wrapper.open {
+    transform: translateX(0);
+  }
+
+  .hamburger-menu {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 200;
+  }
+
+  /* ハンバーガーメニュー背景 */
+  .hamburger-menu__wrapper.open .hamburger-menu-video-wrapper {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+  }
+
+  .hamburger-menu__wrapper.open .hamburger-menu-video {
+    display: block;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  .hamburger-menu__wrapper.open .hamburger-menu-video-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(81, 120, 48, 0.7);
+    z-index: 1;
+  }
+
+  /* ハンバーガーメニューのラインスタイル */
+  .hamburger-menu__line,
+  .hamburger-menu__line::before,
+  .hamburger-menu__line::after {
+    position: absolute;
+    z-index: 101;
+    width: 100%;
+    background-color: var(--main-color-blue);
+    transition: all 0.3s ease;
+  }
+
+  .hamburger-menu__line::before,
+  .hamburger-menu__line::after {
+    right: 8px;
+    height: 4px;
+    content: '';
+  }
+
+  .hamburger-menu__line {
+    height: 4px;
+  }
+
+  .hamburger-menu__line::before {
+    top: -12px;
+  }
+
+  .hamburger-menu__line::after {
+    top: 12px;
+  }
+
+  /* ハンバーガーメニューオープン時の挙動 */
+
+  .hamburger-menu.open .hamburger-menu__line {
+    background-color: transparent;
+  }
+
+  .hamburger-menu.open .hamburger-menu__line::before {
+    top: 0;
+    transform: rotate(315deg);
+  }
+  .hamburger-menu.open .hamburger-menu__line::after {
+    top: 0;
+    transform: rotate(-315deg);
+  }
+
+  /* ハンバーガーメニュー 下部 */
+  .hamburger-menu__information {
+    display: flex;
+    flex-direction: column;
+    gap: 4.74vh;
+  }
+}
+
+/*営業時間 */
+.opening-hours {
+  display: flex;
+  flex-direction: column;
+  gap: 0.95vh;
+  color: var(--text-color-nav);
+  line-height: 1;
+  text-align: center;
+}
+
+.opening-hours__label {
+  font-size: 1rem;
+}
+
+.opening-hours__time time {
+  display: inline-block;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+/* SNSリスト */
+.social-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.78vw;
+}
+@media (max-width: 768px) {
+  /* TOPだけ非表示 */
+  .top__information-bar .social-links {
+    display: none;
+  }
+}
+
+/*=====================
+  メインコンテンツ
+=====================*/
+/* FV */
+.fv {
+  width: 100%;
+  height: calc(100vh - 9.38vh);
+}
+
+.fv__movie {
+  width: 100vw;
+  height: calc(100vh - 9.38vh);
+  object-fit: cover;
+}
+
+/*TOP information-bar */
+.top__information-bar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 9.77vh;
+  background-color: var(--main-color-green);
+  padding-right: 6.94vw;
+  padding-left: 6.94vw;
+  margin-top: -9.38vh;
+  z-index: 10;
+}
+@media (max-width: 768px) {
+  .top__information-bar {
+    justify-content: center;
+  }
+}
+
+.top__information-bar .opening-hours {
+  flex-direction: row;
+  align-items: center;
+}
+@media (max-width: 500px) {
+  .top__information-bar .opening-hours {
+    flex-direction: column;
+    gap: 1.9vh;
+  }
+}
+
+/* 入園料金 */
+.admission-fees__list {
+  display: grid;
+  grid-template-columns: repeat(4, 24.08%);
+  justify-content: space-between;
+  height: 13.28vh;
+  margin-bottom: 3.91vh;
+  font-weight: 500;
+  line-height: 1;
+}
+@media (max-width: 768px) {
+  .admission-fees__list {
+    grid-template-columns: repeat(2, 48%);
+    row-gap: 1vh;
+    height: fit-content;
+  }
+}
+@media (max-width: 500px) {
+  .admission-fees__list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.admission-fees__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1vh;
+  background-color: var(--main-color-orange);
+  border-radius: 8px;
+  color: var(--text-color-nav);
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .admission-fees__item {
+    height: 10vh;
+  }
+}
+
+.admission-fees__item-label,
+.admission-fees__item-fee .small {
+  font-size: 1rem;
+}
+
+.admission-fees__item-label {
+  letter-spacing: 0.1em;
+}
+
+.admission-fees__item-fee {
+  font-size: 3rem;
+}
+/* Webチケット */
+.admission-fees__web-ticket-list-wrapper {
+  width: 49.49%;
+}
+@media (max-width: 768px) {
+  .admission-fees__web-ticket-list-wrapper {
+    width: 100%;
+  }
+}
+
+.admission-fees__web-ticket-list {
+  display: grid;
+  grid-template-columns: repeat(2, 48.66%);
+  justify-content: space-between;
+}
+@media (max-width: 500px) {
+  .admission-fees__web-ticket-list {
+    grid-template-columns: 1fr;
+    gap: 0.95vh;
+  }
+}
+
+.admission-fees__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 6.25vh;
+  font-size: 2rem;
+  border: 1px solid #afafaf;
+  border-radius: 8px;
+  background-color: var(--sub-color-white);
+}
+
+.admission-fees__link:hover {
+  color: var(--text-color-nav);
+  background-color: var(--main-color-orange);
+  border: none;
+}

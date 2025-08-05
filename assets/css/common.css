@@ -31,8 +31,37 @@ a {
 }
 
 /* Layout */
+.l-inner {
+  padding: 7.81vh 6.94vw 11.72vh;
+}
 
 /* Components */
+.c-section-title {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.56vh;
+  margin-bottom: 6.25vh;
+  line-height: 1;
+}
+
+.c-section-title__en {
+  font-size: 1rem;
+}
+
+.c-section-title__ja {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.c-section-title::after {
+  position: absolute;
+  bottom: -24px;
+  content: '';
+  background-color: var(--main-color-green);
+  height: 8px;
+  width: 88px;
+}
 
 /* Utility */
 .pc-only {
@@ -110,27 +139,27 @@ a {
   }
 
   .nav__admission::before {
-    background-image: url(../images/icon_admission.svg);
+    background-image: url('../assets/images/icon_admission.svg');
   }
 
   .nav__animals::before {
-    background-image: url(../images/icon_animals.svg);
+    background-image: url('../assets/images/icon_animals.svg');
   }
 
   .nav__guide::before {
-    background-image: url(../images/icon_guide.svg);
+    background-image: url('../assets/images/icon_guide.svg');
   }
 
   .nav__course::before {
-    background-image: url(../images/icon_course.svg);
+    background-image: url('../assets/images/icon_course.svg');
   }
 
   .nav__news::before {
-    background-image: url(../images/icon_news.svg);
+    background-image: url('../assets/images/icon_news.svg');
   }
 
   .nav__access::before {
-    background-image: url(../images/icon_access.svg);
+    background-image: url('../assets/images/icon_access.svg');
   }
 }
 
@@ -335,5 +364,12 @@ a {
 @media (max-width: 500px) {
   .top__information-bar .opening-hours {
     flex-direction: column;
+    gap: 1.9vh;
   }
+}
+
+/* 入園料金 */
+.admission-fees__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }
