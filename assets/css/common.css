@@ -8,13 +8,14 @@
   --main-color-orange: #e39411;
   --main-color-green: #517830;
   --main-color-blue: #1aa6b4;
+  --sub-color-white: #fefbf3;
 
   /* 背景色 */
-  --header-bg: #fefbf3;
+  --bg-color-white: #fefbf3;
 
   /* テキストカラー */
   --text-color-primary: #333;
-  --text-color-nav: #fefbf3;
+  --text-color-white: #fefbf3;
 }
 
 body {
@@ -28,6 +29,10 @@ body {
 a {
   display: block;
   width: 100%;
+}
+
+button {
+  cursor: pointer;
 }
 
 /* Layout */
@@ -47,6 +52,7 @@ a {
 
 .c-section-title__en {
   font-size: 1rem;
+  text-transform: uppercase;
 }
 
 .c-section-title__ja {
@@ -61,6 +67,26 @@ a {
   background-color: var(--main-color-green);
   height: 8px;
   width: 88px;
+}
+
+.c-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 202px;
+  height: 40px;
+  margin: 0 auto;
+  border: 1px solid var(--main-color-green);
+  border-radius: 8px;
+  color: var(--main-color-green);
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.c-btn:hover {
+  background-color: var(--main-color-green);
+  color: var(--text-color-white);
 }
 
 /* Utility */
@@ -86,7 +112,7 @@ a {
 =====================*/
 .header {
   position: relative;
-  background-color: var(--header-bg);
+  background-color: var(--bg-color-white);
   height: 9.38vh;
 }
 
@@ -124,7 +150,7 @@ a {
 @media screen and (max-width: 768px) {
   .nav__link {
     position: relative;
-    color: var(--text-color-nav);
+    color: var(--text-color-white);
     padding-left: 40px;
   }
 
@@ -139,27 +165,27 @@ a {
   }
 
   .nav__admission::before {
-    background-image: url('../assets/images/icon_admission.svg');
+    background-image: url('../../assets/images/icon_admission.svg');
   }
 
   .nav__animals::before {
-    background-image: url('../assets/images/icon_animals.svg');
+    background-image: url('../../assets/images/icon_animals.svg');
   }
 
   .nav__guide::before {
-    background-image: url('../assets/images/icon_guide.svg');
+    background-image: url('../../assets/images/icon_guide.svg');
   }
 
   .nav__course::before {
-    background-image: url('../assets/images/icon_course.svg');
+    background-image: url('../../assets/images/icon_course.svg');
   }
 
   .nav__news::before {
-    background-image: url('../assets/images/icon_news.svg');
+    background-image: url('../../assets/images/icon_news.svg');
   }
 
   .nav__access::before {
-    background-image: url('../assets/images/icon_access.svg');
+    background-image: url('../../assets/images/icon_access.svg');
   }
 }
 
@@ -293,7 +319,7 @@ a {
   display: flex;
   flex-direction: column;
   gap: 0.95vh;
-  color: var(--text-color-nav);
+  color: var(--text-color-white);
   line-height: 1;
   text-align: center;
 }
@@ -371,5 +397,370 @@ a {
 /* 入園料金 */
 .admission-fees__list {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 24.08%);
+  justify-content: space-between;
+  height: 13.28vh;
+  margin-bottom: 3.91vh;
+  font-weight: 500;
+  line-height: 1;
+}
+@media (max-width: 768px) {
+  .admission-fees__list {
+    grid-template-columns: repeat(2, 48%);
+    row-gap: 1vh;
+    height: fit-content;
+  }
+}
+@media (max-width: 500px) {
+  .admission-fees__list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.admission-fees__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1vh;
+  background-color: var(--main-color-orange);
+  border-radius: 8px;
+  color: var(--text-color-white);
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .admission-fees__item {
+    height: 10vh;
+  }
+}
+
+.admission-fees__item-label,
+.admission-fees__item-fee .small {
+  font-size: 1rem;
+}
+
+.admission-fees__item-label {
+  letter-spacing: 0.1em;
+}
+
+.admission-fees__item-fee {
+  font-size: 3rem;
+}
+/* Webチケット */
+.admission-fees__web-ticket-list-wrapper {
+  width: 49.49%;
+}
+@media (max-width: 768px) {
+  .admission-fees__web-ticket-list-wrapper {
+    width: 100%;
+  }
+}
+
+.admission-fees__web-ticket-list {
+  display: grid;
+  grid-template-columns: repeat(2, 48.66%);
+  justify-content: space-between;
+}
+@media (max-width: 500px) {
+  .admission-fees__web-ticket-list {
+    grid-template-columns: 1fr;
+    gap: 0.95vh;
+  }
+}
+
+.admission-fees__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 6.25vh;
+  font-size: 2rem;
+  border: 1px solid #afafaf;
+  border-radius: 8px;
+  background-color: var(--sub-color-white);
+}
+
+.admission-fees__link:hover {
+  color: var(--text-color-white);
+  background-color: var(--main-color-orange);
+  border: none;
+}
+
+/* イベント */
+.events__list {
+  display: grid;
+  grid-template-columns: repeat(3, 30%);
+  justify-content: space-between;
+  margin-bottom: 6.25vh;
+}
+@media (max-width: 768px) {
+  .events__list {
+    grid-template-columns: repeat(1, 100%);
+    gap: 2.84vh;
+  }
+}
+.event-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-shadow: 3px 3px 3px rgba(19, 19, 19, 0.3);
+  border-radius: 8px;
+}
+
+.event-card__image {
+  width: 100%;
+  height: 31.25vh;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px 8px 0 0;
+}
+
+.event-card__body {
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+  height: 100%;
+  background-color: var(--bg-color-white);
+  border-radius: 0 0 8px 8px;
+}
+
+.event-card__title {
+  color: var(--main-color-orange);
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+@media (max-width: 768px) {
+  .event-card__title {
+    font-size: 1.25rem;
+  }
+}
+
+.event-card__time,
+.event-card__place {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 1rem;
+}
+@media (max-width: 768px) {
+  .event-card__time,
+  .event-card__place {
+    font-size: 0.875rem;
+  }
+}
+
+.event-card__desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 500;
+}
+@media (max-width: 768px) {
+  .event-card__desc {
+    font-size: 0.875rem;
+  }
+}
+
+.event-card__desc.is-expanded {
+  -webkit-line-clamp: unset;
+}
+
+.event-card__note {
+  font-size: 0.875rem;
+}
+@media (max-width: 768px) {
+  .event-card__note {
+    font-size: 0.75rem;
+  }
+}
+
+.event-card__more-btn {
+  margin: auto 0 0;
+}
+
+/* おすすめコース */
+.course__step-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.course__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 3.13vh;
+}
+
+.course__step {
+  display: flex;
+  flex-direction: column;
+  gap: 1.56vh;
+}
+
+.course__options {
+  display: grid;
+  grid-template-columns: repeat(3, 32%);
+  justify-content: space-between;
+  width: 100%;
+  height: 19.53vh;
+  padding: 3.13vh 2.58%;
+  border: 1px solid #aaa;
+  background-color: var(--bg-color-white);
+  border-radius: 8px;
+}
+@media (max-width: 768px) {
+  .course__options {
+    grid-template-columns: 1fr;
+  }
+}
+
+.course__button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: var(--text-color-white);
+  font-size: 1.5rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: 0.1s ease;
+}
+
+.course__button:hover {
+  scale: 1.05;
+}
+
+.course__button--orange {
+  background-color: var(--main-color-orange);
+}
+.course__button--orange.selected {
+  background-color: transparent;
+  border: 8px solid var(--main-color-orange);
+  color: var(--main-color-orange);
+}
+
+.course__button--green {
+  background-color: var(--main-color-green);
+}
+.course__button--green.selected {
+  background-color: transparent;
+  border: 8px solid var(--main-color-green);
+  color: var(--main-color-green);
+}
+
+.course__button--blue {
+  background-color: var(--main-color-blue);
+}
+.course__button--blue.selected {
+  background-color: transparent;
+  border: 8px solid var(--main-color-blue);
+  color: var(--main-color-blue);
+}
+
+/* 新着情報 */
+.news__list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.news__item-link {
+  display: flex;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--main-color-green);
+}
+
+.news__item-date {
+  width: 20%;
+}
+
+/* よくある質問 */
+.faq__list {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  margin: 0 auto;
+
+  gap: 24px;
+}
+
+.faq__item {
+  border: 2px solid #333333;
+  border-radius: 8px;
+}
+
+.faq__item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 64px;
+  background-color: rgba(27, 251, 169, 0.3);
+  cursor: pointer;
+  padding: 16px;
+}
+
+.faq__item-content {
+  height: 0;
+  transition: 0.3s ease;
+  overflow: hidden;
+  padding-left: 16px;
+}
+
+.faq__item-content.is-active {
+  height: auto;
+  padding: 16px;
+}
+
+.faq__item-header .arrow {
+  display: block;
+  transform: translateY(-25%) rotate(135deg);
+  width: 8px;
+  height: 8px;
+  border: 2px solid currentColor;
+  border-bottom: 0;
+  border-left: 0;
+  color: #333333;
+  line-height: 1;
+  vertical-align: middle;
+  transition: 0.2s ease;
+}
+
+.faq__item-header.is-active .arrow {
+  transform: translateY(25%) rotate(-45deg);
+}
+
+/* フッター */
+.footer {
+  padding: 7.81vh 6.94vw;
+  background-color: var(--main-color-green);
+  color: var(--text-color-white);
+}
+
+.footer__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: space-between;
+  margin-bottom: 3.91vh;
+}
+@media (max-width: 768px) {
+  .footer__inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+.footer__nav-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 768px) {
+  .footer__social-list {
+    order: 3;
+  }
 }
