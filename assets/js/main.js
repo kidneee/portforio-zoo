@@ -13,50 +13,64 @@ hamburgerBtn.addEventListener('click', () => {
   }
 });
 
-// event
-document.querySelectorAll('.event-card__more-btn').forEach((btn) => {
-  btn.addEventListener('click', function () {
-    const desc = btn.previousElementSibling;
-    desc.classList.toggle('is-expanded');
-    btn.textContent = desc.classList.contains('is-expanded') ? '閉じる' : '続きを読む';
-  });
-});
-
 // course
+// ボタン選択
 const courseSelectBtns = document.querySelectorAll('.course__button');
 
-// ボタン選択
 courseSelectBtns.forEach((btn) => {
   btn.addEventListener('click', () => {
-    console.log('クリックされました！');
     const currentStep = btn.dataset.step;
-    console.log('currentStep:', currentStep);
     const wasSelected = btn.classList.contains('selected');
-    console.log('wasSelected:', wasSelected);
 
     if (wasSelected) {
-      console.log('選択解除処理');
       btn.classList.remove('selected');
     } else {
-      console.log('選択処理開始');
-
       const sameStepButtons = document.querySelectorAll(`[data-step="${currentStep}"]`);
-      console.log('sameStepButtons:', sameStepButtons);
-
       sameStepButtons.forEach((sameBtn) => {
         sameBtn.classList.remove('selected');
       });
 
       btn.classList.add('selected');
-      console.log('選択処理完了', btn.className);
     }
+
+    // 結果を更新する関数を呼び出し
+    updateResult();
   });
 });
-// 結果表示
-const step1Button = document.querySelector('[data-step="1"].selected');
-const step1Value = step1Button?.dataset.value;
-console.log('セレクター結果:', document.querySelector('[data-step="1"].selected'));
-console.log('selectedクラス一覧:', document.querySelectorAll('.selected'));
+
+function updateResult() {
+  const step1Button = document.querySelector('[data-step="1"].selected');
+  const step2Button = document.querySelector('[data-step="2"].selected');
+  const step3Button = document.querySelector('[data-step="3"].selected');
+
+  const step1Value = step1Button?.dataset.value;
+  const step2Value = step2Button?.dataset.value;
+  const step3Value = step3Button?.dataset.value;
+
+  const result = document.getElementById('js-result');
+
+  // 既存の結果をクリア
+  result.innerHTML = '';
+  result.classList.remove('open');
+  result.style.backgroundColor = ''; // スタイルもリセット
+
+  // 全て選択されている場合のみ結果を表示
+  if (step1Value && step2Value && step3Value) {
+    const resultText = document.createElement('p');
+    resultText.textContent = `${step1Value}と${step2Value}に${step3Value}を楽しむ！`;
+    result.appendChild(resultText);
+    result.classList.add('open');
+
+    if (step1Value === 'family' && step2Value === 'casual' && step3Value === 'animals') {
+    } else if (step1Value === 'partner' && step2Value === 'casual' && step3Value === 'animals') {
+      resultText.textContent = step1Value;
+      result.appendChild(resultText);
+      result.style.backgroundColor = 'green';
+      result.classList.add('open');
+    }
+    // 他の組み合わせも追加可能
+  }
+}
 
 // FAQ
 const faqItemButtons = document.querySelectorAll('.faq__item-header');

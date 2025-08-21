@@ -9,6 +9,7 @@
   --main-color-green: #517830;
   --main-color-blue: #1aa6b4;
   --sub-color-white: #fefbf3;
+  --orange-alpha: rgba(227, 148, 17, 0.5);
 
   /* 背景色 */
   --bg-color-white: #fefbf3;
@@ -491,6 +492,7 @@ button {
   display: grid;
   grid-template-columns: repeat(3, 30%);
   justify-content: space-between;
+  align-items: start;
   margin-bottom: 6.25vh;
 }
 @media (max-width: 768px) {
@@ -499,10 +501,12 @@ button {
     gap: 2.84vh;
   }
 }
+
 .event-card {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  align-items: stretch;
+  /* height: 100%; */
   box-shadow: 3px 3px 3px rgba(19, 19, 19, 0.3);
   border-radius: 8px;
 }
@@ -518,6 +522,7 @@ button {
 .event-card__body {
   display: flex;
   flex-direction: column;
+  gap: 1vh;
   padding: 5%;
   height: 100%;
   background-color: var(--bg-color-white);
@@ -557,7 +562,6 @@ button {
   overflow: hidden;
   font-size: 1rem;
   line-height: 1.6;
-  font-weight: 500;
 }
 @media (max-width: 768px) {
   .event-card__desc {
@@ -578,8 +582,32 @@ button {
   }
 }
 
-.event-card__more-btn {
-  margin: auto 0 0;
+.event-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+  padding: 2% 5%;
+  background: var(--main-color-green);
+  color: var(--text-color-white);
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.event-card__link:hover {
+  background: linear-gradient(135deg, #ff6b35 0%, #e55a2b 100%);
+  box-shadow: 0 4px 12px rgba(255, 140, 66, 0.4);
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .event-card__link {
+    font-size: 0.85rem;
+    padding: 0.65rem 1.25rem;
+  }
 }
 
 /* おすすめコース */
@@ -592,6 +620,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 3.13vh;
+  margin-bottom: 5vh;
 }
 
 .course__step {
@@ -606,7 +635,7 @@ button {
   justify-content: space-between;
   width: 100%;
   height: 13vh;
-    padding: 2vh 2.58%;
+  padding: 2vh 2.58%;
   border: 1px solid #aaa;
   background-color: var(--bg-color-white);
   border-radius: 8px;
@@ -662,7 +691,18 @@ button {
   color: var(--main-color-blue);
 }
 
-/* 新着情報 */
+/* 結果表示エリア */
+.course__result.open {
+  border: 1px solid var(--main-color-green);
+  border-radius: 8px;
+}
+
+.course__result-title {
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+}
+/* お知らせ */
 .news__list {
   display: flex;
   flex-direction: column;
@@ -690,22 +730,24 @@ button {
 }
 
 .faq__item {
-  border: 2px solid #333333;
+  /* border: 1px solid var(--main-color-green); */
   border-radius: 8px;
 }
 
 .faq__item-header {
+  position: relative;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 64px;
-  background-color: rgba(27, 251, 169, 0.3);
-  cursor: pointer;
   padding: 16px;
+  border-radius: 8px;
+  background-color: var(--orange-alpha);
+  cursor: pointer;
 }
 
 .faq__item-content {
+  display: flex;
   height: 0;
   transition: 0.3s ease;
   overflow: hidden;
@@ -715,9 +757,13 @@ button {
 .faq__item-content.is-active {
   height: auto;
   padding: 16px;
+  /* border-top: 1px solid var(--main-color-green); */
 }
 
-.faq__item-header .arrow {
+.faq__item-header::after {
+  position: absolute;
+  right: 2%;
+  content: '';
   display: block;
   transform: translateY(-25%) rotate(135deg);
   width: 8px;
@@ -731,7 +777,7 @@ button {
   transition: 0.2s ease;
 }
 
-.faq__item-header.is-active .arrow {
+.faq__item-header.is-active::after {
   transform: translateY(25%) rotate(-45deg);
 }
 
