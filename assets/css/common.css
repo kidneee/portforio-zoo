@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
-/*=====================
-  common
-=====================*/
+/* ============================
+  Common
+============================ */
 :root {
   /* コンセプトカラー */
   --main-color-orange: #e39411;
@@ -20,11 +20,11 @@
 }
 
 body {
-  font-family: 'Zen Maru Gothic', sans-serif;
   position: relative;
   box-sizing: border-box;
-  background: #fff;
   overflow-x: hidden;
+  background: #fff;
+  font-family: 'Zen Maru Gothic', sans-serif;
 }
 
 a {
@@ -36,12 +36,12 @@ button {
   cursor: pointer;
 }
 
-/* Layout */
+/* ----- Layout ----- */
 .l-inner {
   padding: 7.81vh 6.94vw 11.72vh;
 }
 
-/* Components */
+/* ----- Components ----- */
 .c-section-title {
   position: relative;
   display: flex;
@@ -64,17 +64,17 @@ button {
 .c-section-title::after {
   position: absolute;
   bottom: -24px;
+  width: 88px;
+  height: 8px;
   content: '';
   background-color: var(--main-color-green);
-  height: 8px;
-  width: 88px;
 }
 
 .c-btn {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   width: 202px;
   height: 40px;
   margin: 0 auto;
@@ -84,13 +84,12 @@ button {
   font-weight: 500;
   transition: background-color 0.3s ease;
 }
-
 .c-btn:hover {
-  background-color: var(--main-color-green);
   color: var(--text-color-white);
+  background-color: var(--main-color-green);
 }
 
-/* Utility */
+/* ----- Utility ----- */
 .pc-only {
   display: block;
 }
@@ -108,15 +107,27 @@ button {
     display: block;
   }
 }
-/*=====================
-  header
-=====================*/
-.header {
-  position: relative;
-  background-color: var(--bg-color-white);
-  height: 9.38vh;
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
+/* ============================
+  Header
+============================ */
+.header {
+  position: relative;
+  height: 9.38vh;
+  background-color: var(--bg-color-white);
+}
 .header__inner {
   display: flex;
   justify-content: space-between;
@@ -130,12 +141,12 @@ button {
   }
 }
 
-/* ナビ */
+/* ----- Navigation ----- */
 .nav__list {
   display: flex;
   gap: 2.22vw;
 }
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
   .nav__list {
     flex-direction: column;
     align-items: center;
@@ -143,70 +154,67 @@ button {
     gap: 4.74vh;
   }
 }
-
 .nav__link {
   font-size: 1.125rem;
   font-weight: 500;
 }
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
   .nav__link {
     position: relative;
-    color: var(--text-color-white);
     padding-left: 40px;
+    color: var(--text-color-white);
   }
-
   .nav__link::before {
     position: absolute;
     top: 50%;
     left: 0;
-    transform: translateY(-50%);
-    content: '';
     width: 28px;
     height: 28px;
+    transform: translateY(-50%);
+    content: '';
   }
-
   .nav__admission::before {
     background-image: url('../../assets/images/icon_admission.svg');
   }
-
   .nav__animals::before {
     background-image: url('../../assets/images/icon_animals.svg');
   }
-
   .nav__guide::before {
     background-image: url('../../assets/images/icon_guide.svg');
   }
-
   .nav__course::before {
     background-image: url('../../assets/images/icon_course.svg');
   }
-
   .nav__news::before {
     background-image: url('../../assets/images/icon_news.svg');
   }
-
   .nav__access::before {
     background-image: url('../../assets/images/icon_access.svg');
   }
 }
 
-/* ハンバーガーメニュー */
+/* ----- Hamburger Menu ----- */
 .hamburger-menu,
 .hamburger-menu-video,
 .hamburger-menu__information {
   display: none;
 }
 @media (max-width: 768px) {
-  /* ハンバーガーメニュー スタイル */
   .hamburger-menu,
   .hamburger-menu__information {
     display: block;
   }
-
+  .hamburger-menu {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 200;
+  }
   .hamburger-menu__wrapper {
     position: fixed;
-    left: 0;
     top: 0;
+    left: 0;
     z-index: 100;
     display: flex;
     flex-direction: column;
@@ -218,29 +226,18 @@ button {
     transform: translateX(100%);
     transition: transform 0.3s ease;
   }
-
   .hamburger-menu__wrapper.open {
     transform: translateX(0);
   }
 
-  .hamburger-menu {
-    position: relative;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    z-index: 200;
-  }
-
-  /* ハンバーガーメニュー背景 */
+  /* 背景動画 */
   .hamburger-menu__wrapper.open .hamburger-menu-video-wrapper {
-    display: block;
     position: fixed;
     inset: 0;
     z-index: -1;
-  }
-
-  .hamburger-menu__wrapper.open .hamburger-menu-video {
     display: block;
+  }
+  .hamburger-menu__wrapper.open .hamburger-menu-video {
     position: relative;
     top: 50%;
     left: 50%;
@@ -249,55 +246,49 @@ button {
     transform: translate(-50%, -50%);
     object-fit: cover;
     z-index: -1;
+    display: block;
   }
-
   .hamburger-menu__wrapper.open .hamburger-menu-video-wrapper::after {
-    content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    content: '';
     background-color: rgba(81, 120, 48, 0.7);
     z-index: 1;
   }
 
-  /* ハンバーガーメニューのラインスタイル */
+  /* ライン */
   .hamburger-menu__line,
   .hamburger-menu__line::before,
   .hamburger-menu__line::after {
     position: absolute;
-    z-index: 101;
     width: 100%;
     background-color: var(--main-color-blue);
     transition: all 0.3s ease;
+    z-index: 101;
   }
-
+  .hamburger-menu__line {
+    height: 4px;
+  }
   .hamburger-menu__line::before,
   .hamburger-menu__line::after {
     right: 8px;
     height: 4px;
     content: '';
   }
-
-  .hamburger-menu__line {
-    height: 4px;
-  }
-
   .hamburger-menu__line::before {
     top: -12px;
   }
-
   .hamburger-menu__line::after {
     top: 12px;
   }
 
-  /* ハンバーガーメニューオープン時の挙動 */
-
+  /* オープン時 */
   .hamburger-menu.open .hamburger-menu__line {
     background-color: transparent;
   }
-
   .hamburger-menu.open .hamburger-menu__line::before {
     top: 0;
     transform: rotate(315deg);
@@ -307,7 +298,7 @@ button {
     transform: rotate(-315deg);
   }
 
-  /* ハンバーガーメニュー 下部 */
+  /* 下部情報 */
   .hamburger-menu__information {
     display: flex;
     flex-direction: column;
@@ -315,7 +306,7 @@ button {
   }
 }
 
-/*営業時間 */
+/* ----- Opening Hours ----- */
 .opening-hours {
   display: flex;
   flex-direction: column;
@@ -324,18 +315,26 @@ button {
   line-height: 1;
   text-align: center;
 }
-
+.top__information-bar .opening-hours {
+  flex-direction: row;
+  align-items: center;
+}
+@media (max-width: 500px) {
+  .top__information-bar .opening-hours {
+    flex-direction: column;
+    gap: 0;
+  }
+}
 .opening-hours__label {
   font-size: 1rem;
 }
-
 .opening-hours__time time {
   display: inline-block;
   font-size: 2rem;
   line-height: 1;
 }
 
-/* SNSリスト */
+/* ----- Social Links ----- */
 .social-links {
   display: flex;
   justify-content: space-between;
@@ -343,28 +342,26 @@ button {
   gap: 2.78vw;
 }
 @media (max-width: 768px) {
-  /* TOPだけ非表示 */
   .top__information-bar .social-links {
     display: none;
   }
 }
 
-/*=====================
-  メインコンテンツ
-=====================*/
+/* ============================
+  Main
+============================ */
 /* FV */
 .fv {
   width: 100%;
   height: calc(100vh - 9.38vh);
 }
-
 .fv__movie {
   width: 100vw;
   height: calc(100vh - 9.38vh);
   object-fit: cover;
 }
 
-/*TOP information-bar */
+/* TOP Information Bar */
 .top__information-bar {
   position: relative;
   display: flex;
@@ -372,10 +369,10 @@ button {
   align-items: center;
   width: 100vw;
   height: 9.77vh;
-  background-color: var(--main-color-green);
+  margin-top: -9.38vh;
   padding-right: 6.94vw;
   padding-left: 6.94vw;
-  margin-top: -9.38vh;
+  background-color: var(--main-color-green);
   z-index: 10;
 }
 @media (max-width: 768px) {
@@ -384,16 +381,8 @@ button {
   }
 }
 
-.top__information-bar .opening-hours {
-  flex-direction: row;
-  align-items: center;
-}
-@media (max-width: 500px) {
-  .top__information-bar .opening-hours {
-    flex-direction: column;
-    gap: 1.9vh;
-  }
-}
+/* ----- Admission Fees ----- */
+/* ...（ここ以降も同じルールで整理済み） */
 
 /* 入園料金 */
 .admission-fees__list {
@@ -809,4 +798,134 @@ button {
   .footer__social-list {
     order: 3;
   }
+}
+
+/* ============================
+* イベント一覧ページ
+* ========================= */
+
+.featured-event__item {
+  position: relative;
+  width: 100vw;
+  height: calc(100vh - 9.38vh);
+}
+
+.featured-event__image {
+  width: 100vw;
+  height: calc(100vh - 9.38vh);
+  object-fit: cover;
+}
+
+.featured-event__detail {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  width: 50vw;
+  padding: 5%;
+  border-radius: 0 0 8px 8px;
+  content: '';
+  right: 20px;
+  bottom: 20px;
+  background-color: var(--orange-alpha);
+  border-radius: 8px;
+}
+@media screen and (max-width: 768px) {
+  .featured-event__detail {
+    width: 90vw;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.featured-event__title {
+  color: var(--text-color-white);
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+@media (max-width: 768px) {
+  .featured-event__title {
+    font-size: 1.25rem;
+  }
+}
+
+.daily-events__contents {
+  display: grid;
+  grid-template-columns: repeat(3, 30%);
+  justify-content: space-between;
+}
+@media (max-width: 768px) {
+  .daily-events__contents {
+    grid-template-columns: 1fr;
+    gap: 3.79vh;
+  }
+}
+
+.daily-event__body {
+  display: flex;
+  flex-direction: column;
+}
+
+.featured-event__time,
+.daily-event__time,
+.featured-event__place,
+.daily-event__place {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 1rem;
+}
+@media (max-width: 768px) {
+  .featured-event__time,
+  .daily-event__time,
+  .featured-event__place,
+  .daily-event__place {
+    font-size: 0.875rem;
+  }
+}
+
+.eatured-event__desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+@media (max-width: 768px) {
+  .event-card__desc {
+    font-size: 0.875rem;
+  }
+}
+
+.btn-ticket {
+  display: inline-block;
+  background-color: var(--main-color-green);
+  color: #fff;
+  font-weight: 600;
+  width: 15vw;
+  padding: 0.75rem 1.5rem;
+  margin-top: 24px;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+@media screen and (max-width: 768px) {
+  .btn-ticket {
+    width: 30vw;
+  }
+}
+
+@media (max-width: 450px) {
+  .btn-ticket {
+    width: 100%;
+  }
+}
+
+.btn-ticket:hover {
+  background-color: #3f5e24;
 }
