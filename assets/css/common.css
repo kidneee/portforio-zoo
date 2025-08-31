@@ -40,6 +40,11 @@ button {
 .l-inner {
   padding: 7.81vh 6.94vw 11.72vh;
 }
+@media screen and (max-width: 768px) {
+  .l-inner {
+    padding: 7.81vh 6.94vw 11.72vh;
+  }
+}
 
 /* ----- Components ----- */
 .c-section-title {
@@ -381,13 +386,13 @@ button {
   }
 }
 
-/* ----- Admission Fees ----- */
-/* ...（ここ以降も同じルールで整理済み） */
-
-/* 入園料金 */
+/*-------------------------
+  入園料金
+-------------------------*/
 .admission-fees__list {
   display: grid;
   grid-template-columns: repeat(4, 24.08%);
+  grid-template-rows: 1fr 1fr;
   justify-content: space-between;
   height: 13.28vh;
   margin-bottom: 3.91vh;
@@ -412,15 +417,15 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1vh;
-  background-color: var(--main-color-orange);
+  height: auto;
+  border: 2px solid var(--main-color-orange);
   border-radius: 8px;
   color: var(--text-color-white);
   text-align: center;
 }
 @media (max-width: 768px) {
   .admission-fees__item {
-    height: 10vh;
+    /* height: 10vh; */
   }
 }
 
@@ -430,19 +435,31 @@ button {
 }
 
 .admission-fees__item-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 3vh 0;
   letter-spacing: 0.1em;
+  background-color: var(--main-color-orange);
 }
 
 .admission-fees__item-fee {
+  padding: 3vh 3vw;
+  justify-content: center;
+  color: var(--main-color-orange);
   font-size: 3rem;
 }
 /* Webチケット */
 .admission-fees__web-ticket-list-wrapper {
   width: 49.49%;
+  margin-top: 12vh;
 }
 @media (max-width: 768px) {
   .admission-fees__web-ticket-list-wrapper {
     width: 100%;
+    margin-top: 4vh;
   }
 }
 
@@ -450,6 +467,7 @@ button {
   display: grid;
   grid-template-columns: repeat(2, 48.66%);
   justify-content: space-between;
+  gap: 1vh;
 }
 @media (max-width: 500px) {
   .admission-fees__web-ticket-list {
@@ -463,6 +481,7 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  min-height: 60px;
   height: 6.25vh;
   font-size: 2rem;
   border: 1px solid #afafaf;
@@ -476,7 +495,9 @@ button {
   border: none;
 }
 
-/* イベント */
+/*-------------------------
+  イベント
+-------------------------*/
 .events__list {
   display: grid;
   grid-template-columns: repeat(3, 30%);
@@ -599,7 +620,9 @@ button {
   }
 }
 
-/* おすすめコース */
+/*-------------------------
+  コース
+-------------------------*/
 .course__step-title {
   font-size: 1.75rem;
   font-weight: 600;
@@ -770,7 +793,9 @@ button {
   transform: translateY(25%) rotate(-45deg);
 }
 
-/* フッター */
+/*-------------------------
+  フッター
+-------------------------*/
 .footer {
   padding: 7.81vh 6.94vw;
   background-color: var(--main-color-green);
@@ -928,4 +953,74 @@ button {
 
 .btn-ticket:hover {
   background-color: #3f5e24;
+}
+
+/*-------------------------
+  アクセス
+-------------------------*/
+.access__contents {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .access__contents {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.access__contents iframe {
+  width: 60%;
+}
+
+.access__text {
+  width: 37%;
+}
+@media screen and (max-width: 768px) {
+  .access__contents iframe {
+    width: 100%;
+  }
+
+  .access__text {
+    width: 100%;
+  }
+}
+
+/*-------------------------
+  入園案内
+-------------------------*/
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+  margin: 2rem 0;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th {
+  background-color: var(--main-color-green);
+  color: #fff;
+  text-align: left;
+  padding: 1rem;
+  font-size: 1.1rem;
+}
+
+td {
+  padding: 1rem;
+  border-top: 1px solid #e0e0e0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+tr:nth-child(even) td {
+  background-color: #f9fafb;
+}
+
+.opening-hours__time time {
+  font-weight: 500;
 }
