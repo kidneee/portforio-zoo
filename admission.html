@@ -107,7 +107,9 @@
   <!-- /.header -->
 
   <main class="addmission-page">
-    <h1 class="">入園案内</h1>
+    <div class="page__title-wrapper addmission-page__title-wapper">
+      <h1 class="c-page-title">入園案内</h1>
+    </div><!-- /.page__title-wrapper addmission-page__title-wapper-->
     <div class="addmission-page__contents">
       <!-- 入園料金 -->
       <section class="addmission-page__fees">
@@ -165,22 +167,25 @@
             <span class="c-section-title__en">Openning Hours</span>
             <span class="c-section-title__ja">開園時間</span>
           </h2>
-          <table>
-            <tr>
-              <th scope="col">開園時間</th>
-              <th scope="col">休園日</th>
-              <th scope="col">その他</th>
-            </tr>
-            <tbody>
-              <tr>
-                <td scope="row" class="opening-hours__time">
-                  <time datetime="09:00">午前9:00</time>～<time datetime="17:00">午後5:00</time>
-                </td>
-                <td>毎週水曜日</td>
-                <td>天候や動物たちの体調により、営業時間の変更があります。</td>
-              </tr>
-            </tbody>
-          </table>
+          <dl class="opening-hours__list">
+            <!-- 営業時間 -->
+            <div class="opening-hours__item opening-hours__item--time">
+              <dt class="opening-hours__item-label">開園時間</dt>
+              <dd class="opening-hours__item-content">
+                <time datetime="09:00">午前9:00</time>～<time datetime="17:00">午後5:00</time>
+              </dd>
+            </div>
+            <!-- 休園日 -->
+            <div class="opening-hours__item opening-hours__item--closed-day">
+              <dt class="opening-hours__item-label">休園日</dt>
+              <dd class="opening-hours__item-content">毎週水曜日</dd>
+            </div>
+            <!-- その他 -->
+            <div class="opening-hours__item opening-hours__item--other">
+              <dt class="opening-hours__item-label">その他</dt>
+              <dd class="opening-hours__item-content">天候や動物たちの体調により、営業時間の変更があります。</dd>
+            </div>
+          </dl>
         </div>
         <!-- /.l-inner -->
       </section>
