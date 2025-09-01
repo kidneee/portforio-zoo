@@ -1130,3 +1130,21 @@ button {
     border-radius: 0 0 8px 8px;
   }
 }
+
+/*-------------------------
+  動物紹介
+-------------------------*/
+.animals-page__tab-panel-inner {
+  display: grid;
+  grid-template-columns: repeat(4, 20%);
+  justify-content: space-between;
+}
+
+.animals-page__tab-panel {
+  display: none;
+}
+
+.animals-page__tab-panel.active {
+  display: block;
+  /* background-color: rgb(252 222 222 / .5); */
+}

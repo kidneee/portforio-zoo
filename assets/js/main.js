@@ -13,6 +13,24 @@ hamburgerBtn.addEventListener('click', () => {
   }
 });
 
+//animals
+const tabItems = document.querySelectorAll('.tab');
+const tabPanels = document.querySelectorAll('.animals-page__tab-panel');
+
+tabItems.forEach(function (tabItem, index) {
+  tabItem.addEventListener('click', () => {
+    tabItems.forEach((item) => {
+      item.classList.remove('active');
+    });
+    tabItems[index].classList.add('active');
+
+    tabPanels.forEach((tabPanel) => {
+      tabPanel.classList.remove('active');
+    });
+    tabPanels[index].classList.add('active');
+  });
+});
+
 // course
 // ボタン選択
 const courseSelectBtns = document.querySelectorAll('.course__button');
