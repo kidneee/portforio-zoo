@@ -3,23 +3,6 @@
 /* ============================
   Common
 ============================ */
-:root {
-  /* コンセプトカラー */
-  --main-color-orange: #e39411;
-  --main-color-green: #517830;
-  --main-color-blue: #1aa6b4;
-  --sub-color-white: #fefbf3;
-  --green-alpha: rgba(81, 120, 48, 0.5);
-  --orange-alpha: rgba(227, 148, 17, 0.5);
-
-  /* 背景色 */
-  --bg-color-white: #fefbf3;
-
-  /* テキストカラー */
-  --text-color-primary: #333;
-  --text-color-white: #fefbf3;
-}
-
 body {
   position: relative;
   box-sizing: border-box;
@@ -870,7 +853,6 @@ button {
 /* ============================
 * イベント一覧ページ
 * ========================= */
-
 .featured-event__item {
   position: relative;
   width: 100vw;
@@ -1030,9 +1012,9 @@ button {
   }
 }
 
-/*-------------------------
-  入園案内
--------------------------*/
+/* ============================
+* 入園案内
+* ========================= */
 /* ページタイトル背景画像 */
 .addmission-page__title-wapper {
   background-image: url('../images/title-bg_addmission.jpg');
@@ -1131,20 +1113,118 @@ button {
   }
 }
 
-/*-------------------------
-  動物紹介
--------------------------*/
-.animals-page__tab-panel-inner {
-  display: grid;
-  grid-template-columns: repeat(4, 20%);
-  justify-content: space-between;
+/* ============================
+* 動物紹介
+* ========================= */
+/* ページタイトル背景画像 */
+.animals-page__title-wapper {
+  background-image: url('../images/title-bg_animals.jpg');
+  background-position: top;
 }
 
-.animals-page__tab-panel {
+/* タブ */
+.animals-page .tabs {
+  display: flex;
+  justify-content: center;
+  gap: 3vw;
+  padding: 3%;
+}
+@media screen and (max-width: 768px) {
+  .animals-page .tabs {
+    justify-content: space-between;
+  }
+}
+
+.animals-page .tab {
+  font-size: 2rem;
+  line-height: 1.5;
+}
+@media screen and (max-width: 768px) {
+  .animals-page .tab {
+    font-size: 1.25em;
+  }
+}
+
+/* 昼行性 */
+.diurnal-tab.active {
+  color: var(--main-color-orange);
+  border-bottom: 4px solid var(--main-color-orange);
+}
+
+/* 夜行性 */
+.nocturnal-tab.active {
+  color: #4a4a8a;
+  border-bottom: 4px solid #4a4a8a;
+}
+
+/* 小動物 */
+.small-animals-tab.active {
+  color: var(--main-color-green);
+  border-bottom: 4px solid var(--main-color-green);
+}
+
+/* 爬虫類 */
+.reptiles-tab.active {
+  color: var(--main-color-blue);
+  border-bottom: 4px solid var(--main-color-blue);
+}
+
+.animals-page .tab-panel {
   display: none;
 }
 
-.animals-page__tab-panel.active {
+.tab-panel.active {
   display: block;
   /* background-color: rgb(252 222 222 / .5); */
+}
+
+/* 動物サムネイル */
+.animal-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.animals-page .tab-panel__inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 20%);
+  grid-template-rows: auto;
+  justify-content: center;
+  gap: 12vh 1.67vw;
+}
+@media screen and (max-width: 768px) {
+  .animals-page .tab-panel__inner {
+    grid-template-columns: repeat(3, 32%);
+  }
+}
+@media screen and (max-width: 500px) {
+  .animals-page .tab-panel__inner {
+    grid-template-columns: repeat(2, 47%);
+    justify-content: space-between;
+    gap: 12vh 6.15vw;
+  }
+}
+
+.animal-card__image:hover {
+  border: 8px solid var(--main-color-orange);
+  /* border-style: inset; */
+}
+
+/* テスト用 */
+#test.active {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  width: 500px;
+  height: 500px;
+  background-image: url('../images/event_lion.jpg');
+  background-size: cover;
+}
+
+#test.active img {
+  display: none;
 }

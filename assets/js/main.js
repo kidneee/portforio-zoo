@@ -14,8 +14,9 @@ hamburgerBtn.addEventListener('click', () => {
 });
 
 //animals
+// カテゴリ選択タブ
 const tabItems = document.querySelectorAll('.tab');
-const tabPanels = document.querySelectorAll('.animals-page__tab-panel');
+const tabPanels = document.querySelectorAll('.tab-panel');
 
 tabItems.forEach(function (tabItem, index) {
   tabItem.addEventListener('click', () => {
@@ -29,6 +30,13 @@ tabItems.forEach(function (tabItem, index) {
     });
     tabPanels[index].classList.add('active');
   });
+});
+// 詳細ポップアップ
+const test = document.getElementById('test');
+
+test.addEventListener('click', () => {
+  // alert('Success!');
+  test.classList.toggle('active');
 });
 
 // course

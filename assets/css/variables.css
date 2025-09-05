@@ -1,0 +1,44 @@
+:root {
+  /* コンセプトカラー */
+  --main-color-orange: #e39411;
+  --main-color-green: #517830;
+  --main-color-blue: #1aa6b4;
+  --sub-color-white: #fefbf3;
+  --green-alpha: rgba(81, 120, 48, 0.5);
+  --orange-alpha: rgba(227, 148, 17, 0.5);
+
+  /* 背景色 */
+  --bg-color-white: #fefbf3;
+
+  /* テキストカラー */
+  --text-color-primary: #333;
+  --text-color-white: #fefbf3;
+
+  /* --- Desktop (1920x1080) --- */
+  --space-16-d: 0.8333vw;
+  --space-24-d: 1.25vw;
+  --space-32-d: 1.6667vw;
+  --space-48-d: 2.5vw;
+  --space-64-d: 3.3333vw;
+  --space-80-d: 4.1667vw;
+
+  /* --- Mobile (390x844) --- */
+  --space-16-m: 4.1026vw;
+  --space-24-m: 6.1538vw;
+  --space-32-m: 8.2051vw;
+  --space-48-m: 12.3077vw;
+  --space-64-m: 16.4103vw;
+  --space-80-m: 20.5128vw;
+
+  /* --- 高さ用（縦余白）Desktop --- */
+  --space-vh16-d: 1.4815vh;
+  --space-vh32-d: 2.963vh;
+  --space-vh48-d: 4.4444vh;
+  --space-vh80-d: 7.4074vh;
+
+  /* --- 高さ用（縦余白）Mobile --- */
+  --space-vh16-m: 1.8957vh;
+  --space-vh32-m: 3.7915vh;
+  --space-vh48-m: 5.6872vh;
+  --space-vh80-m: 9.4811vh;
+}

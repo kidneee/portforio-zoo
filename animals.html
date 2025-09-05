@@ -6,10 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="keywords" content="宮崎県,宮崎市,動物園イベント,ゾウのお散歩,ライオン観察,パンダ撮影会,ふれあい体験,家族向けイベント" />
   <meta name="description" content="Hinata Zooのイベントページ。ゾウのお散歩と記念撮影、ライオン観察、パンダと記念撮影など、家族で楽しめる特別イベントの詳細をご紹介しています。" />
-  <title>入園案内 | Hinata Zoo</title>
+  <title>Hinata Zooの動物たち | Hinata Zoo</title>
   <!-- css -->
   <link rel="stylesheet" href="/assets/css/reset.css" />
   <link rel="stylesheet" href="/assets/css/common.css" />
+   <link rel="stylesheet" href="/assets/css/variables.css">
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -33,14 +34,44 @@
       <aside id="js-drawerMenu" class="hamburger-menu__wrapper">
         <div class="hamburger-menu-video-wrapper">
           <video autoplay muted loop playsinline class="hamburger-menu-video">
-            <source src="/assets/images/fv-movie-sp.mp4" type="video/mp4" />
+            <source src="/assets/images/fv-movie-sp.mp4" type="video/mp4">
             お使いのブラウザは動画に対応していません。
           </video>
         </div>
         <!-- /.hamburger-menu-video-wrapper -->
         <img src="/assets/images/logo_hamburger.svg" width="186" height="54" alt=""
-          class="hamburger-menu__logo sp-only" />
+          class="hamburger-menu__logo sp-only">
         <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="./admission.html" class="nav__link nav__admission">入園案内</a>
+            </li>
+            <li class="nav__item">
+              <a href="./animals.html" class="nav__link nav__animals">どうぶつ</a>
+            </li>
+            <li class="nav__item">
+              <a href="./event.html" class="nav__link nav__guide">イベント</a>
+            </li>
+            <li class="nav__item">
+              <a href="./course.html" class="nav__link nav__course">コース</a>
+            </li>
+            <li class="nav__item">
+              <a href="./news.html" class="nav__link nav__news">ニュース</a>
+            </li>
+            <li class="nav__item">
+              <a href="#access" class="nav__link nav__access">アクセス</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="hamburger-menu__information">
+          <div class="opening-hours">
+            <span class="opening-hours__label">本日の営業時間</span>
+            <p class="opening-hours__time">
+              <time datetime="09:00">午前9:00</time>
+              ～
+              <time datetime="17:00">午後5:00</time>
+            </p>
+          </div>
           <ul class="social-links">
             <li class="social-links__item">
               <a href="" class="social-links__link">
@@ -60,38 +91,6 @@
             <li class="social-links__item">
               <a href="" class="social-links__link">
                 <img src="./assets/images/icon_youtube.svg" alt="ユーチューブ" class="social-links__icon" />
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <div class="hamburger-menu__information">
-          <div class="opening-hours">
-            <span class="opening-hours__label">本日の営業時間</span>
-            <p class="opening-hours__time">
-              <time datetime="09:00">午前9:00</time>
-              ～
-              <time datetime="17:00">午後5:00</time>
-            </p>
-          </div>
-          <ul class="social-links">
-            <li class="social-links__item">
-              <a href="" class="social-links__link">
-                <img src="../../assets/images/twitter.svg" alt="ツイッター" class="social-links__icon" />
-              </a>
-            </li>
-            <li class="social-links__item">
-              <a href="" class="social-links__link">
-                <img src="../../assets/images/instagram.svg" alt="インスタグラム" class="social-links__icon" />
-              </a>
-            </li>
-            <li class="social-links__item">
-              <a href="" class="social-links__link">
-                <img src="../../assets/images/facebook.svg" alt="フェイスブック" class="social-links__icon" />
-              </a>
-            </li>
-            <li class="social-links__item">
-              <a href="" class="social-links__link">
-                <img src="../../assets/images/youtube.svg" alt="ユーチューブ" class="social-links__icon" />
               </a>
             </li>
           </ul>
@@ -117,85 +116,53 @@
       <section>
         <div class="l-inner">
           <div class="tabs">
-            <button class="tab active" data-tab="diurnal">昼行性</button>
-            <button class="tab" data-tab="nocturnal">夜行性</button>
-            <button class="tab" data-tab="small-animals">小動物</button>
-            <button class="tab" data-tab="reptiles">爬虫類</button>
+            <button class="tab diurnal-tab active" data-tab="diurnal">昼行性</button>
+            <button class="tab nocturnal-tab" data-tab="nocturnal">夜行性</button>
+            <button class="tab small-animals-tab" data-tab="small-animals">小動物</button>
+            <button class="tab reptiles-tab" data-tab="reptiles">爬虫類</button>
           </div>
-          <div class="animals-page__tab-content">
-            <section id="diurnal" class="animals-page__tab-panel diurnal-panel active">
-              <h3>昼行性</h3>
-              <div class="animals-page__tab-panel-inner">
-                <div class="animal-card">
-                  <img src="./assets/images/event_elephant.jpg" width="300" alt="ゾウ">
-                  <p>ゾウ</p>
+          <div class="tab-content">
+            <!-- 昼行性 -->
+            <section id="diurnal" class="tab-panel diurnal-panel active">
+              <h3 class="sr-only">昼行性</h3>
+              <div class="tab-panel__inner">
+                <!-- カード -->
+                <div id="test" class="animal-card">
+                  <img src="./assets/images/event_elephant.jpg" class="animal-card__image" alt="ゾウ">
+                  <span class="animal-card__label"></span>
                 </div>
+                <!-- カード -->
                 <div class="animal-card">
-                  <img src="./assets/images/event_elephant.jpg" width="300" alt="ゾウ">
-                  <p>ゾウ</p>
+                  <img src="./assets/images/event_elephant.jpg" class="animal-card__image" alt="ゾウ">
+                  <span class="animal-card__label"></span>
                 </div>
+                <!-- カード -->
                 <div class="animal-card">
-                  <img src="./assets/images/event_elephant.jpg" width="300" alt="ゾウ">
-                  <p>ゾウ</p>
+                  <img src="./assets/images/event_elephant.jpg" class="animal-card__image" alt="ゾウ">
+                  <span class="animal-card__label"></span>
                 </div>
-                <div class="animal-card">
-                  <img src="./assets/images/event_elephant.jpg" width="300" alt="ゾウ">
-                  <p>ゾウ</p>
-                </div>
-                <div class="animal-card">
-                  <img src="./assets/images/event_elephant.jpg" width="300" alt="ゾウ">
-                  <p>ゾウ</p>
-                </div>
-                <div class="animal-card">
-                  <img src="./assets/images/event_elephant.jpg" width="300" alt="ゾウ">
-                  <p>ゾウ</p>
-                </div>
-                <div class="animal-card">
-                  <img src="./assets/images/event_elephant.jpg" width="300" alt="ゾウ">
-                  <p>ゾウ</p>
-                </div>
-                <div class="animal-card">
-                  <img src="./assets/images/event_elephant.jpg" width="300" alt="ゾウ">
-                  <p>ゾウ</p>
-                </div>
-              </div><!-- /.animals-page__tab-panel-inner -->
+              </div><!-- /.tab-panel-inner -->
             </section>
-            <section id="nocturnal" class="animals-page__tab-panel nocturnal-panel">
-              <h3>夜行性</h3>
-              <div class="animals-page__tab-panel-inner">
-                <div class="animal-card">
-                  <img src="./assets/images/event_lion.jpg" width="300" alt="ライオン">
-                  <p>ライオン</p>
-                </div>
-                <div class="animal-card">
-                  <img src="./assets/images/event_lion.jpg" width="300" alt="ライオン">
-                  <p>ライオン</p>
-                </div>
-                <div class="animal-card">
-                  <img src="./assets/images/event_lion.jpg" width="300" alt="ライオン">
-                  <p>ライオン</p>
-                </div>
-                <div class="animal-card">
-                  <img src="./assets/images/event_lion.jpg" width="300" alt="ライオン">
-                  <p>ライオン</p>
-                </div>
-                <div class="animal-card">
-                  <img src="./assets/images/event_lion.jpg" width="300" alt="ライオン">
-                  <p>ライオン</p>
-                </div>
-                <div class="animal-card">
-                  <img src="./assets/images/event_elephant.jpg" width="300" alt="ゾウ">
-                  <p>ゾウ</p>
-                </div>
-                <div class="animal-card">
-                  <img src="./assets/images/event_elephant.jpg" width="300" alt="ゾウ">
-                  <p>ゾウ</p>
-                </div>
-                <div class="animal-card">
-                  <img src="./assets/images/event_elephant.jpg" width="300" alt="ゾウ">
-                  <p>ゾウ</p>
-                </div>
-              </div>
+            <!-- 夜行性 -->
+            <section id="nocturnal" class="tab-panel nocturnal-panel">
+              <h3 class="sr-only">夜行性</h3>
+              <div class="tab-panel__inner">
+
+              </div><!-- /.tab-panel__inner -->
+            </section>
+            <!-- 小動物 -->
+            <section id="small-animals" class="tab-panel small-animals-panel">
+              <h3 class="sr-only">小動物</h3>
+              <div class="tab-panel__inner">
+
+              </div><!-- /.tab-panel__inner -->
+            </section>
+            <!-- 小動物 -->
+            <section id="reptiles" class="tab-panel reptiles-panel">
+              <h3 class="sr-only">爬虫類</h3>
+              <div class="tab-panel__inner">
+
+              </div><!-- /.tab-panel__inner -->
             </section>
           </div><!-- /.tab-panel active -->
         </div><!-- /.l-inner -->
