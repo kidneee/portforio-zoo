@@ -1189,15 +1189,10 @@ button {
 .animals-page .tab-panel__inner {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(4, 20%);
-  grid-template-rows: auto;
+  grid-template-columns: repeat(3, 32%);
+  grid-template-rows: repeat(3, 32%);
   justify-content: center;
   gap: 12vh 1.67vw;
-}
-@media screen and (max-width: 768px) {
-  .animals-page .tab-panel__inner {
-    grid-template-columns: repeat(3, 32%);
-  }
 }
 @media screen and (max-width: 500px) {
   .animals-page .tab-panel__inner {
@@ -1208,23 +1203,74 @@ button {
 }
 
 .animal-card__image:hover {
-  border: 8px solid var(--main-color-orange);
-  /* border-style: inset; */
+  cursor: pointer;
 }
 
-/* テスト用 */
-#test.active {
-  position: absolute;
-  top: 50%;
+.animal-card__label {
+  display: block;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* 詳細 ポップアップ */
+.animal-detail-wrapper {
+  position: fixed;
+  content: '';
+  top: 50vh;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 100;
-  width: 500px;
-  height: 500px;
-  background-image: url('../images/event_lion.jpg');
-  background-size: cover;
+  width: 50vw;
+  padding: var(--space-vh40-d) var(--space-32-d);
+  background-color: var(--bg-color-white);
+  border-radius: 16px;
+  box-shadow: 3px 3px 3px 0 rgba(54, 54, 54, 0.3);
 }
 
-#test.active img {
-  display: none;
+.animal-detail {
+  position: relative;
+}
+
+.animal-detail__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32-d);
+  width: 100%;
+  height: auto;
+}
+
+.animal-detail__heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.animal-detail__title {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.animal-detail__image {
+  height: 40vh;
+  border-radius: 16px;
+}
+
+.animal-detail__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.animal-detail__close {
+  font-size: 1.25rem;
+  line-height: 1;
+  padding: 8px;
+  font-weight: 600;
+  color: var(--main-color-blue);
+  background-color: var(--bg-color-white);
+  border: 1px solid var(--main-color-blue);
+  border-radius: 8px;
 }

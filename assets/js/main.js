@@ -32,11 +32,19 @@ tabItems.forEach(function (tabItem, index) {
   });
 });
 // 詳細ポップアップ
-const test = document.getElementById('test');
-
-test.addEventListener('click', () => {
-  // alert('Success!');
-  test.classList.toggle('active');
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.animal-card').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const popUp = document.getElementById('js-popUp');
+      const answer = document.getElementById(btn.getAttribute('aria-controls'));
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', !expanded);
+      answer.hidden = expanded;
+      const epopUp = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', !expanded);
+      answer.hidden = expanded;
+    });
+  });
 });
 
 // course

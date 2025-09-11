@@ -10,7 +10,7 @@
   <!-- css -->
   <link rel="stylesheet" href="/assets/css/reset.css" />
   <link rel="stylesheet" href="/assets/css/common.css" />
-   <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/variables.css">
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,7 +18,7 @@
     href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500&family=Noto+Sans+Tamil:wght@100;200;300;400;500&family=Zen+Maru+Gothic:wght@300;400;500;700&display=swap"
     rel="stylesheet" />
   <!-- js -->
-  <script type="module" src="/assets/js/main.js"></script>
+  <script type="module" src="./assets/js/main.js"></script>
 </head>
 
 <body>
@@ -34,7 +34,7 @@
       <aside id="js-drawerMenu" class="hamburger-menu__wrapper">
         <div class="hamburger-menu-video-wrapper">
           <video autoplay muted loop playsinline class="hamburger-menu-video">
-            <source src="/assets/images/fv-movie-sp.mp4" type="video/mp4">
+            <source src="/assets/images/fv_movie-sp.mp4" type="video/mp4">
             お使いのブラウザは動画に対応していません。
           </video>
         </div>
@@ -51,9 +51,6 @@
             </li>
             <li class="nav__item">
               <a href="./event.html" class="nav__link nav__guide">イベント</a>
-            </li>
-            <li class="nav__item">
-              <a href="./course.html" class="nav__link nav__course">コース</a>
             </li>
             <li class="nav__item">
               <a href="./news.html" class="nav__link nav__news">ニュース</a>
@@ -127,22 +124,23 @@
               <h3 class="sr-only">昼行性</h3>
               <div class="tab-panel__inner">
                 <!-- カード -->
-                <div id="test" class="animal-card">
-                  <img src="./assets/images/event_elephant.jpg" class="animal-card__image" alt="ゾウ">
-                  <span class="animal-card__label"></span>
+                <button aria-expanded="false" aria-controls="giraffe" class="animal-card">
+                  <img src="./assets/images/animals-cadr-giraffe.jpg" class="animal-card__image" alt="キリン">
+                  <span class="animal-card__label">キリン</span>
+                </button>
+                <!-- カード -->
+                <div class="animal-card">
+                  <img src="./assets/images/event-elephant.jpg" class="animal-card__image" alt="ゾウ">
+                  <span class="animal-card__label">ゾウ</span>
                 </div>
                 <!-- カード -->
                 <div class="animal-card">
-                  <img src="./assets/images/event_elephant.jpg" class="animal-card__image" alt="ゾウ">
-                  <span class="animal-card__label"></span>
-                </div>
-                <!-- カード -->
-                <div class="animal-card">
-                  <img src="./assets/images/event_elephant.jpg" class="animal-card__image" alt="ゾウ">
-                  <span class="animal-card__label"></span>
+                  <img src="./assets/images/annimals-card-zebra.jpg" class="animal-card__image" alt="シマウマ">
+                  <span class="animal-card__label">シマウマ</span>
                 </div>
               </div><!-- /.tab-panel-inner -->
             </section>
+
             <!-- 夜行性 -->
             <section id="nocturnal" class="tab-panel nocturnal-panel">
               <h3 class="sr-only">夜行性</h3>
@@ -150,6 +148,7 @@
 
               </div><!-- /.tab-panel__inner -->
             </section>
+
             <!-- 小動物 -->
             <section id="small-animals" class="tab-panel small-animals-panel">
               <h3 class="sr-only">小動物</h3>
@@ -157,14 +156,34 @@
 
               </div><!-- /.tab-panel__inner -->
             </section>
-            <!-- 小動物 -->
+
+            <!-- 爬虫類 -->
             <section id="reptiles" class="tab-panel reptiles-panel">
               <h3 class="sr-only">爬虫類</h3>
               <div class="tab-panel__inner">
 
               </div><!-- /.tab-panel__inner -->
             </section>
-          </div><!-- /.tab-panel active -->
+
+            <!-- 詳細ポップアップ -->
+            <div aria-expanded="false" id="js-popup" class="animal-detail-wrapper" hidden>
+              <!-- キリン -->
+              <article id="giraffe" class="animal-detail" hidden aria-controls="js-popup">
+                <div class="animal-detail__inner">
+                  <div class="animal-detail__heading">
+                    <h4 class="animal-detail__title">キリン</h4>
+                    <button class="animal-detail__close">&times;</button>
+                  </div><!-- /.animal-detail__heading -->
+                  <div class="animal-detail__image">
+                    <img src="./assets/images/animals-cadr-giraffe.jpg" class="animal-detail__img" alt="キリン">
+                  </div>
+                  <p class="animal-detail__text">
+                    ゾウは世界最大の陸上動物で、昼行性です。社会性が強く群れで生活します。
+                  </p>
+                </div>
+              </article>
+            </div><!-- /.animal-detail-wrapper -->
+          </div><!-- /.tab-content -->
         </div><!-- /.l-inner -->
       </section>
     </div><!-- /.animals-page__contents -->
@@ -239,7 +258,7 @@
     <div class="footer__inner">
       <div>
         <a href="" class="footer__link">
-          <img src="../../assets/images/logo-white.svg" width="186" height="54" alt="Hinata Zoo"
+          <img src="./assets/images/logo-white.svg" width="186" height="54" alt="Hinata Zoo"
             class="footer__logo-image" />
         </a>
         <address class="footer__address">
@@ -260,22 +279,22 @@
         <ul class="social-links">
           <li class="social-links__item">
             <a href="" class="social-links__link">
-              <img src="../../assets/images/twitter.svg" alt="ツイッター" class="social-links__icon" />
+              <img src="./assets/images/icon_twitter.svg" alt="ツイッター" class="social-links__icon" />
             </a>
           </li>
           <li class="social-links__item">
             <a href="" class="social-links__link">
-              <img src="../../assets/images/instagram.svg" alt="インスタグラム" class="social-links__icon" />
+              <img src="./assets/images/icon_instagram.svg" alt="インスタグラム" class="social-links__icon" />
             </a>
           </li>
           <li class="social-links__item">
             <a href="" class="social-links__link">
-              <img src="../../assets/images/facebook.svg" alt="フェイスブック" class="social-links__icon" />
+              <img src="./assets/images/icon_facebook.svg" alt="フェイスブック" class="social-links__icon" />
             </a>
           </li>
           <li class="social-links__item">
             <a href="" class="social-links__link">
-              <img src="../../assets/images/youtube.svg" alt="ユーチューブ" class="social-links__icon" />
+              <img src="./assets/images/icon_youtube.svg" alt="ユーチューブ" class="social-links__icon" />
             </a>
           </li>
         </ul>
@@ -290,9 +309,6 @@
         </li>
         <li class="footer__nav-item">
           <a href="guide.html" class="footer__nav-link">施設案内</a>
-        </li>
-        <li class="footer__nav-item">
-          <a href="course.html" class="footer__nav-link">コース</a>
         </li>
         <li class="footer__nav-item">
           <a href="news.html" class="footer__nav-link">ニュース</a>
