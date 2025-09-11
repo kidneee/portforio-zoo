@@ -31,18 +31,31 @@ tabItems.forEach(function (tabItem, index) {
     tabPanels[index].classList.add('active');
   });
 });
+
 // 詳細ポップアップ
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.animal-card').forEach((btn) => {
     btn.addEventListener('click', () => {
-      const popUp = document.getElementById('js-popUp');
-      const answer = document.getElementById(btn.getAttribute('aria-controls'));
-      const expanded = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', !expanded);
-      answer.hidden = expanded;
-      const epopUp = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', !expanded);
-      answer.hidden = expanded;
+      const popupWrapper = document.getElementById('js-popup');
+      const targetId = btn.getAttribute('aria-controls'); // 例: giraffe
+      const targetArticle = document.getElementById(targetId);
+
+      // いったん全て閉じる
+      popupWrapper.hidden = false;
+      document.querySelectorAll('.animal-detail').forEach((article) => {
+        article.hidden = true;
+      });
+
+      // 押したやつだけ開く
+      targetArticle.hidden = false;
+    });
+  });
+
+  // 閉じるボタン処理
+  document.querySelectorAll('.animal-detail__close').forEach((closeBtn) => {
+    closeBtn.addEventListener('click', () => {
+      const popupWrapper = document.getElementById('js-popup');
+      popupWrapper.hidden = true;
     });
   });
 });

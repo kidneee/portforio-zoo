@@ -106,7 +106,7 @@
 
   <main class="animals-page">
     <div class="page__title-wrapper animals-page__title-wapper">
-      <h1 class="c-page-title">Hinata Zooの動物たち</h1>
+      <h1 class="c-page-title">Hinata Zooの<br class="sp-only">動物たち</h1>
     </div><!-- /.page__title-wrapper animals-page__title-wapper-->
 
     <div class="animals-page__contents">
@@ -123,21 +123,21 @@
             <section id="diurnal" class="tab-panel diurnal-panel active">
               <h3 class="sr-only">昼行性</h3>
               <div class="tab-panel__inner">
-                <!-- カード -->
+                <!-- キリン -->
                 <button aria-expanded="false" aria-controls="giraffe" class="animal-card">
-                  <img src="./assets/images/animals-cadr-giraffe.jpg" class="animal-card__image" alt="キリン">
+                  <img src="./assets/images/animals-card-giraffe.jpg" class="animal-card__image" alt="キリン">
                   <span class="animal-card__label">キリン</span>
                 </button>
-                <!-- カード -->
-                <div class="animal-card">
-                  <img src="./assets/images/event-elephant.jpg" class="animal-card__image" alt="ゾウ">
+                <!-- ゾウ -->
+                <button aria-expanded="false" aria-controls="elephant" class="animal-card">
+                  <img src="./assets/images/animals-card-elephant.jpg" class="animal-card__image" alt="ゾウ">
                   <span class="animal-card__label">ゾウ</span>
-                </div>
-                <!-- カード -->
-                <div class="animal-card">
-                  <img src="./assets/images/annimals-card-zebra.jpg" class="animal-card__image" alt="シマウマ">
-                  <span class="animal-card__label">シマウマ</span>
-                </div>
+                </button>
+                <!-- シマウマ -->
+                <button aria-expanded="false" aria-controls="zebra" class="animal-card">
+                  <img src="./assets/images/animals-card-zebra.jpg" class="animal-card__image" alt="シマウマ">
+                  <span class="animal-card__label">キリン</span>
+                </button>
               </div><!-- /.tab-panel-inner -->
             </section>
 
@@ -166,7 +166,7 @@
             </section>
 
             <!-- 詳細ポップアップ -->
-            <div aria-expanded="false" id="js-popup" class="animal-detail-wrapper" hidden>
+            <div id="js-popup" class="animal-detail-wrapper" role="dialog" aria-modal="true" hidden>
               <!-- キリン -->
               <article id="giraffe" class="animal-detail" hidden aria-controls="js-popup">
                 <div class="animal-detail__inner">
@@ -175,10 +175,40 @@
                     <button class="animal-detail__close">&times;</button>
                   </div><!-- /.animal-detail__heading -->
                   <div class="animal-detail__image">
-                    <img src="./assets/images/animals-cadr-giraffe.jpg" class="animal-detail__img" alt="キリン">
+                    <img src="./assets/images/animals-card-giraffe.jpg" class="animal-detail__img" alt="キリン">
                   </div>
                   <p class="animal-detail__text">
-                    ゾウは世界最大の陸上動物で、昼行性です。社会性が強く群れで生活します。
+                    キリンはアフリカのサバンナに生息する世界一背の高い動物で、長い首を使って高い木の葉を食べます。草食性で、特にアカシアの葉を好みます。昼間に活発に活動し、のんびりと群れで移動する姿が特徴です。動物園ではその優雅で穏やかな動きが人気で、来園者の目を引きます。首や模様には個体ごとの特徴があり、観察する楽しみもあります。
+                  </p>
+                </div>
+              </article>
+              <!-- ゾウ -->
+              <article id="elephant" class="animal-detail" hidden aria-controls="js-popup">
+                <div class="animal-detail__inner">
+                  <div class="animal-detail__heading">
+                    <h4 class="animal-detail__title">ゾウ</h4>
+                    <button class="animal-detail__close">&times;</button>
+                  </div><!-- /.animal-detail__heading -->
+                  <div class="animal-detail__image">
+                    <img src="./assets/images/animals-card-elephant.jpg" class="animal-detail__img" alt="ゾウ">
+                  </div>
+                  <p class="animal-detail__text">
+                    ゾウは世界最大の陸上動物で、力強さと同時に高い知性を持つことで知られています。社会性が強く、群れの中で助け合いながら生活する姿は感動を与えます。昼行性で、昼間に活発に活動し、長い鼻（鼻と上唇が一体化した器官）を器用に使って餌をつかんだり水を飲んだりします。動物園ではその迫力ある体格と親しみやすい性格が人気の理由です。
+                  </p>
+                </div>
+              </article>
+              <!-- ゾウ -->
+              <article id="zebra" class="animal-detail" hidden aria-controls="js-popup">
+                <div class="animal-detail__inner">
+                  <div class="animal-detail__heading">
+                    <h4 class="animal-detail__title">シマウマ</h4>
+                    <button class="animal-detail__close">&times;</button>
+                  </div><!-- /.animal-detail__heading -->
+                  <div class="animal-detail__image">
+                    <img src="./assets/images/animals-card-zebra.jpg" class="animal-detail__img" alt="シマウマ">
+                  </div>
+                  <p class="animal-detail__text">
+                    シマウマは黒と白の美しい縞模様が特徴で、一頭ごとに模様の形が異なります。草食性で群れを作り、サバンナで昼間に活動します。縞模様には体温調整や外敵から身を守る役割があると考えられています。動物園では模様の美しさと群れで駆け回る姿が来園者を魅了します。キリンやゾウと並んで展示されることが多く、動物園らしい雰囲気をつくる存在です。
                   </p>
                 </div>
               </article>

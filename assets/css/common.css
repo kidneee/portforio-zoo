@@ -1220,12 +1220,18 @@ button {
   top: 50vh;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 100;
+  z-index: 5;
   width: 50vw;
   padding: var(--space-vh40-d) var(--space-32-d);
   background-color: var(--bg-color-white);
   border-radius: 16px;
   box-shadow: 3px 3px 3px 0 rgba(54, 54, 54, 0.3);
+}
+@media screen and (max-width: 768px) {
+  .animal-detail-wrapper {
+    width: 90.26vw;
+    padding: var(--space-vh32-m) var(--space-32-m);
+  }
 }
 
 .animal-detail {
@@ -1256,12 +1262,22 @@ button {
   height: 40vh;
   border-radius: 16px;
 }
+@media screen and (max-width: 768px) {
+  .animal-detail__image {
+    height: auto;
+  }
+}
 
 .animal-detail__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 16px;
+}
+
+.animal-detail__text {
+  font-size: 1rem;
+  line-height: 2;
 }
 
 .animal-detail__close {
