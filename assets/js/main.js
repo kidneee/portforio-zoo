@@ -60,31 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// course
-// ボタン選択
-const courseSelectBtns = document.querySelectorAll('.course__button');
-
-courseSelectBtns.forEach((btn) => {
-  btn.addEventListener('click', () => {
-    const currentStep = btn.dataset.step;
-    const wasSelected = btn.classList.contains('selected');
-
-    if (wasSelected) {
-      btn.classList.remove('selected');
-    } else {
-      const sameStepButtons = document.querySelectorAll(`[data-step="${currentStep}"]`);
-      sameStepButtons.forEach((sameBtn) => {
-        sameBtn.classList.remove('selected');
-      });
-
-      btn.classList.add('selected');
-    }
-
-    // 結果を更新する関数を呼び出し
-    updateResult();
-  });
-});
-
 function updateResult() {
   const step1Button = document.querySelector('[data-step="1"].selected');
   const step2Button = document.querySelector('[data-step="2"].selected');

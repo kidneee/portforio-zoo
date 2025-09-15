@@ -567,6 +567,7 @@ button {
 .event-card__title {
   color: var(--main-color-orange);
   font-size: 1.75rem;
+  font-size: clamp(1.25rem, 1.46vw, 1.75rem);
   font-weight: 500;
   line-height: 1.4;
 }
@@ -739,11 +740,15 @@ button {
   font-weight: 500;
   text-align: center;
 }
-/* お知らせ */
+
+/*-------------------------
+  お知らせ
+-------------------------*/
 .news__list {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  margin-bottom: 6.25vh;
 }
 
 .news__item-link {
@@ -751,12 +756,27 @@ button {
   padding: 8px 16px;
   border-bottom: 1px solid var(--main-color-green);
 }
+@media screen and (max-width: 500px) {
+  .news__item-link {
+    flex-direction: column;
+  }
+}
 
 .news__item-date {
   width: 20%;
 }
+@media screen and (max-width: 500px) {
+  .news__item-date {
+    width: 100%;
+  }
+  .news__item-label {
+    margin-left: -0.2em;
+  }
+}
 
-/* よくある質問 */
+/*-------------------------
+  よくある質問
+-------------------------*/
 .faq__list {
   display: flex;
   flex-direction: column;
