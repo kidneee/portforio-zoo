@@ -45,16 +45,16 @@
         <nav class="nav">
           <ul class="nav__list">
             <li class="nav__item">
-              <a href="./admission.html" class="nav__link nav__admission">入園案内</a>
+              <a href="./templates/pages/page-admission.html" class="nav__link nav__admission">入園案内</a>
             </li>
             <li class="nav__item">
-              <a href="./animals.html" class="nav__link nav__animals">どうぶつ</a>
+              <a href="./templates/pages/page-animals.html" class="nav__link nav__animals">どうぶつ</a>
             </li>
             <li class="nav__item">
-              <a href="./event.html" class="nav__link nav__guide">イベント</a>
+              <a href="./templates/pages/page-event.html" class="nav__link nav__guide">イベント</a>
             </li>
             <li class="nav__item">
-              <a href="./news.html" class="nav__link nav__news">ニュース</a>
+              <a href="./archive-news.html" class="nav__link nav__news">ニュース</a>
             </li>
             <li class="nav__item">
               <a href="#access" class="nav__link nav__access">アクセス</a>
@@ -106,51 +106,53 @@
   <!-- /.header -->
 
   <main>
-    <!-- FV -->
-    <div class="fv">
-      <!-- PC用動画 -->
-      <video autoplay muted loop playsinline class="fv__movie pc-only">
-        <source src="./assets/images/fv_movie-pc.mp4" type="video/mp4" />
-        お使いのブラウザは動画に対応していません。
-      </video>
-      <!-- SP用動画 -->
-      <video autoplay muted loop playsinline class="fv__movie sp-only">
-        <source src="./assets/images/fv_movie-sp.mp4" type="video/mp4" />
-        お使いのブラウザは動画に対応していません。
-      </video>
-    </div>
-    <div class="top__information-bar">
-      <div class="opening-hours">
-        <span class="opening-hours__label">本日の営業時間</span>
-        <p class="opening-hours__time">
-          <time datetime="09:00">午前9:00</time>
-          ～
-          <time datetime="17:00">午後5:00</time>
-        </p>
+    <div class="fv-wrapper">
+      <!-- FV -->
+      <div class="fv">
+        <!-- PC用動画 -->
+        <video autoplay muted loop playsinline class="fv__movie pc-only">
+          <source src="./assets/images/fv_movie-pc.mp4" type="video/mp4" />
+          お使いのブラウザは動画に対応していません。
+        </video>
+        <!-- SP用動画 -->
+        <video autoplay muted loop playsinline class="fv__movie sp-only">
+          <source src="./assets/images/fv_movie-sp.mp4" type="video/mp4" />
+          お使いのブラウザは動画に対応していません。
+        </video>
       </div>
-      <ul class="social-links">
-        <li class="social-links__item">
-          <a href="" class="social-links__link">
-            <img src="./assets/images/icon_twitter.svg" alt="ツイッター" class="social-links__icon" />
-          </a>
-        </li>
-        <li class="social-links__item">
-          <a href="" class="social-links__link">
-            <img src="./assets/images/icon_instagram.svg" alt="インスタグラム" class="social-links__icon" />
-          </a>
-        </li>
-        <li class="social-links__item">
-          <a href="" class="social-links__link">
-            <img src="./assets/images/icon_facebook.svg" alt="フェイスブック" class="social-links__icon" />
-          </a>
-        </li>
-        <li class="social-links__item">
-          <a href="" class="social-links__link">
-            <img src="./assets/images/icon_youtube.svg" alt="ユーチューブ" class="social-links__icon" />
-          </a>
-        </li>
-      </ul>
-    </div>
+      <div class="top__information-bar">
+        <div class="opening-hours">
+          <span class="opening-hours__label">本日の営業時間</span>
+          <p class="opening-hours__time">
+            <time datetime="09:00">午前9:00</time>
+            ～
+            <time datetime="17:00">午後5:00</time>
+          </p>
+        </div>
+        <ul class="social-links">
+          <li class="social-links__item">
+            <a href="" class="social-links__link">
+              <img src="./assets/images/icon_twitter.svg" alt="ツイッター" class="social-links__icon" />
+            </a>
+          </li>
+          <li class="social-links__item">
+            <a href="" class="social-links__link">
+              <img src="./assets/images/icon_instagram.svg" alt="インスタグラム" class="social-links__icon" />
+            </a>
+          </li>
+          <li class="social-links__item">
+            <a href="" class="social-links__link">
+              <img src="./assets/images/icon_facebook.svg" alt="フェイスブック" class="social-links__icon" />
+            </a>
+          </li>
+          <li class="social-links__item">
+            <a href="" class="social-links__link">
+              <img src="./assets/images/icon_youtube.svg" alt="ユーチューブ" class="social-links__icon" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div><!-- /.fv-wrapper -->
 
     <!-- 入園料金 -->
     <section class="admission-fees">
@@ -309,30 +311,30 @@
             <div class="news__item">
               <a href="" class="news__item-link">
                 <dt class="news__item-date"><time datetime="2025-08-11">2025.08-11</time></dt>
-                <dd class="news__item-label">ライオンの赤ちゃん誕生！</dd>
+                <dd class="news__item-label">新エリア「こどもどうぶつ広場」オープン</dd>
               </a>
             </div>
             <div class="news__item">
               <a href="" class="news__item-link">
                 <dt class="news__item-date"><time datetime="2025-08-11">2025.08-11</time></dt>
-                <dd class="news__item-label">ライオンの赤ちゃん誕生！</dd>
+                <dd class="news__item-label">ホワイトタイガーが仲間入り</dd>
               </a>
             </div>
             <div class="news__item">
               <a href="" class="news__item-link">
                 <dt class="news__item-date"><time datetime="2025-08-11">2025.08-11</time></dt>
-                <dd class="news__item-label">ライオンの赤ちゃん誕生！</dd>
+                <dd class="news__item-label">ナイトズー開催決定！</dd>
               </a>
             </div>
             <div class="news__item">
               <a href="" class="news__item-link">
                 <dt class="news__item-date"><time datetime="2025-08-11">2025.08-11</time></dt>
-                <dd class="news__item-label">ライオンの赤ちゃん誕生！</dd>
+                <dd class="news__item-label">ペンギンのパレードスタート</dd>
               </a>
             </div>
           </dl>
         </div>
-        <a href="event.html" class="c-btn event__link">お知らせ一覧はこちら</a>
+        <a href="./archive-news.html" class="c-btn event__link">お知らせ一覧はこちら</a>
       </div>
       <!-- /.l-inner -->
     </section>
@@ -516,19 +518,19 @@
 
       <ul class="footer__nav-list">
         <li class="footer__nav-item">
-          <a href="./admission.html" class="footer__nav-link">入園案内</a>
+          <a href="./templates/pages/page-admission.html" class="footer__nav-link">入園案内</a>
         </li>
         <li class="footer__nav-item">
-          <a href="./animals.html" class="footer__nav-link">どうぶつ</a>
+          <a href="./templates/pages/page-animals.html" class="footer__nav-link">どうぶつ</a>
         </li>
         <li class="footer__nav-item">
-          <a href="./guide.html" class="footer__nav-link">施設案内</a>
+          <a href="./templates/pages/page-event.html" class="footer__nav-link">どうぶつ</a>
         </li>
         <li class="footer__nav-item">
-          <a href="./news.html" class="footer__nav-link">ニュース</a>
+          <a href="./archive-news.html" class="footer__nav-link">ニュース</a>
         </li>
         <li class="footer__nav-item">
-          <a href="./access.html" class="footer__nav-link">アクセス</a>
+          <a href="#access" class="footer__nav-link">アクセス</a>
         </li>
       </ul>
     </div>

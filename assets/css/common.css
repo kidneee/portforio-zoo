@@ -154,10 +154,16 @@ button {
 .header {
   position: fixed;
   width: 100%;
-  height: 9.38vh;
+  height: 96px;
   background-color: var(--bg-color-white);
   z-index: 20;
 }
+@media screen and (max-width: 768px) {
+  .header {
+    background-color: transparent;
+  }
+}
+
 .header__inner {
   display: flex;
   justify-content: space-between;
@@ -381,25 +387,29 @@ button {
   Main
 ============================ */
 /* FV */
-.fv {
+.fv-wrapper {
+  position: relative;
   width: 100%;
-  height: calc(100vh - 9.38vh);
+  height: 100vh;
 }
 .fv__movie {
   width: 100vw;
-  height: calc(100vh - 9.38vh);
+  height: 100vh;
   object-fit: cover;
 }
 
 /* TOP Information Bar */
 .top__information-bar {
-  position: relative;
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100vw;
   height: 9.77vh;
-  margin-top: -9.38vh;
+  margin-top: -96px;
   padding-right: 6.94vw;
   padding-left: 6.94vw;
   background-color: var(--main-color-green);
@@ -1366,4 +1376,13 @@ button {
   background-color: var(--bg-color-white);
   border: 1px solid var(--main-color-blue);
   border-radius: 8px;
+}
+
+/* ============================
+*  お知らせ一覧
+* ========================== */
+.pagination__list {
+  display: flex;
+  justify-content: center;
+  gap: 2vw;
 }

@@ -1,3 +1,26 @@
+const header = document.querySelector('header');
+
+function updateHeaderBackground() {
+  const viewportWidth = window.innerWidth;
+  const scrollY = window.scrollY;
+
+  if (viewportWidth <= 768) {
+    const viewportHeight = window.innerHeight;
+
+    if (scrollY > viewportHeight) {
+      header.style.backgroundColor = 'var(--bg-color-white)';
+    } else {
+      header.style.backgroundColor = '';
+    }
+  } else {
+    header.style.backgroundColor = '';
+  }
+}
+
+window.addEventListener('scroll', updateHeaderBackground);
+window.addEventListener('resize', updateHeaderBackground);
+updateHeaderBackground(); // 初期実行
+
 // Hamburger-menu
 const hamburgerBtn = document.getElementById('js-hamburgerMenu');
 const drawerMenu = document.getElementById('js-drawerMenu');
