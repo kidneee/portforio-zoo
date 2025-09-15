@@ -121,20 +121,20 @@ function updateResult() {
 
 // FAQ
 const faqItemButtons = document.querySelectorAll('.faq__item-header');
-const faqItemContents = document.querySelectorAll('.faq__item-content');
+const faqItemcontent = document.querySelectorAll('.faq__item-content');
 
 faqItemButtons.forEach(function (faqItemButton, index) {
   faqItemButton.addEventListener('click', () => {
-    let isOpen = faqItemContents[index].classList.contains('is-active');
+    let isOpen = faqItemcontent[index].classList.contains('is-active');
 
-    faqItemContents.forEach((faqItemContent) => {
+    faqItemcontent.forEach((faqItemContent) => {
       faqItemButton.classList.remove('is-active');
       faqItemContent.classList.remove('is-active');
     });
 
     if (!isOpen) {
       faqItemButtons[index].classList.add('is-active');
-      faqItemContents[index].classList.add('is-active');
+      faqItemcontent[index].classList.add('is-active');
     }
   });
 });

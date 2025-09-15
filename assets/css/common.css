@@ -853,7 +853,10 @@ button {
 /* ============================
 * イベント一覧ページ
 * ========================= */
-.featured-event__item {
+/*-------------------------
+  注目イベント
+-------------------------*/
+.featured-event__inner {
   position: relative;
   width: 100vw;
   height: calc(100vh - 9.38vh);
@@ -862,7 +865,17 @@ button {
 .featured-event__image {
   width: 100vw;
   height: calc(100vh - 9.38vh);
+}
+
+.featured-event__img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+}
+@media screen and (max-width: 500px) {
+  .featured-event__img {
+    object-position: 30%;
+  }
 }
 
 .featured-event__detail {
@@ -900,42 +913,7 @@ button {
   }
 }
 
-.daily-events__contents {
-  display: grid;
-  grid-template-columns: repeat(3, 30%);
-  justify-content: space-between;
-}
-@media (max-width: 768px) {
-  .daily-events__contents {
-    grid-template-columns: 1fr;
-    gap: 3.79vh;
-  }
-}
-
-.daily-event__body {
-  display: flex;
-  flex-direction: column;
-}
-
-.featured-event__time,
-.daily-event__time,
-.featured-event__place,
-.daily-event__place {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-  font-size: 1rem;
-}
-@media (max-width: 768px) {
-  .featured-event__time,
-  .daily-event__time,
-  .featured-event__place,
-  .daily-event__place {
-    font-size: 0.875rem;
-  }
-}
-
-.eatured-event__desc {
+.featured-event__desc {
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -949,11 +927,90 @@ button {
   }
 }
 
+/*-------------------------
+  デイリーイベント
+-------------------------*/
+.daily-events__content {
+  display: grid;
+  grid-template-columns: repeat(3, 30%);
+  justify-content: space-between;
+}
+@media (max-width: 768px) {
+  .daily-events__content {
+    grid-template-columns: 1fr;
+    gap: 3.79vh;
+  }
+}
+
+.daily-events_card {
+  display: flex;
+  flex-direction: column;
+  gap: 2.22vh;
+  max-height: 504px;
+  height: 100%;
+}
+
+.daily-events_card-image,
+.daily-events_card-img {
+  border-radius: 8px;
+}
+
+.daily-events_card-image {
+  height: 40%;
+}
+
+.daily-events_card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.daily-events_card-text {
+  display: flex;
+  flex-direction: column;
+  height: 40%;
+}
+
+.daily-events_card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.5em;
+}
+
+.featured-event__time,
+.daily-events_card-time,
+.featured-event__place,
+.daily-events_card-place {
+  display: flex;
+  gap: 0.4em;
+  margin-bottom: 0.5em;
+  align-items: center;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #222;
+}
+@media (max-width: 768px) {
+  .featured-event__time,
+  .daily-events_card-time,
+  .featured-event__place,
+  .daily-events_card-place {
+    font-size: 0.875rem;
+  }
+}
+
+.daily-events_card-desc {
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #666;
+}
+
 .btn-ticket {
   display: inline-block;
   background-color: var(--main-color-green);
   color: #fff;
-  font-weight: 600;
+  font-weight: 500;
   width: 15vw;
   padding: 0.75rem 1.5rem;
   margin-top: 24px;
@@ -982,20 +1039,20 @@ button {
 /*-------------------------
   アクセス
 -------------------------*/
-.access__contents {
+.access__content {
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
 @media screen and (max-width: 768px) {
-  .access__contents {
+  .access__content {
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
 }
 
-.access__contents iframe {
+.access__content iframe {
   width: 60%;
 }
 
@@ -1003,7 +1060,7 @@ button {
   width: 37%;
 }
 @media screen and (max-width: 768px) {
-  .access__contents iframe {
+  .access__content iframe {
     width: 100%;
   }
 
@@ -1290,5 +1347,3 @@ button {
   border: 1px solid var(--main-color-blue);
   border-radius: 8px;
 }
-
-http://10.0.0.10/index.html

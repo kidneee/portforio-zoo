@@ -8,8 +8,9 @@
   <meta name="description" content="Hinata Zooのイベントページ。ゾウのお散歩と記念撮影、ライオン観察、パンダと記念撮影など、家族で楽しめる特別イベントの詳細をご紹介しています。" />
   <title>イベント一覧 | Hinata Zoo</title>
   <!-- css -->
-  <link rel="stylesheet" href="/assets/css/reset.css" />
-  <link rel="stylesheet" href="/assets/css/common.css" />
+  <link rel="stylesheet" href="./assets/css/reset.css" />
+  <link rel="stylesheet" href="./assets/css/common.css" />
+  <link rel="stylesheet" href="./assets/css/variables.css">
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,20 +27,20 @@
     <div class="header__inner">
       <div class="header__logo">
         <a href="./" class="header__link">
-          <img src="./assets/images/logo.svg" width="186" height="54" alt="Hinata Zoo" class="header__logo-image" />
+          <img src="/assets/images/logo.svg" width="186" height="54" alt="Hinata Zoo" class="header__logo-image" />
         </a>
       </div>
 
       <aside id="js-drawerMenu" class="hamburger-menu__wrapper">
         <div class="hamburger-menu-video-wrapper">
           <video autoplay muted loop playsinline class="hamburger-menu-video">
-            <source src="/assets/images/fv_movie-sp.mp4" type="video/mp4" />
+            <source src="/assets/images/fv_movie-sp.mp4" type="video/mp4">
             お使いのブラウザは動画に対応していません。
           </video>
         </div>
         <!-- /.hamburger-menu-video-wrapper -->
-        <img src="./assets/images/logo_hamburger.svg" width="186" height="54" alt=""
-          class="hamburger-menu__logo sp-only" />
+        <img src="/assets/images/logo_hamburger.svg" width="186" height="54" alt=""
+          class="hamburger-menu__logo sp-only">
         <nav class="nav">
           <ul class="nav__list">
             <li class="nav__item">
@@ -49,15 +50,12 @@
               <a href="./animals.html" class="nav__link nav__animals">どうぶつ</a>
             </li>
             <li class="nav__item">
-              <a href="./guide.html" class="nav__link nav__guide">施設案内</a>
-            </li>
-            <li class="nav__item">
-              <a href="./course.html" class="nav__link nav__course">コース</a>
+              <a href="./event.html" class="nav__link nav__guide">イベント</a>
             </li>
             <li class="nav__item">
               <a href="./news.html" class="nav__link nav__news">ニュース</a>
             </li>
-            <li class="nav__item pc-only">
+            <li class="nav__item">
               <a href="#access" class="nav__link nav__access">アクセス</a>
             </li>
           </ul>
@@ -74,22 +72,22 @@
           <ul class="social-links">
             <li class="social-links__item">
               <a href="" class="social-links__link">
-                <img src="./assets/images/twitter.svg" alt="ツイッター" class="social-links__icon" />
+                <img src="./assets/images/icon_twitter.svg" alt="ツイッター" class="social-links__icon" />
               </a>
             </li>
             <li class="social-links__item">
               <a href="" class="social-links__link">
-                <img src="./assets/images/instagram.svg" alt="インスタグラム" class="social-links__icon" />
+                <img src="./assets/images/icon_instagram.svg" alt="インスタグラム" class="social-links__icon" />
               </a>
             </li>
             <li class="social-links__item">
               <a href="" class="social-links__link">
-                <img src="./assets/images/facebook.svg" alt="フェイスブック" class="social-links__icon" />
+                <img src="./assets/images/icon_facebook.svg" alt="フェイスブック" class="social-links__icon" />
               </a>
             </li>
             <li class="social-links__item">
               <a href="" class="social-links__link">
-                <img src="./assets/images/youtube.svg" alt="ユーチューブ" class="social-links__icon" />
+                <img src="./assets/images/icon_youtube.svg" alt="ユーチューブ" class="social-links__icon" />
               </a>
             </li>
           </ul>
@@ -108,12 +106,14 @@
 
   <main class="event-page">
     <h1 class="sr-only">イベント一覧</h1>
-    <div class="event-page__contents">
+    <div class="event-page__content">
       <!-- 注目イベント -->
-      <section class="featured-event">
-        <h2 class="sr-only">イチオシ！イベント</h2>
-        <section class="event-page__item featured-event__item">
-          <img src="./assets/images/event-elephant.jpg" alt="ゾウのお散歩と記念撮影" class="featured-event__image" />
+      <section class="event-page__item featured-event">
+        <div class="featured-event__inner">
+          <h2 class="sr-only">イチオシ！イベント</h2>
+          <div class="featured-event__image">
+            <img src="./assets/images/event-elephant.jpg" alt="ゾウのお散歩と記念撮影" class="featured-event__img" />
+          </div><!-- /.feature-event__image -->
           <div class="featured-event__detail">
             <h3 class="featured-event__title">ゾウのお散歩と記念撮影</h3>
             <dl class="featured-event__info">
@@ -133,96 +133,106 @@
             <p class="featured-event__desc">大きな体で優しく歩くゾウと一緒に園内をお散歩できる特別なイベントです。間近で感じる迫力と温かさに感動しながら、最後は記念撮影で思い出を残せます。</p>
             <a href="" class="btn-ticket featured-event__link">Webチケットこちら</a>
           </div>
-        </section>
+        </div><!-- /.featured-event__inner -->
+
       </section>
       <!-- /.featured-event -->
 
       <!-- デイリーイベント -->
-      <section class="daily-events">
+      <section class="event-page__item daily-events">
         <div class="l-inner">
           <h2 class="c-section-title">
             <span class="c-section-title__en">Daily Event</span>
             <span class="c-section-title__ja">デイリーイベント</span>
           </h2>
-          <div class="daily-events__contents">
-            <section class="event-page__item daily-event">
-              <img src="./assets/images/event-lion.jpg" alt="ライオン観察" class="daily-event__image" />
-              <div class="daily-event__body">
-                <h3 class="daily-event__title">ライオン観察</h3>
-                <dl class="daily-event__info">
-                  <div class="daily-event__time">
+          <div class="daily-events__content">
+            <section class="event-page__item daily-events_card">
+              <div class="daily-events_card-image">
+                <img src="./assets/images/event-lion.jpg" alt="ライオン観察" class="daily-events_card-img" />
+              </div><!-- /.daily-events_card-image -->
+              <div class="daily-events_card-text">
+                <h3 class="daily-events_card-title">ライオン観察</h3>
+                <dl class="daily-events_card-info">
+                  <div class="daily-events_card-time">
                     <dt>
                       <img src="./assets/images/icon_time.svg" width="16" height="16" alt="イベント開始時間" />
                     </dt>
                     <dd>15時〜</dd>
                   </div>
-                  <div class="daily-event__place">
+                  <div class="daily-events_card-place">
                     <dt>
                       <img src="./assets/images/icon_location.svg" width="16" height="16" alt="イベント開始時間" />
                     </dt>
                     <dd>ライオン展示場</dd>
                   </div>
                 </dl>
-                <p class="daily-event__desc">百獣の王ライオンの力強い姿を間近で観察できるイベントです。食事シーンや群れで過ごす様子など、普段はなかなか見られない生態を知ることができます。</p>
-                <a href="/event.html" class="btn-ticket daily-event__link">Webチケットこちら</a>
+                <p class="daily-events_card-desc">
+                  百獣の王ライオンの力強い姿を間近で観察できるイベントです。食事シーンや群れで過ごす様子など、普段はなかなか見られない生態を知ることができます。</p>
               </div>
+              <a href="/event.html" class="btn-ticket daily-events_card-link">Webチケットこちら</a>
             </section>
 
-            <section class="event-page__item">
-              <img src="./assets/images/event-panda.jpg" alt="パンダと記念撮影" class="daily-event__image" />
-              <div class="daily-event__body">
-                <h3 class="daily-event__title">パンダと記念撮影</h3>
-                <dl class="daily-event__info">
-                  <div class="daily-event__time">
+            <section class="event-page__item daily-events_card">
+              <div class="daily-events_card-image">
+                <img src="./assets/images/event-panda.jpg" alt="パンダと記念撮影" class="daily-events_card-img" />
+              </div><!-- /.daily-events_card-image -->
+              <div class="daily-events_card-text">
+                <h3 class="daily-events_card-title">パンダと記念撮影</h3>
+                <dl class="daily-events_card-info">
+                  <div class="daily-events_card-time">
                     <dt>
                       <img src="./assets/images/icon_time.svg" width="16" height="16" alt="イベント開始時間" />
                     </dt>
-                    <dd>14時〜</dd>
+                    <dd>15時〜</dd>
                   </div>
-                  <div class="daily-event__place">
-                    <dt>
-                      <img src="/assets/images/icon_location.svg" width="16" height="16" alt="イベント開始時間" />
-                    </dt>
-                    <dd>パンダ広場</dd>
-                  </div>
-                </dl>
-                <p class="daily-event__desc">
-                  モフモフの毛並みと愛らしい仕草で大人気のパンダと一緒に記念撮影できるイベントです。かわいらしい表情を間近で楽しみながら、ここでしか撮れない一枚を残せます。</p>
-                <a href="/event.html" class="btn-ticket daily-event__link">Webチケットこちら</a>
-              </div>
-            </section>
-
-            <section class="event-page__item">
-              <img src="./assets/images/event-panda.jpg" alt="パンダと記念撮影" class="daily-event__image" />
-              <div class="daily-event__body">
-                <h3 class="daily-event__title">パンダと記念撮影</h3>
-                <dl class="daily-event__info">
-                  <div class="daily-event__time">
-                    <dt>
-                      <img src="./assets/images/icon_time.svg" width="16" height="16" alt="イベント開始時間" />
-                    </dt>
-                    <dd>14時〜</dd>
-                  </div>
-                  <div class="daily-event__place">
+                  <div class="daily-events_card-place">
                     <dt>
                       <img src="./assets/images/icon_location.svg" width="16" height="16" alt="イベント開始時間" />
                     </dt>
-                    <dd>パンダ広場</dd>
+                    <dd>パンダ展示場</dd>
                   </div>
                 </dl>
-                <p class="daily-event__desc">
+                <p class="daily-events_card-desc">
                   モフモフの毛並みと愛らしい仕草で大人気のパンダと一緒に記念撮影できるイベントです。かわいらしい表情を間近で楽しみながら、ここでしか撮れない一枚を残せます。</p>
-                <a href="./event.html" class="btn-ticket daily-event__link">Webチケットこちら</a>
               </div>
+              <a href="/event.html" class="btn-ticket daily-events_card-link">Webチケットこちら</a>
             </section>
+
+            <section class="event-page__item daily-events_card">
+              <div class="daily-events_card-image">
+                <img src="./assets/images/event-interactions.jpg" alt="小動物とふれあい" class="daily-events_card-img" />
+              </div><!-- /.daily-events_card-image -->
+              <div class="daily-events_card-text">
+                <h3 class="daily-events_card-title">小さないきものとふれあおう！</h3>
+                <dl class="daily-events_card-info">
+                  <div class="daily-events_card-time">
+                    <dt>
+                      <img src="./assets/images/icon_time.svg" width="16" height="16" alt="イベント開始時間" />
+                    </dt>
+                    <dd>15時〜</dd>
+                  </div>
+                  <div class="daily-events_card-place">
+                    <dt>
+                      <img src="./assets/images/icon_location.svg" width="16" height="16" alt="イベント開始時間" />
+                    </dt>
+                    <dd>小動物ひろば</dd>
+                  </div>
+                </dl>
+                <p class="daily-events_card-desc">
+                  やさしい瞳と愛らしい動きで癒しを与えてくれる小動物たちと触れ合えるイベントです。かわいい姿を間近で楽しみながら、ここでしか味わえない特別な時間を過ごせます。</p>
+              </div>
+              <a href="/event.html" class="btn-ticket daily-events_card-link">Webチケットこちら</a>
+            </section>
+
+
           </div>
-          <!-- /.daily-events__contents -->
+          <!-- /.daily-events__content -->
         </div>
         <!-- /.l-inner -->
       </section>
     </div>
     <!-- /.daily-events -->
-    <!-- /.event-page__contents -->
+    <!-- /.event-page__content -->
 
     <!-- アクセス -->
     <section id="access" class="access">
@@ -231,14 +241,14 @@
           <span class="c-section-title__en">Access</span>
           <span class="c-section-title__ja">アクセス</span>
         </h2>
-        <div class="access__contents">
+        <div class="access__content">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.827853447963!2d139.76493831525402!3d35.68122418019453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bfbd89f700b%3A0x277c49ba34ed38!2z5p2x5Lqs6aeF!5e0!3m2!1sja!2sjp!4v1234567890123!5m2!1sja!2sjp"
             width="100%" height="400" style="border: 0" allowfullscreen="" loading="lazy"></iframe>
 
           <ul class="access__text">
             <li>
-              <div class="contents-text">
+              <div class="content-text">
                 <h3 class="secondary-title access-car">
                   <i class="fa-solid fa-car"></i>
                   お車でお越しの方
@@ -253,7 +263,7 @@
               </div>
             </li>
             <li>
-              <div class="contents-text">
+              <div class="content-text">
                 <h3 class="secondary-title access-train">
                   <i class="fa-solid fa-train"></i>
                   JR
@@ -270,7 +280,7 @@
               </div>
             </li>
             <li>
-              <div class="contents-text">
+              <div class="content-text">
                 <h3 class="secondary-title access-bus">
                   <i class="fa-solid fa-bus"></i>
                   バス
@@ -315,22 +325,22 @@
         <ul class="social-links">
           <li class="social-links__item">
             <a href="" class="social-links__link">
-              <img src="/assets/images/icon_twitter.svg" alt="ツイッター" class="social-links__icon">
+              <img src="./assets/images/icon_twitter.svg" alt="ツイッター" class="social-links__icon" />
             </a>
           </li>
           <li class="social-links__item">
             <a href="" class="social-links__link">
-              <img src="/assets/images/icon_instagram.svg" alt="インスタグラム" class="social-links__icon">
+              <img src="./assets/images/icon_instagram.svg" alt="インスタグラム" class="social-links__icon" />
             </a>
           </li>
           <li class="social-links__item">
             <a href="" class="social-links__link">
-              <img src="/assets/images/icon_facebook.svg" alt="フェイスブック" class="social-links__icon">
+              <img src="./assets/images/icon_facebook.svg" alt="フェイスブック" class="social-links__icon" />
             </a>
           </li>
           <li class="social-links__item">
             <a href="" class="social-links__link">
-              <img src="/assets/images/icon_youtube.svg" alt="ユーチューブ" class="social-links__icon">
+              <img src="./assets/images/icon_youtube.svg" alt="ユーチューブ" class="social-links__icon" />
             </a>
           </li>
         </ul>
@@ -338,22 +348,19 @@
 
       <ul class="footer__nav-list">
         <li class="footer__nav-item">
-          <a href="admission.html" class="footer__nav-link">入園案内</a>
+          <a href="./admission.html" class="footer__nav-link">入園案内</a>
         </li>
         <li class="footer__nav-item">
-          <a href="animals.html" class="footer__nav-link">どうぶつ</a>
+          <a href="./animals.html" class="footer__nav-link">どうぶつ</a>
         </li>
         <li class="footer__nav-item">
-          <a href="guide.html" class="footer__nav-link">施設案内</a>
+          <a href="./guide.html" class="footer__nav-link">施設案内</a>
         </li>
         <li class="footer__nav-item">
-          <a href="course.html" class="footer__nav-link">コース</a>
+          <a href="./news.html" class="footer__nav-link">ニュース</a>
         </li>
         <li class="footer__nav-item">
-          <a href="news.html" class="footer__nav-link">ニュース</a>
-        </li>
-        <li class="footer__nav-item">
-          <a href="access.html" class="footer__nav-link">アクセス</a>
+          <a href="./access.html" class="footer__nav-link">アクセス</a>
         </li>
       </ul>
     </div>

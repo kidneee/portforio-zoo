@@ -8,9 +8,9 @@
   <meta name="description" content="Hinata Zooのイベントページ。ゾウのお散歩と記念撮影、ライオン観察、パンダと記念撮影など、家族で楽しめる特別イベントの詳細をご紹介しています。" />
   <title>Hinata Zooの動物たち | Hinata Zoo</title>
   <!-- css -->
-  <link rel="stylesheet" href="/assets/css/reset.css" />
-  <link rel="stylesheet" href="/assets/css/common.css" />
-  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="./assets/css/reset.css" />
+  <link rel="stylesheet" href="./assets/css/common.css" />
+  <link rel="stylesheet" href="./assets/css/variables.css">
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -109,7 +109,7 @@
       <h1 class="c-page-title">Hinata Zooの<br class="sp-only">動物たち</h1>
     </div><!-- /.page__title-wrapper animals-page__title-wapper-->
 
-    <div class="animals-page__contents">
+    <div class="animals-page__content">
       <section>
         <div class="l-inner">
           <div class="tabs">
@@ -160,7 +160,6 @@
                   <img src="./assets/images/animals-card-bat.jpg" class="animal-card__image" alt="コウモリ">
                   <span class="animal-card__label">コウモリ</span>
                 </button>
-
               </div><!-- /.tab-panel__inner -->
             </section>
 
@@ -168,7 +167,21 @@
             <section id="small-animals" class="tab-panel small-animals-panel">
               <h3 class="sr-only">小動物</h3>
               <div class="tab-panel__inner">
-
+                <!-- モルモット -->
+                <button aria-expanded="false" aria-controls="guineapig" class="animal-card">
+                  <img src="./assets/images/animals-card-guineapig.jpg" class="animal-card__image" alt="モルモット">
+                  <span class="animal-card__label">モルモット</span>
+                </button>
+                <!-- ウサギ -->
+                <button aria-expanded="false" aria-controls="rabbit" class="animal-card">
+                  <img src="./assets/images/animals-card-rabbit.jpg" class="animal-card__image" alt="ウサギ">
+                  <span class="animal-card__label">ウサギ</span>
+                </button>
+                <!-- フェレット -->
+                <button aria-expanded="false" aria-controls="ferret" class="animal-card">
+                  <img src="./assets/images/animals-card-ferret.jpg" class="animal-card__image" alt="フェレット">
+                  <span class="animal-card__label">フェレット</span>
+                </button>
               </div><!-- /.tab-panel__inner -->
             </section>
 
@@ -176,12 +189,28 @@
             <section id="reptiles" class="tab-panel reptiles-panel">
               <h3 class="sr-only">爬虫類</h3>
               <div class="tab-panel__inner">
-
+                <!-- カメレオン -->
+                <button aria-expanded="false" aria-controls="chameleon" class="animal-card">
+                  <img src="./assets/images/animals-card-chameleon.jpg" class="animal-card__image" alt="カメレオン">
+                  <span class="animal-card__label">カメレオン</span>
+                </button>
+                <!-- リクガメ -->
+                <button aria-expanded="false" aria-controls="turtoise" class="animal-card">
+                  <img src="./assets/images/animals-card-turtoise.jpg" class="animal-card__image" alt="リクガメ">
+                  <span class="animal-card__label">リクガメ</span>
+                </button>
+                <!-- ニシキヘビ -->
+                <button aria-expanded="false" aria-controls="python" class="animal-card">
+                  <img src="./assets/images/animals-card-python.jpg" class="animal-card__image" alt="ニシキヘビ">
+                  <span class="animal-card__label">ニシキヘビ</span>
+                </button>
               </div><!-- /.tab-panel__inner -->
             </section>
 
             <!-- 詳細ポップアップ -->
             <div id="js-popup" class="animal-detail-wrapper" role="dialog" aria-modal="true" hidden>
+
+              <!-- 昼行性 -->
               <!-- キリン -->
               <article id="giraffe" class="animal-detail" hidden aria-controls="js-popup">
                 <div class="animal-detail__inner">
@@ -227,6 +256,8 @@
                   </p>
                 </div>
               </article>
+
+              <!-- 夜行性 -->
               <!-- フクロウ -->
               <article id="owl" class="animal-detail" hidden aria-controls="js-popup">
                 <div class="animal-detail__inner">
@@ -272,11 +303,105 @@
                   </p>
                 </div>
               </article>
+
+              <!-- 小動物 -->
+              <!-- モルモット -->
+              <article id="guineapig" class="animal-detail" hidden aria-controls="js-popup">
+                <div class="animal-detail__inner">
+                  <div class="animal-detail__heading">
+                    <h4 class="animal-detail__title">モルモット</h4>
+                    <button class="animal-detail__close">&times;</button>
+                  </div><!-- /.animal-detail__heading -->
+                  <div class="animal-detail__image">
+                    <img src="./assets/images/animals-card-guineapig.jpg" class="animal-detail__img" alt="モルモット">
+                  </div>
+                  <p class="animal-detail__text">
+                    モルモットは小さくてかわいらしい草食動物で、穏やかな性格から「ふれあい動物園」の定番として親しまれています。昼夜を問わず活動しますが、特に昼間に子どもたちと触れ合う展示が人気です。鳴き声や仕草が愛らしく、野菜を食べる様子も観察ポイントです。社会性があり群れで生活するため、複数頭を飼育している動物園も多いです。
+                  </p>
+                </div>
+              </article>
+              <!-- ウサギ -->
+              <article id="rabbit" class="animal-detail" hidden aria-controls="js-popup">
+                <div class="animal-detail__inner">
+                  <div class="animal-detail__heading">
+                    <h4 class="animal-detail__title">ウサギ</h4>
+                    <button class="animal-detail__close">&times;</button>
+                  </div><!-- /.animal-detail__heading -->
+                  <div class="animal-detail__image">
+                    <img src="./assets/images/animals-card-rabbit.jpg" class="animal-detail__img" alt="ウサギ">
+                  </div>
+                  <p class="animal-detail__text">
+                    ウサギは柔らかな毛と長い耳が特徴の小動物で、昔から身近な存在として親しまれてきました。草食性で、にんじんや牧草を好んで食べます。動物園ではふれあいコーナーの人気者で、子どもたちに大人気です。ぴょんぴょん跳ねる動きや、耳で周囲の音を敏感にキャッチする様子が見どころです。かわいらしさと親しみやすさを兼ね備えています。
+                  </p>
+                </div>
+              </article>
+              <!-- フェレット -->
+              <article id="ferret" class="animal-detail" hidden aria-controls="js-popup">
+                <div class="animal-detail__inner">
+                  <div class="animal-detail__heading">
+                    <h4 class="animal-detail__title">フェレット</h4>
+                    <button class="animal-detail__close">&times;</button>
+                  </div><!-- /.animal-detail__heading -->
+                  <div class="animal-detail__image">
+                    <img src="./assets/images/animals-card-ferret.jpg" class="animal-detail__img" alt="フェレット">
+                  </div>
+                  <p class="animal-detail__text">
+                    フェレットは細長い体と好奇心旺盛な性格が魅力の小動物です。活発に動き回り、トンネルのような場所に潜り込むのが大好きです。肉食性に近く、野生では小動物を捕らえて食べますが、動物園では専用の餌で飼育されています。愛らしい顔立ちと元気な動きが来園者を楽しませ、ちょっと珍しい展示として人気を集めています。
+                  </p>
+                </div>
+              </article>
+
+              <!-- 爬虫類 -->
+              <!-- カメレオン -->
+              <article id="chameleon" class="animal-detail" hidden aria-controls="js-popup">
+                <div class="animal-detail__inner">
+                  <div class="animal-detail__heading">
+                    <h4 class="animal-detail__title">カメレオン</h4>
+                    <button class="animal-detail__close">&times;</button>
+                  </div><!-- /.animal-detail__heading -->
+                  <div class="animal-detail__image">
+                    <img src="./assets/images/animals-card-chameleon.jpg" class="animal-detail__img" alt="カメレオン">
+                  </div>
+                  <p class="animal-detail__text">
+                    カメレオンは色を変える能力で有名な爬虫類で、体色を変化させて周囲に溶け込んだり気分を表したりします。独特な長い舌を素早く伸ばして昆虫を捕まえる姿は迫力があります。動物園ではそのユニークな見た目と行動が人気で、観察のしがいがある存在です。ゆっくりした動きや、左右別々に動く目も注目ポイントです。
+                  </p>
+                </div>
+              </article>
+              <!-- リクガメ -->
+              <article id="turtoise" class="animal-detail" hidden aria-controls="js-popup">
+                <div class="animal-detail__inner">
+                  <div class="animal-detail__heading">
+                    <h4 class="animal-detail__title">リクガメ</h4>
+                    <button class="animal-detail__close">&times;</button>
+                  </div><!-- /.animal-detail__heading -->
+                  <div class="animal-detail__image">
+                    <img src="./assets/images/animals-card-turtoise.jpg" class="animal-detail__img" alt="リクガメ">
+                  </div>
+                  <p class="animal-detail__text">
+                    リクガメは草食性の陸生カメで、長寿の象徴として知られています。動物園ではのんびりと歩く姿や、大きな甲羅を背負った特徴的な体を間近で観察できます。日光浴を好み、昼間に活発に活動します。飼育下でも長生きすることが多く、世代を超えて愛される存在です。穏やかな性格と迫力ある体格で、子どもから大人まで人気があります。
+                  </p>
+                </div>
+              </article>
+              <!-- ニシキヘビ -->
+              <article id="python" class="animal-detail" hidden aria-controls="js-popup">
+                <div class="animal-detail__inner">
+                  <div class="animal-detail__heading">
+                    <h4 class="animal-detail__title">ニシキヘビ</h4>
+                    <button class="animal-detail__close">&times;</button>
+                  </div><!-- /.animal-detail__heading -->
+                  <div class="animal-detail__image">
+                    <img src="./assets/images/animals-card-python.jpg" class="animal-detail__img" alt="ニシキヘビ">
+                  </div>
+                  <p class="animal-detail__text">
+                    ニシキヘビは世界最大級のヘビで、長い体と力強さが特徴です。大きな個体は数メートルに達し、動物園でもその迫力に圧倒されます。主に夜行性で、野生では小動物や鳥を捕食します。毒はありませんが、強靭な体で獲物を締め付けて捕らえる習性があります。動物園では安全に観察できるよう展示され、爬虫類コーナーの目玉的存在です。
+                  </p>
+                </div>
+              </article>
             </div><!-- /.animal-detail-wrapper -->
           </div><!-- /.tab-content -->
         </div><!-- /.l-inner -->
       </section>
-    </div><!-- /.animals-page__contents -->
+    </div><!-- /.animals-page__content -->
 
     <!-- アクセス -->
     <section id="access" class="access">
@@ -285,14 +410,14 @@
           <span class="c-section-title__en">Access</span>
           <span class="c-section-title__ja">アクセス</span>
         </h2>
-        <div class="access__contents">
+        <div class="access__content">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.827853447963!2d139.76493831525402!3d35.68122418019453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bfbd89f700b%3A0x277c49ba34ed38!2z5p2x5Lqs6aeF!5e0!3m2!1sja!2sjp!4v1234567890123!5m2!1sja!2sjp"
             width="100%" height="400" style="border: 0" allowfullscreen="" loading="lazy"></iframe>
 
           <ul class="access__text">
             <li>
-              <div class="contents-text">
+              <div class="content-text">
                 <h3 class="secondary-title access-car">
                   <i class="fa-solid fa-car"></i>
                   お車でお越しの方
@@ -307,7 +432,7 @@
               </div>
             </li>
             <li>
-              <div class="contents-text">
+              <div class="content-text">
                 <h3 class="secondary-title access-train">
                   <i class="fa-solid fa-train"></i>
                   JR
@@ -324,7 +449,7 @@
               </div>
             </li>
             <li>
-              <div class="contents-text">
+              <div class="content-text">
                 <h3 class="secondary-title access-bus">
                   <i class="fa-solid fa-bus"></i>
                   バス
@@ -392,19 +517,19 @@
 
       <ul class="footer__nav-list">
         <li class="footer__nav-item">
-          <a href="admission.html" class="footer__nav-link">入園案内</a>
+          <a href="./admission.html" class="footer__nav-link">入園案内</a>
         </li>
         <li class="footer__nav-item">
-          <a href="animals.html" class="footer__nav-link">どうぶつ</a>
+          <a href="./animals.html" class="footer__nav-link">どうぶつ</a>
         </li>
         <li class="footer__nav-item">
-          <a href="guide.html" class="footer__nav-link">施設案内</a>
+          <a href="./guide.html" class="footer__nav-link">施設案内</a>
         </li>
         <li class="footer__nav-item">
-          <a href="news.html" class="footer__nav-link">ニュース</a>
+          <a href="./news.html" class="footer__nav-link">ニュース</a>
         </li>
         <li class="footer__nav-item">
-          <a href="access.html" class="footer__nav-link">アクセス</a>
+          <a href="./access.html" class="footer__nav-link">アクセス</a>
         </li>
       </ul>
     </div>
