@@ -2,7 +2,13 @@
 module.exports = {
   content: ['./index.html', './templates/**/*.html', './src/**/*.js'],
   theme: {
-    extend: {},
+    screens: {
+      sm: '640px',
+      md: '769px', // 768px以下をmax-mdでカバー
+      lg: '1024px',
+      xl: '1280px',
+      '2xl': '1536px',
+    },
   },
   plugins: [],
 };

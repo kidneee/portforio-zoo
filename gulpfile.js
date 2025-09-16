@@ -28,12 +28,12 @@ function js() {
 // 監視
 function watchFiles() {
   watch('src/css/**/*.css', css);
-  watch('src/images/**/*', images);
+  // watch('src/images/**/*', images);
   watch('src/js/**/*', js);
 }
 
 exports.css = css;
-exports.images = images;
+// exports.images = images;
 exports.js = js;
 exports.watch = watchFiles;
-exports.default = series(css, images, js, watchFiles);
+exports.default = series(css, js, watchFiles);

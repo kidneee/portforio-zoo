@@ -24,98 +24,116 @@
 
 <body>
   <!-- ヘッダー -->
-  <header class="header">
-    <div class="header__inner">
+  <header class="header fixed z-20 w-full h-24 bg-transparent md:bg-[var(--bg-color-white)]">
+    <div class="flex items-center justify-between h-full px-4 md:px-32 header__inner">
+
+      <!-- ロゴ -->
       <h1 class="header__logo">
         <a href="./" class="header__link">
           <img src="./dist/images/logo.svg" width="186" height="54" alt="Hinata Zoo" class="header__logo-image" />
         </a>
       </h1>
 
-      <aside id="js-drawerMenu" class="hamburger-menu__wrapper">
-        <div class="hamburger-menu-video-wrapper">
-          <video autoplay muted loop playsinline class="hamburger-menu-video">
+      <!-- PC用ナビ -->
+      <nav class="hidden md:flex md:gap-x-8">
+        <ul class="flex md:flex-row md:gap-x-8">
+          <li><a href="./templates/pages/page-admission.html"
+              class="text-[var(--text-color-primary)] font-medium">入園案内</a></li>
+          <li><a href="./templates/pages/page-animals.html"
+              class="text-[var(--text-color-primary)] font-medium">どうぶつ</a></li>
+          <li><a href="./templates/pages/page-event.html" class="text-[var(--text-color-primary)] font-medium">イベント</a>
+          </li>
+          <li><a href="./archive-news.html" class="text-[var(--text-color-primary)] font-medium">お知らせ</a></li>
+          <li><a href="#access" class="text-[var(--text-color-primary)] font-medium">アクセス</a></li>
+        </ul>
+      </nav>
+
+      <!-- ハンバーガーメニュー開閉ボタン（SP用） -->
+      <button id="js-hamburgerMenu" class="relative z-[200] block w-8 h-8 md:hidden" aria-label="メニューを開く">
+        <span class="blue-600 conh-1 full cpblock hamburger-menu__line"></span>
+      </button>
+
+      <!-- SP用ハンバーガーメニュー -->
+      <aside id="js-drawerMenu"
+        class="hamburger-menu__wrapper fixed inset-0 top-0 left-0 z-[100] w-screen h-screen md:hidden flex flex-col justify-between px-4 py-8 items-center transform translate-x-full transition-transform duration-300">
+        <!-- ハンバーガーメニュー背景動画 -->
+        <div class="relative h-full hamburger-menu-video-wrapper">
+          <video autoplay muted loop playsinline
+            class="relative block object-cover w-full h-full -translate-x-1/2 -translate-y-1/2 hamburger-menu-video top-1/2 left-1/2">
             <source src="./dist/images/fv_movie-sp.mp4" type="video/mp4" />
             お使いのブラウザは動画に対応していません。
           </video>
         </div>
-        <!-- /.hamburger-menu-video-wrapper -->
-        <img src="./dist/images/logo_hamburger.svg" width="186" height="54" alt=""
-          class="hamburger-menu__logo sp-only" />
-        <nav class="nav">
-          <ul class="nav__list">
-            <li class="nav__item">
-              <a href="./templates/pages/page-admission.html" class="nav__link nav__admission">入園案内</a>
+
+        <!-- SP用ロゴ -->
+        <img src="./dist/images/logo_hamburger.svg" width="186" height="54" alt="" class="block" />
+
+        <!-- SP用ナビ -->
+        <nav class="w-full">
+          <ul class="flex flex-col items-center justify-center gap-y-[4.74vh]">
+            <li>
+              <a href="./templates/pages/page-admission.html"
+                class="relative pl-10 text-[var(--text-color-white)] font-medium nav__link nav__admission">入園案内</a>
             </li>
-            <li class="nav__item">
-              <a href="./templates/pages/page-animals.html" class="nav__link nav__animals">どうぶつ</a>
+            <li>
+              <a href="./templates/pages/page-animals.html"
+                class="relative pl-10 text-[var(--text-color-white)] font-medium nav__link nav__animals">どうぶつ</a></li>
+            <li>
+              <a href="./templates/pages/page-event.html"
+                class="relative pl-10 text-[var(--text-color-white)] font-medium nav__link nav__event">イベント</a>
             </li>
-            <li class="nav__item">
-              <a href="./templates/pages/page-event.html" class="nav__link nav__guide">イベント</a>
+            <li>
+              <a href="./archive-news.html"
+                class="relative pl-10 text-[var(--text-color-white)] font-medium nav__link nav__news">お知らせ</a>
             </li>
-            <li class="nav__item">
-              <a href="./archive-news.html" class="nav__link nav__news">ニュース</a>
-            </li>
-            <li class="nav__item">
-              <a href="#access" class="nav__link nav__access">アクセス</a>
+            <li>
+              <a href="#access"
+                class="relative pl-10 text-[var(--text-color-white)] font-medium nav__link nav__access">アクセス</a>
             </li>
           </ul>
         </nav>
-        <div class="hamburger-menu__information">
-          <div class="opening-hours">
-            <span class="opening-hours__label">本日の営業時間</span>
-            <p class="opening-hours__time">
-              <time datetime="09:00">午前9:00</time>
-              ～
-              <time datetime="17:00">午後5:00</time>
+
+        <!-- SPメニュー下情報（営業時間・SNS） -->
+        <div class="block">
+          <div class="flex flex-col opening-hours ">
+            <span class="text-base opening-hours__label">本日の営業時間</span>
+            <p class="flex opening-hours__time">
+              <time datetime="09:00" class="inline-block text-3xl">午前9:00</time> ～ <time datetime="17:00"
+                class="inline-block text-3xl">午後5:00</time>
             </p>
           </div>
-          <ul class="social-links">
-            <li class="social-links__item">
-              <a href="" class="social-links__link">
-                <img src="./dist/images/icon_twitter.svg" alt="ツイッター" class="social-links__icon" />
-              </a>
+          <ul class="flex mt-4 social-links gap-x-4">
+            <li><a href="#" class="relative"><img src="./dist/images/icon_twitter.svg" alt="ツイッター"
+                  class="social-links__icon" /></a></li>
+            <li><a href="#" class="relative"><img src="./dist/images/icon_instagram.svg" alt="インスタグラム"
+                  class="social-links__icon" /></a>
             </li>
-            <li class="social-links__item">
-              <a href="" class="social-links__link">
-                <img src="./dist/images/icon_instagram.svg" alt="インスタグラム" class="social-links__icon" />
-              </a>
+            <li><a href="#" class="relative"><img src="./dist/images/icon_facebook.svg" alt="フェイスブック"
+                  class="social-links__icon" /></a>
             </li>
-            <li class="social-links__item">
-              <a href="" class="social-links__link">
-                <img src="./dist/images/icon_facebook.svg" alt="フェイスブック" class="social-links__icon" />
-              </a>
-            </li>
-            <li class="social-links__item">
-              <a href="" class="social-links__link">
-                <img src="./dist/images/icon_youtube.svg" alt="ユーチューブ" class="social-links__icon" />
-              </a>
+            <li><a href="#" class="relative"><img src="./dist/images/icon_youtube.svg" alt="ユーチューブ"
+                  class="social-links__icon" /></a>
             </li>
           </ul>
         </div>
-        <!-- /.hamburger-menu__information -->
+
       </aside>
 
-      <button id="js-hamburgerMenu" class="hamburger-menu" aria-label="メニューを開く" aria-controls="js-drawerMenu"
-        aria-expanded="false">
-        <span class="hamburger-menu__line"></span>
-      </button>
     </div>
-    <!-- /.header__inner -->
   </header>
-  <!-- /.header -->
+
 
   <main>
     <div class="fv-wrapper">
       <!-- FV -->
       <div class="fv">
         <!-- PC用動画 -->
-        <video autoplay muted loop playsinline class="fv__movie pc-only">
+        <video autoplay muted loop playsinline class="hidden fv__movie md:block">
           <source src="./dist/images/fv_movie-pc.mp4" type="video/mp4" />
           お使いのブラウザは動画に対応していません。
         </video>
         <!-- SP用動画 -->
-        <video autoplay muted loop playsinline class="fv__movie sp-only">
+        <video autoplay muted loop playsinline class="block fv__movie md:hidden">
           <source src="./dist/images/fv_movie-sp.mp4" type="video/mp4" />
           お使いのブラウザは動画に対応していません。
         </video>
@@ -301,38 +319,59 @@
           <span class="c-section-title__ja">お知らせ</span>
         </h2>
         <div class="news__content">
-          <dl class="news__list">
-            <div class="news__item">
-              <a href="" class="news__item-link">
-                <dt class="news__item-date"><time datetime="2025-08-11">2025.08-11</time></dt>
-                <dd class="news__item-label">ライオンの赤ちゃん誕生！</dd>
+          <dl class="flex flex-col gap-4 mb-[6.25vh]">
+            <!-- ニュース1 -->
+            <dt class="w-1/5 max-[500px]:w-full text-gray-500">
+              <time datetime="2025-08-11">2025.08-11</time>
+            </dt>
+            <dd class="flex px-4 py-2 border-b border-[var(--main-color-green)] max-[500px]:flex-col ml-[-0.2em]">
+              <a href="#" class="font-medium text-black hover:underline">
+                ライオンの赤ちゃん誕生！
               </a>
-            </div>
-            <div class="news__item">
-              <a href="" class="news__item-link">
-                <dt class="news__item-date"><time datetime="2025-08-11">2025.08-11</time></dt>
-                <dd class="news__item-label">新エリア「こどもどうぶつ広場」オープン</dd>
+            </dd>
+
+            <!-- ニュース2 -->
+            <dt class="w-1/5 max-[500px]:w-full text-gray-500">
+              <time datetime="2025-08-11">2025.08-11</time>
+            </dt>
+            <dd class="flex px-4 py-2 border-b border-[var(--main-color-green)] max-[500px]:flex-col ml-[-0.2em]">
+              <a href="#" class="font-medium text-black hover:underline">
+                新エリア「こどもどうぶつ広場」オープン
               </a>
-            </div>
-            <div class="news__item">
-              <a href="" class="news__item-link">
-                <dt class="news__item-date"><time datetime="2025-08-11">2025.08-11</time></dt>
-                <dd class="news__item-label">ホワイトタイガーが仲間入り</dd>
+            </dd>
+
+            <!-- ニュース3 -->
+            <dt class="w-1/5 max-[500px]:w-full text-gray-500">
+              <time datetime="2025-08-11">2025.08-11</time>
+            </dt>
+            <dd class="flex px-4 py-2 border-b border-[var(--main-color-green)] max-[500px]:flex-col ml-[-0.2em]">
+              <a href="#" class="font-medium text-black hover:underline">
+                ホワイトタイガーが仲間入り
               </a>
-            </div>
-            <div class="news__item">
-              <a href="" class="news__item-link">
-                <dt class="news__item-date"><time datetime="2025-08-11">2025.08-11</time></dt>
-                <dd class="news__item-label">ナイトズー開催決定！</dd>
+            </dd>
+
+            <!-- ニュース4 -->
+            <dt class="w-1/5 max-[500px]:w-full text-gray-500">
+              <time datetime="2025-08-11">2025.08-11</time>
+            </dt>
+            <dd class="flex px-4 py-2 border-b border-[var(--main-color-green)] max-[500px]:flex-col ml-[-0.2em]">
+              <a href="#" class="font-medium text-black hover:underline">
+                ナイトズー開催決定！
               </a>
-            </div>
-            <div class="news__item">
-              <a href="" class="news__item-link">
-                <dt class="news__item-date"><time datetime="2025-08-11">2025.08-11</time></dt>
-                <dd class="news__item-label">ペンギンのパレードスタート</dd>
+            </dd>
+
+            <!-- ニュース5 -->
+            <dt class="w-1/5 max-[500px]:w-full text-gray-500">
+              <time datetime="2025-08-11">2025.08-11</time>
+            </dt>
+            <dd class="flex px-4 py-2 border-b border-[var(--main-color-green)] max-[500px]:flex-col ml-[-0.2em]">
+              <a href="#" class="font-medium text-black hover:underline">
+                ペンギンのパレードスタート
               </a>
-            </div>
+            </dd>
+
           </dl>
+
         </div>
         <a href="./archive-news.html" class="c-btn event__link">お知らせ一覧はこちら</a>
       </div>
@@ -347,58 +386,95 @@
           <span class="c-section-title__ja">よくある質問</span>
         </h2>
         <div class="faq__content">
-          <ul class="faq__list">
-            <li class="faq__item">
-              <button class="faq__item-header">
-                <span class="question__initial">Q</span>
-                <p class="question__text">チケットは事前に購入できますか？</p>
+          <ul class="faq__list flex flex-col gap-6 w-[80vw] mx-auto">
+
+            <!-- FAQ 1 -->
+            <li class="overflow-hidden rounded-lg faq__item">
+              <button
+                class="relative flex items-center w-full h-16 px-4 bg-orange-200 rounded-lg cursor-pointer faq__item-header">
+                <span class="mr-2 font-bold question__initial">Q</span>
+                <span class="text-base question__text">チケットは事前に購入できますか？</span>
+                <span
+                  class="absolute w-2 h-2 transition-transform duration-200 transform rotate-45 border-2 border-b-0 border-l-0 border-current right-2 faq__icon"></span>
               </button>
-              <div class="faq__item-content">
-                <span class="answer-initial">A</span>
-                <p class="answer__text">はい、公式サイトからオンラインで購入可能です。当日窓口でも購入できますが、混雑時は入園までお時間をいただく場合があります。</p>
+              <div class="px-4 py-0 overflow-hidden transition-all duration-300 faq__item-content max-h-0">
+                <span class="mr-2 font-bold answer-initial">A</span>
+                <span class="text-base answer__text">
+                  はい、公式サイトからオンラインで購入可能です。当日窓口でも購入できますが、混雑時は入園までお時間をいただく場合があります。
+                </span>
               </div>
             </li>
-            <li class="faq__item">
-              <button class="faq__item-header">
-                <span class="question__initial">Q</span>
-                <p>園内で飲食はできますか？</p>
+
+            <!-- FAQ 2 -->
+            <li class="overflow-hidden rounded-lg faq__item">
+              <button
+                class="relative flex items-center w-full h-16 px-4 bg-orange-200 rounded-lg cursor-pointer faq__item-header">
+                <span class="mr-2 font-bold question__initial">Q</span>
+                <span class="text-base question__text">園内で飲食はできますか？</span>
+                <span
+                  class="absolute w-2 h-2 transition-transform duration-200 transform rotate-45 border-2 border-b-0 border-l-0 border-current right-2 faq__icon"></span>
               </button>
-              <div class="faq__item-content">
-                <span class="answer-initial">A</span>
-                <p>園内にはレストランや軽食スタンド、お弁当を広げられるピクニックエリアがあります。動物への餌やりは禁止されていますのでご注意ください。</p>
+              <div class="px-4 py-0 overflow-hidden transition-all duration-300 faq__item-content max-h-0">
+                <span class="mr-2 font-bold answer-initial">A</span>
+                <span class="text-base answer__text">
+                  園内にはレストランや軽食スタンド、お弁当を広げられるピクニックエリアがあります。動物への餌やりは禁止されていますのでご注意ください。
+                </span>
               </div>
             </li>
-            <li class="faq__item">
-              <button class="faq__item-header">
-                <span class="question__initial">Q</span>
-                <p>再入園はできますか？</p>
+
+            <!-- FAQ 3 -->
+            <li class="overflow-hidden rounded-lg faq__item">
+              <button
+                class="relative flex items-center w-full h-16 px-4 bg-orange-200 rounded-lg cursor-pointer faq__item-header">
+                <span class="mr-2 font-bold question__initial">Q</span>
+                <span class="text-base question__text">再入園はできますか？</span>
+                <span
+                  class="absolute w-2 h-2 transition-transform duration-200 transform rotate-45 border-2 border-b-0 border-l-0 border-current right-2 faq__icon"></span>
               </button>
-              <div class="faq__item-content">
-                <span class="answer-initial">A</span>
-                <p>はい、当日中であれば再入園が可能です。出口ゲートでスタッフが再入園スタンプを押しますので、退園時にお申し付けください。</p>
+              <div class="px-4 py-0 overflow-hidden transition-all duration-300 faq__item-content max-h-0">
+                <span class="mr-2 font-bold answer-initial">A</span>
+                <span class="text-base answer__text">
+                  はい、当日中であれば再入園が可能です。出口ゲートでスタッフが再入園スタンプを押しますので、退園時にお申し付けください。
+                </span>
               </div>
             </li>
-            <li class="faq__item">
-              <button class="faq__item-header">
-                <span class="question__initial">Q</span>
-                <p>ペット同伴で入園できますか？</p>
+
+            <!-- FAQ 4 -->
+            <li class="overflow-hidden rounded-lg faq__item">
+              <button
+                class="relative flex items-center w-full h-16 px-4 bg-orange-200 rounded-lg cursor-pointer faq__item-header">
+                <span class="mr-2 font-bold question__initial">Q</span>
+                <span class="text-base question__text">ペット同伴で入園できますか？</span>
+                <span
+                  class="absolute w-2 h-2 transition-transform duration-200 transform rotate-45 border-2 border-b-0 border-l-0 border-current right-2 faq__icon"></span>
               </button>
-              <div class="faq__item-content">
-                <span class="answer-initial">A</span>
-                <p>申し訳ございませんが、動物たちの安全と健康のためペットの入園はお断りしています。介助犬・盲導犬はご同伴いただけます。</p>
+              <div class="px-4 py-0 overflow-hidden transition-all duration-300 faq__item-content max-h-0">
+                <span class="mr-2 font-bold answer-initial">A</span>
+                <span class="text-base answer__text">
+                  申し訳ございませんが、動物たちの安全と健康のためペットの入園はお断りしています。介助犬・盲導犬はご同伴いただけます。
+                </span>
               </div>
             </li>
-            <li class="faq__item">
-              <button class="faq__item-header">
-                <span class="question__initial">Q</span>
-                <p>雨の日でも楽しめますか？</p>
+
+            <!-- FAQ 5 -->
+            <li class="overflow-hidden rounded-lg faq__item">
+              <button
+                class="relative flex items-center w-full h-16 px-4 bg-orange-200 rounded-lg cursor-pointer faq__item-header">
+                <span class="mr-2 font-bold question__initial">Q</span>
+                <span class="text-base question__text">雨の日でも楽しめますか？</span>
+                <span
+                  class="absolute w-2 h-2 transition-transform duration-200 transform rotate-45 border-2 border-b-0 border-l-0 border-current right-2 faq__icon"></span>
               </button>
-              <div class="faq__item-content">
-                <span class="answer-initial">A</span>
-                <p>はい、一部屋内展示や屋根付き通路があり、雨天でもお楽しみいただけます。雨具の貸出はありませんので、傘やカッパをご持参ください。</p>
+              <div class="px-4 py-0 overflow-hidden transition-all duration-300 faq__item-content max-h-0">
+                <span class="mr-2 font-bold answer-initial">A</span>
+                <span class="text-base answer__text">
+                  はい、一部屋内展示や屋根付き通路があり、雨天でもお楽しみいただけます。雨具の貸出はありませんので、傘やカッパをご持参ください。
+                </span>
               </div>
             </li>
+
           </ul>
+
           <!-- /.faq__list -->
         </div>
       </div>
@@ -412,7 +488,7 @@
           <span class="c-section-title__en">Access</span>
           <span class="c-section-title__ja">アクセス</span>
         </h2>
-        <div class="section-content flex">
+        <div class="flex section-content">
           <!-- <iframe class="access-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3384.188952534567!2d131.47391521516198!3d31.982892881219033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3538bad132ff7be5%3A0x4a57e247d1a13528!2sMiyazaki%20City%20Phoenix%20Zoo!5e0!3m2!1sen!2sjp!4v1683858824910!5m2!1sen!2sjp" width="1160" height="800" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
 
           <ul class="access-text">

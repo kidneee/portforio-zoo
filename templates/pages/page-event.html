@@ -21,86 +21,98 @@
 
 <body>
   <!-- ヘッダー -->
-  <header class="header">
-    <div class="header__inner">
-      <div class="header__logo">
-        <a href="../../index.html" class="header__link">
-          <img src="../../dist/images/logo.svg" width="186" height="54" alt="Hinata Zoo" class="header__logo-image" />
+  <header class="fixed w-full h-24 bg-white z-20 md:bg-transparent">
+    <div class="flex justify-between items-center h-full px-[6.94vw] md:px-[4.1vw]">
+      <div class="header-logo">
+        <a href="../../index.html">
+          <img src="../../dist/images/logo.svg" width="186" height="54" alt="Hinata Zoo" class="w-[186px] h-[54px]" />
         </a>
       </div>
 
-      <aside id="js-drawerMenu" class="hamburger-menu__wrapper">
-        <div class="hamburger-menu-video-wrapper">
-          <video autoplay muted loop playsinline class="hamburger-menu-video">
+      <!-- ハンバーガーメニューオーバーレイ -->
+      <aside id="js-drawerMenu"
+        class="fixed top-0 left-0 z-[100] flex flex-col justify-between items-center w-screen h-screen p-[2.84vh_4.1vw] transform translate-x-full transition-transform duration-300 ease-in-out hidden md:block">
+        <!-- 背景動画 -->
+        <div class="fixed inset-0 z-[-1] menu-overlay">
+          <video autoplay muted loop playsinline
+            class="absolute top-1/2 left-1/2 w-full h-full transform -translate-x-1/2 -translate-y-1/2 object-cover z-[-1]">
             <source src="../../dist/images/fv_movie-sp.mp4" type="video/mp4">
             お使いのブラウザは動画に対応していません。
           </video>
         </div>
-        <!-- /.hamburger-menu-video-wrapper -->
+
+        <!-- ロゴ -->
         <img src="../../dist/images/logo_hamburger.svg" width="186" height="54" alt=""
-          class="hamburger-menu__logo sp-only">
+          class="w-[186px] h-[54px] md:block hidden">
+
+        <!-- ナビゲーション -->
         <nav class="nav">
-          <ul class="nav__list">
-            <li class="nav__item">
-              <a href="./page-admission.html" class="nav__link nav__admission">入園案内</a>
+          <ul class="flex flex-col items-center justify-center gap-[4.74vh] md:flex-row md:gap-[2.22vw]">
+            <li>
+              <a href="./page-admission.html"
+                class="relative pl-10 text-white text-lg font-medium md:pl-0 md:text-black before:absolute before:top-1/2 before:left-0 before:w-7 before:h-7 before:-translate-y-1/2 before:content-[''] before:bg-[url('../../dist/images/icon_admission.svg')] md:before:hidden">入園案内</a>
             </li>
-            <li class="nav__item">
-              <a href="./page-animals.html" class="nav__link nav__animals">どうぶつ</a>
+            <li>
+              <a href="./page-animals.html"
+                class="relative pl-10 text-white text-lg font-medium md:pl-0 md:text-black before:absolute before:top-1/2 before:left-0 before:w-7 before:h-7 before:-translate-y-1/2 before:content-[''] before:bg-[url('../../dist/images/icon_animals.svg')] md:before:hidden">どうぶつ</a>
             </li>
-            <li class="nav__item">
-              <a href="./page-event.html" class="nav__link nav__guide">イベント</a>
+            <li>
+              <a href="./page-event.html"
+                class="relative pl-10 text-white text-lg font-medium md:pl-0 md:text-black before:absolute before:top-1/2 before:left-0 before:w-7 before:h-7 before:-translate-y-1/2 before:content-[''] before:bg-[url('../../dist/images/icon_guide.svg')] md:before:hidden">イベント</a>
             </li>
-            <li class="nav__item">
-              <a href="../../archive-news.html" class="nav__link nav__news">ニュース</a>
+            <li>
+              <a href="../../archive-news.html"
+                class="relative pl-10 text-white text-lg font-medium md:pl-0 md:text-black before:absolute before:top-1/2 before:left-0 before:w-7 before:h-7 before:-translate-y-1/2 before:content-[''] before:bg-[url('../../dist/images/icon_news.svg')] md:before:hidden">ニュース</a>
             </li>
-            <li class="nav__item">
-              <a href="#access" class="nav__link nav__access">アクセス</a>
+            <li>
+              <a href="#access"
+                class="relative pl-10 text-white text-lg font-medium md:pl-0 md:text-black before:absolute before:top-1/2 before:left-0 before:w-7 before:h-7 before:-translate-y-1/2 before:content-[''] before:bg-[url('../../dist/images/icon_access.svg')] md:before:hidden">アクセス</a>
             </li>
           </ul>
         </nav>
-        <div class="hamburger-menu__information">
-          <div class="opening-hours">
-            <span class="opening-hours__label">本日の営業時間</span>
-            <p class="opening-hours__time">
+
+        <!-- 営業時間とソーシャルリンク -->
+        <div class="flex flex-col gap-[4.74vh]">
+          <div class="flex flex-col gap-[0.95vh] text-white leading-none text-center">
+            <span class="text-base">本日の営業時間</span>
+            <p class="text-2xl leading-none">
               <time datetime="09:00">午前9:00</time>
               ～
               <time datetime="17:00">午後5:00</time>
             </p>
           </div>
-          <ul class="social-links">
-            <li class="social-links__item">
-              <a href="" class="social-links__link">
-                <img src="../../dist/images/icon_twitter.svg" alt="ツイッター" class="social-links__icon" />
+          <ul class="flex justify-between items-center gap-[2.78vw]">
+            <li>
+              <a href="">
+                <img src="../../dist/images/icon_twitter.svg" alt="ツイッター" class="w-auto h-auto" />
               </a>
             </li>
-            <li class="social-links__item">
-              <a href="" class="social-links__link">
-                <img src="../../dist/images/icon_instagram.svg" alt="インスタグラム" class="social-links__icon" />
+            <li>
+              <a href="">
+                <img src="../../dist/images/icon_instagram.svg" alt="インスタグラム" class="w-auto h-auto" />
               </a>
             </li>
-            <li class="social-links__item">
-              <a href="" class="social-links__link">
-                <img src="../../dist/images/icon_facebook.svg" alt="フェイスブック" class="social-links__icon" />
+            <li>
+              <a href="">
+                <img src="../../dist/images/icon_facebook.svg" alt="フェイスブック" class="w-auto h-auto" />
               </a>
             </li>
-            <li class="social-links__item">
-              <a href="" class="social-links__link">
-                <img src="../../dist/images/icon_youtube.svg" alt="ユーチューブ" class="social-links__icon" />
+            <li>
+              <a href="">
+                <img src="../../dist/images/icon_youtube.svg" alt="ユーチューブ" class="w-auto h-auto" />
               </a>
             </li>
           </ul>
         </div>
-        <!-- /.hamburger-menu__information -->
       </aside>
 
-      <button id="js-hamburgerMenu" class="hamburger-menu" aria-label="メニューを開く" aria-controls="js-drawerMenu"
-        aria-expanded="false">
-        <span class="hamburger-menu__line"></span>
+      <!-- ハンバーガーボタン -->
+      <button id="js-hamburgerMenu" class="relative w-[30px] h-[30px] cursor-pointer z-[200] hidden md:block"
+        aria-label="メニューを開く" aria-controls="js-drawerMenu" aria-expanded="false">
+        <span class="absolute w-full h-1 bg-main-blue hamburger-line"></span>
       </button>
     </div>
-    <!-- /.header__inner -->
   </header>
-  <!-- /.header -->
 
   <main class="event-page">
     <h1 class="sr-only">イベント一覧</h1>
