@@ -1,0 +1,9 @@
+/* リセットCSSや変数、共通スタイル */
+@import './reset.css';
+@import './variables.css';
+@import './style.css';
+
+/* Tailwindの基本スタイルを読み込む */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

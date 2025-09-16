@@ -9,9 +9,9 @@
   <meta name="description" content="Hinata Zooは宮崎市にある動物園。日本でも珍しいフラミンゴショーを見ることができます。遊園地も併設しており、流れるプールや屋外プールも楽しめます。" />
   <title>Hinata Zoo</title>
   <!-- css -->
-  <link rel="stylesheet" href="./assets/css/reset.css" />
-  <link rel="stylesheet" href="./assets/css/common.css" />
-  <link rel="stylesheet" href="./assets/css/variables.css">
+  <link rel="stylesheet" href="./dist/css/output.css" />
+  <!-- <link rel="stylesheet" href="./dist/css/style.css" />
+  <link rel="stylesheet" href="./dist/css/variables.css"> -->
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,7 +19,7 @@
     href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500&family=Noto+Sans+Tamil:wght@100;200;300;400;500&family=Zen+Maru+Gothic:wght@300;400;500;700&display=swap"
     rel="stylesheet" />
   <!-- js -->
-  <script type="module" src="./assets/js/main.js"></script>
+  <script type="module" src="./dist/js/main.js"></script>
 </head>
 
 <body>
@@ -28,19 +28,19 @@
     <div class="header__inner">
       <h1 class="header__logo">
         <a href="./" class="header__link">
-          <img src="./assets/images/logo.svg" width="186" height="54" alt="Hinata Zoo" class="header__logo-image" />
+          <img src="./dist/images/logo.svg" width="186" height="54" alt="Hinata Zoo" class="header__logo-image" />
         </a>
       </h1>
 
       <aside id="js-drawerMenu" class="hamburger-menu__wrapper">
         <div class="hamburger-menu-video-wrapper">
           <video autoplay muted loop playsinline class="hamburger-menu-video">
-            <source src="./assets/images/fv_movie-sp.mp4" type="video/mp4" />
+            <source src="./dist/images/fv_movie-sp.mp4" type="video/mp4" />
             お使いのブラウザは動画に対応していません。
           </video>
         </div>
         <!-- /.hamburger-menu-video-wrapper -->
-        <img src="./assets/images/logo_hamburger.svg" width="186" height="54" alt=""
+        <img src="./dist/images/logo_hamburger.svg" width="186" height="54" alt=""
           class="hamburger-menu__logo sp-only" />
         <nav class="nav">
           <ul class="nav__list">
@@ -73,22 +73,22 @@
           <ul class="social-links">
             <li class="social-links__item">
               <a href="" class="social-links__link">
-                <img src="./assets/images/icon_twitter.svg" alt="ツイッター" class="social-links__icon" />
+                <img src="./dist/images/icon_twitter.svg" alt="ツイッター" class="social-links__icon" />
               </a>
             </li>
             <li class="social-links__item">
               <a href="" class="social-links__link">
-                <img src="./assets/images/icon_instagram.svg" alt="インスタグラム" class="social-links__icon" />
+                <img src="./dist/images/icon_instagram.svg" alt="インスタグラム" class="social-links__icon" />
               </a>
             </li>
             <li class="social-links__item">
               <a href="" class="social-links__link">
-                <img src="./assets/images/icon_facebook.svg" alt="フェイスブック" class="social-links__icon" />
+                <img src="./dist/images/icon_facebook.svg" alt="フェイスブック" class="social-links__icon" />
               </a>
             </li>
             <li class="social-links__item">
               <a href="" class="social-links__link">
-                <img src="./assets/images/icon_youtube.svg" alt="ユーチューブ" class="social-links__icon" />
+                <img src="./dist/images/icon_youtube.svg" alt="ユーチューブ" class="social-links__icon" />
               </a>
             </li>
           </ul>
@@ -111,12 +111,12 @@
       <div class="fv">
         <!-- PC用動画 -->
         <video autoplay muted loop playsinline class="fv__movie pc-only">
-          <source src="./assets/images/fv_movie-pc.mp4" type="video/mp4" />
+          <source src="./dist/images/fv_movie-pc.mp4" type="video/mp4" />
           お使いのブラウザは動画に対応していません。
         </video>
         <!-- SP用動画 -->
         <video autoplay muted loop playsinline class="fv__movie sp-only">
-          <source src="./assets/images/fv_movie-sp.mp4" type="video/mp4" />
+          <source src="./dist/images/fv_movie-sp.mp4" type="video/mp4" />
           お使いのブラウザは動画に対応していません。
         </video>
       </div>
@@ -132,22 +132,22 @@
         <ul class="social-links">
           <li class="social-links__item">
             <a href="" class="social-links__link">
-              <img src="./assets/images/icon_twitter.svg" alt="ツイッター" class="social-links__icon" />
+              <img src="./dist/images/icon_twitter.svg" alt="ツイッター" class="social-links__icon" />
             </a>
           </li>
           <li class="social-links__item">
             <a href="" class="social-links__link">
-              <img src="./assets/images/icon_instagram.svg" alt="インスタグラム" class="social-links__icon" />
+              <img src="./dist/images/icon_instagram.svg" alt="インスタグラム" class="social-links__icon" />
             </a>
           </li>
           <li class="social-links__item">
             <a href="" class="social-links__link">
-              <img src="./assets/images/icon_facebook.svg" alt="フェイスブック" class="social-links__icon" />
+              <img src="./dist/images/icon_facebook.svg" alt="フェイスブック" class="social-links__icon" />
             </a>
           </li>
           <li class="social-links__item">
             <a href="" class="social-links__link">
-              <img src="./assets/images/icon_youtube.svg" alt="ユーチューブ" class="social-links__icon" />
+              <img src="./dist/images/icon_youtube.svg" alt="ユーチューブ" class="social-links__icon" />
             </a>
           </li>
         </ul>
@@ -214,19 +214,19 @@
         <ul class="events__list">
           <li class="events__item">
             <div class="event-card">
-              <img src="./assets/images/event-elephant.jpg" alt="ゾウのお散歩と記念撮影" class="event-card__image" />
+              <img src="./dist/images/event-elephant.jpg" alt="ゾウのお散歩と記念撮影" class="event-card__image" />
               <div class="event-card__body">
                 <h3 class="event-card__title">ゾウのお散歩と記念撮影</h3>
                 <dl class="event-card__info">
                   <div class="event-card__time">
                     <dt>
-                      <img src="./assets/images/icon_time.svg" width="16" height="16" alt="イベント開始時間" />
+                      <img src="./dist/images/icon_time.svg" width="16" height="16" alt="イベント開始時間" />
                     </dt>
                     <dd>14時〜</dd>
                   </div>
                   <div class="event-card__place">
                     <dt>
-                      <img src="./assets/images/icon_location.svg" width="16" height="16" alt="イベント開始時間" />
+                      <img src="./dist/images/icon_location.svg" width="16" height="16" alt="イベント開始時間" />
                     </dt>
                     <dd>アジアゾウ展示場→ゾウさん広場</dd>
                   </div>
@@ -239,19 +239,19 @@
 
           <li class="events__item">
             <div class="event-card">
-              <img src="./assets/images/event-lion.jpg" alt="ライオン観察" class="event-card__image" />
+              <img src="./dist/images/event-lion.jpg" alt="ライオン観察" class="event-card__image" />
               <div class="event-card__body">
                 <h3 class="event-card__title">ライオン観察</h3>
                 <dl class="event-card__info">
                   <div class="event-card__time">
                     <dt>
-                      <img src="./assets/images/icon_time.svg" width="16" height="16" alt="イベント開始時間" />
+                      <img src="./dist/images/icon_time.svg" width="16" height="16" alt="イベント開始時間" />
                     </dt>
                     <dd>15時〜</dd>
                   </div>
                   <div class="event-card__place">
                     <dt>
-                      <img src="./assets/images/icon_location.svg" width="16" height="16" alt="イベント開始時間" />
+                      <img src="./dist/images/icon_location.svg" width="16" height="16" alt="イベント開始時間" />
                     </dt>
                     <dd>ライオン展示場</dd>
                   </div>
@@ -264,19 +264,19 @@
 
           <li class="events__item">
             <div class="event-card">
-              <img src="./assets/images/event-panda.jpg" alt="パンダと記念撮影" class="event-card__image" />
+              <img src="./dist/images/event-panda.jpg" alt="パンダと記念撮影" class="event-card__image" />
               <div class="event-card__body">
                 <h3 class="event-card__title">パンダと記念撮影</h3>
                 <dl class="event-card__info">
                   <div class="event-card__time">
                     <dt>
-                      <img src="./assets/images/icon_time.svg" width="16" height="16" alt="イベント開始時間" />
+                      <img src="./dist/images/icon_time.svg" width="16" height="16" alt="イベント開始時間" />
                     </dt>
                     <dd>14時〜</dd>
                   </div>
                   <div class="event-card__place">
                     <dt>
-                      <img src="./assets/images/icon_location.svg" width="16" height="16" alt="イベント開始時間" />
+                      <img src="./dist/images/icon_location.svg" width="16" height="16" alt="イベント開始時間" />
                     </dt>
                     <dd>パンダ広場</dd>
                   </div>
@@ -474,8 +474,7 @@
     <div class="footer__inner">
       <div>
         <a href="" class="footer__link">
-          <img src="./assets/images/logo-white.svg" width="186" height="54" alt="Hinata Zoo"
-            class="footer__logo-image" />
+          <img src="./dist/images/logo-white.svg" width="186" height="54" alt="Hinata Zoo" class="footer__logo-image" />
         </a>
         <address class="footer__address">
           <p class="footer__address-info">
@@ -495,22 +494,22 @@
         <ul class="social-links">
           <li class="social-links__item">
             <a href="" class="social-links__link">
-              <img src="./assets/images/icon_twitter.svg" alt="ツイッター" class="social-links__icon" />
+              <img src="./dist/images/icon_twitter.svg" alt="ツイッター" class="social-links__icon" />
             </a>
           </li>
           <li class="social-links__item">
             <a href="" class="social-links__link">
-              <img src="./assets/images/icon_instagram.svg" alt="インスタグラム" class="social-links__icon" />
+              <img src="./dist/images/icon_instagram.svg" alt="インスタグラム" class="social-links__icon" />
             </a>
           </li>
           <li class="social-links__item">
             <a href="" class="social-links__link">
-              <img src="./assets/images/icon_facebook.svg" alt="フェイスブック" class="social-links__icon" />
+              <img src="./dist/images/icon_facebook.svg" alt="フェイスブック" class="social-links__icon" />
             </a>
           </li>
           <li class="social-links__item">
             <a href="" class="social-links__link">
-              <img src="./assets/images/icon_youtube.svg" alt="ユーチューブ" class="social-links__icon" />
+              <img src="./dist/images/icon_youtube.svg" alt="ユーチューブ" class="social-links__icon" />
             </a>
           </li>
         </ul>

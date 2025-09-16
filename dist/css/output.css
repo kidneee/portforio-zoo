@@ -1,0 +1,1961 @@
+@charset "UTF-8";
+/* リセットCSSや変数、共通スタイル */
+/***
+    The new CSS reset - version 1.11.3 (last updated 25.08.2024)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+    - The "html" element is excluded, otherwise a bug in Chrome breaks the CSS hyphens property (https://github.com/elad2412/the-new-css-reset/issues/36)
+ */
+*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* Fix mobile Safari increase font-size on landscape mode */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+/* Reapply the pointer cursor for anchor tags */
+a,
+button {
+  cursor: revert;
+}
+/* Remove list styles (bullets/numbers) */
+ol,
+ul,
+menu,
+summary {
+  list-style: none;
+}
+/* Firefox: solve issue where nested ordered lists continue numbering from parent (https://bugzilla.mozilla.org/show_bug.cgi?id=1881517) */
+ol {
+  counter-reset: revert;
+}
+/* For images to not be able to exceed their container */
+img {
+  display: block;
+  max-inline-size: 100%;
+  max-block-size: 100%;
+}
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input,
+textarea {
+  -webkit-user-select: auto;
+}
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+/* minimum style to allow to style meter element */
+meter {
+  -webkit-appearance: revert;
+  -moz-appearance: revert;
+       appearance: revert;
+}
+/* preformatted text - use only for this feature */
+:where(pre) {
+  all: revert;
+  box-sizing: border-box;
+}
+/* reset default text opacity of input placeholder */
+::-moz-placeholder {
+  color: unset;
+}
+::placeholder {
+  color: unset;
+}
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+  display: none;
+}
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly.
+   - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
+:where([contenteditable]:not([contenteditable='false'])) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+  -webkit-user-select: auto;
+}
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable='true']) {
+  -webkit-user-drag: element;
+}
+/* Revert Modal native behavior */
+:where(dialog:modal) {
+  all: revert;
+  box-sizing: border-box;
+}
+/* Remove details summary webkit styles */
+::-webkit-details-marker {
+  display: none;
+}
+:root {
+  /* コンセプトカラー */
+  --main-color-orange: #e39411;
+  --main-color-green: #517830;
+  --main-color-blue: #1aa6b4;
+  --sub-color-white: #fefbf3;
+  --green-alpha: rgba(81, 120, 48, 0.5);
+  --orange-alpha: rgba(227, 148, 17, 0.5);
+
+  /* 背景色 */
+  --bg-color-white: #fefbf3;
+
+  /* テキストカラー */
+  --text-color-primary: #333;
+  --text-color-white: #fefbf3;
+
+  /* --- Desktop (1920x1080) --- */
+  --space-16-d: 0.8333vw;
+  --space-24-d: 1.25vw;
+  --space-32-d: 1.6667vw;
+  --space-48-d: 2.5vw;
+  --space-64-d: 3.3333vw;
+  --space-80-d: 4.1667vw;
+
+  /* --- 高さ用（縦余白）Desktop --- */
+  --space-vh16-d: 1.4815vh;
+  --space-vh24-d: 2.2222vh;
+  --space-vh32-d: 2.963vh;
+  --space-vh40-d: 3.7037vh;
+  --space-vh48-d: 4.4444vh;
+  --space-vh80-d: 7.4074vh;
+
+  /* --- Mobile (390x844) --- */
+  --space-16-m: 4.1026vw;
+  --space-24-m: 6.1538vw;
+  --space-32-m: 8.2051vw;
+  --space-48-m: 12.3077vw;
+  --space-64-m: 16.4103vw;
+  --space-80-m: 20.5128vw;
+
+  /* --- 高さ用（縦余白）Mobile --- */
+  --space-vh16-m: 1.8957vh;
+  --space-vh32-m: 3.7915vh;
+  --space-vh48-m: 5.6872vh;
+  --space-vh80-m: 9.4811vh;
+}
+/* ============================
+  style
+============================ */
+body {
+  position: relative;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background: #fff;
+  font-family: 'Zen Maru Gothic', sans-serif;
+}
+a {
+  display: block;
+  width: 100%;
+}
+button {
+  cursor: pointer;
+}
+/* ----- Layout ----- */
+.l-inner {
+  padding: 7.81vh 6.94vw 11.72vh;
+}
+@media screen and (max-width: 768px) {
+  .l-inner {
+    padding: 7.58vh 4.1vw;
+  }
+}
+/* 各ページ */
+.page__title-wrapper {
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  z-index: -10;
+  padding: 30vh 0 10vh 4vw;
+}
+@media screen and (max-width: 768px) {
+  .page__title-wrapper {
+    padding: 19.38vh 4.1vw 10vh;
+  }
+}
+.page__title-wrapper::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  background-color: var(--green-alpha);
+  width: 100%;
+  height: 100%;
+  z-index: -5;
+}
+/* ----- Components ----- */
+.c-section-title {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.56vh;
+  margin-bottom: 6.25vh;
+  line-height: 1;
+}
+.c-section-title__en {
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+.c-section-title__ja {
+  font-size: 2rem;
+  font-weight: 500;
+}
+.c-section-title::after {
+  position: absolute;
+  bottom: -24px;
+  width: 88px;
+  height: 8px;
+  content: '';
+  background-color: var(--main-color-green);
+}
+.c-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 202px;
+  height: 40px;
+  margin: 0 auto;
+  border: 1px solid var(--main-color-green);
+  border-radius: 8px;
+  color: var(--main-color-green);
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+.c-btn:hover {
+  color: var(--text-color-white);
+  background-color: var(--main-color-green);
+}
+/* 下層ページ */
+/* タイトル */
+.c-page-title {
+  font-size: 3rem;
+  letter-spacing: 0.05em;
+  color: var(--text-color-white);
+  font-weight: 500;
+}
+@media screen and (max-width: 768px) {
+  .c-page-title {
+    text-align: center;
+  }
+}
+/* ----- Utility ----- */
+.pc-only {
+  display: block;
+}
+@media (max-width: 768px) {
+  .pc-only {
+    display: none;
+  }
+}
+.sp-only {
+  display: none;
+}
+@media (max-width: 768px) {
+  .sp-only {
+    display: block;
+  }
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+/* ============================
+  Header
+============================ */
+.header {
+  position: fixed;
+  width: 100%;
+  height: 96px;
+  background-color: var(--bg-color-white);
+  z-index: 20;
+}
+@media screen and (max-width: 768px) {
+  .header {
+    background-color: transparent;
+  }
+}
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 6.94vw;
+}
+@media (max-width: 768px) {
+  .header__inner {
+    padding: 0 4.1vw;
+  }
+}
+/* ----- Navigation ----- */
+.nav__list {
+  display: flex;
+  gap: 2.22vw;
+}
+@media (max-width: 768px) {
+  .nav__list {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4.74vh;
+  }
+}
+.nav__link {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+@media (max-width: 768px) {
+  .nav__link {
+    position: relative;
+    padding-left: 40px;
+    color: var(--text-color-white);
+  }
+  .nav__link::before {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 28px;
+    height: 28px;
+    transform: translateY(-50%);
+    content: '';
+  }
+  .nav__admission::before {
+    background-image: url('../../dist/images/icon_admission.svg');
+  }
+  .nav__animals::before {
+    background-image: url('../../dist/images/icon_animals.svg');
+  }
+  .nav__guide::before {
+    background-image: url('../../dist/images/icon_guide.svg');
+  }
+  .nav__course::before {
+    background-image: url('../../dist/images/icon_course.svg');
+  }
+  .nav__news::before {
+    background-image: url('../../dist/images/icon_news.svg');
+  }
+  .nav__access::before {
+    background-image: url('../../dist/images/icon_access.svg');
+  }
+}
+/* ----- Hamburger Menu ----- */
+.hamburger-menu,
+.hamburger-menu-video,
+.hamburger-menu__information {
+  display: none;
+}
+@media (max-width: 768px) {
+  .hamburger-menu,
+  .hamburger-menu__information {
+    display: block;
+  }
+  .hamburger-menu {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 200;
+  }
+  .hamburger-menu__wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    padding: 2.84vh 4.1vw;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+  .hamburger-menu__wrapper.open {
+    transform: translateX(0);
+  }
+
+  /* 背景動画 */
+  .hamburger-menu__wrapper.open .hamburger-menu-video-wrapper {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    display: block;
+  }
+  .hamburger-menu__wrapper.open .hamburger-menu-video {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    -o-object-fit: cover;
+       object-fit: cover;
+    z-index: -1;
+    display: block;
+  }
+  .hamburger-menu__wrapper.open .hamburger-menu-video-wrapper::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background-color: rgba(81, 120, 48, 0.7);
+    z-index: 1;
+  }
+
+  /* ライン */
+  .hamburger-menu__line,
+  .hamburger-menu__line::before,
+  .hamburger-menu__line::after {
+    position: absolute;
+    width: 100%;
+    background-color: var(--main-color-blue);
+    transition: all 0.3s ease;
+    z-index: 101;
+  }
+  .hamburger-menu__line {
+    height: 4px;
+  }
+  .hamburger-menu__line::before,
+  .hamburger-menu__line::after {
+    right: 8px;
+    height: 4px;
+    content: '';
+  }
+  .hamburger-menu__line::before {
+    top: -12px;
+  }
+  .hamburger-menu__line::after {
+    top: 12px;
+  }
+
+  /* オープン時 */
+  .hamburger-menu.open .hamburger-menu__line {
+    background-color: transparent;
+  }
+  .hamburger-menu.open .hamburger-menu__line::before {
+    top: 0;
+    transform: rotate(315deg);
+  }
+  .hamburger-menu.open .hamburger-menu__line::after {
+    top: 0;
+    transform: rotate(-315deg);
+  }
+
+  /* 下部情報 */
+  .hamburger-menu__information {
+    display: flex;
+    flex-direction: column;
+    gap: 4.74vh;
+  }
+}
+/* ----- Opening Hours ----- */
+.opening-hours {
+  display: flex;
+  flex-direction: column;
+  gap: 0.95vh;
+  color: var(--text-color-white);
+  line-height: 1;
+  text-align: center;
+}
+.top__information-bar .opening-hours {
+  flex-direction: row;
+  align-items: center;
+}
+@media (max-width: 500px) {
+  .top__information-bar .opening-hours {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+.opening-hours__label {
+  font-size: 1rem;
+}
+.opening-hours__time time {
+  display: inline-block;
+  font-size: 2rem;
+  line-height: 1;
+}
+/* ----- Social Links ----- */
+.social-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.78vw;
+}
+@media (max-width: 768px) {
+  .top__information-bar .social-links {
+    display: none;
+  }
+}
+/* ============================
+  Main
+============================ */
+/* FV */
+.fv-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+.fv__movie {
+  width: 100vw;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+/* TOP Information Bar */
+.top__information-bar {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 9.77vh;
+  margin-top: -96px;
+  padding-right: 6.94vw;
+  padding-left: 6.94vw;
+  background-color: var(--main-color-green);
+  z-index: 10;
+}
+@media (max-width: 768px) {
+  .top__information-bar {
+    justify-content: center;
+  }
+}
+/*-------------------------
+  入園料金
+-------------------------*/
+.admission-fees__list {
+  display: grid;
+  grid-template-columns: repeat(4, 24.08%);
+  grid-template-rows: 1fr 1fr;
+  justify-content: space-between;
+  height: 13.28vh;
+  margin-bottom: 3.91vh;
+  font-weight: 500;
+  line-height: 1;
+}
+@media (max-width: 768px) {
+  .admission-fees__list {
+    grid-template-columns: repeat(2, 48%);
+    row-gap: 1vh;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+}
+@media (max-width: 500px) {
+  .admission-fees__list {
+    grid-template-columns: 1fr;
+  }
+}
+.admission-fees__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  border: 2px solid var(--main-color-orange);
+  border-radius: 8px;
+  color: var(--text-color-white);
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .admission-fees__item {
+    /* height: 10vh; */
+  }
+}
+.admission-fees__item-label,
+.admission-fees__item-fee .small {
+  font-size: 1rem;
+}
+.admission-fees__item-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 3vh 0;
+  letter-spacing: 0.1em;
+  background-color: var(--main-color-orange);
+}
+.admission-fees__item-fee {
+  padding: 3vh 3vw;
+  justify-content: center;
+  color: var(--main-color-orange);
+  font-size: 3rem;
+}
+/* Webチケット */
+.admission-fees__web-ticket-list-wrapper {
+  width: 49.49%;
+  margin-top: 12vh;
+}
+@media (max-width: 768px) {
+  .admission-fees__web-ticket-list-wrapper {
+    width: 100%;
+    margin-top: 4vh;
+  }
+}
+.admission-fees__web-ticket-list {
+  display: grid;
+  grid-template-columns: repeat(2, 48.66%);
+  justify-content: space-between;
+  gap: 1vh;
+}
+@media (max-width: 500px) {
+  .admission-fees__web-ticket-list {
+    grid-template-columns: 1fr;
+    gap: 0.95vh;
+  }
+}
+.admission-fees__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
+  height: 6.25vh;
+  font-size: 2rem;
+  border: 1px solid #afafaf;
+  border-radius: 8px;
+  background-color: var(--sub-color-white);
+}
+.admission-fees__link:hover {
+  color: var(--text-color-white);
+  background-color: var(--main-color-orange);
+  border: none;
+}
+/*-------------------------
+  イベント
+-------------------------*/
+.events__list {
+  display: grid;
+  grid-template-columns: repeat(3, 30%);
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 6.25vh;
+}
+@media (max-width: 768px) {
+  .events__list {
+    grid-template-columns: repeat(1, 100%);
+    gap: 2.84vh;
+  }
+}
+.event-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* height: 100%; */
+  box-shadow: 3px 3px 3px rgba(19, 19, 19, 0.3);
+  border-radius: 8px;
+}
+.event-card__image {
+  width: 100%;
+  height: 31.25vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: 8px 8px 0 0;
+}
+.event-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  padding: 5%;
+  height: 100%;
+  background-color: var(--bg-color-white);
+  border-radius: 0 0 8px 8px;
+}
+.event-card__title {
+  color: var(--main-color-orange);
+  font-size: 1.75rem;
+  font-size: clamp(1.25rem, 1.46vw, 1.75rem);
+  font-weight: 500;
+  line-height: 1.4;
+}
+@media (max-width: 768px) {
+  .event-card__title {
+    font-size: 1.25rem;
+  }
+}
+.event-card__time,
+.event-card__place {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 1rem;
+}
+@media (max-width: 768px) {
+  .event-card__time,
+  .event-card__place {
+    font-size: 0.875rem;
+  }
+}
+.event-card__desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+@media (max-width: 768px) {
+  .event-card__desc {
+    font-size: 0.875rem;
+  }
+}
+.event-card__desc.is-expanded {
+  -webkit-line-clamp: unset;
+}
+.event-card__note {
+  font-size: 0.875rem;
+}
+@media (max-width: 768px) {
+  .event-card__note {
+    font-size: 0.75rem;
+  }
+}
+.event-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 2% 5%;
+  background: var(--main-color-green);
+  color: var(--text-color-white);
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+.event-card__link:hover {
+  background: linear-gradient(135deg, #ff6b35 0%, #e55a2b 100%);
+  box-shadow: 0 4px 12px rgba(255, 140, 66, 0.4);
+  text-decoration: none;
+}
+@media (max-width: 768px) {
+  .event-card__link {
+    font-size: 0.85rem;
+    padding: 0.65rem 1.25rem;
+  }
+}
+/*-------------------------
+  コース
+-------------------------*/
+.course__step-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+.course__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 3.13vh;
+  margin-bottom: 5vh;
+}
+.course__step {
+  display: flex;
+  flex-direction: column;
+  gap: 1.56vh;
+}
+.course__options {
+  display: grid;
+  grid-template-columns: repeat(3, 32%);
+  justify-content: space-between;
+  width: 100%;
+  height: 13vh;
+  padding: 2vh 2.58%;
+  border: 1px solid #aaa;
+  background-color: var(--bg-color-white);
+  border-radius: 8px;
+}
+@media (max-width: 768px) {
+  .course__options {
+    grid-template-columns: 1fr;
+  }
+}
+.course__button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: var(--text-color-white);
+  font-size: 1.5rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: 0.1s ease;
+}
+.course__button:hover {
+  scale: 1.05;
+}
+.course__button--orange {
+  background-color: var(--main-color-orange);
+}
+.course__button--orange.selected {
+  background-color: transparent;
+  border: 8px solid var(--main-color-orange);
+  color: var(--main-color-orange);
+}
+.course__button--green {
+  background-color: var(--main-color-green);
+}
+.course__button--green.selected {
+  background-color: transparent;
+  border: 8px solid var(--main-color-green);
+  color: var(--main-color-green);
+}
+.course__button--blue {
+  background-color: var(--main-color-blue);
+}
+.course__button--blue.selected {
+  background-color: transparent;
+  border: 8px solid var(--main-color-blue);
+  color: var(--main-color-blue);
+}
+/* 結果表示エリア */
+.course__result.open {
+  border: 1px solid var(--main-color-green);
+  border-radius: 8px;
+}
+.course__result-title {
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+}
+/*-------------------------
+  お知らせ
+-------------------------*/
+.news__list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 6.25vh;
+}
+.news__item-link {
+  display: flex;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--main-color-green);
+}
+@media screen and (max-width: 500px) {
+  .news__item-link {
+    flex-direction: column;
+  }
+}
+.news__item-date {
+  width: 20%;
+}
+@media screen and (max-width: 500px) {
+  .news__item-date {
+    width: 100%;
+  }
+  .news__item-label {
+    margin-left: -0.2em;
+  }
+}
+/*-------------------------
+  よくある質問
+-------------------------*/
+.faq__list {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  margin: 0 auto;
+
+  gap: 24px;
+}
+.faq__item {
+  /* border: 1px solid var(--main-color-green); */
+  border-radius: 8px;
+}
+.faq__item-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 64px;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: var(--orange-alpha);
+  cursor: pointer;
+}
+.faq__item-content {
+  display: flex;
+  height: 0;
+  transition: 0.3s ease;
+  overflow: hidden;
+  padding-left: 16px;
+}
+.faq__item-content.is-active {
+  height: auto;
+  padding: 16px;
+  /* border-top: 1px solid var(--main-color-green); */
+}
+.faq__item-header::after {
+  position: absolute;
+  right: 2%;
+  content: '';
+  display: block;
+  transform: translateY(-25%) rotate(135deg);
+  width: 8px;
+  height: 8px;
+  border: 2px solid currentColor;
+  border-bottom: 0;
+  border-left: 0;
+  color: #333333;
+  line-height: 1;
+  vertical-align: middle;
+  transition: 0.2s ease;
+}
+.faq__item-header.is-active::after {
+  transform: translateY(25%) rotate(-45deg);
+}
+/*-------------------------
+  フッター
+-------------------------*/
+.footer {
+  padding: 7.81vh 6.94vw;
+  background-color: var(--main-color-green);
+  color: var(--text-color-white);
+}
+.footer__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: space-between;
+  margin-bottom: 3.91vh;
+}
+@media (max-width: 768px) {
+  .footer__inner {
+    grid-template-columns: 1fr;
+  }
+}
+.footer__nav-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (max-width: 768px) {
+  .footer__social-list {
+    order: 3;
+  }
+}
+/* ============================
+* イベント一覧ページ
+* ========================= */
+/*-------------------------
+  注目イベント
+-------------------------*/
+.featured-event__inner {
+  position: relative;
+  width: 100vw;
+  height: calc(100vh - 9.38vh);
+}
+.featured-event__image {
+  width: 100vw;
+  height: calc(100vh - 9.38vh);
+}
+.featured-event__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (max-width: 500px) {
+  .featured-event__img {
+    -o-object-position: 30%;
+       object-position: 30%;
+  }
+}
+.featured-event__detail {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  width: 50vw;
+  padding: 5%;
+  border-radius: 0 0 8px 8px;
+  content: '';
+  right: 20px;
+  bottom: 20px;
+  background-color: var(--orange-alpha);
+  border-radius: 8px;
+}
+@media screen and (max-width: 768px) {
+  .featured-event__detail {
+    width: 90vw;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+  }
+}
+.featured-event__title {
+  color: var(--text-color-white);
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+@media (max-width: 768px) {
+  .featured-event__title {
+    font-size: 1.25rem;
+  }
+}
+.featured-event__desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+@media (max-width: 768px) {
+  .event-card__desc {
+    font-size: 0.875rem;
+  }
+}
+/*-------------------------
+  デイリーイベント
+-------------------------*/
+.daily-events__content {
+  display: grid;
+  grid-template-columns: repeat(3, 30%);
+  justify-content: space-between;
+}
+@media (max-width: 768px) {
+  .daily-events__content {
+    grid-template-columns: 1fr;
+    gap: 3.79vh;
+  }
+}
+.daily-events__card {
+  display: grid;
+  grid-template-rows: 40% 60%;
+  gap: 2.22vh;
+  /* max-height: 504px; */
+  height: 100%;
+}
+@media screen and (max-width: 768px) {
+  .daily-events__card {
+    max-height: 100%;
+  }
+}
+.daily-events__card-image,
+.daily-events__card-img {
+  border-radius: 8px;
+}
+.daily-events__card-image {
+  /* height: 60%; */
+}
+.daily-events__card-img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.daily-events__card-content {
+  display: flex;
+  flex-direction: column;
+  /* height: 40%; */
+}
+.daily-events__card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.5em;
+}
+.featured-event__time,
+.daily-events__card-time,
+.featured-event__place,
+.daily-events__card-place {
+  display: flex;
+  gap: 0.4em;
+  margin-bottom: 0.5em;
+  align-items: center;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #222;
+}
+@media (max-width: 768px) {
+  .featured-event__time,
+  .daily-events__card-time,
+  .featured-event__place,
+  .daily-events__card-place {
+    font-size: 0.875rem;
+  }
+}
+.daily-events__card-desc {
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #666;
+}
+.btn-ticket {
+  display: inline-block;
+  background-color: var(--main-color-green);
+  color: #fff;
+  font-weight: 500;
+  width: 15vw;
+  padding: 0.75rem 1.5rem;
+  /* margin-top: 24px; */
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+@media screen and (max-width: 768px) {
+  .btn-ticket {
+    width: 30vw;
+  }
+}
+@media (max-width: 450px) {
+  .btn-ticket {
+    width: 100%;
+  }
+}
+.btn-ticket:hover {
+  background-color: #3f5e24;
+}
+/*-------------------------
+  アクセス
+-------------------------*/
+.access__content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .access__content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.access__content iframe {
+  width: 60%;
+}
+.access__text {
+  width: 37%;
+}
+@media screen and (max-width: 768px) {
+  .access__content iframe {
+    width: 100%;
+  }
+
+  .access__text {
+    width: 100%;
+  }
+}
+/* ============================
+* 入園案内
+* ========================= */
+/* ページタイトル背景画像 */
+.addmission-page__title-wapper {
+  background-image: url('../../dist/images/title-bg_addmission.jpg');
+}
+.opening-hours__list {
+  display: flex;
+  height: 104px;
+  border-radius: 8px;
+}
+@media screen and (max-width: 768px) {
+  .opening-hours__list {
+    flex-direction: column;
+    gap: 2.84vh;
+    height: auto;
+  }
+}
+.opening-hours__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  align-items: stretch;
+}
+.opening-hours__item-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  color: var(--text-color-white);
+  font-size: 1.125rem;
+}
+.opening-hours__item-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 0 5%;
+}
+@media screen and (max-width: 768px) {
+  .opening-hours__item-content {
+    padding: 4%;
+  }
+}
+/* 営業時間 */
+.opening-hours__item--time .opening-hours__item-label {
+  background-color: var(--main-color-green);
+  border-radius: 8px 0 0 0;
+}
+.opening-hours__item--time .opening-hours__item-content {
+  flex-direction: row;
+  font-size: 1.5rem;
+  border: 2px solid var(--main-color-green);
+  border-radius: 0 0 0 8px;
+}
+/* 休園日 */
+.opening-hours__item--closed-day .opening-hours__item-label {
+  background-color: var(--main-color-orange);
+}
+.opening-hours__item--closed-day .opening-hours__item-content {
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  border: 2px solid var(--main-color-orange);
+}
+/* その他 */
+.opening-hours__item--other .opening-hours__item-label {
+  background-color: var(--main-color-blue);
+  border-radius: 0 8px 0 0;
+}
+.opening-hours__item--other .opening-hours__item-content {
+  border: 2px solid var(--main-color-blue);
+  border-radius: 0 0 8px 0;
+}
+@media screen and (max-width: 768px) {
+  .opening-hours__item--time .opening-hours__item-label,
+  .opening-hours__item--closed-day .opening-hours__item-label,
+  .opening-hours__item--other .opening-hours__item-label {
+    border-radius: 8px 8px 0 0;
+  }
+
+  .opening-hours__item--time .opening-hours__item-content,
+  .opening-hours__item--closed-day .opening-hours__item-content,
+  .opening-hours__item--other .opening-hours__item-content {
+    border-radius: 0 0 8px 8px;
+  }
+}
+/* ============================
+* 動物紹介
+* ========================= */
+/* ページタイトル背景画像 */
+.animals-page__title-wapper {
+  background-image: url('../images/title-bg_animals.jpg');
+  background-position: top;
+}
+/* タブ */
+.animals-page .tabs {
+  display: flex;
+  justify-content: center;
+  gap: 3vw;
+  padding: 3%;
+}
+@media screen and (max-width: 768px) {
+  .animals-page .tabs {
+    justify-content: space-between;
+  }
+}
+.animals-page .tab {
+  font-size: 2rem;
+  line-height: 1.5;
+}
+@media screen and (max-width: 768px) {
+  .animals-page .tab {
+    font-size: 1.25em;
+  }
+}
+/* 昼行性 */
+.diurnal-tab.active {
+  color: var(--main-color-orange);
+  border-bottom: 4px solid var(--main-color-orange);
+}
+/* 夜行性 */
+.nocturnal-tab.active {
+  color: #4a4a8a;
+  border-bottom: 4px solid #4a4a8a;
+}
+/* 小動物 */
+.small-animals-tab.active {
+  color: var(--main-color-green);
+  border-bottom: 4px solid var(--main-color-green);
+}
+/* 爬虫類 */
+.reptiles-tab.active {
+  color: var(--main-color-blue);
+  border-bottom: 4px solid var(--main-color-blue);
+}
+.animals-page .tab-panel {
+  display: none;
+}
+.tab-panel.active {
+  display: block;
+  /* background-color: rgb(252 222 222 / .5); */
+}
+/* 動物サムネイル */
+.animal-card__image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 16px;
+}
+.animals-page .tab-panel__inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 32%);
+  /* grid-template-rows: repeat(3, 32%); */
+  justify-content: center;
+  gap: 12vh 1.67vw;
+}
+@media screen and (max-width: 500px) {
+  .animals-page .tab-panel__inner {
+    grid-template-columns: repeat(2, 47%);
+    justify-content: space-between;
+    gap: 12vh 6.15vw;
+  }
+}
+.animal-card__image:hover {
+  cursor: pointer;
+}
+.animal-card__label {
+  display: block;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
+/* 詳細 ポップアップ */
+.animal-detail-wrapper {
+  position: fixed;
+  content: '';
+  top: 50vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  width: 50vw;
+  padding: var(--space-vh40-d) var(--space-32-d);
+  background-color: var(--bg-color-white);
+  border-radius: 16px;
+  box-shadow: 3px 3px 3px 0 rgba(54, 54, 54, 0.3);
+}
+@media screen and (max-width: 768px) {
+  .animal-detail-wrapper {
+    width: 90.26vw;
+    padding: var(--space-vh32-m) var(--space-32-m);
+  }
+}
+.animal-detail {
+  position: relative;
+}
+.animal-detail__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32-d);
+  width: 100%;
+  height: auto;
+}
+.animal-detail__heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.animal-detail__title {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.animal-detail__image {
+  height: 40vh;
+  border-radius: 16px;
+}
+@media screen and (max-width: 768px) {
+  .animal-detail__image {
+    height: auto;
+  }
+}
+.animal-detail__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 16px;
+}
+.animal-detail__text {
+  font-size: 1rem;
+  line-height: 2;
+}
+.animal-detail__close {
+  font-size: 1.25rem;
+  line-height: 1;
+  padding: 8px;
+  font-weight: 600;
+  color: var(--main-color-blue);
+  background-color: var(--bg-color-white);
+  border: 1px solid var(--main-color-blue);
+  border-radius: 8px;
+}
+/* ============================
+*  お知らせ一覧
+* ========================== */
+.pagination__list {
+  display: flex;
+  justify-content: center;
+  gap: 2vw;
+}
+/* Tailwindの基本スタイルを読み込む */
+*, ::before, ::after{
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ;
+}
+::backdrop{
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ;
+}
+/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */
+/*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+*/
+*,
+::before,
+::after {
+  box-sizing: border-box; /* 1 */
+  border-width: 0; /* 2 */
+  border-style: solid; /* 2 */
+  border-color: #e5e7eb; /* 2 */
+}
+::before,
+::after {
+  --tw-content: '';
+}
+/*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+4. Use the user's configured `sans` font-family by default.
+5. Use the user's configured `sans` font-feature-settings by default.
+6. Use the user's configured `sans` font-variation-settings by default.
+7. Disable tap highlights on iOS
+*/
+html,
+:host {
+  line-height: 1.5; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  -moz-tab-size: 4; /* 3 */
+  -o-tab-size: 4;
+     tab-size: 4; /* 3 */
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 4 */
+  font-feature-settings: normal; /* 5 */
+  font-variation-settings: normal; /* 6 */
+  -webkit-tap-highlight-color: transparent; /* 7 */
+}
+/*
+1. Remove the margin in all browsers.
+2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+*/
+body {
+  margin: 0; /* 1 */
+  line-height: inherit; /* 2 */
+}
+/*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
+hr {
+  height: 0; /* 1 */
+  color: inherit; /* 2 */
+  border-top-width: 1px; /* 3 */
+}
+/*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+/*
+Remove the default font size and weight for headings.
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+/*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+/*
+Add the correct font weight in Edge and Safari.
+*/
+b,
+strong {
+  font-weight: bolder;
+}
+/*
+1. Use the user's configured `mono` font-family by default.
+2. Use the user's configured `mono` font-feature-settings by default.
+3. Use the user's configured `mono` font-variation-settings by default.
+4. Correct the odd `em` font sizing in all browsers.
+*/
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /* 1 */
+  font-feature-settings: normal; /* 2 */
+  font-variation-settings: normal; /* 3 */
+  font-size: 1em; /* 4 */
+}
+/*
+Add the correct font size in all browsers.
+*/
+small {
+  font-size: 80%;
+}
+/*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+/*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+table {
+  text-indent: 0; /* 1 */
+  border-color: inherit; /* 2 */
+  border-collapse: collapse; /* 3 */
+}
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-feature-settings: inherit; /* 1 */
+  font-variation-settings: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  font-weight: inherit; /* 1 */
+  line-height: inherit; /* 1 */
+  letter-spacing: inherit; /* 1 */
+  color: inherit; /* 1 */
+  margin: 0; /* 2 */
+  padding: 0; /* 3 */
+}
+/*
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+button,
+select {
+  text-transform: none;
+}
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Remove default button styles.
+*/
+button,
+input:where([type='button']),
+input:where([type='reset']),
+input:where([type='submit']) {
+  -webkit-appearance: button; /* 1 */
+  background-color: transparent; /* 2 */
+  background-image: none; /* 2 */
+}
+/*
+Use the modern Firefox focus style for all focusable elements.
+*/
+:-moz-focusring {
+  outline: auto;
+}
+/*
+Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+*/
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+/*
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+progress {
+  vertical-align: baseline;
+}
+/*
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+/*
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+[type='search'] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+/*
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to `inherit` in Safari.
+*/
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+/*
+Add the correct display in Chrome and Safari.
+*/
+summary {
+  display: list-item;
+}
+/*
+Removes the default spacing and border for appropriate elements.
+*/
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+legend {
+  padding: 0;
+}
+ol,
+ul,
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/*
+Reset default styling for dialogs.
+*/
+dialog {
+  padding: 0;
+}
+/*
+Prevent resizing textareas horizontally by default.
+*/
+textarea {
+  resize: vertical;
+}
+/*
+1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+2. Set the default placeholder color to the user's configured gray 400 color.
+*/
+input::-moz-placeholder, textarea::-moz-placeholder {
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
+}
+input::placeholder,
+textarea::placeholder {
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
+}
+/*
+Set the default cursor for buttons.
+*/
+button,
+[role="button"] {
+  cursor: pointer;
+}
+/*
+Make sure disabled buttons don't get the pointer cursor.
+*/
+:disabled {
+  cursor: default;
+}
+/*
+1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+   This can trigger a poorly considered lint error in some tools but is included by design.
+*/
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block; /* 1 */
+  vertical-align: middle; /* 2 */
+}
+/*
+Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+*/
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+/* Make elements with the HTML hidden attribute stay hidden by default */
+[hidden]:where(:not([hidden="until-found"])) {
+  display: none;
+}
+.container{
+  width: 100%;
+}
+@media (min-width: 640px){
+  .container{
+    max-width: 640px;
+  }
+}
+@media (min-width: 768px){
+  .container{
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px){
+  .container{
+    max-width: 1024px;
+  }
+}
+@media (min-width: 1280px){
+  .container{
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1536px){
+  .container{
+    max-width: 1536px;
+  }
+}
+.sr-only{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+.visible{
+  visibility: visible;
+}
+.static{
+  position: static;
+}
+.sticky{
+  position: sticky;
+}
+.flex{
+  display: flex;
+}
+.grid{
+  display: grid;
+}
+.hidden{
+  display: none;
+}
+.transform{
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.resize{
+  resize: both;
+}
+.break-keep{
+  word-break: keep-all;
+}
+.border{
+  border-width: 1px;
+}
+.shadow{
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.blur{
+  --tw-blur: blur(8px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.invert{
+  --tw-invert: invert(100%);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.filter{
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.transition{
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/*# sourceMappingURL=output.css.map */
