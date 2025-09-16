@@ -22,7 +22,7 @@
   <script type="module" src="./dist/js/main.js"></script>
 </head>
 
-<body>
+<body class="box-border relative bg-white">
   <!-- ヘッダー -->
   <header class="header fixed z-20 w-full h-24 bg-transparent md:bg-[var(--bg-color-white)]">
     <div class="flex items-center justify-between h-full px-4 md:px-32 header__inner">
@@ -94,8 +94,8 @@
         </nav>
 
         <!-- SPメニュー下情報（営業時間・SNS） -->
-        <div class="block">
-          <div class="flex flex-col opening-hours ">
+        <div class="flex flex-col gap-y-10 hamburger-menu__information ">
+          <div class="flex flex-col leading-none text-center gap-y-3 opening-hours">
             <span class="text-base opening-hours__label">本日の営業時間</span>
             <p class="flex opening-hours__time">
               <time datetime="09:00" class="inline-block text-3xl">午前9:00</time> ～ <time datetime="17:00"
@@ -122,7 +122,6 @@
     </div>
   </header>
 
-
   <main>
     <div class="fv-wrapper">
       <!-- FV -->
@@ -138,8 +137,8 @@
           お使いのブラウザは動画に対応していません。
         </video>
       </div>
-      <div class="top__information-bar">
-        <div class="opening-hours">
+      <div class="top__information-bar text-[var(--text-color-white)]">
+        <div class="flex flex-col items-center gap-0 text-center sm:flex-row sm:gap-x-4 opening-hours">
           <span class="opening-hours__label">本日の営業時間</span>
           <p class="opening-hours__time">
             <time datetime="09:00">午前9:00</time>

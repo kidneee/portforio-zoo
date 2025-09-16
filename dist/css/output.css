@@ -156,10 +156,6 @@ meter {
   style
 ============================ */
 body {
-  position: relative;
-  box-sizing: border-box;
-  overflow-x: hidden;
-  background: #fff;
   font-family: 'Zen Maru Gothic', sans-serif;
 }
 a {
@@ -258,17 +254,6 @@ button {
   }
 }
 /* ----- Utility ----- */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
 /* ============================
   Header
 ============================ */
@@ -317,16 +302,9 @@ button {
   }
 
   .hamburger-menu__wrapper.is-active .hamburger-menu-video {
-    /* position: relative; */
-    /* top: 50%; */
-    /* left: 50%; */
-    /* width: 100%; */
-    /* height: 100%; */
-    /* transform: translate(-50%, -50%); */
-    /* object-fit: cover; */
     z-index: -1;
-    /* display: block; */
   }
+
   .hamburger-menu__wrapper.is-active .hamburger-menu-video-wrapper::after {
     position: absolute;
     top: 0;
@@ -375,33 +353,8 @@ button {
     top: 0;
     transform: rotate(-315deg);
   }
-
-  /* 下部情報 */
-  .hamburger-menu__information {
-    display: flex;
-    flex-direction: column;
-    gap: 4.74vh;
-  }
 }
 /* ----- Opening Hours ----- */
-.opening-hours {
-  /* display: flex; */
-  /* flex-direction: column; */
-  gap: 0.95vh;
-  color: var(--text-color-white);
-  line-height: 1;
-  text-align: center;
-}
-.top__information-bar .opening-hours {
-  flex-direction: row;
-  align-items: center;
-}
-@media (max-width: 500px) {
-  .top__information-bar .opening-hours {
-    flex-direction: column;
-    gap: 0;
-  }
-}
 .opening-hours__label {
   font-size: 1rem;
 }
@@ -1872,6 +1825,9 @@ video {
 .mt-4{
   margin-top: 1rem;
 }
+.box-border{
+  box-sizing: border-box;
+}
 .block{
   display: block;
 }
@@ -1984,6 +1940,9 @@ video {
 .justify-between{
   justify-content: space-between;
 }
+.gap-0{
+  gap: 0px;
+}
 .gap-4{
   gap: 1rem;
 }
@@ -2002,6 +1961,12 @@ video {
 .gap-x-4{
   -moz-column-gap: 1rem;
        column-gap: 1rem;
+}
+.gap-y-10{
+  row-gap: 2.5rem;
+}
+.gap-y-3{
+  row-gap: 0.75rem;
 }
 .gap-y-\[4\.74vh\]{
   row-gap: 4.74vh;
@@ -2053,10 +2018,6 @@ video {
 }
 .p-\[2\.84vh_4\.1vw\]{
   padding: 2.84vh 4.1vw;
-}
-.px-20{
-  padding-left: 5rem;
-  padding-right: 5rem;
 }
 .px-4{
   padding-left: 1rem;
@@ -2225,6 +2186,15 @@ video {
   }
   .max-\[500px\]\:flex-col{
     flex-direction: column;
+  }
+}
+@media (min-width: 640px){
+  .sm\:flex-row{
+    flex-direction: row;
+  }
+  .sm\:gap-x-4{
+    -moz-column-gap: 1rem;
+         column-gap: 1rem;
   }
 }
 @media (min-width: 769px){
