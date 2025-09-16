@@ -1059,10 +1059,8 @@ button {
 }
 .daily-events__card {
   display: grid;
-  grid-template-rows: 40% 60%;
+  grid-template-rows: 40% 56Fix %;
   gap: 2.22vh;
-  /* max-height: 504px; */
-  height: 100%;
 }
 @media screen and (max-width: 768px) {
   .daily-events__card {
@@ -1073,9 +1071,6 @@ button {
 .daily-events__card-img {
   border-radius: 8px;
 }
-.daily-events__card-image {
-  /* height: 60%; */
-}
 .daily-events__card-img {
   width: 100%;
   height: 100%;
@@ -1085,7 +1080,7 @@ button {
 .daily-events__card-content {
   display: flex;
   flex-direction: column;
-  /* height: 40%; */
+  justify-content: space-between;
 }
 .daily-events__card-title {
   font-size: 1.25rem;
