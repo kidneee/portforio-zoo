@@ -13,6 +13,7 @@
   /* テキストカラー */
   --text-color-primary: #333;
   --text-color-white: #fefbf3;
+  --text-color-orange: #e39411;
 
   /* --- Desktop (1920x1080) --- */
   --space-16-d: 0.8333vw;

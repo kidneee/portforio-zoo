@@ -119,35 +119,6 @@ button {
   Header
 ============================ */
 /* ----- Navigation ----- */
-@media (max-width: 768px) {
-  .nav__link::before {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 28px;
-    height: 28px;
-    transform: translateY(-50%);
-    content: '';
-  }
-  .nav__admission::before {
-    background-image: url('../../dist/images/icon_admission.svg');
-  }
-
-  .nav__animals::before {
-    background-image: url('../../dist/images/icon_animals.svg');
-  }
-
-  .nav__event::before {
-    background-image: url('../../dist/images/icon_course.svg');
-  }
-
-  .nav__news::before {
-    background-image: url('../../dist/images/icon_news.svg');
-  }
-  .nav__access::before {
-    background-image: url('../../dist/images/icon_access.svg');
-  }
-}
 
 /* ----- Hamburger Menu ----- */
 @media (max-width: 768px) {
@@ -218,130 +189,24 @@ button {
 }
 
 /* ----- Opening Hours ----- */
-.opening-hours__label {
-  font-size: 1rem;
-}
-.opening-hours__time time {
-  /* display: inline-block; */
-  font-size: 2rem;
-  line-height: 1;
-}
 
 /* ----- Social Links ----- */
-.social-links {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2.78vw;
-}
-@media (max-width: 768px) {
-  .top__information-bar .social-links {
-    display: none;
-  }
-}
 
 /* ============================
   Main
 ============================ */
 /* FV */
-.fv-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-}
-.fv__movie {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-}
 
 /* TOP Information Bar */
-.top__information-bar {
-  position: absolute;
-  content: '';
-  bottom: 0;
-  left: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100vw;
-  height: 9.77vh;
-  margin-top: -96px;
-  padding-right: 6.94vw;
-  padding-left: 6.94vw;
-  background-color: var(--main-color-green);
-  z-index: 10;
-}
-@media (max-width: 768px) {
-  .top__information-bar {
-    justify-content: center;
-  }
-}
 
 /*-------------------------
   入園料金
 -------------------------*/
-.admission-fees__list {
-  display: grid;
-  grid-template-columns: repeat(4, 24.08%);
-  grid-template-rows: 1fr 1fr;
-  justify-content: space-between;
-  height: 13.28vh;
-  margin-bottom: 3.91vh;
-  font-weight: 500;
-  line-height: 1;
-}
-@media (max-width: 768px) {
-  .admission-fees__list {
-    grid-template-columns: repeat(2, 48%);
-    row-gap: 1vh;
-    height: fit-content;
-  }
-}
-@media (max-width: 500px) {
-  .admission-fees__list {
-    grid-template-columns: 1fr;
-  }
-}
-
-.admission-fees__item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: auto;
-  border: 2px solid var(--main-color-orange);
-  border-radius: 8px;
-  color: var(--text-color-white);
-  text-align: center;
-}
-@media (max-width: 768px) {
-  .admission-fees__item {
-    /* height: 10vh; */
-  }
-}
-
-.admission-fees__item-label,
-.admission-fees__item-fee .small {
-  font-size: 1rem;
-}
-
-.admission-fees__item-label {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 3vh 0;
-  letter-spacing: 0.1em;
-  background-color: var(--main-color-orange);
-}
-
 .admission-fees__item-fee {
-  padding: 3vh 3vw;
-  justify-content: center;
-  color: var(--main-color-orange);
-  font-size: 3rem;
+  /* padding: 3vh 3vw; */
+  /* justify-content: center; */
+  /* color: var(--main-color-orange); */
+  /* font-size: 3rem; */
 }
 /* Webチケット */
 .admission-fees__web-ticket-list-wrapper {

@@ -121,6 +121,7 @@ meter {
   /* テキストカラー */
   --text-color-primary: #333;
   --text-color-white: #fefbf3;
+  --text-color-orange: #e39411;
 
   /* --- Desktop (1920x1080) --- */
   --space-16-d: 0.8333vw;
@@ -258,35 +259,6 @@ button {
   Header
 ============================ */
 /* ----- Navigation ----- */
-@media (max-width: 768px) {
-  .nav__link::before {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 28px;
-    height: 28px;
-    transform: translateY(-50%);
-    content: '';
-  }
-  .nav__admission::before {
-    background-image: url('../../dist/images/icon_admission.svg');
-  }
-
-  .nav__animals::before {
-    background-image: url('../../dist/images/icon_animals.svg');
-  }
-
-  .nav__event::before {
-    background-image: url('../../dist/images/icon_course.svg');
-  }
-
-  .nav__news::before {
-    background-image: url('../../dist/images/icon_news.svg');
-  }
-  .nav__access::before {
-    background-image: url('../../dist/images/icon_access.svg');
-  }
-}
 /* ----- Hamburger Menu ----- */
 @media (max-width: 768px) {
   .hamburger-menu__wrapper.is-active {
@@ -355,124 +327,20 @@ button {
   }
 }
 /* ----- Opening Hours ----- */
-.opening-hours__label {
-  font-size: 1rem;
-}
-.opening-hours__time time {
-  /* display: inline-block; */
-  font-size: 2rem;
-  line-height: 1;
-}
 /* ----- Social Links ----- */
-.social-links {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2.78vw;
-}
-@media (max-width: 768px) {
-  .top__information-bar .social-links {
-    display: none;
-  }
-}
 /* ============================
   Main
 ============================ */
 /* FV */
-.fv-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-}
-.fv__movie {
-  width: 100vw;
-  height: 100vh;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
 /* TOP Information Bar */
-.top__information-bar {
-  position: absolute;
-  content: '';
-  bottom: 0;
-  left: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100vw;
-  height: 9.77vh;
-  margin-top: -96px;
-  padding-right: 6.94vw;
-  padding-left: 6.94vw;
-  background-color: var(--main-color-green);
-  z-index: 10;
-}
-@media (max-width: 768px) {
-  .top__information-bar {
-    justify-content: center;
-  }
-}
 /*-------------------------
   入園料金
 -------------------------*/
-.admission-fees__list {
-  display: grid;
-  grid-template-columns: repeat(4, 24.08%);
-  grid-template-rows: 1fr 1fr;
-  justify-content: space-between;
-  height: 13.28vh;
-  margin-bottom: 3.91vh;
-  font-weight: 500;
-  line-height: 1;
-}
-@media (max-width: 768px) {
-  .admission-fees__list {
-    grid-template-columns: repeat(2, 48%);
-    row-gap: 1vh;
-    height: -moz-fit-content;
-    height: fit-content;
-  }
-}
-@media (max-width: 500px) {
-  .admission-fees__list {
-    grid-template-columns: 1fr;
-  }
-}
-.admission-fees__item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: auto;
-  border: 2px solid var(--main-color-orange);
-  border-radius: 8px;
-  color: var(--text-color-white);
-  text-align: center;
-}
-@media (max-width: 768px) {
-  .admission-fees__item {
-    /* height: 10vh; */
-  }
-}
-.admission-fees__item-label,
-.admission-fees__item-fee .small {
-  font-size: 1rem;
-}
-.admission-fees__item-label {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 3vh 0;
-  letter-spacing: 0.1em;
-  background-color: var(--main-color-orange);
-}
 .admission-fees__item-fee {
-  padding: 3vh 3vw;
-  justify-content: center;
-  color: var(--main-color-orange);
-  font-size: 3rem;
+  /* padding: 3vh 3vw; */
+  /* justify-content: center; */
+  /* color: var(--main-color-orange); */
+  /* font-size: 3rem; */
 }
 /* Webチケット */
 .admission-fees__web-ticket-list-wrapper {
@@ -1782,6 +1650,9 @@ video {
 .inset-0{
   inset: 0px;
 }
+.bottom-0{
+  bottom: 0px;
+}
 .left-0{
   left: 0px;
 }
@@ -1796,6 +1667,9 @@ video {
 }
 .top-1\/2{
   top: 50%;
+}
+.z-10{
+  z-index: 10;
 }
 .z-20{
   z-index: 20;
@@ -1812,6 +1686,12 @@ video {
 .mx-auto{
   margin-left: auto;
   margin-right: auto;
+}
+.-mt-0\.5{
+  margin-top: -0.125rem;
+}
+.-mt-24{
+  margin-top: -6rem;
 }
 .mb-\[6\.25vh\]{
   margin-bottom: 6.25vh;
@@ -1830,9 +1710,6 @@ video {
 }
 .block{
   display: block;
-}
-.inline-block{
-  display: inline-block;
 }
 .flex{
   display: flex;
@@ -1928,6 +1805,12 @@ video {
 .resize{
   resize: both;
 }
+.grid-cols-1{
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.grid-rows-1{
+  grid-template-rows: repeat(1, minmax(0, 1fr));
+}
 .flex-col{
   flex-direction: column;
 }
@@ -1942,6 +1825,9 @@ video {
 }
 .gap-0{
   gap: 0px;
+}
+.gap-3{
+  gap: 0.75rem;
 }
 .gap-4{
   gap: 1rem;
@@ -1962,11 +1848,18 @@ video {
   -moz-column-gap: 1rem;
        column-gap: 1rem;
 }
+.gap-x-6{
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
+}
 .gap-y-10{
   row-gap: 2.5rem;
 }
 .gap-y-3{
   row-gap: 0.75rem;
+}
+.gap-y-4{
+  row-gap: 1rem;
 }
 .gap-y-\[4\.74vh\]{
   row-gap: 4.74vh;
@@ -1979,6 +1872,18 @@ video {
 }
 .rounded-lg{
   border-radius: 0.5rem;
+}
+.rounded-ee-lg{
+  border-end-end-radius: 0.5rem;
+}
+.rounded-es-lg{
+  border-end-start-radius: 0.5rem;
+}
+.rounded-se-lg{
+  border-start-end-radius: 0.5rem;
+}
+.rounded-ss-lg{
+  border-start-start-radius: 0.5rem;
 }
 .border{
   border-width: 1px;
@@ -1995,11 +1900,23 @@ video {
 .border-l-0{
   border-left-width: 0px;
 }
+.border-solid{
+  border-style: solid;
+}
 .border-\[var\(--main-color-green\)\]{
   border-color: var(--main-color-green);
 }
+.border-\[var\(--main-color-orange\)\]{
+  border-color: var(--main-color-orange);
+}
 .border-current{
   border-color: currentColor;
+}
+.bg-\[var\(--main-color-green\)\]{
+  background-color: var(--main-color-green);
+}
+.bg-\[var\(--main-color-orange\)\]{
+  background-color: var(--main-color-orange);
 }
 .bg-orange-200{
   --tw-bg-opacity: 1;
@@ -2019,6 +1936,10 @@ video {
 .p-\[2\.84vh_4\.1vw\]{
   padding: 2.84vh 4.1vw;
 }
+.px-0{
+  padding-left: 0px;
+  padding-right: 0px;
+}
 .px-4{
   padding-left: 1rem;
   padding-right: 1rem;
@@ -2034,6 +1955,10 @@ video {
 .py-2{
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+}
+.py-6{
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 .py-8{
   padding-top: 2rem;
@@ -2061,6 +1986,10 @@ video {
   font-size: 1.125rem;
   line-height: 1.75rem;
 }
+.text-xl{
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
 .font-bold{
   font-weight: 700;
 }
@@ -2069,6 +1998,12 @@ video {
 }
 .leading-none{
   line-height: 1;
+}
+.tracking-widest{
+  letter-spacing: 0.1em;
+}
+.text-\[var\(--text-color-orange\)\]{
+  color: var(--text-color-orange);
 }
 .text-\[var\(--text-color-primary\)\]{
   color: var(--text-color-primary);
@@ -2189,6 +2124,9 @@ video {
   }
 }
 @media (min-width: 640px){
+  .sm\:grid-cols-2{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .sm\:flex-row{
     flex-direction: row;
   }
@@ -2207,8 +2145,14 @@ video {
   .md\:hidden{
     display: none;
   }
+  .md\:grid-cols-4{
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
   .md\:flex-row{
     flex-direction: row;
+  }
+  .md\:justify-between{
+    justify-content: space-between;
   }
   .md\:gap-\[2\.22vw\]{
     gap: 2.22vw;

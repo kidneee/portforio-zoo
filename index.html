@@ -95,11 +95,11 @@
 
         <!-- SPメニュー下情報（営業時間・SNS） -->
         <div class="flex flex-col gap-y-10 hamburger-menu__information ">
-          <div class="flex flex-col leading-none text-center gap-y-3 opening-hours">
+          <div class="flex flex-col leading-none text-center gap-y-3 opening-hours text-[var(--text-color-white)]">
             <span class="text-base opening-hours__label">本日の営業時間</span>
-            <p class="flex opening-hours__time">
-              <time datetime="09:00" class="inline-block text-3xl">午前9:00</time> ～ <time datetime="17:00"
-                class="inline-block text-3xl">午後5:00</time>
+            <p class="flex items-center justify-between opening-hours__time">
+              <time datetime="09:00" class="text-3xl">午前9:00</time> ～ <time datetime="17:00"
+                class="text-3xl">午後5:00</time>
             </p>
           </div>
           <ul class="flex mt-4 social-links gap-x-4">
@@ -123,30 +123,32 @@
   </header>
 
   <main>
-    <div class="fv-wrapper">
+    <div class="relative w-full h-screen fv-wrapper">
       <!-- FV -->
       <div class="fv">
         <!-- PC用動画 -->
-        <video autoplay muted loop playsinline class="hidden fv__movie md:block">
+        <video autoplay muted loop playsinline class="hidden object-cover w-full h-screen fv__movie md:block">
           <source src="./dist/images/fv_movie-pc.mp4" type="video/mp4" />
           お使いのブラウザは動画に対応していません。
         </video>
         <!-- SP用動画 -->
-        <video autoplay muted loop playsinline class="block fv__movie md:hidden">
+        <video autoplay muted loop playsinline class="block object-cover w-full h-screen fv__movie md:hidden">
           <source src="./dist/images/fv_movie-sp.mp4" type="video/mp4" />
           お使いのブラウザは動画に対応していません。
         </video>
       </div>
-      <div class="top__information-bar text-[var(--text-color-white)]">
+      <div
+        class="top__information-bar absolute bottom-0 left-0 flex md:justify-between justify-center w-screen h-24 -mt-24 items-center md:px-32 z-10 text-[var(--text-color-white)] bg-[var(--main-color-green)]">
         <div class="flex flex-col items-center gap-0 text-center sm:flex-row sm:gap-x-4 opening-hours">
-          <span class="opening-hours__label">本日の営業時間</span>
-          <p class="opening-hours__time">
-            <time datetime="09:00">午前9:00</time>
+          <span class="text-base opening-hours__label">本日の営業時間</span>
+          <p class="flex items-center justify-between gap-3 opening-hours__time">
+            <time datetime="09:00" class="text-3xl">午前9:00</time>
             ～
-            <time datetime="17:00">午後5:00</time>
+            <time datetime="17:00" class="text-3xl">午後5:00</time>
           </p>
         </div>
-        <ul class="social-links">
+        <!-- SNS -->
+        <ul class="items-center justify-between hidden gap-6 social-links md:flex">
           <li class="social-links__item">
             <a href="" class="social-links__link">
               <img src="./dist/images/icon_twitter.svg" alt="ツイッター" class="social-links__icon" />
@@ -178,44 +180,65 @@
           <span class="c-section-title__en">Admission Fees</span>
           <span class="c-section-title__ja">入園料金</span>
         </h2>
-        <dl class="admission-fees__list">
-          <div class="admission-fees__item">
-            <dt class="admission-fees__item-label">大人（高校生以上）</dt>
-            <dd class="admission-fees__item-fee">
-              840
-              <span class="small">円</span>
-            </dd>
-          </div>
-          <div class="admission-fees__item">
-            <dt class="admission-fees__item-label">中学生</dt>
-            <dd class="admission-fees__item-fee">
-              420
-              <span class="small">円</span>
-            </dd>
-          </div>
-          <div class="admission-fees__item">
-            <dt class="admission-fees__item-label">小学生</dt>
-            <dd class="admission-fees__item-fee">
-              310
-              <span class="small">円</span>
-            </dd>
-          </div>
-          <div class="admission-fees__item">
-            <dt class="admission-fees__item-label">未就学児</dt>
-            <dd class="admission-fees__item-fee">無料</dd>
-          </div>
-        </dl>
-        <div class="admission-fees__web-ticket-list-wrapper">
-          <ul class="admission-fees__web-ticket-list">
-            <li class="admission-fees___web-ticket-item">
-              <a href="./webticket.html" class="admission-fees__link">Webチケット</a>
-            </li>
-            <li class="admission-fees__web-ticket-item">
-              <a href="./admission.html" class="admission-fees__link">団体のお客様</a>
-            </li>
-          </ul>
+        <div class="flex flex-col gap-y-10">
+          <dl
+            class="grid h-auto grid-cols-1 grid-rows-1 text-xl font-medium leading-none sm:grid-cols-2 md:grid-cols-4 gap-x-6 admission-fees__list gap-y-4">
+            <div
+              class="flex flex-col items-center justify-center h-auto border-solid admission-fees__item text-[var(--text-color-white)] rounded-lg text-center">
+              <dt
+                class="flex flex-col items-center justify-center w-full h-full rounded-ss-lg rounded-se-lg px-0 py-6 admission-fees__item-label tetxt-base bg-[var(--main-color-orange)] tracking-widest">
+                大人（高校生以上）</dt>
+              <dd
+                class="justify-center px-0 py-6 w-full admission-fees__item-fee text-[var(--text-color-orange)] text-3xl rounded-es-lg rounded-ee-lg border-2 border-[var(--main-color-orange)] -mt-0.5">
+                840
+                <span class="tetxt-base text-[var(--text-color-orange)]">円</span>
+              </dd>
+            </div>
+            <div
+              class="flex flex-col items-center justify-center h-auto border-solid admission-fees__item text-[var(--text-color-white)] rounded-lg text-center">
+              <dt
+                class="flex flex-col items-center justify-center w-full h-full rounded-ss-lg rounded-se-lg px-0 py-6 admission-fees__item-label tetxt-base bg-[var(--main-color-orange)] tracking-widest">
+                中学生</dt>
+              <dd
+                class="justify-center px-0 py-6 w-full admission-fees__item-fee text-[var(--text-color-orange)] text-3xl rounded-es-lg rounded-ee-lg border-2 border-[var(--main-color-orange)] -mt-0.5">
+                420
+                <span class="tetxt-base text-[var(--text-color-orange)]">円</span>
+              </dd>
+            </div>
+            <div
+              class="flex flex-col items-center justify-center h-auto border-solid admission-fees__item text-[var(--text-color-white)] rounded-lg text-center">
+              <dt
+                class="flex flex-col items-center justify-center w-full h-full rounded-ss-lg rounded-se-lg px-0 py-6 admission-fees__item-label tetxt-base bg-[var(--main-color-orange)] tracking-widest">
+                小学生</dt>
+              <dd
+                class="justify-center px-0 py-6 w-full admission-fees__item-fee text-[var(--text-color-orange)] text-3xl rounded-es-lg rounded-ee-lg border-2 border-[var(--main-color-orange)] -mt-0.5">
+                310
+                <span class="tetxt-base text-[var(--text-color-orange)]">円</span>
+              </dd>
+            </div>
+            <div
+              class="flex flex-col items-center justify-center h-auto border-solid admission-fees__item text-[var(--text-color-white)] rounded-lg text-center">
+              <dt
+                class="flex flex-col items-center justify-center w-full h-full rounded-ss-lg rounded-se-lg px-0 py-6 admission-fees__item-label tetxt-base bg-[var(--main-color-orange)] tracking-widest">
+                未就学児</dt>
+              <dd
+                class="justify-center px-0 py-6 w-full admission-fees__item-fee text-[var(--text-color-orange)] text-3xl rounded-es-lg rounded-ee-lg border-2 border-[var(--main-color-orange)] -mt-0.5">
+                無料
+              </dd>
+            </div>
+          </dl>
+          <div class="admission-fees__web-ticket-list-wrapper">
+            <ul class="admission-fees__web-ticket-list">
+              <li class="admission-fees___web-ticket-item">
+                <a href="./webticket.html" class="admission-fees__link">Webチケット</a>
+              </li>
+              <li class="admission-fees__web-ticket-item">
+                <a href="./admission.html" class="admission-fees__link">団体のお客様</a>
+              </li>
+            </ul>
+          </div><!-- /.admission-fees__web-ticket-list-wrapper -->
         </div>
-        <!-- /.list-wrapper -->
+
       </div>
       <!-- /.l-inner -->
     </section>
