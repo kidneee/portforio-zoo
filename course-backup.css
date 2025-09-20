@@ -1,0 +1,94 @@
+/*-------------------------
+  コース
+-------------------------*/
+.course__step-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.course__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 3.13vh;
+  margin-bottom: 5vh;
+}
+
+.course__step {
+  display: flex;
+  flex-direction: column;
+  gap: 1.56vh;
+}
+
+.course__options {
+  display: grid;
+  grid-template-columns: repeat(3, 32%);
+  justify-content: space-between;
+  width: 100%;
+  height: 13vh;
+  padding: 2vh 2.58%;
+  border: 1px solid #aaa;
+  background-color: var(--bg-color-white);
+  border-radius: 8px;
+}
+@media (max-width: 768px) {
+  .course__options {
+    grid-template-columns: 1fr;
+  }
+}
+
+.course__button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: var(--text-color-white);
+  font-size: 1.5rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: 0.1s ease;
+}
+
+.course__button:hover {
+  scale: 1.05;
+}
+
+.course__button--orange {
+  background-color: var(--main-color-orange);
+}
+.course__button--orange.selected {
+  background-color: transparent;
+  border: 8px solid var(--main-color-orange);
+  color: var(--main-color-orange);
+}
+
+.course__button--green {
+  background-color: var(--main-color-green);
+}
+.course__button--green.selected {
+  background-color: transparent;
+  border: 8px solid var(--main-color-green);
+  color: var(--main-color-green);
+}
+
+.course__button--blue {
+  background-color: var(--main-color-blue);
+}
+.course__button--blue.selected {
+  background-color: transparent;
+  border: 8px solid var(--main-color-blue);
+  color: var(--main-color-blue);
+}
+
+/* 結果表示エリア */
+.course__result.open {
+  border: 1px solid var(--main-color-green);
+  border-radius: 8px;
+}
+
+.course__result-title {
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+}

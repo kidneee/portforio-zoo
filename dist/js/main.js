@@ -119,16 +119,16 @@ const faqItemcontent = document.querySelectorAll('.faq__item-content');
 
 faqItemButtons.forEach(function (faqItemButton, index) {
   faqItemButton.addEventListener('click', () => {
-    let isOpen = faqItemcontent[index].classList.contains('is-active');
+    let isOpen = faqItemcontent[index].classList.contains('open');
 
     faqItemcontent.forEach((faqItemContent) => {
-      faqItemButton.classList.remove('is-active');
-      faqItemContent.classList.remove('is-active');
+      faqItemButton.classList.remove('open');
+      faqItemContent.classList.remove('open');
     });
 
     if (!isOpen) {
-      faqItemButtons[index].classList.add('is-active');
-      faqItemcontent[index].classList.add('is-active');
+      faqItemButtons[index].classList.add('open');
+      faqItemcontent[index].classList.add('open');
     }
   });
 });
