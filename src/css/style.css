@@ -18,11 +18,15 @@ button {
 
 /* ----- Layout ----- */
 .l-inner {
-  padding: 7.81vh 6.94vw 11.72vh;
+  padding: 7.81vh 6.94vw;
 }
 @media screen and (max-width: 768px) {
   .l-inner {
     padding: 7.58vh 4.1vw;
+  }
+
+  .access .l-inner {
+    padding: 7.58vh 0;
   }
 }
 
@@ -285,11 +289,11 @@ button {
 -------------------------*/
 .footer {
   padding: 7.81vh 6.94vw;
-  background-color: var(--main-color-green);
-  color: var(--text-color-white);
+  /* background-color: var(--main-color-green); */
+  /* color: var(--text-color-white); */
 }
 
-.footer__inner {
+/* .footer__inner {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: space-between;
@@ -310,7 +314,7 @@ button {
   .footer__social-list {
     order: 3;
   }
-}
+} */
 
 /* ============================
 * イベント一覧ページ

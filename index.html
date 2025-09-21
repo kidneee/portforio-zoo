@@ -22,7 +22,7 @@
   <script type="module" src="./dist/js/main.js"></script>
 </head>
 
-<body class="box-border relative bg-white">
+<body class="box-border relative">
   <!-- ヘッダー -->
   <header class="header fixed z-20 w-full h-24 bg-transparent md:bg-[var(--bg-color-white)]">
     <div class="flex items-center justify-between h-full px-4 md:px-32 header__inner">
@@ -228,15 +228,15 @@
                 </dd>
               </div>
             </dl>
-            <div class="w-full md:px-96 md:w-full admission-fees__web-ticket-list-wrapper">
+            <div class="w-full md:px-60 md:w-full admission-fees__web-ticket-list-wrapper">
               <ul class="grid grid-cols-1 md:grid-cols-2 md:gap-x-8 gap-y-2 admission-fees__web-ticket-list">
                 <li class="admission-fees___web-ticket-item">
                   <a href="./webticket.html"
-                    class="flex flex-col items-center justify-center h-16 text-3xl rounded-lg admission-fees__link min-h-14 bg-[var(--main-color-orange)] text-[var(--text-color-white)]">Webチケット</a>
+                    class="flex flex-col items-center justify-center h-16 text-2xl rounded-lg admission-fees__link min-h-14 bg-[var(--main-color-orange)] text-[var(--text-color-white)] py-4 px-6 md:w-56 w-full">Webチケット</a>
                 </li>
                 <li class="admission-fees__web-ticket-item">
                   <a href="./webticket.html"
-                    class="flex flex-col items-center justify-center h-16 text-3xl rounded-lg admission-fees__link min-h-14 bg-[var(--main-color-orange)] text-[var(--text-color-white)]">団体のお客様</a>
+                    class="flex flex-col items-center justify-center h-16 text-2xl rounded-lg admission-fees__link min-h-14 bg-[var(--main-color-orange)] text-[var(--text-color-white)] py-4 px-6 md:w-56 w-full">団体のお客様</a>
                 </li>
               </ul>
             </div><!-- /.admission-fees__web-ticket-list-wrapper -->
@@ -248,7 +248,7 @@
 
       <!-- イベント -->
       <section class="events">
-        <div class="l-inner">
+        <div class="l-inner bg-[var(--bg-color-white)]">
           <h2 class="c-section-title">
             <span class="c-section-title__en">Event</span>
             <span class="c-section-title__ja">楽しいイベント盛りだくさん！</span>
@@ -262,7 +262,7 @@
                   <img src="./dist/images/event-elephant.jpg" alt="ゾウのお散歩と記念撮影"
                     class="object-cover w-full h-full rounded-t-lg">
                 </div><!-- /.event-card__image -->
-                <div class="p-6 event-card__text bg-[var(--bg-color-white)] rounded-b-lg flex flex-col justify-between">
+                <div class="flex flex-col justify-between p-6 bg-white rounded-b-lg event-card__text">
                   <h3
                     class="event-card__title text-[ var(--main-color-orange)] md:text-2xl text-xl font-medium leading-6">
                     ゾウのお散歩と記念撮影</h3>
@@ -293,7 +293,7 @@
                 <div class="w-full rounded-t-lg event-card__image">
                   <img src="./dist/images/event-lion.jpg" alt="ライオン観察" class="object-cover w-full h-full rounded-t-lg">
                 </div><!-- /.event-card__image -->
-                <div class="p-6 event-card__text bg-[var(--bg-color-white)] rounded-b-lg flex flex-col justify-between">
+                <div class="flex flex-col justify-between p-6 bg-white rounded-b-lg event-card__text">
                   <h3
                     class="event-card__title text-[ var(--main-color-orange)] md:text-2xl text-xl font-medium leading-6">
                     ライオン観察</h3>
@@ -325,7 +325,7 @@
                   <img src="./dist/images/event-panda.jpg" alt="パンダと記念撮影"
                     class="object-cover w-full h-full rounded-ss-lg event-card__img rounded-se-lg ">
                 </div><!-- /.event-card__image -->
-                <div class="p-6 event-card__text bg-[var(--bg-color-white)] rounded-b-lg flex flex-col justify-between">
+                <div class="flex flex-col justify-between p-6 bg-white rounded-b-lg event-card__text">
                   <h3
                     class="event-card__title text-[ var(--main-color-orange)] md:text-2xl text-xl font-medium leading-6">
                     パンダと記念撮影</h3>
@@ -429,7 +429,7 @@
 
       <!-- FAQ -->
       <section class="faq">
-        <div class="l-inner">
+        <div class="l-inner bg-[var(--bg-color-white)]">
           <h2 class="c-section-title">
             <span class="c-section-title__en">FAQ</span>
             <span class="c-section-title__ja">よくある質問</span>
@@ -515,92 +515,86 @@
 
       <!-- アクセス -->
       <section id="access" class="access">
-        <div class="l-inner">
+        <div class="bg-white l-inner">
           <h2 class="c-section-title">
             <span class="c-section-title__en">Access</span>
             <span class="c-section-title__ja">アクセス</span>
           </h2>
-          <div class="flex flex-col justify-between w-full gap-8 section-content md:flex-row">
-            <iframe class="w-3/5 h-auto access-map"
+          <div class="flex flex-col justify-between w-full gap-8 section-content">
+            <iframe class="w-full md:h-80 access-map h-28"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3384.188952534567!2d131.47391521516198!3d31.982892881219033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3538bad132ff7be5%3A0x4a57e247d1a13528!2sMiyazaki%20City%20Phoenix%20Zoo!5e0!3m2!1sen!2sjp!4v1683858824910!5m2!1sen!2sjp"
-              width="100%" style="border: 0" allowfullscreen="" loading="lazy"
+              width="100%" height="100%" style="border: 0" allowfullscreen="" loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"></iframe>
-            <ul class="grid w-2/5 grid-rows-3 gap-8 list-none">
-              <!-- 車でのアクセス -->
-              <li>
-                <div
-                  class="relative p-8 overflow-hidden transition-all duration-300 delay-100 bg-white border-t-4 shadow-lg rounded-2xl hover:-translate-y-1 hover:shadow-2xl animate-fade-in-up border-main-orange">
-                  <h3 class="flex items-center gap-3 mb-6 text-xl font-semibold text-text-primary">
-                    <div class="flex items-center justify-center w-8 h-8 text-white rounded-full bg-main-orange">
-                      <i class="text-base fa-solid fa-car"></i>
+            <ul class="flex flex-col justify-between w-full gap-8 p-6 list-none md:grid md:grid-cols-3 md:grid-rows-1">
+            <!-- 車でのアクセス -->
+            <li class="flex h-full">
+                <div class="relative flex flex-col md:p-8 p-4 bg-[var(--bg-color-white)] rounded-2xl w-full">
+                    <h3 class="flex items-center gap-3 mb-6 text-xl font-semibold text-text-primary">
+                        <div class="flex items-center justify-center w-8 h-8 text-[var(--text-color-white)] rounded-full bg-main-orange">
+                            <i class="text-base fa-solid fa-car"></i>
+                        </div>
+                        お車でお越しの方
+                    </h3>
+                    <div class="flex-1 text-base font-normal leading-relaxed tracking-wide text-text-primary">
+                        <p class="mb-4">
+                            羽南自動車道・羽南インターチェンジより、ひなた有料道路を経由して、ひなた西インターチェンジまで約15分。
+                        </p>
+                        <p class="mb-4">
+                            旭川方面からは、国道12号線を経由してひなた有料道路を利用し、ひなた西インターチェンジまで約2時間。
+                        </p>
+                        <div class="block p-3 mt-2 text-sm font-light leading-normal text-gray-600 border-l-4 rounded-lg bg-gray-50 border-main-orange">
+                            ※ひなた西インターチェンジを降りて約1分で、左手にHinata Zooの駐車場が見えてきます。
+                        </div>
                     </div>
-                    お車でお越しの方
-                  </h3>
-                  <div class="text-base font-normal leading-relaxed tracking-wide text-text-primary">
-                    <p class="mb-4">
-                      羽南自動車道・羽南インターチェンジより、ひなた有料道路を経由して、ひなた西インターチェンジまで約15分。
-                    </p>
-                    <p class="mb-4">
-                      旭川方面からは、国道12号線を経由してひなた有料道路を利用し、ひなた西インターチェンジまで約2時間。
-                    </p>
-                    <div
-                      class="block p-3 mt-2 text-sm font-light leading-normal text-gray-600 border-l-4 rounded-lg bg-gray-50 border-main-orange">
-                      ※ひなた西インターチェンジを降りて約1分で、左手にHinata Zooの駐車場が見えてきます。
-                    </div>
-                  </div>
                 </div>
-              </li>
+            </li>
 
-              <!-- 電車でのアクセス -->
-              <li>
-                <div
-                  class="relative p-8 overflow-hidden transition-all duration-300 delay-200 bg-white border-t-4 shadow-lg rounded-2xl hover:-translate-y-1 hover:shadow-2xl animate-fade-in-up border-main-blue">
-                  <h3 class="flex items-center gap-3 mb-6 text-xl font-semibold text-text-primary">
-                    <div class="flex items-center justify-center w-8 h-8 text-white rounded-full bg-main-blue">
-                      <i class="text-base fa-solid fa-train"></i>
+            <!-- 電車でのアクセス -->
+            <li class="flex h-full">
+                <div class="relative flex flex-col md:p-8 p-4 bg-[var(--bg-color-white)] rounded-2xl w-full">
+                    <h3 class="flex items-center gap-3 mb-6 text-xl font-semibold text-text-primary">
+                        <div class="flex items-center justify-center w-8 h-8 text-[var(--text-color-white)] rounded-full bg-main-blue">
+                            <i class="text-base fa-solid fa-train"></i>
+                        </div>
+                        JR
+                    </h3>
+                    <div class="flex-1 text-base font-normal leading-relaxed tracking-wide text-text-primary">
+                        <p class="mb-2">
+                            最寄の駅から JR羽南本線「羽南動物公園駅」よりタクシーにて約10分
+                        </p>
+                        <div class="block p-3 mt-2 mb-4 text-sm font-light leading-normal text-gray-600 border-l-4 rounded-lg bg-gray-50 border-main-blue">
+                            ※羽南動物公園駅には特急・快速列車は停車しません。
+                        </div>
+                        <p class="mb-4">
+                            JR羽南中央駅からJR羽南本線、各駅停車にて「羽南動物公園駅」まで約12分
+                        </p>
+                        <p>
+                            タクシーで動物園まで15～20分
+                        </p>
                     </div>
-                    JR
-                  </h3>
-                  <div class="text-base font-normal leading-relaxed tracking-wide text-text-primary">
-                    <p class="mb-2">
-                      最寄の駅から JR羽南本線「羽南動物公園駅」よりタクシーにて約10分
-                    </p>
-                    <div
-                      class="block p-3 mt-2 mb-4 text-sm font-light leading-normal text-gray-600 border-l-4 rounded-lg bg-gray-50 border-main-blue">
-                      ※羽南動物公園駅には特急・快速列車は停車しません。
-                    </div>
-                    <p class="mb-4">
-                      JR羽南中央駅からJR羽南本線、各駅停車にて「羽南動物公園駅」まで約12分
-                    </p>
-                    <p>
-                      タクシーで動物園まで15～20分
-                    </p>
-                  </div>
                 </div>
-              </li>
+            </li>
 
-              <!-- バスでのアクセス -->
-              <li>
-                <div
-                  class="relative p-8 overflow-hidden transition-all duration-300 delay-300 bg-white border-t-4 shadow-lg rounded-2xl hover:-translate-y-1 hover:shadow-2xl animate-fade-in-up border-main-green">
-                  <h3 class="flex items-center gap-3 mb-6 text-xl font-semibold text-text-primary">
-                    <div class="flex items-center justify-center w-8 h-8 text-white rounded-full bg-main-green">
-                      <i class="text-base fa-solid fa-bus"></i>
+            <!-- バスでのアクセス -->
+            <li class="flex h-full">
+                <div class="relative flex flex-col md:p-8 p-4 bg-[var(--bg-color-white)] rounded-2xl w-full">
+                    <h3 class="flex items-center gap-3 mb-6 text-xl font-semibold text-text-primary">
+                        <div class="flex items-center justify-center w-8 h-8 text-[var(--text-color-white)] rounded-full bg-main-green">
+                            <i class="text-base fa-solid fa-bus"></i>
+                        </div>
+                        バス
+                    </h3>
+                    <div class="flex-1 text-base font-normal leading-relaxed tracking-wide text-text-primary">
+                        <p class="mb-2">
+                            宮崎駅からHinata Zoo行きのバスが運行しております。
+                        </p>
+                        <div class="block p-3 mt-2 text-sm font-light leading-normal text-gray-600 border-l-4 rounded-lg bg-gray-50 border-main-green">
+                            ※時刻表等はホームページをご参照ください。
+                        </div>
                     </div>
-                    バス
-                  </h3>
-                  <div class="text-base font-normal leading-relaxed tracking-wide text-text-primary">
-                    <p class="mb-2">
-                      宮崎駅からHinata Zoo行きのバスが運行しております。
-                    </p>
-                    <div
-                      class="block p-3 mt-2 text-sm font-light leading-normal text-gray-600 border-l-4 rounded-lg bg-gray-50 border-main-green">
-                      ※時刻表等はホームページをご参照ください。
-                    </div>
-                  </div>
                 </div>
-              </li>
-            </ul>
+            </li>
+        </ul>
           </div>
         </div>
         <!-- /.l-inner -->
@@ -609,71 +603,155 @@
   </main>
 
   <!-- フッター -->
-  <footer class="footer">
-    <div class="grid l__inner md:grid-cols-3">
-      <div>
-        <a href="" class="footer__link">
-          <img src="./dist/images/logo-white.svg" width="186" height="54" alt="Hinata Zoo" class="footer__logo-image">
-        </a>
-        <address class="footer__address">
-          <p class="footer__address-info">
-            〒880-XXXX
-            <br>
-            宮崎県宮崎市XXXXXXX
-          </p>
-          <p class="footer__address-info">
-            電話番号：
-            <a class="footer__address-link footer__address-link--tel" href="tel:+0985123456">0985-12-3456</a>
-          </p>
-          <p class="footer__address-info">FAX番号：0985-12-3456</p>
-        </address>
-      </div>
-
-      <div class="footer__social-list">
-        <ul class="social-links">
-          <li class="social-links__item">
-            <a href="" class="social-links__link">
-              <img src="./dist/images/icon_twitter.svg" alt="ツイッター" class="social-links__icon">
-            </a>
-          </li>
-          <li class="social-links__item">
-            <a href="" class="social-links__link">
-              <img src="./dist/images/icon_instagram.svg" alt="インスタグラム" class="social-links__icon">
-            </a>
-          </li>
-          <li class="social-links__item">
-            <a href="" class="social-links__link">
-              <img src="./dist/images/icon_facebook.svg" alt="フェイスブック" class="social-links__icon">
-            </a>
-          </li>
-          <li class="social-links__item">
-            <a href="" class="social-links__link">
-              <img src="./dist/images/icon_youtube.svg" alt="ユーチューブ" class="social-links__icon">
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <ul class="footer__nav-list">
-        <li class="footer__nav-item">
-          <a href="./templates/pages/page-admission.html" class="footer__nav-link">入園案内</a>
-        </li>
-        <li class="footer__nav-item">
-          <a href="./templates/pages/page-animals.html" class="footer__nav-link">どうぶつ</a>
-        </li>
-        <li class="footer__nav-item">
-          <a href="./templates/pages/page-event.html" class="footer__nav-link">どうぶつ</a>
-        </li>
-        <li class="footer__nav-item">
-          <a href="./archive-news.html" class="footer__nav-link">ニュース</a>
-        </li>
-        <li class="footer__nav-item">
-          <a href="#access" class="footer__nav-link">アクセス</a>
-        </li>
-      </ul>
+  <footer class="relative overflow-hidden text-[var(--text-color-white)] footer bg-[var(--main-color-green)]">
+    <!-- トップカラーバー -->
+    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-zoo-light-green via-green-400 to-green-300">
     </div>
-    <!-- /.footer__inner -->
-    <small class="footer__copyright">Copyright &copy; 2011 Miyazaki City Phoenix Zoo ALL Rights Reserved.</small>
+
+    <!-- フッターコンテンツ -->
+    <div class="relative max-w-6xl mx-auto pb:-10">
+      <!-- フッタートップ -->
+      <div class="flex flex-col items-start justify-between gap-6 mb-12 md:items-center md:flex-row">
+        <div class="text-center md:text-left">
+          <a href="" class="footer__link">
+            <img src="./dist/images/logo-white.svg" width="186" height="54" alt="Hinata Zoo"
+              class="mb-2 footer__logo-image">
+          </a>
+          <p class="text-sm opacity-80">宮崎の自然と動物たちの楽園</p>
+        </div>
+        <div class="text-sm leading-relaxed text-left md:text-right">
+          <div class="mb-2 font-semibold">お問い合わせ</div>
+          <div class="flex flex-row items-center gap-4 md:flex-col">
+            <div class="flex items-center justify-center gap-2 mb-1 md:justify-end">
+              <span>📞</span>
+              <a class="transition-colors duration-300 hover:text-zoo-accent" href="tel:+0985123456">0985-12-3456</a>
+            </div>
+            <div class="flex items-center justify-center gap-2 md:justify-end">
+              <span>📠</span>
+              <span>0985-12-3456</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- メインコンテンツ -->
+      <div class="grid grid-cols-1 gap-12 mb-12 md:grid-cols-2 lg:grid-cols-3">
+        <!-- アクセス情報 -->
+        <div class="lg:col-span-1">
+          <div class="pl-6 border-l-4 border-[var(--main-color-orange)]">
+            <h3 class="mb-6 text-lg font-semibold">アクセス情報</h3>
+            <address class="not-italic footer__address">
+              <div class="flex items-start gap-3 mb-4">
+                <span class="text-lg">📍</span>
+                <div class="text-sm leading-relaxed footer__address-info">
+                  〒880-XXXX<br>
+                  宮崎県宮崎市XXXXXXX
+                </div>
+              </div>
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-lg">🚗</span>
+                <div class="text-sm">宮崎駅から車で15分</div>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="text-lg">🅿️</span>
+                <div class="text-sm">無料駐車場完備（500台）</div>
+              </div>
+            </address>
+          </div>
+        </div>
+
+        <!-- ナビゲーション -->
+        <div class="lg:col-span-1">
+          <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-1">
+            <div>
+              <h4 class="mb-4 text-base font-semibold text-zoo-accent">園内案内</h4>
+              <ul class="grid grid-cols-2 footer__nav-list">
+                <li class="footer__nav-item">
+                  <a href="./templates/pages/page-admission.html"
+                    class="block py-1 text-sm transition-all duration-300 footer__nav-link hover:text-zoo-accent hover:pl-3">入園案内</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#access"
+                    class="block py-1 text-sm transition-all duration-300 footer__nav-link hover:text-zoo-accent hover:pl-3">アクセス</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="#"
+                    class="block py-1 text-sm transition-all duration-300 footer__nav-link hover:text-zoo-accent hover:pl-3">料金表</a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="mb-4 text-base font-semibold text-zoo-accent">動物・イベント</h4>
+              <ul class="grid grid-cols-2 footer__nav-list">
+                <li class="footer__nav-item">
+                  <a href="./templates/pages/page-animals.html"
+                    class="block py-1 text-sm transition-all duration-300 footer__nav-link hover:text-zoo-accent hover:pl-3">どうぶつ</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="./templates/pages/page-event.html"
+                    class="block py-1 text-sm transition-all duration-300 footer__nav-link hover:text-zoo-accent hover:pl-3">イベント</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="./archive-news.html"
+                    class="block py-1 text-sm transition-all duration-300 footer__nav-link hover:text-zoo-accent hover:pl-3">お知らせ</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- ソーシャルメディア -->
+        <div class="lg:col-span-1">
+          <div class="footer__social-list">
+            <h4 class="mb-6 text-base font-semibold text-zoo-accent">フォローする</h4>
+            <ul class="grid grid-cols-2 gap-4 social-links">
+              <li class="social-links__item">
+                <a href=""
+                  class="flex flex-col items-center p-4 text-center transition-all duration-300 bg-white border border-white rounded-lg social-links__link bg-opacity-10 border-opacity-20 hover:bg-opacity-20 hover:-translate-y-1">
+                  <img src="./dist/images/icon_twitter.svg" alt="ツイッター"
+                    class="w-6 h-6 mb-2 social-links__icon filter brightness-0 invert">
+                  <span class="text-xs">Twitter</span>
+                </a>
+              </li>
+              <li class="social-links__item">
+                <a href=""
+                  class="flex flex-col items-center p-4 text-center transition-all duration-300 bg-white border border-white rounded-lg social-links__link bg-opacity-10 border-opacity-20 hover:bg-opacity-20 hover:-translate-y-1">
+                  <img src="./dist/images/icon_instagram.svg" alt="インスタグラム"
+                    class="w-6 h-6 mb-2 social-links__icon filter brightness-0 invert">
+                  <span class="text-xs">Instagram</span>
+                </a>
+              </li>
+              <li class="social-links__item">
+                <a href=""
+                  class="flex flex-col items-center p-4 text-center transition-all duration-300 bg-white border border-white rounded-lg social-links__link bg-opacity-10 border-opacity-20 hover:bg-opacity-20 hover:-translate-y-1">
+                  <img src="./dist/images/icon_facebook.svg" alt="フェイスブック"
+                    class="w-6 h-6 mb-2 social-links__icon filter brightness-0 invert">
+                  <span class="text-xs">Facebook</span>
+                </a>
+              </li>
+              <li class="social-links__item">
+                <a href=""
+                  class="flex flex-col items-center p-4 text-center transition-all duration-300 bg-white border border-white rounded-lg social-links__link bg-opacity-10 border-opacity-20 hover:bg-opacity-20 hover:-translate-y-1">
+                  <img src="./dist/images/icon_youtube.svg" alt="ユーチューブ"
+                    class="w-6 h-6 mb-2 social-links__icon filter brightness-0 invert">
+                  <span class="text-xs">YouTube</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- フッターボトム -->
+    <div class="px-8 py-6 bg-black border-t border-white border-opacity-20 bg-opacity-20">
+      <div class="max-w-6xl mx-auto text-center">
+        <small class="text-xs footer__copyright opacity-70">
+          Copyright &copy; 2025 Hinata Zoo ALL Rights Reserved.
+        </small>
+      </div>
+    </div>
   </footer>
   <!-- /.footer -->
 </body>
