@@ -123,6 +123,33 @@ button {
   Header
 ============================ */
 /* ----- Navigation ----- */
+.nav__link::after {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 1rem;
+}
+
+.nav__admission {
+  background: url(../images/icon_admission.svg) no-repeat;
+}
+
+.nav__animals {
+  background: url(../images/icon_animals.svg) no-repeat;
+}
+
+.nav__event {
+  background: url(../images/icon_course.svg) no-repeat;
+}
+
+.nav__news {
+  background: url(../images/icon_news.svg) no-repeat;
+}
+
+.nav__access {
+  background: url(../images/icon_access.svg) no-repeat;
+}
 
 /* ----- Hamburger Menu ----- */
 @media (max-width: 768px) {
@@ -232,32 +259,6 @@ button {
 /*-------------------------
   よくある質問
 -------------------------*/
-.faq__list {
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* width: 80vw; */
-  /* margin: 0 auto; */
-
-  /* gap: 24px; */
-}
-
-.faq__item {
-  /* border: 1px solid var(--main-color-green); */
-  /* border-radius: 8px; */
-}
-
-.faq__item-header {
-  /* position: relative;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 64px;
-  padding: 16px;
-  border-radius: 8px;
-  background-color: var(--orange-alpha);
-  cursor: pointer; */
-}
-
 .faq__item-content.open {
   max-height: 500px;
   padding: 16px;

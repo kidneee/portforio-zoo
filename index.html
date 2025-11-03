@@ -77,7 +77,8 @@
             </li>
             <li>
               <a href="./templates/pages/page-animals.html"
-                class="relative pl-10 text-[var(--text-color-white)] font-medium nav__link nav__animals">どうぶつ</a></li>
+                class="relative pl-10 text-[var(--text-color-white)] font-medium nav__link nav__animals">どうぶつ</a>
+            </li>
             <li>
               <a href="./templates/pages/page-event.html"
                 class="relative pl-10 text-[var(--text-color-white)] font-medium nav__link nav__event">イベント</a>
@@ -229,7 +230,7 @@
               </div>
             </dl>
             <div class="w-full md:px-60 md:w-full admission-fees__web-ticket-list-wrapper">
-              <ul class="grid grid-cols-1 md:grid-cols-2 md:gap-x-8 gap-y-2 admission-fees__web-ticket-list">
+              <ul class="flex flex-col justify-center md:gap-x-8 md:flex-row admission-fees__web-ticket-list">
                 <li class="admission-fees___web-ticket-item">
                   <a href="./webticket.html"
                     class="flex flex-col items-center justify-center h-16 text-2xl rounded-lg admission-fees__link min-h-14 bg-[var(--main-color-orange)] text-[var(--text-color-white)] py-4 px-6 md:w-56 w-full">Webチケット</a>
@@ -526,75 +527,81 @@
               width="100%" height="100%" style="border: 0" allowfullscreen="" loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"></iframe>
             <ul class="flex flex-col justify-between w-full gap-8 p-6 list-none md:grid md:grid-cols-3 md:grid-rows-1">
-            <!-- 車でのアクセス -->
-            <li class="flex h-full">
+              <!-- 車でのアクセス -->
+              <li class="flex h-full">
                 <div class="relative flex flex-col md:p-8 p-4 bg-[var(--bg-color-white)] rounded-2xl w-full">
-                    <h3 class="flex items-center gap-3 mb-6 text-xl font-semibold text-text-primary">
-                        <div class="flex items-center justify-center w-8 h-8 text-[var(--text-color-white)] rounded-full bg-main-orange">
-                            <i class="text-base fa-solid fa-car"></i>
-                        </div>
-                        お車でお越しの方
-                    </h3>
-                    <div class="flex-1 text-base font-normal leading-relaxed tracking-wide text-text-primary">
-                        <p class="mb-4">
-                            羽南自動車道・羽南インターチェンジより、ひなた有料道路を経由して、ひなた西インターチェンジまで約15分。
-                        </p>
-                        <p class="mb-4">
-                            旭川方面からは、国道12号線を経由してひなた有料道路を利用し、ひなた西インターチェンジまで約2時間。
-                        </p>
-                        <div class="block p-3 mt-2 text-sm font-light leading-normal text-gray-600 border-l-4 rounded-lg bg-gray-50 border-main-orange">
-                            ※ひなた西インターチェンジを降りて約1分で、左手にHinata Zooの駐車場が見えてきます。
-                        </div>
+                  <h3 class="flex items-center gap-3 mb-6 text-xl font-semibold text-text-primary">
+                    <div
+                      class="flex items-center justify-center w-8 h-8 text-[var(--text-color-white)] rounded-full bg-main-orange">
+                      <i class="text-base fa-solid fa-car"></i>
                     </div>
+                    お車でお越しの方
+                  </h3>
+                  <div class="flex-1 text-base font-normal leading-relaxed tracking-wide text-text-primary">
+                    <p class="mb-4">
+                      羽南自動車道・羽南インターチェンジより、ひなた有料道路を経由して、ひなた西インターチェンジまで約15分。
+                    </p>
+                    <p class="mb-4">
+                      旭川方面からは、国道12号線を経由してひなた有料道路を利用し、ひなた西インターチェンジまで約2時間。
+                    </p>
+                    <div
+                      class="block p-3 mt-2 text-sm font-light leading-normal text-gray-600 border-l-4 rounded-lg bg-gray-50 border-main-orange">
+                      ※ひなた西インターチェンジを降りて約1分で、左手にHinata Zooの駐車場が見えてきます。
+                    </div>
+                  </div>
                 </div>
-            </li>
+              </li>
 
-            <!-- 電車でのアクセス -->
-            <li class="flex h-full">
+              <!-- 電車でのアクセス -->
+              <li class="flex h-full">
                 <div class="relative flex flex-col md:p-8 p-4 bg-[var(--bg-color-white)] rounded-2xl w-full">
-                    <h3 class="flex items-center gap-3 mb-6 text-xl font-semibold text-text-primary">
-                        <div class="flex items-center justify-center w-8 h-8 text-[var(--text-color-white)] rounded-full bg-main-blue">
-                            <i class="text-base fa-solid fa-train"></i>
-                        </div>
-                        JR
-                    </h3>
-                    <div class="flex-1 text-base font-normal leading-relaxed tracking-wide text-text-primary">
-                        <p class="mb-2">
-                            最寄の駅から JR羽南本線「羽南動物公園駅」よりタクシーにて約10分
-                        </p>
-                        <div class="block p-3 mt-2 mb-4 text-sm font-light leading-normal text-gray-600 border-l-4 rounded-lg bg-gray-50 border-main-blue">
-                            ※羽南動物公園駅には特急・快速列車は停車しません。
-                        </div>
-                        <p class="mb-4">
-                            JR羽南中央駅からJR羽南本線、各駅停車にて「羽南動物公園駅」まで約12分
-                        </p>
-                        <p>
-                            タクシーで動物園まで15～20分
-                        </p>
+                  <h3 class="flex items-center gap-3 mb-6 text-xl font-semibold text-text-primary">
+                    <div
+                      class="flex items-center justify-center w-8 h-8 text-[var(--text-color-white)] rounded-full bg-main-blue">
+                      <i class="text-base fa-solid fa-train"></i>
                     </div>
+                    JR
+                  </h3>
+                  <div class="flex-1 text-base font-normal leading-relaxed tracking-wide text-text-primary">
+                    <p class="mb-2">
+                      最寄の駅から JR羽南本線「羽南動物公園駅」よりタクシーにて約10分
+                    </p>
+                    <div
+                      class="block p-3 mt-2 mb-4 text-sm font-light leading-normal text-gray-600 border-l-4 rounded-lg bg-gray-50 border-main-blue">
+                      ※羽南動物公園駅には特急・快速列車は停車しません。
+                    </div>
+                    <p class="mb-4">
+                      JR羽南中央駅からJR羽南本線、各駅停車にて「羽南動物公園駅」まで約12分
+                    </p>
+                    <p>
+                      タクシーで動物園まで15～20分
+                    </p>
+                  </div>
                 </div>
-            </li>
+              </li>
 
-            <!-- バスでのアクセス -->
-            <li class="flex h-full">
+              <!-- バスでのアクセス -->
+              <li class="flex h-full">
                 <div class="relative flex flex-col md:p-8 p-4 bg-[var(--bg-color-white)] rounded-2xl w-full">
-                    <h3 class="flex items-center gap-3 mb-6 text-xl font-semibold text-text-primary">
-                        <div class="flex items-center justify-center w-8 h-8 text-[var(--text-color-white)] rounded-full bg-main-green">
-                            <i class="text-base fa-solid fa-bus"></i>
-                        </div>
-                        バス
-                    </h3>
-                    <div class="flex-1 text-base font-normal leading-relaxed tracking-wide text-text-primary">
-                        <p class="mb-2">
-                            宮崎駅からHinata Zoo行きのバスが運行しております。
-                        </p>
-                        <div class="block p-3 mt-2 text-sm font-light leading-normal text-gray-600 border-l-4 rounded-lg bg-gray-50 border-main-green">
-                            ※時刻表等はホームページをご参照ください。
-                        </div>
+                  <h3 class="flex items-center gap-3 mb-6 text-xl font-semibold text-text-primary">
+                    <div
+                      class="flex items-center justify-center w-8 h-8 text-[var(--text-color-white)] rounded-full bg-main-green">
+                      <i class="text-base fa-solid fa-bus"></i>
                     </div>
+                    バス
+                  </h3>
+                  <div class="flex-1 text-base font-normal leading-relaxed tracking-wide text-text-primary">
+                    <p class="mb-2">
+                      宮崎駅からHinata Zoo行きのバスが運行しております。
+                    </p>
+                    <div
+                      class="block p-3 mt-2 text-sm font-light leading-normal text-gray-600 border-l-4 rounded-lg bg-gray-50 border-main-green">
+                      ※時刻表等はホームページをご参照ください。
+                    </div>
+                  </div>
                 </div>
-            </li>
-        </ul>
+              </li>
+            </ul>
           </div>
         </div>
         <!-- /.l-inner -->
