@@ -7,7 +7,7 @@ const rename = require('gulp-rename');
 
 // HTMLコピー
 function html() {
-  return src('*.html').pipe(dest('dist'));
+  return src(['*.html', 'templates/pages/*.html']).pipe(dest('dist'));
 }
 
 // CSS ビルド
