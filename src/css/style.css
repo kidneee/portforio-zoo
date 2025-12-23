@@ -540,7 +540,7 @@ button {
 * ========================= */
 /* ページタイトル背景画像 */
 .addmission-page__title-wapper {
-  background-image: url('../../images/title-bg_addmission.jpg');
+  background-image: url('./images/title-bg_addmission.jpg');
 }
 
 .opening-hours__list {
