@@ -5,6 +5,11 @@ const autoprefixer = require('autoprefixer');
 const sourcemaps = require('gulp-sourcemaps');
 const rename = require('gulp-rename');
 
+// HTMLコピー
+function html() {
+  return src('*.html').pipe(dest('dist'));
+}
+
 // CSS ビルド
 function css() {
   return src('src/css/input.css')
@@ -14,11 +19,6 @@ function css() {
     .pipe(sourcemaps.write('.'))
     .pipe(dest('dist/css'));
 }
-
-// 画像コピー（シンプルに、バイナリ安全）
-// function images() {
-//   return src('src/images/**/*').pipe(dest('dist/images'));
-// }
 
 // JS コピー
 function js() {
@@ -32,8 +32,9 @@ function watchFiles() {
   watch('src/js/**/*', js);
 }
 
+exports.html = html;
 exports.css = css;
 // exports.images = images;
 exports.js = js;
 exports.watch = watchFiles;
-exports.default = series(css, js, watchFiles);
+exports.default = series(html, css, js, watchFiles);
