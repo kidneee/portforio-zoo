@@ -1,0 +1,9 @@
+{
+  "liveServer.settings.port": 5503,
+  "files.associations": {
+    "*.ejs": "html"
+  },
+  "html.validate.scripts": false,
+  "html.validate.styles": false,
+  "html.format.enable": false
+}

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="Keywords" content="宮崎県,宮崎市,宮崎,動物園,遊園地,流れるプール,ひなた,ふれあい,ファミリー" />
+  <meta name="description" content="Hinata Zooは宮崎市にある動物園。日本でも珍しいフラミンゴショーを見ることができます。遊園地も併設しており、流れるプールや屋外プールも楽しめます。" />
+  <title>Hinata Zoo</title>
+  <!-- css -->
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/variables.css">
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500&family=Noto+Sans+Tamil:wght@100;200;300;400;500&family=Zen+Maru+Gothic:wght@300;400;500;700&display=swap"
+    rel="stylesheet" />
+  <!-- js -->
+  <script type="module" src="./js/main.js"></script>
+</head>
+
+<body>
+  <!-- ヘッダー -->
+  <header class="header">
+    <div class="header__inner">
+      <h1 class="header__logo">
+        <a href="./" class="header__link">
+          <img src="./images/logo.svg" width="186" height="54" alt="Hinata Zoo" class="header__logo-image" />
+        </a>
+      </h1>
+
+      <aside id="js-drawerMenu" class="hamburger-menu__wrapper">
+        <div class="hamburger-menu-video-wrapper">
+          <video autoplay muted loop playsinline class="hamburger-menu-video">
+            <source src="./images/fv_movie-sp.mp4" type="video/mp4" />
+            お使いのブラウザは動画に対応していません。
+          </video>
+        </div>
+        <!-- /.hamburger-menu-video-wrapper -->
+        <img src="./images/logo_hamburger.svg" width="186" height="54" alt=""
+          class="hamburger-menu__logo sp-only" />
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="./templates/pages/page-admission.html" class="nav__link nav__admission">入園案内</a>
+            </li>
+            <li class="nav__item">
+              <a href="./templates/pages/page-animals.html" class="nav__link nav__animals">どうぶつ</a>
+            </li>
+            <li class="nav__item">
+              <a href="./templates/pages/page-event.html" class="nav__link nav__guide">イベント</a>
+            </li>
+            <li class="nav__item">
+              <a href="./archive-news.html" class="nav__link nav__news">ニュース</a>
+            </li>
+            <li class="nav__item">
+              <a href="#access" class="nav__link nav__access">アクセス</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="hamburger-menu__information">
+          <div class="opening-hours">
+            <span class="opening-hours__label">本日の営業時間</span>
+            <p class="opening-hours__time">
+              <time datetime="09:00">午前9:00</time>
+              ～
+              <time datetime="17:00">午後5:00</time>
+            </p>
+          </div>
+          <ul class="social-links">
+            <li class="social-links__item">
+              <a href="" class="social-links__link">
+                <img src="./images/icon_twitter.svg" alt="ツイッター" class="social-links__icon" />
+              </a>
+            </li>
+            <li class="social-links__item">
+              <a href="" class="social-links__link">
+                <img src="./images/icon_instagram.svg" alt="インスタグラム" class="social-links__icon" />
+              </a>
+            </li>
+            <li class="social-links__item">
+              <a href="" class="social-links__link">
+                <img src="./images/icon_facebook.svg" alt="フェイスブック" class="social-links__icon" />
+              </a>
+            </li>
+            <li class="social-links__item">
+              <a href="" class="social-links__link">
+                <img src="./images/icon_youtube.svg" alt="ユーチューブ" class="social-links__icon" />
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- /.hamburger-menu__information -->
+      </aside>
+
+      <button id="js-hamburgerMenu" class="hamburger-menu" aria-label="メニューを開く" aria-controls="js-drawerMenu"
+        aria-expanded="false">
+        <span class="hamburger-menu__line"></span>
+      </button>
+    </div>
+    <!-- /.header__inner -->
+  </header>
+  <!-- /.header -->
+
+  <main class="news-page">
+    <div class="page__title-wrapper addmission-page__title-wapper">
+      <h1 class="c-page-title">お知らせ一覧</h1>
+    </div><!-- /.page__title-wrapper addmission-page__title-wapper-->
+
+    <!-- お知らせ -->
+    <section class="news">
+      <div class="l-inner">
+        <h2 class="c-section-title">
+          <span class="c-section-title__en">News</span>
+          <span class="c-section-title__ja">お知らせ</span>
+        </h2>
+        <div class="news__content">
+          <dl class="news__list">
+            <div class="news__item">
+              <a href="" class="news__item-link">
+                <dt class="news__item-date"><time datetime="2025-08-11">2025.08-11</time></dt>
+                <dd class="news__item-label">ライオンの赤ちゃん誕生！</dd>
+              </a>
+            </div>
+            <div class="news__item">
+              <a href="" class="news__item-link">
+                <dt class="news__item-date"><time datetime="2025-08-11">2025.08-11</time></dt>
+                <dd class="news__item-label">新エリア「こどもどうぶつ広場」オープン</dd>
+              </a>
+            </div>
+            <div class="news__item">
+              <a href="" class="news__item-link">
+                <dt class="news__item-date"><time datetime="2025-08-11">2025.08-11</time></dt>
+                <dd class="news__item-label">ホワイトタイガーが仲間入り</dd>
+              </a>
+            </div>
+            <div class="news__item">
+              <a href="" class="news__item-link">
+                <dt class="news__item-date"><time datetime="2025-08-11">2025.08-11</time></dt>
+                <dd class="news__item-label">ナイトズー開催決定！</dd>
+              </a>
+            </div>
+            <div class="news__item">
+              <a href="" class="news__item-link">
+                <dt class="news__item-date"><time datetime="2025-08-11">2025.08-11</time></dt>
+                <dd class="news__item-label">ペンギンのパレードスタート</dd>
+              </a>
+            </div>
+          </dl>
+        </div>
+        <!-- ページネーション -->
+        <nav class="pagination">
+          <ol class="pagination__list">
+            <li class="pagination__item pagination__item--prev">
+              <a href="#" class="pagination__link">前のページ</a>
+            </li>
+            <li class="pagination__item">
+              <a href="#" class="pagination__link pagination__link--current">1</a>
+            </li>
+            <li class="pagination__item">
+              <a href="#" class="pagination__link">2</a>
+            </li>
+            <li class="pagination__item pagination__item--next">
+              <a href="#" class="pagination__link">次のページ</a>
+            </li>
+          </ol>
+        </nav>
+      </div>
+      <!-- /.l-inner -->
+    </section>
+  </main>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div>
+        <a href="" class="footer__link">
+          <img src="./images/logo-white.svg" width="186" height="54" alt="Hinata Zoo" class="footer__logo-image" />
+        </a>
+        <address class="footer__address">
+          <p class="footer__address-info">
+            〒880-XXXX
+            <br />
+            宮崎県宮崎市XXXXXXX
+          </p>
+          <p class="footer__address-info">
+            電話番号：
+            <a class="footer__address-link footer__address-link--tel" href="tel:+0985123456">0985-12-3456</a>
+          </p>
+          <p class="footer__address-info">FAX番号：0985-12-3456</p>
+        </address>
+      </div>
+
+      <div class="footer__social-list">
+        <ul class="social-links">
+          <li class="social-links__item">
+            <a href="" class="social-links__link">
+              <img src="./images/icon_twitter.svg" alt="ツイッター" class="social-links__icon" />
+            </a>
+          </li>
+          <li class="social-links__item">
+            <a href="" class="social-links__link">
+              <img src="./images/icon_instagram.svg" alt="インスタグラム" class="social-links__icon" />
+            </a>
+          </li>
+          <li class="social-links__item">
+            <a href="" class="social-links__link">
+              <img src="./images/icon_facebook.svg" alt="フェイスブック" class="social-links__icon" />
+            </a>
+          </li>
+          <li class="social-links__item">
+            <a href="" class="social-links__link">
+              <img src="./images/icon_youtube.svg" alt="ユーチューブ" class="social-links__icon" />
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <ul class="footer__nav-list">
+        <li class="footer__nav-item">
+          <a href="./admission.html" class="footer__nav-link">入園案内</a>
+        </li>
+        <li class="footer__nav-item">
+          <a href="./animals.html" class="footer__nav-link">どうぶつ</a>
+        </li>
+        <li class="footer__nav-item">
+          <a href="./guide.html" class="footer__nav-link">施設案内</a>
+        </li>
+        <li class="footer__nav-item">
+          <a href="./news.html" class="footer__nav-link">ニュース</a>
+        </li>
+        <li class="footer__nav-item">
+          <a href="./access.html" class="footer__nav-link">アクセス</a>
+        </li>
+      </ul>
+    </div>
+    <!-- /.footer__inner -->
+    <small class="footer__copyright">Copyright &copy; 2011 Miyazaki City Phoenix Zoo ALL Rights Reserved.</small>
+  </footer>
+  <!-- /.footer -->
+</body>
+
+</html>

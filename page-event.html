@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="keywords" content="宮崎県,宮崎市,動物園イベント,ゾウのお散歩,ライオン観察,パンダ撮影会,ふれあい体験,家族向けイベント" />
+  <meta name="description" content="Hinata Zooのイベントページ。ゾウのお散歩と記念撮影、ライオン観察、パンダと記念撮影など、家族で楽しめる特別イベントの詳細をご紹介しています。" />
+  <title>イベント一覧 | Hinata Zoo</title>
+  <!-- css -->
+  <link rel="stylesheet" href="./css/output.css">
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500&family=Noto+Sans+Tamil:wght@100;200;300;400;500&family=Zen+Maru+Gothic:wght@300;400;500;700&display=swap"
+    rel="stylesheet">
+  <!-- js -->
+  <script type="module" src="./js/main.js"></script>
+</head>
+
+<body>
+  <!-- ヘッダー -->
+  <header class="fixed w-full h-24 bg-white z-20 md:bg-transparent">
+    <div class="flex justify-between items-center h-full px-[6.94vw] md:px-[4.1vw]">
+      <div class="header-logo">
+        <a href="./index.html">
+          <img src="./images/logo.svg" width="186" height="54" alt="Hinata Zoo" class="w-[186px] h-[54px]" />
+        </a>
+      </div>
+
+      <!-- ハンバーガーメニューオーバーレイ -->
+      <aside id="js-drawerMenu"
+        class="fixed top-0 left-0 z-[100] flex flex-col justify-between items-center w-screen h-screen p-[2.84vh_4.1vw] transform translate-x-full transition-transform duration-300 ease-in-out hidden md:block">
+        <!-- 背景動画 -->
+        <div class="fixed inset-0 z-[-1] menu-overlay">
+          <video autoplay muted loop playsinline
+            class="absolute top-1/2 left-1/2 w-full h-full transform -translate-x-1/2 -translate-y-1/2 object-cover z-[-1]">
+            <source src="./images/fv_movie-sp.mp4" type="video/mp4">
+            お使いのブラウザは動画に対応していません。
+          </video>
+        </div>
+
+        <!-- ロゴ -->
+        <img src="./images/logo_hamburger.svg" width="186" height="54" alt=""
+          class="w-[186px] h-[54px] md:block hidden">
+
+        <!-- ナビゲーション -->
+        <nav class="nav">
+          <ul class="flex flex-col items-center justify-center gap-[4.74vh] md:flex-row md:gap-[2.22vw]">
+            <li>
+              <a href="./page-admission.html"
+                class="relative pl-10 text-white text-lg font-medium md:pl-0 md:text-black before:absolute before:top-1/2 before:left-0 before:w-7 before:h-7 before:-translate-y-1/2 before:content-[''] before:bg-[url('./images/icon_admission.svg')] md:before:hidden">入園案内</a>
+            </li>
+            <li>
+              <a href="./page-animals.html"
+                class="relative pl-10 text-white text-lg font-medium md:pl-0 md:text-black before:absolute before:top-1/2 before:left-0 before:w-7 before:h-7 before:-translate-y-1/2 before:content-[''] before:bg-[url('./images/icon_animals.svg')] md:before:hidden">どうぶつ</a>
+            </li>
+            <li>
+              <a href="./page-event.html"
+                class="relative pl-10 text-white text-lg font-medium md:pl-0 md:text-black before:absolute before:top-1/2 before:left-0 before:w-7 before:h-7 before:-translate-y-1/2 before:content-[''] before:bg-[url('./images/icon_guide.svg')] md:before:hidden">イベント</a>
+            </li>
+            <li>
+              <a href="./archive-news.html"
+                class="relative pl-10 text-white text-lg font-medium md:pl-0 md:text-black before:absolute before:top-1/2 before:left-0 before:w-7 before:h-7 before:-translate-y-1/2 before:content-[''] before:bg-[url('./images/icon_news.svg')] md:before:hidden">ニュース</a>
+            </li>
+            <li>
+              <a href="#access"
+                class="relative pl-10 text-white text-lg font-medium md:pl-0 md:text-black before:absolute before:top-1/2 before:left-0 before:w-7 before:h-7 before:-translate-y-1/2 before:content-[''] before:bg-[url('./images/icon_access.svg')] md:before:hidden">アクセス</a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- 営業時間とソーシャルリンク -->
+        <div class="flex flex-col gap-[4.74vh]">
+          <div class="flex flex-col gap-[0.95vh] text-white leading-none text-center">
+            <span class="text-base">本日の営業時間</span>
+            <p class="text-2xl leading-none">
+              <time datetime="09:00">午前9:00</time>
+              ～
+              <time datetime="17:00">午後5:00</time>
+            </p>
+          </div>
+          <ul class="flex justify-between items-center gap-[2.78vw]">
+            <li>
+              <a href="">
+                <img src="./images/icon_twitter.svg" alt="ツイッター" class="w-auto h-auto" />
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img src="./images/icon_instagram.svg" alt="インスタグラム" class="w-auto h-auto" />
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img src="./images/icon_facebook.svg" alt="フェイスブック" class="w-auto h-auto" />
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img src="./images/icon_youtube.svg" alt="ユーチューブ" class="w-auto h-auto" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- ハンバーガーボタン -->
+      <button id="js-hamburgerMenu" class="relative w-[30px] h-[30px] cursor-pointer z-[200] hidden md:block"
+        aria-label="メニューを開く" aria-controls="js-drawerMenu" aria-expanded="false">
+        <span class="absolute w-full h-1 bg-main-blue hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="event-page">
+    <h1 class="sr-only">イベント一覧</h1>
+    <div class="event-page__content">
+      <!-- 注目イベント -->
+      <section class="event-page__item featured-event">
+        <div class="featured-event__inner">
+          <h2 class="sr-only">イチオシ！イベント</h2>
+          <div class="featured-event__image">
+            <img src="./images/event-elephant.jpg" alt="ゾウのお散歩と記念撮影" class="featured-event__img" />
+          </div><!-- /.feature-event__image -->
+          <div class="featured-event__detail">
+            <h3 class="featured-event__title">ゾウのお散歩と記念撮影</h3>
+            <dl class="featured-event__info">
+              <div class="featured-event__time">
+                <dt>
+                  <img src="./images/icon_time.svg" width="16" height="16" alt="イベント開始時間" />
+                </dt>
+                <dd>14時〜</dd>
+              </div>
+              <div class="featured-event__place">
+                <dt>
+                  <img src="./images/icon_location.svg" width="16" height="16" alt="イベント開始時間" />
+                </dt>
+                <dd>アジアゾウ展示場→ゾウさん広場</dd>
+              </div>
+            </dl>
+            <p class="featured-event__desc">大きな体で優しく歩くゾウと一緒に園内をお散歩できる特別なイベントです。間近で感じる迫力と温かさに感動しながら、最後は記念撮影で思い出を残せます。</p>
+            <a href="" class="btn-ticket featured-event__link">Webチケットこちら</a>
+          </div>
+        </div><!-- /.featured-event__inner -->
+
+      </section>
+      <!-- /.featured-event -->
+
+      <!-- デイリーイベント -->
+      <section class="event-page__item daily-events">
+        <div class="l-inner">
+          <h2 class="c-section-title">
+            <span class="c-section-title__en">Daily Event</span>
+            <span class="c-section-title__ja">デイリーイベント</span>
+          </h2>
+          <div class="daily-events__content">
+            <section class="event-page__item daily-events__card">
+              <div class="daily-events__card-image">
+                <img src="./images/event-lion.jpg" alt="ライオン観察" class="daily-events__card-img" />
+              </div><!-- /.daily-events__card-image -->
+              <div class="daily-events__card-content">
+                <div class="daily-events__card-text">
+                  <h3 class="daily-events__card-title">ライオン観察</h3>
+                  <dl class="daily-events__card-info">
+                    <div class="daily-events__card-time">
+                      <dt>
+                        <img src="./images/icon_time.svg" width="16" height="16" alt="イベント開始時間" />
+                      </dt>
+                      <dd>15時〜</dd>
+                    </div>
+                    <div class="daily-events__card-place">
+                      <dt>
+                        <img src="./images/icon_location.svg" width="16" height="16" alt="イベント開始時間" />
+                      </dt>
+                      <dd>ライオン展示場</dd>
+                    </div>
+                  </dl>
+                  <p class="daily-events__card-desc">
+                    百獣の王ライオンの力強い姿を間近で観察できるイベントです。食事シーンや群れで過ごす様子など、普段はなかなか見られない生態を知ることができます。</p>
+                </div>
+                <a href="/event.html" class="btn-ticket daily-events__card-link">Webチケットこちら</a>
+              </div><!-- /.events__card-content -->
+            </section>
+
+            <section class="event-page__item daily-events__card">
+              <div class="daily-events__card-image">
+                <img src="./images/event-panda.jpg" alt="パンダと記念撮影" class="daily-events__card-img" />
+              </div><!-- /.daily-events__card-image -->
+              <div class="daily-events__card-content">
+                <div class="daily-events__card-text">
+                  <h3 class="daily-events__card-title">パンダと記念撮影</h3>
+                  <dl class="daily-events__card-info">
+                    <div class="daily-events__card-time">
+                      <dt>
+                        <img src="./images/icon_time.svg" width="16" height="16" alt="イベント開始時間" />
+                      </dt>
+                      <dd>15時〜</dd>
+                    </div>
+                    <div class="daily-events__card-place">
+                      <dt>
+                        <img src="./images/icon_location.svg" width="16" height="16" alt="イベント開始時間" />
+                      </dt>
+                      <dd>パンダ展示場</dd>
+                    </div>
+                  </dl>
+                  <p class="daily-events__card-desc">
+                    モフモフの毛並みと愛らしい仕草で大人気のパンダと一緒に記念撮影できるイベントです。かわいらしい表情を間近で楽しみながら、ここでしか撮れない一枚を残せます。</p>
+                </div>
+                <a href="/event.html" class="btn-ticket daily-events__card-link">Webチケットこちら</a>
+              </div><!-- /.daily-events__card-content -->
+            </section>
+
+            <section class="event-page__item daily-events__card">
+              <div class="daily-events__card-image">
+                <img src="./images/event-interactions.jpg" alt="小動物とふれあい" class="daily-events__card-img" />
+              </div><!-- /.daily-events__card-image -->
+              <div class="daily-events__card-content">
+                <div class="daily-events__card-text">
+                  <h3 class="daily-events__card-title">小さないきものとふれあおう！</h3>
+                  <dl class="daily-events__card-info">
+                    <div class="daily-events__card-time">
+                      <dt>
+                        <img src="./images/icon_time.svg" width="16" height="16" alt="イベント開始時間" />
+                      </dt>
+                      <dd>15時〜</dd>
+                    </div>
+                    <div class="daily-events__card-place">
+                      <dt>
+                        <img src="./images/icon_location.svg" width="16" height="16" alt="イベント開始時間" />
+                      </dt>
+                      <dd>小動物ひろば</dd>
+                    </div>
+                  </dl>
+                  <p class="daily-events__card-desc">
+                    やさしい瞳と愛らしい動きで癒しを与えてくれる小動物たちと触れ合えるイベントです。かわいい姿を間近で楽しみながら、ここでしか味わえない特別な時間を過ごせます。</p>
+                </div>
+                <a href="/event.html" class="btn-ticket daily-events__card-link">Webチケットこちら</a>
+              </div><!-- /.daily-events__card-content -->
+            </section>
+          </div>
+          <!-- /.daily-events__content -->
+        </div>
+        <!-- /.l-inner -->
+      </section>
+    </div>
+    <!-- /.daily-events -->
+    <!-- /.event-page__content -->
+
+    <!-- アクセス -->
+    <section id="access" class="access">
+      <div class="l-inner">
+        <h2 class="c-section-title">
+          <span class="c-section-title__en">Access</span>
+          <span class="c-section-title__ja">アクセス</span>
+        </h2>
+        <div class="access__content">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.827853447963!2d139.76493831525402!3d35.68122418019453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bfbd89f700b%3A0x277c49ba34ed38!2z5p2x5Lqs6aeF!5e0!3m2!1sja!2sjp!4v1234567890123!5m2!1sja!2sjp"
+            width="100%" height="400" style="border: 0" allowfullscreen="" loading="lazy"></iframe>
+
+          <ul class="access__text">
+            <li>
+              <div class="content-text">
+                <h3 class="secondary-title access-car">
+                  <i class="fa-solid fa-car"></i>
+                  お車でお越しの方
+                </h3>
+                <p class="break-keep">
+                  羽南自動車道・羽南インターチェンジより、ひなた有料道路を経由して、ひなた西インターチェンジまで約15分。
+                  <br />
+                  旭川方面からは、国道12号線を経由してひなた有料道路を利用し、ひなた西インターチェンジまで約2時間。
+                  <br />
+                  <small>※ひなた西インターチェンジを降りて約1分で、左手にHnata Zooの駐車場が見えてきます。</small>
+                </p>
+              </div>
+            </li>
+            <li>
+              <div class="content-text">
+                <h3 class="secondary-title access-train">
+                  <i class="fa-solid fa-train"></i>
+                  JR
+                </h3>
+                <p class="break-keep">
+                  ・最寄の駅から JR羽南本線「羽南動物公園駅」よりタクシーにて約10分
+                  <br />
+                  <small>※羽南動物公園駅には特急・快速列車は停車しません。</small>
+                  <br />
+                  ・JR羽南中央駅からJR羽南本線、各駅停車にて「羽南動物公園駅」まで約12分
+                  <br />
+                  タクシーで動物園まで15～20分
+                </p>
+              </div>
+            </li>
+            <li>
+              <div class="content-text">
+                <h3 class="secondary-title access-bus">
+                  <i class="fa-solid fa-bus"></i>
+                  バス
+                </h3>
+                <p class="break-keep">
+                  宮崎駅からHinata Zoo行きのバスが 運行しております。
+                  <br />
+                  <small>※時刻表等はホームページをご参照ください。</small>
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- /.l-inner -->
+    </section>
+  </main>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div>
+        <a href="" class="footer__link">
+          <img src="./images/logo-white.svg" width="186" height="54" alt="Hinata Zoo"
+            class="footer__logo-image" />
+        </a>
+        <address class="footer__address">
+          <p class="footer__address-info">
+            〒880-XXXX
+            <br />
+            宮崎県宮崎市XXXXXXX
+          </p>
+          <p class="footer__address-info">
+            電話番号：
+            <a class="footer__address-link footer__address-link--tel" href="tel:+0985123456">0985-12-3456</a>
+          </p>
+          <p class="footer__address-info">FAX番号：0985-12-3456</p>
+        </address>
+      </div>
+
+      <div class="footer__social-list">
+        <ul class="social-links">
+          <li class="social-links__item">
+            <a href="" class="social-links__link">
+              <img src="./images/icon_twitter.svg" alt="ツイッター" class="social-links__icon" />
+            </a>
+          </li>
+          <li class="social-links__item">
+            <a href="" class="social-links__link">
+              <img src="./images/icon_instagram.svg" alt="インスタグラム" class="social-links__icon" />
+            </a>
+          </li>
+          <li class="social-links__item">
+            <a href="" class="social-links__link">
+              <img src="./images/icon_facebook.svg" alt="フェイスブック" class="social-links__icon" />
+            </a>
+          </li>
+          <li class="social-links__item">
+            <a href="" class="social-links__link">
+              <img src="./images/icon_youtube.svg" alt="ユーチューブ" class="social-links__icon" />
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <ul class="footer__nav-list">
+        <li class="footer__nav-item">
+          <a href="./admission.html" class="footer__nav-link">入園案内</a>
+        </li>
+        <li class="footer__nav-item">
+          <a href="./animals.html" class="footer__nav-link">どうぶつ</a>
+        </li>
+        <li class="footer__nav-item">
+          <a href="./guide.html" class="footer__nav-link">施設案内</a>
+        </li>
+        <li class="footer__nav-item">
+          <a href="./news.html" class="footer__nav-link">ニュース</a>
+        </li>
+        <li class="footer__nav-item">
+          <a href="./access.html" class="footer__nav-link">アクセス</a>
+        </li>
+      </ul>
+    </div>
+    <!-- /.footer__inner -->
+    <small class="footer__copyright">Copyright &copy; 2011 Miyazaki City Phoenix Zoo ALL Rights Reserved.</small>
+  </footer>
+  <!-- /.footer -->
+</body>
+
+</html>

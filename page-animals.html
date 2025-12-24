@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="keywords" content="宮崎県,宮崎市,動物園イベント,ゾウのお散歩,ライオン観察,パンダ撮影会,ふれあい体験,家族向けイベント" />
+  <meta name="description" content="Hinata Zooのイベントページ。ゾウのお散歩と記念撮影、ライオン観察、パンダと記念撮影など、家族で楽しめる特別イベントの詳細をご紹介しています。" />
+  <title>Hinata Zooの動物たち | Hinata Zoo</title>
+  <!-- css -->
+  <link rel="stylesheet" href="./css/output.css">
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500&family=Noto+Sans+Tamil:wght@100;200;300;400;500&family=Zen+Maru+Gothic:wght@300;400;500;700&display=swap"
+    rel="stylesheet">
+  <!-- js -->
+  <script type="module" src="./js/main.js"></script>
+</head>
+
+<body>
+  <!-- ヘッダー -->
+  <header class="header">
+    <div class="header__inner">
+      <div class="header__logo">
+        <a href="./index.html" class="header__link">
+          <img src="./images/logo.svg" width="186" height="54" alt="Hinata Zoo" class="header__logo-image" />
+        </a>
+      </div>
+
+      <aside id="js-drawerMenu" class="hamburger-menu__wrapper">
+        <div class="hamburger-menu-video-wrapper">
+          <video autoplay muted loop playsinline class="hamburger-menu-video">
+            <source src="./images/fv_movie-sp.mp4" type="video/mp4">
+            お使いのブラウザは動画に対応していません。
+          </video>
+        </div>
+        <!-- /.hamburger-menu-video-wrapper -->
+        <img src="./images/logo_hamburger.svg" width="186" height="54" alt=""
+          class="hamburger-menu__logo sp-only">
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="./page-admission.html" class="nav__link nav__admission">入園案内</a>
+            </li>
+            <li class="nav__item">
+              <a href="./page-animals.html" class="nav__link nav__animals">どうぶつ</a>
+            </li>
+            <li class="nav__item">
+              <a href="./page-event.html" class="nav__link nav__guide">イベント</a>
+            </li>
+            <li class="nav__item">
+              <a href="./archive-news.html" class="nav__link nav__news">ニュース</a>
+            </li>
+            <li class="nav__item">
+              <a href="#access" class="nav__link nav__access">アクセス</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="hamburger-menu__information">
+          <div class="opening-hours">
+            <span class="opening-hours__label">本日の営業時間</span>
+            <p class="opening-hours__time">
+              <time datetime="09:00">午前9:00</time>
+              ～
+              <time datetime="17:00">午後5:00</time>
+            </p>
+          </div>
+          <ul class="social-links">
+            <li class="social-links__item">
+              <a href="" class="social-links__link">
+                <img src="./images/icon_twitter.svg" alt="ツイッター" class="social-links__icon" />
+              </a>
+            </li>
+            <li class="social-links__item">
+              <a href="" class="social-links__link">
+                <img src="./images/icon_instagram.svg" alt="インスタグラム" class="social-links__icon" />
+              </a>
+            </li>
+            <li class="social-links__item">
+              <a href="" class="social-links__link">
+                <img src="./images/icon_facebook.svg" alt="フェイスブック" class="social-links__icon" />
+              </a>
+            </li>
+            <li class="social-links__item">
+              <a href="" class="social-links__link">
+                <img src="./images/icon_youtube.svg" alt="ユーチューブ" class="social-links__icon" />
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- /.hamburger-menu__information -->
+      </aside>
+
+      <button id="js-hamburgerMenu" class="hamburger-menu" aria-label="メニューを開く" aria-controls="js-drawerMenu"
+        aria-expanded="false">
+        <span class="hamburger-menu__line"></span>
+      </button>
+    </div>
+    <!-- /.header__inner -->
+  </header>
+  <!-- /.header -->
+
+  <main class="animals-page">
+    <div class="page__title-wrapper animals-page__title-wapper">
+      <h1 class="c-page-title">Hinata Zooの<br class="sp-only">動物たち</h1>
+    </div><!-- /.page__title-wrapper animals-page__title-wapper-->
+
+    <div class="animals-page__content">
+      <section>
+        <div class="l-inner">
+          <div class="tabs">
+            <button class="tab diurnal-tab active" data-tab="diurnal">昼行性</button>
+            <button class="tab nocturnal-tab" data-tab="nocturnal">夜行性</button>
+            <button class="tab small-animals-tab" data-tab="small-animals">小動物</button>
+            <button class="tab reptiles-tab" data-tab="reptiles">爬虫類</button>
+          </div>
+          <div class="tab-content">
+            <!-- 昼行性 -->
+            <section id="diurnal" class="tab-panel diurnal-panel active">
+              <h3 class="sr-only">昼行性</h3>
+              <div class="tab-panel__inner">
+                <!-- キリン -->
+                <button aria-expanded="false" aria-controls="giraffe" class="animal-card">
+                  <img src="./images/animals-card-giraffe.jpg" class="animal-card__image" alt="キリン">
+                  <span class="animal-card__label">キリン</span>
+                </button>
+                <!-- ゾウ -->
+                <button aria-expanded="false" aria-controls="elephant" class="animal-card">
+                  <img src="./images/animals-card-elephant.jpg" class="animal-card__image" alt="ゾウ">
+                  <span class="animal-card__label">ゾウ</span>
+                </button>
+                <!-- シマウマ -->
+                <button aria-expanded="false" aria-controls="zebra" class="animal-card">
+                  <img src="./images/animals-card-zebra.jpg" class="animal-card__image" alt="シマウマ">
+                  <span class="animal-card__label">シマウマ</span>
+                </button>
+              </div><!-- /.tab-panel-inner -->
+            </section>
+
+            <!-- 夜行性 -->
+            <section id="nocturnal" class="tab-panel nocturnal-panel">
+              <h3 class="sr-only">夜行性</h3>
+              <div class="tab-panel__inner">
+                <!-- フクロウ -->
+                <button aria-expanded="false" aria-controls="owl" class="animal-card">
+                  <img src="./images/animals-card-owl.jpg" class="animal-card__image" alt="フクロウ">
+                  <span class="animal-card__label">フクロウ</span>
+                </button>
+                <!-- ハリネズミ -->
+                <button aria-expanded="false" aria-controls="hedgehog" class="animal-card">
+                  <img src="./images/animals-card-hedgehog.jpg" class="animal-card__image" alt="ハリネズミ">
+                  <span class="animal-card__label">ハリネズミ</span>
+                </button>
+                <!-- コウモリ -->
+                <button aria-expanded="false" aria-controls="bat" class="animal-card">
+                  <img src="./images/animals-card-bat.jpg" class="animal-card__image" alt="コウモリ">
+                  <span class="animal-card__label">コウモリ</span>
+                </button>
+              </div><!-- /.tab-panel__inner -->
+            </section>
+
+            <!-- 小動物 -->
+            <section id="small-animals" class="tab-panel small-animals-panel">
+              <h3 class="sr-only">小動物</h3>
+              <div class="tab-panel__inner">
+                <!-- モルモット -->
+                <button aria-expanded="false" aria-controls="guineapig" class="animal-card">
+                  <img src="./images/animals-card-guineapig.jpg" class="animal-card__image" alt="モルモット">
+                  <span class="animal-card__label">モルモット</span>
+                </button>
+                <!-- ウサギ -->
+                <button aria-expanded="false" aria-controls="rabbit" class="animal-card">
+                  <img src="./images/animals-card-rabbit.jpg" class="animal-card__image" alt="ウサギ">
+                  <span class="animal-card__label">ウサギ</span>
+                </button>
+                <!-- フェレット -->
+                <button aria-expanded="false" aria-controls="ferret" class="animal-card">
+                  <img src="./images/animals-card-ferret.jpg" class="animal-card__image" alt="フェレット">
+                  <span class="animal-card__label">フェレット</span>
+                </button>
+              </div><!-- /.tab-panel__inner -->
+            </section>
+
+            <!-- 爬虫類 -->
+            <section id="reptiles" class="tab-panel reptiles-panel">
+              <h3 class="sr-only">爬虫類</h3>
+              <div class="tab-panel__inner">
+                <!-- カメレオン -->
+                <button aria-expanded="false" aria-controls="chameleon" class="animal-card">
+                  <img src="./images/animals-card-chameleon.jpg" class="animal-card__image" alt="カメレオン">
+                  <span class="animal-card__label">カメレオン</span>
+                </button>
+                <!-- リクガメ -->
+                <button aria-expanded="false" aria-controls="turtoise" class="animal-card">
+                  <img src="./images/animals-card-turtoise.jpg" class="animal-card__image" alt="リクガメ">
+                  <span class="animal-card__label">リクガメ</span>
+                </button>
+                <!-- ニシキヘビ -->
+                <button aria-expanded="false" aria-controls="python" class="animal-card">
+                  <img src="./images/animals-card-python.jpg" class="animal-card__image" alt="ニシキヘビ">
+                  <span class="animal-card__label">ニシキヘビ</span>
+                </button>
+              </div><!-- /.tab-panel__inner -->
+            </section>
+
+            <!-- 詳細ポップアップ -->
+            <div id="js-popup" class="animal-detail-wrapper" role="dialog" aria-modal="true" hidden>
+
+              <!-- 昼行性 -->
+              <!-- キリン -->
+              <article id="giraffe" class="animal-detail" hidden aria-controls="js-popup">
+                <div class="animal-detail__inner">
+                  <div class="animal-detail__heading">
+                    <h4 class="animal-detail__title">キリン</h4>
+                    <button class="animal-detail__close">&times;</button>
+                  </div><!-- /.animal-detail__heading -->
+                  <div class="animal-detail__image">
+                    <img src="./images/animals-card-giraffe.jpg" class="animal-detail__img" alt="キリン">
+                  </div>
+                  <p class="animal-detail__text">
+                    キリンはアフリカのサバンナに生息する世界一背の高い動物で、長い首を使って高い木の葉を食べます。草食性で、特にアカシアの葉を好みます。昼間に活発に活動し、のんびりと群れで移動する姿が特徴です。動物園ではその優雅で穏やかな動きが人気で、来園者の目を引きます。首や模様には個体ごとの特徴があり、観察する楽しみもあります。
+                  </p>
+                </div>
+              </article>
+              <!-- ゾウ -->
+              <article id="elephant" class="animal-detail" hidden aria-controls="js-popup">
+                <div class="animal-detail__inner">
+                  <div class="animal-detail__heading">
+                    <h4 class="animal-detail__title">ゾウ</h4>
+                    <button class="animal-detail__close">&times;</button>
+                  </div><!-- /.animal-detail__heading -->
+                  <div class="animal-detail__image">
+                    <img src="./images/animals-card-elephant.jpg" class="animal-detail__img" alt="ゾウ">
+                  </div>
+                  <p class="animal-detail__text">
+                    ゾウは世界最大の陸上動物で、力強さと同時に高い知性を持つことで知られています。社会性が強く、群れの中で助け合いながら生活する姿は感動を与えます。昼行性で、昼間に活発に活動し、長い鼻（鼻と上唇が一体化した器官）を器用に使って餌をつかんだり水を飲んだりします。動物園ではその迫力ある体格と親しみやすい性格が人気の理由です。
+                  </p>
+                </div>
+              </article>
+              <!-- シマウマ -->
+              <article id="zebra" class="animal-detail" hidden aria-controls="js-popup">
+                <div class="animal-detail__inner">
+                  <div class="animal-detail__heading">
+                    <h4 class="animal-detail__title">シマウマ</h4>
+                    <button class="animal-detail__close">&times;</button>
+                  </div><!-- /.animal-detail__heading -->
+                  <div class="animal-detail__image">
+                    <img src="./images/animals-card-zebra.jpg" class="animal-detail__img" alt="シマウマ">
+                  </div>
+                  <p class="animal-detail__text">
+                    シマウマは黒と白の美しい縞模様が特徴で、一頭ごとに模様の形が異なります。草食性で群れを作り、サバンナで昼間に活動します。縞模様には体温調整や外敵から身を守る役割があると考えられています。動物園では模様の美しさと群れで駆け回る姿が来園者を魅了します。キリンやゾウと並んで展示されることが多く、動物園らしい雰囲気をつくる存在です。
+                  </p>
+                </div>
+              </article>
+
+              <!-- 夜行性 -->
+              <!-- フクロウ -->
+              <article id="owl" class="animal-detail" hidden aria-controls="js-popup">
+                <div class="animal-detail__inner">
+                  <div class="animal-detail__heading">
+                    <h4 class="animal-detail__title">フクロウ</h4>
+                    <button class="animal-detail__close">&times;</button>
+                  </div><!-- /.animal-detail__heading -->
+                  <div class="animal-detail__image">
+                    <img src="./images/animals-card-owl.jpg" class="animal-detail__img" alt="フクロウ">
+                  </div>
+                  <p class="animal-detail__text">
+                    フクロウは夜行性の代表格で、大きな目と首をぐるりと回す仕草が特徴です。静かに羽ばたくため狩りが得意で、小動物や昆虫を捕食します。動物園では昼間は木陰で休む姿が多く見られますが、夜の展示イベントでは活発な動きが楽しめます。その神秘的な姿は「森の賢者」と呼ばれることもあり、子どもから大人まで人気を集めます。
+                  </p>
+                </div>
+              </article>
+              <!-- ハリネズミ -->
+              <article id="hedgehog" class="animal-detail" hidden aria-controls="js-popup">
+                <div class="animal-detail__inner">
+                  <div class="animal-detail__heading">
+                    <h4 class="animal-detail__title">ハリネズミ</h4>
+                    <button class="animal-detail__close">&times;</button>
+                  </div><!-- /.animal-detail__heading -->
+                  <div class="animal-detail__image">
+                    <img src="./images/animals-card-hedgehog.jpg" class="animal-detail__img" alt="ハリネズミ">
+                  </div>
+                  <p class="animal-detail__text">
+                    ハリネズミは夜行性の小動物で、体を守るために背中に硬い針状の毛を持っています。普段は小さく丸まって寝ていますが、夜になると活動的になり、昆虫などを探して動き回ります。動物園ではその愛らしい姿と独特の防御姿勢が注目されます。ペットとしても人気が高く、親しみやすい一方で野生の生態を知る機会としても展示されています。
+                  </p>
+                </div>
+              </article>
+              <!-- コウモリ -->
+              <article id="bat" class="animal-detail" hidden aria-controls="js-popup">
+                <div class="animal-detail__inner">
+                  <div class="animal-detail__heading">
+                    <h4 class="animal-detail__title">コウモリ</h4>
+                    <button class="animal-detail__close">&times;</button>
+                  </div><!-- /.animal-detail__heading -->
+                  <div class="animal-detail__image">
+                    <img src="./images/animals-card-bat.jpg" class="animal-detail__img" alt="コウモリ">
+                  </div>
+                  <p class="animal-detail__text">
+                    コウモリは唯一空を飛ぶことができる哺乳類で、夜行性として知られています。超音波を発して反射を聞き取りながら暗闇を飛び回り、昆虫を捕食します。動物園ではその独特な飛行スタイルや逆さにぶら下がる休息姿が観察できます。夜の動物園イベントでは特に注目を集め、普段なかなか見られない生態を間近で学ぶことができます。
+                  </p>
+                </div>
+              </article>
+
+              <!-- 小動物 -->
+              <!-- モルモット -->
+              <article id="guineapig" class="animal-detail" hidden aria-controls="js-popup">
+                <div class="animal-detail__inner">
+                  <div class="animal-detail__heading">
+                    <h4 class="animal-detail__title">モルモット</h4>
+                    <button class="animal-detail__close">&times;</button>
+                  </div><!-- /.animal-detail__heading -->
+                  <div class="animal-detail__image">
+                    <img src="./images/animals-card-guineapig.jpg" class="animal-detail__img" alt="モルモット">
+                  </div>
+                  <p class="animal-detail__text">
+                    モルモットは小さくてかわいらしい草食動物で、穏やかな性格から「ふれあい動物園」の定番として親しまれています。昼夜を問わず活動しますが、特に昼間に子どもたちと触れ合う展示が人気です。鳴き声や仕草が愛らしく、野菜を食べる様子も観察ポイントです。社会性があり群れで生活するため、複数頭を飼育している動物園も多いです。
+                  </p>
+                </div>
+              </article>
+              <!-- ウサギ -->
+              <article id="rabbit" class="animal-detail" hidden aria-controls="js-popup">
+                <div class="animal-detail__inner">
+                  <div class="animal-detail__heading">
+                    <h4 class="animal-detail__title">ウサギ</h4>
+                    <button class="animal-detail__close">&times;</button>
+                  </div><!-- /.animal-detail__heading -->
+                  <div class="animal-detail__image">
+                    <img src="./images/animals-card-rabbit.jpg" class="animal-detail__img" alt="ウサギ">
+                  </div>
+                  <p class="animal-detail__text">
+                    ウサギは柔らかな毛と長い耳が特徴の小動物で、昔から身近な存在として親しまれてきました。草食性で、にんじんや牧草を好んで食べます。動物園ではふれあいコーナーの人気者で、子どもたちに大人気です。ぴょんぴょん跳ねる動きや、耳で周囲の音を敏感にキャッチする様子が見どころです。かわいらしさと親しみやすさを兼ね備えています。
+                  </p>
+                </div>
+              </article>
+              <!-- フェレット -->
+              <article id="ferret" class="animal-detail" hidden aria-controls="js-popup">
+                <div class="animal-detail__inner">
+                  <div class="animal-detail__heading">
+                    <h4 class="animal-detail__title">フェレット</h4>
+                    <button class="animal-detail__close">&times;</button>
+                  </div><!-- /.animal-detail__heading -->
+                  <div class="animal-detail__image">
+                    <img src="./images/animals-card-ferret.jpg" class="animal-detail__img" alt="フェレット">
+                  </div>
+                  <p class="animal-detail__text">
+                    フェレットは細長い体と好奇心旺盛な性格が魅力の小動物です。活発に動き回り、トンネルのような場所に潜り込むのが大好きです。肉食性に近く、野生では小動物を捕らえて食べますが、動物園では専用の餌で飼育されています。愛らしい顔立ちと元気な動きが来園者を楽しませ、ちょっと珍しい展示として人気を集めています。
+                  </p>
+                </div>
+              </article>
+
+              <!-- 爬虫類 -->
+              <!-- カメレオン -->
+              <article id="chameleon" class="animal-detail" hidden aria-controls="js-popup">
+                <div class="animal-detail__inner">
+                  <div class="animal-detail__heading">
+                    <h4 class="animal-detail__title">カメレオン</h4>
+                    <button class="animal-detail__close">&times;</button>
+                  </div><!-- /.animal-detail__heading -->
+                  <div class="animal-detail__image">
+                    <img src="./images/animals-card-chameleon.jpg" class="animal-detail__img" alt="カメレオン">
+                  </div>
+                  <p class="animal-detail__text">
+                    カメレオンは色を変える能力で有名な爬虫類で、体色を変化させて周囲に溶け込んだり気分を表したりします。独特な長い舌を素早く伸ばして昆虫を捕まえる姿は迫力があります。動物園ではそのユニークな見た目と行動が人気で、観察のしがいがある存在です。ゆっくりした動きや、左右別々に動く目も注目ポイントです。
+                  </p>
+                </div>
+              </article>
+              <!-- リクガメ -->
+              <article id="turtoise" class="animal-detail" hidden aria-controls="js-popup">
+                <div class="animal-detail__inner">
+                  <div class="animal-detail__heading">
+                    <h4 class="animal-detail__title">リクガメ</h4>
+                    <button class="animal-detail__close">&times;</button>
+                  </div><!-- /.animal-detail__heading -->
+                  <div class="animal-detail__image">
+                    <img src="./images/animals-card-turtoise.jpg" class="animal-detail__img" alt="リクガメ">
+                  </div>
+                  <p class="animal-detail__text">
+                    リクガメは草食性の陸生カメで、長寿の象徴として知られています。動物園ではのんびりと歩く姿や、大きな甲羅を背負った特徴的な体を間近で観察できます。日光浴を好み、昼間に活発に活動します。飼育下でも長生きすることが多く、世代を超えて愛される存在です。穏やかな性格と迫力ある体格で、子どもから大人まで人気があります。
+                  </p>
+                </div>
+              </article>
+              <!-- ニシキヘビ -->
+              <article id="python" class="animal-detail" hidden aria-controls="js-popup">
+                <div class="animal-detail__inner">
+                  <div class="animal-detail__heading">
+                    <h4 class="animal-detail__title">ニシキヘビ</h4>
+                    <button class="animal-detail__close">&times;</button>
+                  </div><!-- /.animal-detail__heading -->
+                  <div class="animal-detail__image">
+                    <img src="./images/animals-card-python.jpg" class="animal-detail__img" alt="ニシキヘビ">
+                  </div>
+                  <p class="animal-detail__text">
+                    ニシキヘビは世界最大級のヘビで、長い体と力強さが特徴です。大きな個体は数メートルに達し、動物園でもその迫力に圧倒されます。主に夜行性で、野生では小動物や鳥を捕食します。毒はありませんが、強靭な体で獲物を締め付けて捕らえる習性があります。動物園では安全に観察できるよう展示され、爬虫類コーナーの目玉的存在です。
+                  </p>
+                </div>
+              </article>
+            </div><!-- /.animal-detail-wrapper -->
+          </div><!-- /.tab-content -->
+        </div><!-- /.l-inner -->
+      </section>
+    </div><!-- /.animals-page__content -->
+
+    <!-- アクセス -->
+    <section id="access" class="access">
+      <div class="l-inner">
+        <h2 class="c-section-title">
+          <span class="c-section-title__en">Access</span>
+          <span class="c-section-title__ja">アクセス</span>
+        </h2>
+        <div class="access__content">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.827853447963!2d139.76493831525402!3d35.68122418019453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bfbd89f700b%3A0x277c49ba34ed38!2z5p2x5Lqs6aeF!5e0!3m2!1sja!2sjp!4v1234567890123!5m2!1sja!2sjp"
+            width="100%" height="400" style="border: 0" allowfullscreen="" loading="lazy"></iframe>
+
+          <ul class="access__text">
+            <li>
+              <div class="content-text">
+                <h3 class="secondary-title access-car">
+                  <i class="fa-solid fa-car"></i>
+                  お車でお越しの方
+                </h3>
+                <p class="break-keep">
+                  羽南自動車道・羽南インターチェンジより、ひなた有料道路を経由して、ひなた西インターチェンジまで約15分。
+                  <br />
+                  旭川方面からは、国道12号線を経由してひなた有料道路を利用し、ひなた西インターチェンジまで約2時間。
+                  <br />
+                  <small>※ひなた西インターチェンジを降りて約1分で、左手にHnata Zooの駐車場が見えてきます。</small>
+                </p>
+              </div>
+            </li>
+            <li>
+              <div class="content-text">
+                <h3 class="secondary-title access-train">
+                  <i class="fa-solid fa-train"></i>
+                  JR
+                </h3>
+                <p class="break-keep">
+                  ・最寄の駅から JR羽南本線「羽南動物公園駅」よりタクシーにて約10分
+                  <br />
+                  <small>※羽南動物公園駅には特急・快速列車は停車しません。</small>
+                  <br />
+                  ・JR羽南中央駅からJR羽南本線、各駅停車にて「羽南動物公園駅」まで約12分
+                  <br />
+                  タクシーで動物園まで15～20分
+                </p>
+              </div>
+            </li>
+            <li>
+              <div class="content-text">
+                <h3 class="secondary-title access-bus">
+                  <i class="fa-solid fa-bus"></i>
+                  バス
+                </h3>
+                <p class="break-keep">
+                  宮崎駅からHinata Zoo行きのバスが 運行しております。
+                  <br />
+                  <small>※時刻表等はホームページをご参照ください。</small>
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- /.l-inner -->
+    </section>
+  </main>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div>
+        <a href="" class="footer__link">
+          <img src="./images/logo-white.svg" width="186" height="54" alt="Hinata Zoo"
+            class="footer__logo-image" />
+        </a>
+        <address class="footer__address">
+          <p class="footer__address-info">
+            〒880-XXXX
+            <br />
+            宮崎県宮崎市XXXXXXX
+          </p>
+          <p class="footer__address-info">
+            電話番号：
+            <a class="footer__address-link footer__address-link--tel" href="tel:+0985123456">0985-12-3456</a>
+          </p>
+          <p class="footer__address-info">FAX番号：0985-12-3456</p>
+        </address>
+      </div>
+
+      <div class="footer__social-list">
+        <ul class="social-links">
+          <li class="social-links__item">
+            <a href="" class="social-links__link">
+              <img src="./images/icon_twitter.svg" alt="ツイッター" class="social-links__icon" />
+            </a>
+          </li>
+          <li class="social-links__item">
+            <a href="" class="social-links__link">
+              <img src="./images/icon_instagram.svg" alt="インスタグラム" class="social-links__icon" />
+            </a>
+          </li>
+          <li class="social-links__item">
+            <a href="" class="social-links__link">
+              <img src="./images/icon_facebook.svg" alt="フェイスブック" class="social-links__icon" />
+            </a>
+          </li>
+          <li class="social-links__item">
+            <a href="" class="social-links__link">
+              <img src="./images/icon_youtube.svg" alt="ユーチューブ" class="social-links__icon" />
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <ul class="footer__nav-list">
+        <li class="footer__nav-item">
+          <a href="./admission.html" class="footer__nav-link">入園案内</a>
+        </li>
+        <li class="footer__nav-item">
+          <a href="./animals.html" class="footer__nav-link">どうぶつ</a>
+        </li>
+        <li class="footer__nav-item">
+          <a href="./guide.html" class="footer__nav-link">施設案内</a>
+        </li>
+        <li class="footer__nav-item">
+          <a href="./news.html" class="footer__nav-link">ニュース</a>
+        </li>
+        <li class="footer__nav-item">
+          <a href="./access.html" class="footer__nav-link">アクセス</a>
+        </li>
+      </ul>
+    </div>
+    <!-- /.footer__inner -->
+    <small class="footer__copyright">Copyright &copy; 2011 Miyazaki City Phoenix Zoo ALL Rights Reserved.</small>
+  </footer>
+  <!-- /.footer -->
+</body>
+
+</html>

@@ -1,0 +1,2159 @@
+@charset "UTF-8";
+/* リセットCSSや変数、共通スタイル */
+/***
+    The new CSS reset - version 1.11.3 (last updated 25.08.2024)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+    - The "html" element is excluded, otherwise a bug in Chrome breaks the CSS hyphens property (https://github.com/elad2412/the-new-css-reset/issues/36)
+ */
+*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* Fix mobile Safari increase font-size on landscape mode */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+/* Reapply the pointer cursor for anchor tags */
+a,
+button {
+  cursor: revert;
+}
+/* Remove list styles (bullets/numbers) */
+ol,
+ul,
+menu,
+summary {
+  list-style: none;
+}
+/* Firefox: solve issue where nested ordered lists continue numbering from parent (https://bugzilla.mozilla.org/show_bug.cgi?id=1881517) */
+ol {
+  counter-reset: revert;
+}
+/* For images to not be able to exceed their container */
+img {
+  display: block;
+  max-inline-size: 100%;
+  max-block-size: 100%;
+}
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input,
+textarea {
+  -webkit-user-select: auto;
+}
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+/* minimum style to allow to style meter element */
+meter {
+  -webkit-appearance: revert;
+  -moz-appearance: revert;
+       appearance: revert;
+}
+/* preformatted text - use only for this feature */
+:where(pre) {
+  all: revert;
+  box-sizing: border-box;
+}
+/* reset default text opacity of input placeholder */
+::-moz-placeholder {
+  color: unset;
+}
+::placeholder {
+  color: unset;
+}
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+  display: none;
+}
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly.
+   - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
+:where([contenteditable]:not([contenteditable='false'])) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+  -webkit-user-select: auto;
+}
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable='true']) {
+  -webkit-user-drag: element;
+}
+/* Revert Modal native behavior */
+:where(dialog:modal) {
+  all: revert;
+  box-sizing: border-box;
+}
+/* Remove details summary webkit styles */
+::-webkit-details-marker {
+  display: none;
+}
+:root {
+  /* コンセプトカラー */
+  --main-color-orange: #e39411;
+  --main-color-green: #517830;
+  --main-color-blue: #1aa6b4;
+  --sub-color-white: #fefbf3;
+  --green-alpha: rgba(81, 120, 48, 0.5);
+  --orange-alpha: rgba(227, 148, 17, 0.5);
+
+  /* 背景色 */
+  --bg-color-white: #fefbf3;
+
+  /* テキストカラー */
+  --text-color-primary: #333;
+  --text-color-white: #fefbf3;
+  --text-color-orange: #e39411;
+
+  /* --- Desktop (1920x1080) --- */
+  --space-16-d: 0.8333vw;
+  --space-24-d: 1.25vw;
+  --space-32-d: 1.6667vw;
+  --space-48-d: 2.5vw;
+  --space-64-d: 3.3333vw;
+  --space-80-d: 4.1667vw;
+
+  /* --- 高さ用（縦余白）Desktop --- */
+  --space-vh16-d: 1.4815vh;
+  --space-vh24-d: 2.2222vh;
+  --space-vh32-d: 2.963vh;
+  --space-vh40-d: 3.7037vh;
+  --space-vh48-d: 4.4444vh;
+  --space-vh80-d: 7.4074vh;
+
+  /* --- Mobile (390x844) --- */
+  --space-16-m: 4.1026vw;
+  --space-24-m: 6.1538vw;
+  --space-32-m: 8.2051vw;
+  --space-48-m: 12.3077vw;
+  --space-64-m: 16.4103vw;
+  --space-80-m: 20.5128vw;
+
+  /* --- 高さ用（縦余白）Mobile --- */
+  --space-vh16-m: 1.8957vh;
+  --space-vh32-m: 3.7915vh;
+  --space-vh48-m: 5.6872vh;
+  --space-vh80-m: 9.4811vh;
+}
+/* ============================
+  style
+============================ */
+body {
+  font-family: 'Zen Maru Gothic', sans-serif;
+}
+a {
+  display: block;
+  width: 100%;
+}
+button {
+  cursor: pointer;
+}
+/* ----- Layout ----- */
+.l-inner {
+  padding: 7.81vh 6.94vw;
+}
+@media screen and (max-width: 768px) {
+  .l-inner {
+    padding: 7.58vh 4.1vw;
+  }
+
+  .access .l-inner {
+    padding: 7.58vh 0;
+  }
+}
+/* 各ページ */
+.page__title-wrapper {
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  z-index: -10;
+  padding: 30vh 0 10vh 4vw;
+}
+@media screen and (max-width: 768px) {
+  .page__title-wrapper {
+    padding: 19.38vh 4.1vw 10vh;
+  }
+}
+.page__title-wrapper::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  background-color: var(--green-alpha);
+  width: 100%;
+  height: 100%;
+  z-index: -5;
+}
+/* ----- Components ----- */
+.c-section-title {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.56vh;
+  margin-bottom: 6.25vh;
+  line-height: 1;
+}
+.c-section-title__en {
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+.c-section-title__ja {
+  font-size: 2rem;
+  font-weight: 500;
+}
+.c-section-title::after {
+  position: absolute;
+  bottom: -24px;
+  width: 88px;
+  height: 8px;
+  content: '';
+  background-color: var(--main-color-green);
+}
+.c-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 202px;
+  height: 40px;
+  margin: 0 auto;
+  border: 1px solid var(--main-color-green);
+  border-radius: 8px;
+  color: var(--main-color-green);
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+.c-btn:hover {
+  color: var(--text-color-white);
+  background-color: var(--main-color-green);
+}
+/* 下層ページ */
+/* タイトル */
+.c-page-title {
+  font-size: 3rem;
+  letter-spacing: 0.05em;
+  color: var(--text-color-white);
+  font-weight: 500;
+}
+@media screen and (max-width: 768px) {
+  .c-page-title {
+    text-align: center;
+  }
+}
+/* ----- Utility ----- */
+/* ============================
+  Header
+============================ */
+/* ----- Navigation ----- */
+.nav__link::after {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 1rem;
+}
+.nav__admission {
+  background: url(../images/icon_admission.svg) no-repeat;
+}
+.nav__animals {
+  background: url(../images/icon_animals.svg) no-repeat;
+}
+.nav__event {
+  background: url(../images/icon_course.svg) no-repeat;
+}
+.nav__news {
+  background: url(../images/icon_news.svg) no-repeat;
+}
+.nav__access {
+  background: url(../images/icon_access.svg) no-repeat;
+}
+/* ----- Hamburger Menu ----- */
+@media (max-width: 768px) {
+  .hamburger-menu__wrapper.is-active {
+    transform: translateX(0);
+  }
+
+  /* 背景動画 */
+  .hamburger-menu__wrapper.is-active .hamburger-menu-video-wrapper {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    display: block;
+  }
+
+  .hamburger-menu__wrapper.is-active .hamburger-menu-video {
+    z-index: -1;
+  }
+
+  .hamburger-menu__wrapper.is-active .hamburger-menu-video-wrapper::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background-color: rgba(81, 120, 48, 0.7);
+    z-index: 1;
+  }
+
+  /* ライン */
+  .hamburger-menu__line,
+  .hamburger-menu__line::before,
+  .hamburger-menu__line::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 4px;
+    background-color: var(--main-color-blue);
+    transition: all 0.3s ease;
+    z-index: 101;
+  }
+
+  .hamburger-menu__line::before,
+  .hamburger-menu__line::after {
+    right: 8px;
+  }
+
+  .hamburger-menu__line::before {
+    top: -12px;
+  }
+  .hamburger-menu__line::after {
+    top: 12px;
+  }
+
+  /* オープン時 */
+  .is-active .hamburger-menu__line {
+    background-color: transparent;
+  }
+  .is-active .hamburger-menu__line::before {
+    top: 0;
+    transform: rotate(315deg);
+  }
+  .is-active .hamburger-menu__line::after {
+    top: 0;
+    transform: rotate(-315deg);
+  }
+}
+/* ----- Opening Hours ----- */
+/* ----- Social Links ----- */
+/* ============================
+  Main
+============================ */
+/* FV */
+/* TOP Information Bar */
+/*-------------------------
+  入園料金
+-------------------------*/
+.admission-fees__link:hover {
+  color: var(--main-color-orange);
+  background-color: var(--sub-color-white);
+  border: 2px solid var(--main-color-orange);
+}
+/*-------------------------
+  イベント
+-------------------------*/
+.event-card__link {
+  transition: all 0.3s ease;
+}
+.event-card__link:hover {
+  background: linear-gradient(135deg, #ff6b35 0%, #e55a2b 100%);
+  box-shadow: 0 4px 12px rgba(255, 140, 66, 0.4);
+  text-decoration: none;
+}
+/*-------------------------
+  お知らせ
+-------------------------*/
+/*-------------------------
+  よくある質問
+-------------------------*/
+.faq__item-content.open {
+  max-height: 500px;
+  padding: 16px;
+}
+.faq__item-header::after {
+  position: absolute;
+  right: 2%;
+  content: '';
+  display: block;
+  transform: translateY(-25%) rotate(135deg);
+  width: 8px;
+  height: 8px;
+  border: 2px solid currentColor;
+  border-bottom: 0;
+  border-left: 0;
+  color: #333333;
+  line-height: 1;
+  vertical-align: middle;
+  transition: 0.2s ease;
+}
+.faq__item-header.open::after {
+  transform: translateY(25%) rotate(-45deg);
+}
+/*-------------------------
+  フッター
+-------------------------*/
+.footer {
+  padding: 7.81vh 6.94vw;
+  /* background-color: var(--main-color-green); */
+  /* color: var(--text-color-white); */
+}
+/* .footer__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: space-between;
+  margin-bottom: 3.91vh;
+}
+@media (max-width: 768px) {
+  .footer__inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+.footer__nav-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 768px) {
+  .footer__social-list {
+    order: 3;
+  }
+} */
+/* ============================
+* イベント一覧ページ
+* ========================= */
+/*-------------------------
+  注目イベント
+-------------------------*/
+.featured-event__inner {
+  position: relative;
+  width: 100vw;
+  height: calc(100vh - 9.38vh);
+}
+.featured-event__image {
+  width: 100vw;
+  height: calc(100vh - 9.38vh);
+}
+.featured-event__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (max-width: 500px) {
+  .featured-event__img {
+    -o-object-position: 30%;
+       object-position: 30%;
+  }
+}
+.featured-event__detail {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  width: 50vw;
+  padding: 5%;
+  border-radius: 0 0 8px 8px;
+  content: '';
+  right: 20px;
+  bottom: 20px;
+  background-color: var(--orange-alpha);
+  border-radius: 8px;
+}
+@media screen and (max-width: 768px) {
+  .featured-event__detail {
+    width: 90vw;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+  }
+}
+.featured-event__title {
+  color: var(--text-color-white);
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+@media (max-width: 768px) {
+  .featured-event__title {
+    font-size: 1.25rem;
+  }
+}
+.featured-event__desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+@media (max-width: 768px) {
+  .event-card__desc {
+    font-size: 0.875rem;
+  }
+}
+/*-------------------------
+  デイリーイベント
+-------------------------*/
+.daily-events__content {
+  display: grid;
+  grid-template-columns: repeat(3, 30%);
+  justify-content: space-between;
+}
+@media (max-width: 768px) {
+  .daily-events__content {
+    grid-template-columns: 1fr;
+    gap: 3.79vh;
+  }
+}
+.daily-events__card {
+  display: grid;
+  grid-template-rows: 40% 56%;
+  gap: 2.22vh;
+}
+@media screen and (max-width: 768px) {
+  .daily-events__card {
+    max-height: 100%;
+  }
+}
+.daily-events__card-image,
+.daily-events__card-img {
+  border-radius: 8px;
+}
+.daily-events__card-img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.daily-events__card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.daily-events__card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.5em;
+}
+.featured-event__time,
+.daily-events__card-time,
+.featured-event__place,
+.daily-events__card-place {
+  display: flex;
+  gap: 0.4em;
+  margin-bottom: 0.5em;
+  align-items: center;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #222;
+}
+@media (max-width: 768px) {
+  .featured-event__time,
+  .daily-events__card-time,
+  .featured-event__place,
+  .daily-events__card-place {
+    font-size: 0.875rem;
+  }
+}
+.daily-events__card-desc {
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #666;
+}
+.btn-ticket {
+  display: inline-block;
+  background-color: var(--main-color-green);
+  color: #fff;
+  font-weight: 500;
+  width: 15vw;
+  padding: 0.75rem 1.5rem;
+  /* margin-top: 24px; */
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+@media screen and (max-width: 768px) {
+  .btn-ticket {
+    width: 30vw;
+  }
+}
+@media (max-width: 450px) {
+  .btn-ticket {
+    width: 100%;
+  }
+}
+.btn-ticket:hover {
+  background-color: #3f5e24;
+}
+/*-------------------------
+  アクセス
+-------------------------*/
+.access__content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .access__content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.access__content iframe {
+  width: 60%;
+}
+.access__text {
+  width: 37%;
+}
+@media screen and (max-width: 768px) {
+  .access__content iframe {
+    width: 100%;
+  }
+
+  .access__text {
+    width: 100%;
+  }
+}
+/* ============================
+* 入園案内
+* ========================= */
+/* ページタイトル背景画像 */
+.addmission-page__title-wapper {
+  background-image: url('./images/title-bg_addmission.jpg');
+}
+.opening-hours__list {
+  display: flex;
+  height: 104px;
+  border-radius: 8px;
+}
+@media screen and (max-width: 768px) {
+  .opening-hours__list {
+    flex-direction: column;
+    gap: 2.84vh;
+    height: auto;
+  }
+}
+.opening-hours__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  align-items: stretch;
+}
+.opening-hours__item-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  color: var(--text-color-white);
+  font-size: 1.125rem;
+}
+.opening-hours__item-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 0 5%;
+}
+@media screen and (max-width: 768px) {
+  .opening-hours__item-content {
+    padding: 4%;
+  }
+}
+/* 営業時間 */
+.opening-hours__item--time .opening-hours__item-label {
+  background-color: var(--main-color-green);
+  border-radius: 8px 0 0 0;
+}
+.opening-hours__item--time .opening-hours__item-content {
+  flex-direction: row;
+  font-size: 1.5rem;
+  border: 2px solid var(--main-color-green);
+  border-radius: 0 0 0 8px;
+}
+/* 休園日 */
+.opening-hours__item--closed-day .opening-hours__item-label {
+  background-color: var(--main-color-orange);
+}
+.opening-hours__item--closed-day .opening-hours__item-content {
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  border: 2px solid var(--main-color-orange);
+}
+/* その他 */
+.opening-hours__item--other .opening-hours__item-label {
+  background-color: var(--main-color-blue);
+  border-radius: 0 8px 0 0;
+}
+.opening-hours__item--other .opening-hours__item-content {
+  border: 2px solid var(--main-color-blue);
+  border-radius: 0 0 8px 0;
+}
+@media screen and (max-width: 768px) {
+  .opening-hours__item--time .opening-hours__item-label,
+  .opening-hours__item--closed-day .opening-hours__item-label,
+  .opening-hours__item--other .opening-hours__item-label {
+    border-radius: 8px 8px 0 0;
+  }
+
+  .opening-hours__item--time .opening-hours__item-content,
+  .opening-hours__item--closed-day .opening-hours__item-content,
+  .opening-hours__item--other .opening-hours__item-content {
+    border-radius: 0 0 8px 8px;
+  }
+}
+/* ============================
+* 動物紹介
+* ========================= */
+/* ページタイトル背景画像 */
+.animals-page__title-wapper {
+  background-image: url('../images/title-bg_animals.jpg');
+  background-position: top;
+}
+/* タブ */
+.animals-page .tabs {
+  display: flex;
+  justify-content: center;
+  gap: 3vw;
+  padding: 3%;
+}
+@media screen and (max-width: 768px) {
+  .animals-page .tabs {
+    justify-content: space-between;
+  }
+}
+.animals-page .tab {
+  font-size: 2rem;
+  line-height: 1.5;
+}
+@media screen and (max-width: 768px) {
+  .animals-page .tab {
+    font-size: 1.25em;
+  }
+}
+/* 昼行性 */
+.diurnal-tab.active {
+  color: var(--main-color-orange);
+  border-bottom: 4px solid var(--main-color-orange);
+}
+/* 夜行性 */
+.nocturnal-tab.active {
+  color: #4a4a8a;
+  border-bottom: 4px solid #4a4a8a;
+}
+/* 小動物 */
+.small-animals-tab.active {
+  color: var(--main-color-green);
+  border-bottom: 4px solid var(--main-color-green);
+}
+/* 爬虫類 */
+.reptiles-tab.active {
+  color: var(--main-color-blue);
+  border-bottom: 4px solid var(--main-color-blue);
+}
+.animals-page .tab-panel {
+  display: none;
+}
+.tab-panel.active {
+  display: block;
+  /* background-color: rgb(252 222 222 / .5); */
+}
+/* 動物サムネイル */
+.animal-card__image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 16px;
+}
+.animals-page .tab-panel__inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 32%);
+  /* grid-template-rows: repeat(3, 32%); */
+  justify-content: center;
+  gap: 12vh 1.67vw;
+}
+@media screen and (max-width: 500px) {
+  .animals-page .tab-panel__inner {
+    grid-template-columns: repeat(2, 47%);
+    justify-content: space-between;
+    gap: 12vh 6.15vw;
+  }
+}
+.animal-card__image:hover {
+  cursor: pointer;
+}
+.animal-card__label {
+  display: block;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
+/* 詳細 ポップアップ */
+.animal-detail-wrapper {
+  position: fixed;
+  content: '';
+  top: 50vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  width: 50vw;
+  padding: var(--space-vh40-d) var(--space-32-d);
+  background-color: var(--bg-color-white);
+  border-radius: 16px;
+  box-shadow: 3px 3px 3px 0 rgba(54, 54, 54, 0.3);
+}
+@media screen and (max-width: 768px) {
+  .animal-detail-wrapper {
+    width: 90.26vw;
+    padding: var(--space-vh32-m) var(--space-32-m);
+  }
+}
+.animal-detail {
+  position: relative;
+}
+.animal-detail__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32-d);
+  width: 100%;
+  height: auto;
+}
+.animal-detail__heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.animal-detail__title {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.animal-detail__image {
+  height: 40vh;
+  border-radius: 16px;
+}
+@media screen and (max-width: 768px) {
+  .animal-detail__image {
+    height: auto;
+  }
+}
+.animal-detail__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 16px;
+}
+.animal-detail__text {
+  font-size: 1rem;
+  line-height: 2;
+}
+.animal-detail__close {
+  font-size: 1.25rem;
+  line-height: 1;
+  padding: 8px;
+  font-weight: 600;
+  color: var(--main-color-blue);
+  background-color: var(--bg-color-white);
+  border: 1px solid var(--main-color-blue);
+  border-radius: 8px;
+}
+/* ============================
+*  お知らせ一覧
+* ========================== */
+.pagination__list {
+  display: flex;
+  justify-content: center;
+  gap: 2vw;
+}
+/* Tailwindの基本スタイルを読み込む */
+*, ::before, ::after{
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ;
+}
+::backdrop{
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ;
+}
+/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */
+/*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+*/
+*,
+::before,
+::after {
+  box-sizing: border-box; /* 1 */
+  border-width: 0; /* 2 */
+  border-style: solid; /* 2 */
+  border-color: #e5e7eb; /* 2 */
+}
+::before,
+::after {
+  --tw-content: '';
+}
+/*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+4. Use the user's configured `sans` font-family by default.
+5. Use the user's configured `sans` font-feature-settings by default.
+6. Use the user's configured `sans` font-variation-settings by default.
+7. Disable tap highlights on iOS
+*/
+html,
+:host {
+  line-height: 1.5; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  -moz-tab-size: 4; /* 3 */
+  -o-tab-size: 4;
+     tab-size: 4; /* 3 */
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 4 */
+  font-feature-settings: normal; /* 5 */
+  font-variation-settings: normal; /* 6 */
+  -webkit-tap-highlight-color: transparent; /* 7 */
+}
+/*
+1. Remove the margin in all browsers.
+2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+*/
+body {
+  margin: 0; /* 1 */
+  line-height: inherit; /* 2 */
+}
+/*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
+hr {
+  height: 0; /* 1 */
+  color: inherit; /* 2 */
+  border-top-width: 1px; /* 3 */
+}
+/*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+/*
+Remove the default font size and weight for headings.
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+/*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+/*
+Add the correct font weight in Edge and Safari.
+*/
+b,
+strong {
+  font-weight: bolder;
+}
+/*
+1. Use the user's configured `mono` font-family by default.
+2. Use the user's configured `mono` font-feature-settings by default.
+3. Use the user's configured `mono` font-variation-settings by default.
+4. Correct the odd `em` font sizing in all browsers.
+*/
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /* 1 */
+  font-feature-settings: normal; /* 2 */
+  font-variation-settings: normal; /* 3 */
+  font-size: 1em; /* 4 */
+}
+/*
+Add the correct font size in all browsers.
+*/
+small {
+  font-size: 80%;
+}
+/*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+/*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+table {
+  text-indent: 0; /* 1 */
+  border-color: inherit; /* 2 */
+  border-collapse: collapse; /* 3 */
+}
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-feature-settings: inherit; /* 1 */
+  font-variation-settings: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  font-weight: inherit; /* 1 */
+  line-height: inherit; /* 1 */
+  letter-spacing: inherit; /* 1 */
+  color: inherit; /* 1 */
+  margin: 0; /* 2 */
+  padding: 0; /* 3 */
+}
+/*
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+button,
+select {
+  text-transform: none;
+}
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Remove default button styles.
+*/
+button,
+input:where([type='button']),
+input:where([type='reset']),
+input:where([type='submit']) {
+  -webkit-appearance: button; /* 1 */
+  background-color: transparent; /* 2 */
+  background-image: none; /* 2 */
+}
+/*
+Use the modern Firefox focus style for all focusable elements.
+*/
+:-moz-focusring {
+  outline: auto;
+}
+/*
+Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+*/
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+/*
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+progress {
+  vertical-align: baseline;
+}
+/*
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+/*
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+[type='search'] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+/*
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to `inherit` in Safari.
+*/
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+/*
+Add the correct display in Chrome and Safari.
+*/
+summary {
+  display: list-item;
+}
+/*
+Removes the default spacing and border for appropriate elements.
+*/
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+legend {
+  padding: 0;
+}
+ol,
+ul,
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/*
+Reset default styling for dialogs.
+*/
+dialog {
+  padding: 0;
+}
+/*
+Prevent resizing textareas horizontally by default.
+*/
+textarea {
+  resize: vertical;
+}
+/*
+1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+2. Set the default placeholder color to the user's configured gray 400 color.
+*/
+input::-moz-placeholder, textarea::-moz-placeholder {
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
+}
+input::placeholder,
+textarea::placeholder {
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
+}
+/*
+Set the default cursor for buttons.
+*/
+button,
+[role="button"] {
+  cursor: pointer;
+}
+/*
+Make sure disabled buttons don't get the pointer cursor.
+*/
+:disabled {
+  cursor: default;
+}
+/*
+1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+   This can trigger a poorly considered lint error in some tools but is included by design.
+*/
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block; /* 1 */
+  vertical-align: middle; /* 2 */
+}
+/*
+Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+*/
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+/* Make elements with the HTML hidden attribute stay hidden by default */
+[hidden]:where(:not([hidden="until-found"])) {
+  display: none;
+}
+.sr-only{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+.fixed{
+  position: fixed;
+}
+.absolute{
+  position: absolute;
+}
+.relative{
+  position: relative;
+}
+.inset-0{
+  inset: 0px;
+}
+.bottom-0{
+  bottom: 0px;
+}
+.left-0{
+  left: 0px;
+}
+.left-1\/2{
+  left: 50%;
+}
+.right-0{
+  right: 0px;
+}
+.top-0{
+  top: 0px;
+}
+.top-1\/2{
+  top: 50%;
+}
+.z-10{
+  z-index: 10;
+}
+.z-20{
+  z-index: 20;
+}
+.z-\[-1\]{
+  z-index: -1;
+}
+.z-\[100\]{
+  z-index: 100;
+}
+.z-\[200\]{
+  z-index: 200;
+}
+.mx-auto{
+  margin-left: auto;
+  margin-right: auto;
+}
+.-mt-0\.5{
+  margin-top: -0.125rem;
+}
+.-mt-24{
+  margin-top: -6rem;
+}
+.mb-1{
+  margin-bottom: 0.25rem;
+}
+.mb-12{
+  margin-bottom: 3rem;
+}
+.mb-16{
+  margin-bottom: 4rem;
+}
+.mb-2{
+  margin-bottom: 0.5rem;
+}
+.mb-3{
+  margin-bottom: 0.75rem;
+}
+.mb-4{
+  margin-bottom: 1rem;
+}
+.mb-6{
+  margin-bottom: 1.5rem;
+}
+.ml-\[-0\.2em\]{
+  margin-left: -0.2em;
+}
+.mr-2{
+  margin-right: 0.5rem;
+}
+.mt-2{
+  margin-top: 0.5rem;
+}
+.mt-4{
+  margin-top: 1rem;
+}
+.box-border{
+  box-sizing: border-box;
+}
+.block{
+  display: block;
+}
+.flex{
+  display: flex;
+}
+.inline-flex{
+  display: inline-flex;
+}
+.grid{
+  display: grid;
+}
+.hidden{
+  display: none;
+}
+.h-1{
+  height: 0.25rem;
+}
+.h-16{
+  height: 4rem;
+}
+.h-24{
+  height: 6rem;
+}
+.h-28{
+  height: 7rem;
+}
+.h-6{
+  height: 1.5rem;
+}
+.h-8{
+  height: 2rem;
+}
+.h-\[30px\]{
+  height: 30px;
+}
+.h-\[54px\]{
+  height: 54px;
+}
+.h-auto{
+  height: auto;
+}
+.h-full{
+  height: 100%;
+}
+.h-screen{
+  height: 100vh;
+}
+.max-h-0{
+  max-height: 0px;
+}
+.min-h-14{
+  min-height: 3.5rem;
+}
+.w-1\/5{
+  width: 20%;
+}
+.w-6{
+  width: 1.5rem;
+}
+.w-8{
+  width: 2rem;
+}
+.w-\[186px\]{
+  width: 186px;
+}
+.w-\[30px\]{
+  width: 30px;
+}
+.w-auto{
+  width: auto;
+}
+.w-fit{
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.w-full{
+  width: 100%;
+}
+.w-screen{
+  width: 100vw;
+}
+.max-w-6xl{
+  max-width: 72rem;
+}
+.flex-1{
+  flex: 1 1 0%;
+}
+.-translate-x-1\/2{
+  --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.-translate-y-1\/2{
+  --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.translate-x-full{
+  --tw-translate-x: 100%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.transform{
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.cursor-pointer{
+  cursor: pointer;
+}
+.resize{
+  resize: both;
+}
+.list-none{
+  list-style-type: none;
+}
+.grid-cols-1{
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.grid-cols-2{
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.grid-rows-1{
+  grid-template-rows: repeat(1, minmax(0, 1fr));
+}
+.grid-rows-2{
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+.flex-row{
+  flex-direction: row;
+}
+.flex-col{
+  flex-direction: column;
+}
+.items-start{
+  align-items: flex-start;
+}
+.items-center{
+  align-items: center;
+}
+.justify-center{
+  justify-content: center;
+}
+.justify-between{
+  justify-content: space-between;
+}
+.gap-0{
+  gap: 0px;
+}
+.gap-0\.5{
+  gap: 0.125rem;
+}
+.gap-12{
+  gap: 3rem;
+}
+.gap-2{
+  gap: 0.5rem;
+}
+.gap-3{
+  gap: 0.75rem;
+}
+.gap-4{
+  gap: 1rem;
+}
+.gap-6{
+  gap: 1.5rem;
+}
+.gap-8{
+  gap: 2rem;
+}
+.gap-\[0\.95vh\]{
+  gap: 0.95vh;
+}
+.gap-\[2\.78vw\]{
+  gap: 2.78vw;
+}
+.gap-\[4\.74vh\]{
+  gap: 4.74vh;
+}
+.gap-x-4{
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+}
+.gap-x-8{
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+}
+.gap-y-10{
+  row-gap: 2.5rem;
+}
+.gap-y-3{
+  row-gap: 0.75rem;
+}
+.gap-y-4{
+  row-gap: 1rem;
+}
+.gap-y-6{
+  row-gap: 1.5rem;
+}
+.gap-y-\[4\.74vh\]{
+  row-gap: 4.74vh;
+}
+.overflow-hidden{
+  overflow: hidden;
+}
+.break-keep{
+  word-break: keep-all;
+}
+.rounded-2xl{
+  border-radius: 1rem;
+}
+.rounded-full{
+  border-radius: 9999px;
+}
+.rounded-lg{
+  border-radius: 0.5rem;
+}
+.rounded-b-lg{
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+.rounded-t-lg{
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+.rounded-se-lg{
+  border-start-end-radius: 0.5rem;
+}
+.rounded-ss-lg{
+  border-start-start-radius: 0.5rem;
+}
+.border{
+  border-width: 1px;
+}
+.border-2{
+  border-width: 2px;
+}
+.border-b{
+  border-bottom-width: 1px;
+}
+.border-l-4{
+  border-left-width: 4px;
+}
+.border-t{
+  border-top-width: 1px;
+}
+.border-solid{
+  border-style: solid;
+}
+.border-\[var\(--main-color-green\)\]{
+  border-color: var(--main-color-green);
+}
+.border-\[var\(--main-color-orange\)\]{
+  border-color: var(--main-color-orange);
+}
+.border-white{
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
+}
+.border-opacity-20{
+  --tw-border-opacity: 0.2;
+}
+.bg-\[var\(--bg-color-white\)\]{
+  background-color: var(--bg-color-white);
+}
+.bg-\[var\(--main-color-green\)\]{
+  background-color: var(--main-color-green);
+}
+.bg-\[var\(--main-color-orange\)\]{
+  background-color: var(--main-color-orange);
+}
+.bg-black{
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
+}
+.bg-gray-50{
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
+}
+.bg-orange-200{
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 215 170 / var(--tw-bg-opacity, 1));
+}
+.bg-transparent{
+  background-color: transparent;
+}
+.bg-white{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
+.bg-opacity-10{
+  --tw-bg-opacity: 0.1;
+}
+.bg-opacity-20{
+  --tw-bg-opacity: 0.2;
+}
+.bg-gradient-to-r{
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+.via-green-400{
+  --tw-gradient-to: rgb(74 222 128 / 0)  var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), #4ade80 var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+.to-green-300{
+  --tw-gradient-to: #86efac var(--tw-gradient-to-position);
+}
+.object-cover{
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.p-3{
+  padding: 0.75rem;
+}
+.p-4{
+  padding: 1rem;
+}
+.p-6{
+  padding: 1.5rem;
+}
+.p-\[2\.84vh_4\.1vw\]{
+  padding: 2.84vh 4.1vw;
+}
+.px-0{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.px-4{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.px-6{
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.px-8{
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.px-\[5\%\]{
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.px-\[6\.94vw\]{
+  padding-left: 6.94vw;
+  padding-right: 6.94vw;
+}
+.py-0{
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.py-1{
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+.py-2{
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.py-4{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.py-6{
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.py-8{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.py-\[2\%\]{
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+.pl-10{
+  padding-left: 2.5rem;
+}
+.pl-6{
+  padding-left: 1.5rem;
+}
+.text-left{
+  text-align: left;
+}
+.text-center{
+  text-align: center;
+}
+.text-2xl{
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+.text-3xl{
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+.text-base{
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.text-lg{
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+.text-sm{
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.text-xl{
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+.text-xs{
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+.font-bold{
+  font-weight: 700;
+}
+.font-light{
+  font-weight: 300;
+}
+.font-medium{
+  font-weight: 500;
+}
+.font-normal{
+  font-weight: 400;
+}
+.font-semibold{
+  font-weight: 600;
+}
+.not-italic{
+  font-style: normal;
+}
+.leading-6{
+  line-height: 1.5rem;
+}
+.leading-none{
+  line-height: 1;
+}
+.leading-normal{
+  line-height: 1.5;
+}
+.leading-relaxed{
+  line-height: 1.625;
+}
+.tracking-wide{
+  letter-spacing: 0.025em;
+}
+.tracking-widest{
+  letter-spacing: 0.1em;
+}
+.text-\[var\(--text-color-orange\)\]{
+  color: var(--text-color-orange);
+}
+.text-\[var\(--text-color-primary\)\]{
+  color: var(--text-color-primary);
+}
+.text-\[var\(--text-color-white\)\]{
+  color: var(--text-color-white);
+}
+.text-black{
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
+}
+.text-gray-500{
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity, 1));
+}
+.text-gray-600{
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99 / var(--tw-text-opacity, 1));
+}
+.text-white{
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+.opacity-70{
+  opacity: 0.7;
+}
+.opacity-80{
+  opacity: 0.8;
+}
+.shadow-\[3px_3px_3px_rgba\(19\2c 19\2c 19\2c 0\.3\)\]{
+  --tw-shadow: 3px 3px 3px rgba(19,19,19,0.3);
+  --tw-shadow-colored: 3px 3px 3px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.brightness-0{
+  --tw-brightness: brightness(0);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.invert{
+  --tw-invert: invert(100%);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.filter{
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.transition-all{
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.transition-colors{
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.transition-transform{
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.duration-300{
+  transition-duration: 300ms;
+}
+.ease-in-out{
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.before\:absolute::before{
+  content: var(--tw-content);
+  position: absolute;
+}
+.before\:left-0::before{
+  content: var(--tw-content);
+  left: 0px;
+}
+.before\:top-1\/2::before{
+  content: var(--tw-content);
+  top: 50%;
+}
+.before\:h-7::before{
+  content: var(--tw-content);
+  height: 1.75rem;
+}
+.before\:w-7::before{
+  content: var(--tw-content);
+  width: 1.75rem;
+}
+.before\:-translate-y-1\/2::before{
+  content: var(--tw-content);
+  --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.before\:bg-\[url\(\'\.\/images\/icon_access\.svg\'\)\]::before{
+  content: var(--tw-content);
+  background-image: url('./images/icon_access.svg');
+}
+.before\:bg-\[url\(\'\.\/images\/icon_admission\.svg\'\)\]::before{
+  content: var(--tw-content);
+  background-image: url('./images/icon_admission.svg');
+}
+.before\:bg-\[url\(\'\.\/images\/icon_animals\.svg\'\)\]::before{
+  content: var(--tw-content);
+  background-image: url('./images/icon_animals.svg');
+}
+.before\:bg-\[url\(\'\.\/images\/icon_guide\.svg\'\)\]::before{
+  content: var(--tw-content);
+  background-image: url('./images/icon_guide.svg');
+}
+.before\:bg-\[url\(\'\.\/images\/icon_news\.svg\'\)\]::before{
+  content: var(--tw-content);
+  background-image: url('./images/icon_news.svg');
+}
+.before\:content-\[\'\'\]::before{
+  --tw-content: '';
+  content: var(--tw-content);
+}
+.hover\:-translate-y-1:hover{
+  --tw-translate-y: -0.25rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.hover\:bg-opacity-20:hover{
+  --tw-bg-opacity: 0.2;
+}
+.hover\:pl-3:hover{
+  padding-left: 0.75rem;
+}
+.hover\:underline:hover{
+  text-decoration-line: underline;
+}
+@media (max-width: 500px){
+  .max-\[500px\]\:w-full{
+    width: 100%;
+  }
+  .max-\[500px\]\:flex-col{
+    flex-direction: column;
+  }
+}
+@media (min-width: 640px){
+  .sm\:grid-cols-2{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .sm\:flex-row{
+    flex-direction: row;
+  }
+  .sm\:gap-x-4{
+    -moz-column-gap: 1rem;
+         column-gap: 1rem;
+  }
+  .sm\:gap-x-6{
+    -moz-column-gap: 1.5rem;
+         column-gap: 1.5rem;
+  }
+}
+@media (min-width: 769px){
+  .md\:block{
+    display: block;
+  }
+  .md\:flex{
+    display: flex;
+  }
+  .md\:grid{
+    display: grid;
+  }
+  .md\:hidden{
+    display: none;
+  }
+  .md\:h-80{
+    height: 20rem;
+  }
+  .md\:h-\[560px\]{
+    height: 560px;
+  }
+  .md\:w-56{
+    width: 14rem;
+  }
+  .md\:w-full{
+    width: 100%;
+  }
+  .md\:grid-cols-2{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .md\:grid-cols-3{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .md\:grid-cols-4{
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .md\:grid-rows-1{
+    grid-template-rows: repeat(1, minmax(0, 1fr));
+  }
+  .md\:flex-row{
+    flex-direction: row;
+  }
+  .md\:flex-col{
+    flex-direction: column;
+  }
+  .md\:items-center{
+    align-items: center;
+  }
+  .md\:justify-end{
+    justify-content: flex-end;
+  }
+  .md\:justify-between{
+    justify-content: space-between;
+  }
+  .md\:gap-12{
+    gap: 3rem;
+  }
+  .md\:gap-\[2\.22vw\]{
+    gap: 2.22vw;
+  }
+  .md\:gap-x-8{
+    -moz-column-gap: 2rem;
+         column-gap: 2rem;
+  }
+  .md\:bg-\[var\(--bg-color-white\)\]{
+    background-color: var(--bg-color-white);
+  }
+  .md\:bg-transparent{
+    background-color: transparent;
+  }
+  .md\:p-8{
+    padding: 2rem;
+  }
+  .md\:px-32{
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+  .md\:px-48{
+    padding-left: 12rem;
+    padding-right: 12rem;
+  }
+  .md\:px-60{
+    padding-left: 15rem;
+    padding-right: 15rem;
+  }
+  .md\:px-\[4\.1vw\]{
+    padding-left: 4.1vw;
+    padding-right: 4.1vw;
+  }
+  .md\:pl-0{
+    padding-left: 0px;
+  }
+  .md\:text-left{
+    text-align: left;
+  }
+  .md\:text-right{
+    text-align: right;
+  }
+  .md\:text-2xl{
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  .md\:text-base{
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  .md\:text-black{
+    --tw-text-opacity: 1;
+    color: rgb(0 0 0 / var(--tw-text-opacity, 1));
+  }
+  .md\:before\:hidden::before{
+    content: var(--tw-content);
+    display: none;
+  }
+}
+@media (min-width: 1024px){
+  .lg\:col-span-1{
+    grid-column: span 1 / span 1;
+  }
+  .lg\:grid-cols-1{
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .lg\:grid-cols-3{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/*# sourceMappingURL=output.css.map */
