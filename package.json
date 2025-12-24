@@ -1,10 +1,12 @@
 {
   "name": "portforio-zoo",
   "version": "1.0.0",
+  "homepage": "https://kidneee.github.io/portforio-zoo/",
   "main": "index.js",
   "scripts": {
     "dev": "gulp",
     "build": "gulp html css js",
+    "deploy": "npm run build && gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,6 +14,7 @@
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^10.4.21",
+    "gh-pages": "^6.3.0",
     "gulp": "^5.0.1",
     "gulp-newer": "^1.4.0",
     "gulp-postcss": "^10.0.0",
